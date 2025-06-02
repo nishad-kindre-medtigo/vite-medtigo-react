@@ -1,0 +1,159 @@
+.availability-page .fc .fc-daygrid-body-natural .fc-daygrid-day-events {
+  margin-bottom: 0em;
+}
+
+.availability-page .fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events {
+  min-height: 0em;
+}
+.availability-page .fc, .fc *, .fc :after, .fc :before {
+  box-sizing: border-box;
+  /* background: #fff; */
+  border: none;
+  /* color: black; */
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Custom style for the FullCalendar container */
+.availability-page .custom-calendar {
+  border-top: 2px solid #000; /* Border color and width */
+  position: relative; /* Ensures the border is correctly positioned */
+}
+
+/* Remove border from FullCalendar header */
+/* .fc .fc-col-header {
+  border: none !important;
+} */
+
+/* Remove any other borders in the FullCalendar header */
+.availability-page .fc .fc-toolbar {
+  border: none !important;
+}
+
+/* Ensure that other calendar components are not affected */
+.availability-page .fc .fc-daygrid-day-frame,
+.availability-page .fc .fc-daygrid-day-top,
+.availability-page .fc .fc-daygrid-day-number {
+  border: none !important;
+}
+
+.availability-page .fc .fc-scrollgrid {
+  border: none;
+}
+
+.availability-page .fc-theme-standard td {
+  border: 9px solid #f6f6f6;
+}
+
+.availability-page .fc-theme-standard td:last-child {
+  border-right: none;
+}
+
+.availability-page .fc-theme-standard th {
+  border: none;
+  background: #f6f6f6;
+  height: 50px;
+  color: #3A3A3A;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+}
+
+.availability-page .fc-scrollgrid-sync-table {
+  border-collapse: separate;
+  border-spacing: 2px 0;
+}
+.availability-page .fc-daygrid-day-top{
+  background: #fff;
+}
+
+
+/* .fc .fc-daygrid-day-top {
+  margin-right: 9px;
+  margin-bottom: 10px;
+} */
+.availability-page .fc .fc-daygrid-day-frame, .availability-page .fc .fc-daygrid-day-top, .availability-page .fc .fc-daygrid-day-number {
+  border: none !important;
+  background: #fff;
+  /* margin: 10px; */
+}
+
+/* .fc .fc-toolbar.fc-header-toolbar {
+  display: none;
+}
+
+.css-ijsi3p-MuiPaper-root-MuiAccordion-root::before {
+  background: none;
+} */
+
+/* Targeting FullCalendar toolbar with more specificity */
+.availability-page .fc .fc-toolbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+}
+
+
+.availability-page .fc .fc-toolbar.fc-header-toolbar {
+  border-bottom: 1px solid #000;
+  margin-bottom: 4px;
+}
+
+/* Title (Month Year) Styling */
+.availability-page .fc .fc-toolbar .fc-toolbar-title {
+  font-size:20px;
+  font-weight: 600;
+  color: #3A3A3A;
+}
+
+/* Today Button Styling */
+.availability-page .fc .fc-toolbar .fc-today-button {
+  background-color: white;
+  border: 1px solid #2872C1;
+  box-shadow: 0px 2px 8px 0px #0000001C;
+  color: #2872C1;
+  border-radius: 2px;
+  padding: 2px 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+/* Hover effect for Today Button */
+.availability-page .fc .fc-toolbar .fc-today-button:hover {
+  background-color: #f0f0f0;
+}
+
+/* Prev/Next Button Styles */
+.availability-page .fc .fc-toolbar .fc-prev-button, 
+.availability-page .fc .fc-toolbar .fc-next-button {
+  background-color: #F6F6F6;
+  border: 1px solid #2872C1 !important;
+  box-shadow: 0px 2px 8px 0px #0000001C;
+  color: #2872C1;
+  padding: 3px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.availability-page .fc .fc-toolbar .fc-prev-button {
+  margin-right: 8px;
+}
+
+/* Hover effect for Prev/Next Buttons */
+.availability-page .fc .fc-toolbar .fc-prev-button:hover, 
+.availability-page .fc .fc-toolbar .fc-next-button:hover {
+  background-color: #f0f0f0;
+}
+
+/* .fc-day.fc-day-other.fc-day-sun,
+.fc-day.fc-day-other.fc-day-mon,
+.fc-day.fc-day-other.fc-day-tue,
+.fc-day.fc-day-other.fc-day-wed,
+.fc-day.fc-day-other.fc-day-thu,
+.fc-day.fc-day-other.fc-day-fri,
+.fc-day.fc-day-other.fc-day-sat {
+  display: none;
+} */

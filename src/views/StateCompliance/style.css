@@ -1,0 +1,124 @@
+* {
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.generate-report .MuiInputBase-input, .generate-report .MuiInputLabel-animated{
+    color: #000 !important;
+
+}
+
+.generate-report .MuiSvgIcon-root{
+    color: #000;
+
+}
+.MuiAutocomplete-popupIndicator{
+fill: gray;}
+.MuiAutocomplete-popupIndicator:hover{
+    background: gray;
+    fill: black;
+}
+
+.MuiAccordionDetails-root{
+    padding: 0;
+}
+.cme_datepicker,.cme_datepicker::before{
+    color: #000;
+}
+.cme-compliance-div{
+    height: 100%;
+}
+
+
+
+.css-iqd1hh-MuiButtonBase-root-MuiChip-root .MuiChip-deleteIcon {
+    color: white;
+}
+
+.css-6od3lo-MuiChip-label{
+    color: white;
+
+}
+
+.css-19im320-MuiAutocomplete-root .MuiInput-root .MuiInput-input {
+    color: white;
+    padding: 20px 0;
+}
+
+.css-19im320-MuiAutocomplete-root .MuiAutocomplete-tag{
+    /* border: 2px solid rgba(255, 255, 255, 0.288); */
+    color: white;
+    background: rgba(255, 255, 255, 0.082);
+    margin: 0 5px;
+}
+
+/* .css-i4bv87-MuiSvgIcon-root{
+    color: white;
+} */
+
+/* .css-1glvl0p-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-clearIndicator{
+    color: white;
+} */
+
+.MuiSelect-select.MuiSelect-select {
+    padding-right: 24px;
+    /* color: white; */
+}
+#cme-state-select{
+    color: white;
+}
+
+.css-177zyfz-CertificateDrawer {
+    background-color: white;
+}
+.generate-report .MuiInputBase-input,
+.generate-report .MuiInputLabel-animated{
+    color: white;
+
+}
+
+.MuiPaper-root.MuiDialog-paper.MuiDialog-paperScrollPaper.MuiDialog-paperWidthSm.MuiPaper-elevation24.MuiPaper-rounded{
+    color: #000;
+    background: white;
+}
+
+.MuiFormControl-root.MuiTextField-root.makeStyles-textFields-48{
+    background: white;
+    color: #000;
+}
+.MuiGrid-root.MuiGrid-item.MuiGrid-grid-sm-6.MuiGrid-grid-md-5,
+.MuiInputBase-root.MuiInput-root.MuiInput-underline.Mui-disabled.Mui-disabled.MuiInputBase-formControl.MuiInput-formControl{
+    color: #000;
+}
+
+.MuiFormLabel-root.MuiInputLabel-root.MuiInputLabel-formControl.MuiInputLabel-animated.MuiInputLabel-shrink.MuiFormLabel-filled{
+    color: #000;
+}
+
+.MuiPickersBasePicker-pickerView{
+    background: white;
+    color: black;
+}
+.MuiPickersCalendar-week{
+    color: black;
+}
+.MuiPickersDay-daySelect{
+    color: black;
+    background-color: #2872C1;
+}
+.MuiPickersCalendarHeader-dayLabel{
+    color: black;
+    font-weight: 500;
+}
+.MuiButtonBase-root.MuiIconButton-root.MuiPickersCalendarHeader-iconButton{
+}
+.help_button{
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.help_button:hover{
+color: #2872C1;
+
+}

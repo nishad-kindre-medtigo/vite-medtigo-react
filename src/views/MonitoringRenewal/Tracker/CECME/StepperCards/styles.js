@@ -1,0 +1,90 @@
+export const stepperCardStyles = {
+  grid: {
+    padding: 3,
+    paddingLeft: 0,
+    height: '100%',
+    margin: '5px 0',
+  },
+  certificateContainer: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    flexWrap: 'wrap',
+    backgroundColor: '#fff',
+    color: '#000',
+    minHeight: '120px',
+    fontSize: '16px',
+    border: '1px solid #DFDFDF',
+    borderRadius: '2px',
+    position: 'relative',
+    boxShadow: '0px 4px 6px -1px #efefef',
+  },
+  cardContentDiv: {
+    display: 'flex',
+    padding: '16px !important',
+    gap: 8,
+    '@media (max-width: 600px)': {
+      padding: 12,
+    },
+    '@media (max-width: 960px)': {
+      flexWrap: 'wrap',
+    },
+  },
+  cardContent: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '6px',
+  },
+  actions: {
+    display: 'flex',
+    alignSelf: 'end',
+    marginLeft: 'auto',
+    padding: '12px',
+    '@media (max-width: 600px)': {
+      paddingTop: 4,
+    },
+  },
+  btn: {
+    padding: '6px',
+    fontSize: '14px',
+    backgroundColor: '#2872C1',
+    borderRadius: '2px',
+    width: '120px',
+    '&:hover': {
+      backgroundColor: '#0B6BC8',
+    },
+    marginTop: '6px',
+  },
+  typography: {
+    fontSize: '16px',
+    fontWeight: 500,
+  },
+  infoText: {
+    fontSize: '10px',
+    fontWeight: 300,
+    color: '#6A6A6A',
+  },
+  img: {
+    marginInline: 6,
+    cursor: 'pointer',
+  },
+  stepper: {
+    '& .MuiStepIcon-active': { color: '#008000' },
+    '& .MuiStepIcon-completed': { color: '#008000' },
+    '& .Mui-disabled .MuiStepIcon-root': { color: '#808080' },
+    '& .MuiStepLabel-active': { color: '#008000' },
+    '& .MuiStepLabel-completed': { color: '#008000' },
+    '& .MuiStepIcon-text': { fontWeight: '430' },
+    '& .MuiStepper-root': { padding: 0 },
+    '& .MuiStepLabel-label': { fontSize: '12px', fontWeight: 400 },
+    padding: '14px 10px !important',
+    maxWidth: '100%',
+    textAlign: 'center',
+    backgroundColor: '#F8F8F8 !important',
+    flexGrow: 1,
+    borderRadius: '1px',
+    '@media (max-width: 600px)': {
+      '& .MuiStepLabel-label': { fontSize: '10px' },
+    },
+  },
+};

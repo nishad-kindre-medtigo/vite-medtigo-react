@@ -1,0 +1,58 @@
+
+.textFieldBorder{
+    border: 1px solid black;
+}
+
+/* .MuiOutlinedInput-root, .MuiOutlinedInput-input, .MuiInputBase-input, .MuiInputLabel-root, .MuiInputLabel-formControl, .MuiInputLabel-animated{
+    height: 40px !important;
+} */
+
+/* .MuiStepLabel-iconContainer{
+    height: 50px;
+    width: 50px;
+} */
+
+.form-page .MuiTypography-root, .form-page .MuiTypography-body1{
+    font-size: 14px;
+}
+
+.form-page .MuiInputLabel-root{
+    font-size: 14px !important;
+}
+
+.form-page .MuiTypography-body2{
+    font-family: 'Poppins' !important;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.form-page .MuiFormHelperText-root{
+    margin-left: 0px !important;
+    margin-top: 0px !important;
+}
+
+.marginLeft{
+    margin-left: 300px;
+}
+
+.errorDisplay{
+    bottom: 0px;
+}
+
+@media only screen and (max-width: 1026px) {
+    .fadeshow1 {
+        display: none;
+    }
+    .marginLeft{
+        margin-left: 20px;
+    }
+.errorDisplay{
+    bottom: -20px;
+}
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}

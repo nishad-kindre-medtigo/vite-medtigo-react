@@ -1,0 +1,26 @@
+#cme-form .MuiFormLabel-root {
+  color: #000;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+#cme-form .describe-box {
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 15px;
+  padding-left: 30px;
+}
+
+@media (min-width: 1024px) {
+  #cme-form .MuiFormControl-root,
+  #cme-form .MuiFormGroup-root {
+    margin: 10px 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  #cme-form .MuiFormControl-root,
+  #cme-form .MuiFormGroup-root {
+    margin: 10px 0px;
+  }
+}

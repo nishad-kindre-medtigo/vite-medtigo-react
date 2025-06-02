@@ -1,0 +1,128 @@
+.page {
+  width: 90%;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.short-screen {
+  width: 78%;
+}
+
+@media (max-width: 768px) {
+  /* Assuming 'isTablet' corresponds to 768px */
+  .short-screen {
+    width: 90%;
+  }
+}
+
+.react-quiz-container {
+  width: 100%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column; /* Align content vertically */
+}
+
+.questionWrapperBody img {
+  padding-top: 16px;
+  max-height: 150px;
+  max-width: 100%;
+}
+
+.react-quiz-container h2 {
+  font-size: 28px;
+  font-weight: 500;
+}
+
+@media (min-width: 768px) {
+  .react-quiz-container h2 {
+    font-size: 22px;
+  }
+}
+
+.tag-container {
+  display: none !important; /* Hide tag container */
+}
+
+.questionWrapperBody h3,
+.questionWrapperBody p {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5; /* Improve text readability */
+}
+
+.questions-wrapper b {
+  margin-right: 5px;
+}
+
+.quiz-result-filter {
+  display: none;
+}
+
+.tag-container + .answerBtn {
+  margin-top: 20px !important;
+}
+
+.answerBtn.btn {
+  color: #444;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  text-align: left !important;
+  font-weight: 400;
+  width: 100%;
+  position: relative;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
+  font-size: 15px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.answerBtn.btn:focus {
+  outline: none;
+}
+
+/* ADD LEFT MARGIN FOR OPTION TEXT */
+.answerBtn span {
+  display: block;
+}
+
+/* CHANGE BG COLOR & ADD SHADOW ON HOVER */
+.answerBtn:hover {
+  background-color: #f0f8ff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+/* CHANGE BORDER & BG COLOR WHEN SELECTED */
+.answerBtn.selected.btn {
+  border: 1px solid #2872c1;
+  background-color: #e9f2fc;
+  color: #2872c1
+}
+
+/*! ONLY FOR DEVELOPMENT & TESTING PURPOSE - DONT USE THIS FOR PROD  */
+/*? THIS HIGHLIGHTS QUIZ QUESTION OPTIONS AS GREEN/ RED BASED ON ITS STATUS */
+
+.answerBtn.btn.true {
+  background-color: #e8f5e9;
+  color: #388e3c;
+}
+
+.answerBtn.btn.false {
+  background-color: #ffebee;
+  color: #d32f2f;
+}
+
+.answerBtn.selected.btn.true {
+  border-color: #388e3c;
+}
+
+.answerBtn.selected.btn.false {
+  border-color: #d32f2f;
+}
