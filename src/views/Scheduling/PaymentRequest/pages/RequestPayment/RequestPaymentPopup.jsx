@@ -3,7 +3,7 @@ import { Box, Dialog, DialogContent, DialogTitle, Button, Grid, Typography, Text
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import moment from 'moment';
-import { useOpenSnackbar } from '../../../../../hooks/useOpenSnackbar';
+import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 import axios from '../../../../../utils/axios';
 import Label from '../../../../../components/Label';
 import { Transition } from '../../../../../ui/Transition';

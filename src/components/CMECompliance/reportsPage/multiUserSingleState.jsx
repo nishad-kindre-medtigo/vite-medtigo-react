@@ -5,7 +5,7 @@ import ArrowBackIosNewRoundedIcon from '@mui/icons-material/ArrowBackIosNewRound
 import { Box, Grid, IconButton } from '@mui/material';
 import { CME_RequestType, states } from '../../../appConstants.js';
 import moment from 'moment';
-import useBreakpoints from '../../../hooks/useBreakpoints.js';
+import useBreakpoints from 'src/hooks/useBreakpoints.js';
 import ReportContainer from './reportContainer';
 import { ComplianceTag, PageNav } from '../index';
 

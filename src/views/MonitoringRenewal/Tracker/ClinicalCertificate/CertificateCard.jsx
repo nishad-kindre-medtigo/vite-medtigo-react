@@ -5,7 +5,7 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { CertificateActions } from '../../../MonitoringRenewal/components/CertificateActions';
 import { useMyLearningContext } from '../../../../context/MyLearningContext';
 import { getCertificateExpiryDetails } from '../../../../utils/getCertificateExpiryDetails';
-import useBreakpoints from '../../../../hooks/useBreakpoints';
+import useBreakpoints from 'src/hooks/useBreakpoints';
 import { courses as courseContentData } from '../../../Acquisition/MyLearning/data';
 import { StyledCard, CertificateContent, PrimaryText, SecondaryText, AddedByYou, OldCertificateText, MenuIcon, ProgressIcon, ActionContainer, ActionButton } from '../../../MonitoringRenewal/ui';
 import CardActions from '../../../MonitoringRenewal/components/CardActions';

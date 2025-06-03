@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid, Box, Typography, Button } from '@mui/material';
 import BuyIcon from '@mui/icons-material/AddShoppingCart';
 import { FullAccessPlanInfo } from '../data';
-import { useBuyPlan } from '../../../../hooks/useBuyPlan';
+import { useBuyPlan } from 'src/hooks/useBuyPlan';
 import { CertificateValidity } from '../ui';
 
 // Constants for colors and styles

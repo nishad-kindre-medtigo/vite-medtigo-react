@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import moment from 'moment';
 import { useLicenceContext } from '../../../context/LicenseContext';
-import { useOpenSnackbar } from '../../../hooks/useOpenSnackbar';
+import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 import alertPage from '../../../services/alertPage';
 import history from '../../../utils/history';
 import Page from '../../../components/Page';

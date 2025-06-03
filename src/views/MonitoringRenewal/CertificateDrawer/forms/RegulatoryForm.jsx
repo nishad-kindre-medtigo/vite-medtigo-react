@@ -4,7 +4,7 @@ import { states, certCategories } from '../../../../appConstants';
 import { Grid } from '@mui/material';
 import certificatesService from '../../../../services/certificatesService';
 import { useCertificatesContext } from '../../../../context/CertificatesContext';
-import { useOpenSnackbar } from '../../../../hooks/useOpenSnackbar';
+import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 import { LICENSE_STATES, formatActiveData, scrollToCertificate, getCertificateNameFromPage } from '../utils';
 import { ActionButton, CustomDatePicker, SelectField, FileUploadField, ErrorMessage } from '../components';
 

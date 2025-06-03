@@ -5,11 +5,11 @@ import { Link } from 'react-router-dom';
 import Label from '../../../../../components/Label';
 import moment from 'moment';
 import axios from '../../../../../utils/axios';
-import useIsMountedRef from '../../../../../hooks/useIsMountedRef';
+import useIsMountedRef from 'src/hooks/useIsMountedRef';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import { useSelector } from 'react-redux';
 import TableSkeleton from '../../components/TableSkeleton';
-import useBreakpoints from '../../../../../hooks/useBreakpoints';
+import useBreakpoints from 'src/hooks/useBreakpoints';
 
 const useStyles = {
   root: {

@@ -11,7 +11,7 @@ import PlatformDetailsDialog from './PlatformDetailsDialog';
 import { format } from 'date-fns';
 import CryptoJS from 'crypto-js';
 import passwordManagerServices from '../../../../services/passwordManagerService';
-import { useOpenSnackbar } from '../../../../hooks/useOpenSnackbar';
+import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 import Label from '../../../../components/Label';
 
 const ENCRYPTION_KEY = import.meta.env.VITE_ENCRYPTION_KEY;

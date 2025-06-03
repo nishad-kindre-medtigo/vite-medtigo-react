@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useOpenSnackbar } from '../hooks/useOpenSnackbar';
+import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 import { useSelector } from 'react-redux';
 import certificatesService from '../services/certificatesService';
 import orderServices from '../services/orderServices';

@@ -4,7 +4,7 @@ import InfoIcon from '@mui/icons-material/InfoRounded';
 import Label from '../../../../../components/Label';
 import moment from 'moment';
 import axios from '../../../../../utils/axios';
-import useIsMountedRef from '../../../../../hooks/useIsMountedRef';
+import useIsMountedRef from 'src/hooks/useIsMountedRef';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import Header from './Header';

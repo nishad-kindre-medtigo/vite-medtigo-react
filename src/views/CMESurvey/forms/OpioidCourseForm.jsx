@@ -5,7 +5,7 @@ import Page from '../../../components/Page';
 import learningService from '../../../services/learningService';
 import orderServices from '../../../services/orderServices';
 import certificatesService from '../../../services/certificatesService';
-import { useOpenSnackbar } from '../../../hooks/useOpenSnackbar';
+import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 import { CertificatesContext } from '../../../context/CertificatesContext';
 import MOCForm from '../components/MOCForm';
 import FormSubmitBackdrop from '../components/FormSubmitBackdrop';

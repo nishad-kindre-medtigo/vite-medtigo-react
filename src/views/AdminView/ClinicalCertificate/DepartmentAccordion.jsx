@@ -4,7 +4,7 @@ import { Box, Collapse, IconButton, TableBody, TableCell, TableContainer, TableH
 import { AccordionBox, AccordionHead, AccordionExpandIcon, AccordionTable, UserClick } from '../../../components/CMECompliance';
 import { useNavigate } from 'react-router-dom';
 import MailIconWithDialog from '../../../components/Reports/IconWithPopup';
-import { useOpenSnackbar } from '../../../hooks/useOpenSnackbar';
+import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 
 const DepartmentAccordion = ({ data, page, allUserIds, currentMonthSelected = null }) => {
   const navigate = useNavigate();

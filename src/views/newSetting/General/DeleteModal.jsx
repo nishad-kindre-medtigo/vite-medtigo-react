@@ -4,7 +4,7 @@ import authService from '../../../services/authService';
 import AfterAccountDeleteModal from '../../../views/newSetting/General/AfterAccountDeleteModal';
 import CryptoJS from 'crypto-js';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutlineOutlined';
-import { useOpenSnackbar } from '../../../hooks/useOpenSnackbar';
+import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 import { Transition } from '../../../ui/Transition';
 
 const ENCRYPTION_KEY = import.meta.env.VITE_ENCRYPTION_KEY;

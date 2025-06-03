@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 import { SERVER_URL } from '../../../../settings';
 import AddIcon from '@mui/icons-material/Add';
 import ReplayIcon from '@mui/icons-material/Replay';
-import { useOpenSnackbar } from '../../../../hooks/useOpenSnackbar';
+import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 
 const formatTimestamp = (timestamp) => {
   if (!timestamp) return '';

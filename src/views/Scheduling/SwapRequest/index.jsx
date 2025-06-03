@@ -3,7 +3,7 @@ import { Box } from '@mui/material';
 import Page from '../../../components/Page';
 import Header from './components/Header';
 import Results from './components/Results';
-import { useOpenSnackbar } from '../../../hooks/useOpenSnackbar';
+import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 import { useSelector } from 'react-redux';
 import schedullingServices from '../../../services/schedullingServices';
 import TableSkeleton from '../PaymentRequest/components/TableSkeleton';

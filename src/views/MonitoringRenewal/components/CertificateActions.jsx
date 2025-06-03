@@ -8,7 +8,7 @@ import { Loader } from '../../../ui/Progress';
 import { Transition } from '../../../ui/Transition';
 import { StyledMenu, StyledMenuItem } from '../../../layouts/NewLayout/MidBar/HeaderMenu';
 import { CertificateIcon } from '../../MonitoringRenewal/ui';
-import { useOpenSnackbar } from '../../../hooks/useOpenSnackbar';
+import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 import { SERVER_URL } from '../../../settings';
 import isPrintable from '../../../utils/isPrintable';
 import { printCertificate } from '../../MonitoringRenewal/utils';

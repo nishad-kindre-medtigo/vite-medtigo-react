@@ -4,7 +4,7 @@ import MailIcon from '@mui/icons-material/Mail';
 import { AccordionExpandIcon, AccordionBox, AccordionHead, AccordionTable, UserClick } from '../../../components/CMECompliance';
 import { ConfirmationDialog } from '../../../components/Reports/confirmationDilog';
 import MailIconWithDialog from '../../../components/Reports/IconWithPopup';
-import { useOpenSnackbar } from '../../../hooks/useOpenSnackbar';
+import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 
 const DepartmentAccordion = ({ department, onViewAll, onViewSingle }) => {
   const [expanded, setExpanded] = useState(true);

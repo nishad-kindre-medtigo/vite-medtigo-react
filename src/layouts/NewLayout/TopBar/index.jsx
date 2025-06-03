@@ -7,14 +7,14 @@ import moment from 'moment';
 import { StaffingContext } from '../../../context/StaffingContext';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { useOpenSnackbar } from '../../../hooks/useOpenSnackbar';
-import { useBlockNavigation } from '../../../hooks/useBlockNavigation';
+import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
+import { useBlockNavigation } from 'src/hooks/useBlockNavigation';
 import { logout } from '../../../actions/accountActions';
 import { AUTH_URL, SERVER_URL, CONNECT_URL } from '../../../settings';
 import { SearchBar } from './SearchBar';
 import UserDetailsPopup from './UserDetailsPopup';
 import axios from 'axios';
-import useBreakpoints from '../../../hooks/useBreakpoints';
+import useBreakpoints from 'src/hooks/useBreakpoints';
 import { Root, ToolbarContainer, StyledToolbar, FlexGrow, Section, DividerStyled, StyledLink, DateText, StyledBadge, StyledMenu, MenuItemWithSeparator, TruncatedUserName } from './components';
 
 const TopBar = () => {

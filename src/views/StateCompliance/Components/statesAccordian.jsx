@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Box, Collapse, IconButton, Tab, Table, TableBody, TableCell, TableContainer, TableFooter, TableHead, TableRow, Tabs, Tooltip, Typography } from '@mui/material';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import { AccordionBox, AccordionHead, AccordionTabs, AccordionExpandIcon, StatesButton, styles } from '../../AdminView/TeamCompliance/components';
-import useBreakpoints from '../../../hooks/useBreakpoints';
+import useBreakpoints from 'src/hooks/useBreakpoints';
 import { ReportTypes, states } from '../../../appConstants';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';

@@ -11,7 +11,7 @@ import { useCertificatesContext } from '../../context/CertificatesContext';
 import Page from '../../components/Page';
 import SendMailDialog from './dialogs/SendMailDialog';
 import { PrimaryTabPanel, RightSection } from '../../ui/Tabs';
-import useBreakpoints from '../../hooks/useBreakpoints';
+import useBreakpoints from 'src/hooks/useBreakpoints';
 import { NAV_CONFIG } from './constants';
 
 const MonitoringAndRenewalSection = () => {

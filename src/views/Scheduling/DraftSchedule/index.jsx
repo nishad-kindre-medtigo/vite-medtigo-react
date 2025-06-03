@@ -12,7 +12,7 @@ import resourceTimelinePlugin from '@fullcalendar/resource-timeline';
 import hospitalsService from '../../../services/hospitalsService';
 import departmentsService from '../../../services/departmentsService';
 import schedullingServices from '../../../services/schedullingServices';
-import useBreakpoints from '../../../hooks/useBreakpoints';
+import useBreakpoints from 'src/hooks/useBreakpoints';
 import moment from 'moment';
 import '../GroupSchedule/style.css';
 

@@ -10,7 +10,7 @@ import CachedIcon from '@mui/icons-material/Cached';
 import SkipNextIcon from '@mui/icons-material/SkipNext';
 import CallMadeIcon from '@mui/icons-material/CallMade';
 import VerifiedIcon from '@mui/icons-material/Verified';
-import useBreakpoints from '../../../../../../hooks/useBreakpoints';
+import useBreakpoints from 'src/hooks/useBreakpoints';
 import { simulationCasesData } from '../data';
 import { LearningContext } from '../../../../../../context/LearningContext';
 import { AutoProviderCardBox } from '../handlers';

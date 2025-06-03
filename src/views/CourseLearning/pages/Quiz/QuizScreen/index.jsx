@@ -12,8 +12,8 @@ import QuizActionsCard from './components/QuizActionsCard';
 import QuizCompletion from './components/QuizCompletion';
 import { ExitButton } from './handlers';
 import './styles.css';
-import { useOpenSnackbar } from '../../../../../hooks/useOpenSnackbar';
-import useBreakpoints from '../../../../../hooks/useBreakpoints';
+import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
+import useBreakpoints from 'src/hooks/useBreakpoints';
 
 /**
  * @component QuizScreen

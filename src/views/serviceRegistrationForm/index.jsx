@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import "./style.css"
 // import DateFnsUtils from '@date-io/moment';
 import { Box, InputLabel, MenuItem, TextField, Typography, IconButton, FormControl, Select, FormControlLabel, FormLabel, RadioGroup, Radio, TextareaAutosize, Checkbox, Button, ThemeProvider, Divider, Tooltip } from '@mui/material';
-import { useOpenSnackbar } from '../../hooks/useOpenSnackbar';
+import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 
 import { countryList } from '../../appConstants';
 import { DatePicker, LocalizationProvider, DesktopDatePicker} from '@mui/x-date-pickers';

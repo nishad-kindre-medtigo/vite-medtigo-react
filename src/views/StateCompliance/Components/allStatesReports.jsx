@@ -4,7 +4,7 @@ import ReportContainer from '../../../components/CMECompliance/reportsPage/repor
 import { CME_RequestType, cme_states, states } from '../../../appConstants';
 import { Box, FormControl, Grid, IconButton, MenuItem, Select, Tooltip, Typography } from '@mui/material';
 import { StateWiseRenew } from '../../StateCompliance';
-import useBreakpoints from '../../../hooks/useBreakpoints';
+import useBreakpoints from 'src/hooks/useBreakpoints';
 import moment from 'moment';
 import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleUp';
 import { PageNav } from '../../AdminView/TeamCompliance/components';

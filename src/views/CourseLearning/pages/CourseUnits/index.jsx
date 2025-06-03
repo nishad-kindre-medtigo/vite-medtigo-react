@@ -6,7 +6,7 @@ import { LearningContext } from '../../../../context/LearningContext';
 import { courseLanguages } from '../../../../appConstants';
 import useroptionsServices from '../../../../services/userOptionsService';
 import { useNavigate } from 'react-router-dom';
-import useBreakpoints from '../../../../hooks/useBreakpoints';
+import useBreakpoints from 'src/hooks/useBreakpoints';
 
 function CourseUnits(props) {
   const { activeStep, steps, activeCourse, goToPreviousUnit, goToNextUnit, courseTitle } = props;

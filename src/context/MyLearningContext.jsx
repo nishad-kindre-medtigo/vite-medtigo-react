@@ -1,6 +1,6 @@
 import React, { createContext, useState, useCallback, useContext } from 'react';
 import { useSelector } from 'react-redux';
-import { useBuyPlan } from '../hooks/useBuyPlan';
+import { useBuyPlan } from 'src/hooks/useBuyPlan';
 import Backdrop from '@mui/material/Backdrop';
 import { Loader } from '../ui/Progress';
 

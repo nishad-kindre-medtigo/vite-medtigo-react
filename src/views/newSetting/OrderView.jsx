@@ -2,7 +2,7 @@ import React from 'react';
 import { Dialog, DialogTitle, DialogContent, Typography, Box, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import { Transition } from '../../ui/Transition';
-import useBreakpoints from '../../hooks/useBreakpoints';
+import useBreakpoints from 'src/hooks/useBreakpoints';
 import moment from 'moment';
 import NewLabel from '../../components/Label';
 

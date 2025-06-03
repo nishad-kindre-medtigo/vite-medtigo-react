@@ -12,7 +12,7 @@ import { useMyLearningContext } from '../../../context/MyLearningContext';
 import myLearningService from '../../../services/myLearningService';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { useLearningContext } from '../../../context/LearningContext';
-import useBreakpoints from '../../../hooks/useBreakpoints';
+import useBreakpoints from 'src/hooks/useBreakpoints';
 
 const CONNECT_COURSES = [4526, 9985, 9238, 79132, 151904, 192797, 11159];
 

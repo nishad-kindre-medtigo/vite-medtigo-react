@@ -6,7 +6,7 @@ import { Box, Grid, IconButton } from '@mui/material';
 import { CME_RequestType, states } from '../../../appConstants';
 import moment from 'moment';
 import { StateWiseRenew } from '../../../views/StateCompliance';
-import useBreakpoints from '../../../hooks/useBreakpoints';
+import useBreakpoints from 'src/hooks/useBreakpoints';
 import ReportContainer from './reportContainer';
 import { ComplianceTag, ComplianceTagSmall, PageNav } from '..';
 import BackButtonWithTitle from '../../Reports';

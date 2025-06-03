@@ -5,7 +5,7 @@ import { Box, Grid, IconButton, Typography } from '@mui/material';
 import { CME_RequestType, cme_states, states } from '../../../appConstants';
 import moment from 'moment';
 // import { StateWiseRenew } from '../../../StateCompliance';
-import useBreakpoints from '../../../hooks/useBreakpoints';
+import useBreakpoints from 'src/hooks/useBreakpoints';
 import ReportContainer from '../../../components/CMECompliance/reportsPage/reportContainer';
 import { ComplianceTag, ComplianceTagSmall, PageNav } from '../../AdminView/TeamCompliance/components';
 import { useParams } from "react-router-dom";

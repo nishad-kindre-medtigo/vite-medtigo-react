@@ -2,7 +2,7 @@ import React from 'react';
 import { Box } from '@mui/material';
 import { courses, COURSE_ICONS } from '../data';
 import { useNavigate } from 'react-router-dom';
-import { useOpenSnackbar } from '../../../../hooks/useOpenSnackbar';
+import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 import { CourseCard, ImageBox, ImageOverlay, CourseImage, CardActions, CourseProgress, ExpiryText,  ActionIcon, PrimaryText, ActionButton } from '../ui';
 
 const NewCourseCard = React.memo(({ courseID, courseData, handleOpenDialog, handleButtonClick, setIsOrderTypeFullAccess }) => {

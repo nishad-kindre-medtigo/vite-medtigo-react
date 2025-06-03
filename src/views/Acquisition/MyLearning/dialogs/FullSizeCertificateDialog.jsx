@@ -4,7 +4,7 @@ import SendIcon from '@mui/icons-material/Send';
 import { Transition } from '../../../../ui/Transition';
 import certificatesService from '../../../../services/certificatesService';
 import { useSelector } from 'react-redux';
-import { useOpenSnackbar } from '../../../../hooks/useOpenSnackbar';
+import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 import { useMyLearningContext } from '../../../../context/MyLearningContext';
 
 const FullSizeCertificateDialog = () => {

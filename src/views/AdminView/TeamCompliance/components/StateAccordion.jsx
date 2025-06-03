@@ -4,7 +4,7 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import CheckBoxIcon from '@mui/icons-material/CheckBoxRounded';
 import DisabledByDefaultIcon from '@mui/icons-material/DisabledByDefaultRounded';
 import { AccordionBox, AccordionHead, AccordionTabs, AccordionExpandIcon, StatesButton, styles } from '.';
-import useBreakpoints from '../../../../hooks/useBreakpoints';
+import useBreakpoints from 'src/hooks/useBreakpoints';
 import { ReportTypes, states } from '../../../../appConstants';
 import { Link } from 'react-router-dom';
 import { cme_colors } from '../../../../components/CMECompliance/style_guides';

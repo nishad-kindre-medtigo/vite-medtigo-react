@@ -18,7 +18,7 @@ import {
 } from "@mui/material";
 import MailIconWithDialog from '../../../../components/Reports/IconWithPopup';
 import { ReportTypes } from '../../../../appConstants';
-import { useOpenSnackbar } from '../../../../hooks/useOpenSnackbar';
+import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 import { cme_colors } from '../../../../components/CMECompliance/style_guides';
 import CloseIcon from "@mui/icons-material/Close";
 import SingleUserSingleStateDrawer from '../../../../components/CMECompliance/reportsPage/singleUserSingleStateDrawer';

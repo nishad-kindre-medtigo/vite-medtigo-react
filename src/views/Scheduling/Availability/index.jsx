@@ -49,8 +49,8 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { styled } from '@mui/material/styles';
-import { useOpenSnackbar } from '../../../hooks/useOpenSnackbar';
-import useBreakpoints from '../../../hooks/useBreakpoints';
+import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
+import useBreakpoints from 'src/hooks/useBreakpoints';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {

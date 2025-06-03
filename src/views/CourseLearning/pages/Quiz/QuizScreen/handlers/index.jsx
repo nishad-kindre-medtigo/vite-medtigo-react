@@ -20,7 +20,7 @@ import QuizHint from './QuizHint';
 import AnswerCheck from './AnswerCheck';
 import QuizResultFilter from './QuizResultFilter';
 import CourseFeedbackPopup from './CourseFeedbackPopup';
-import { useOpenSnackbar } from '../../../../../../hooks/useOpenSnackbar';
+import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 import { Loader } from '../../../../../../ui/Progress';
 
 // Progress Bar displaying number of questions answered and total number of questions in quiz

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Dialog, Box, Button, Collapse, Typography, Stack, TextareaAutosize, useTheme } from '@mui/material';
 import Confetti from 'react-dom-confetti';
-import { useOpenSnackbar } from '../../../../../../hooks/useOpenSnackbar';
-import useBreakpoints from '../../../../../../hooks/useBreakpoints';
+import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
+import useBreakpoints from 'src/hooks/useBreakpoints';
 import LearningService from '../../../../../../services/learningService';
 import { useSelector } from 'react-redux';
 import { useFormik } from 'formik';

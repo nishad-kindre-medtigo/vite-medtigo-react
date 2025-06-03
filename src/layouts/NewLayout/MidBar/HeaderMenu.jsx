@@ -1,7 +1,7 @@
 import React from 'react';
 import { Menu, MenuItem } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { useBlockNavigation } from '../../../hooks/useBlockNavigation';
+import { useBlockNavigation } from 'src/hooks/useBlockNavigation';
 
 // Styled Menu Component
 export const StyledMenu = styled(Menu)({

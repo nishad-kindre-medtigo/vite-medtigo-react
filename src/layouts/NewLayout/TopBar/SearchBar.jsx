@@ -4,7 +4,7 @@ import { Dialog, DialogContent, InputAdornment, TextField, IconButton, Box, Typo
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import { GradientCircularProgress } from '../../../ui/Progress';
-import { useOpenSnackbar } from '../../../hooks/useOpenSnackbar';
+import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 
 const SearchField = styled(TextField)(() => ({
   borderColor: '#8B8B8B',

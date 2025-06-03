@@ -7,8 +7,8 @@ import certificatesService from '../../../../services/certificatesService';
 import { useSelector } from 'react-redux';
 import { getCertificateExpiryDetails } from '../../../../utils/getCertificateExpiryDetails';
 import RenewLicenseDialog from '../../../MonitoringRenewal/dialogs/RenewLicenseDialog';
-import { useOpenSnackbar } from '../../../../hooks/useOpenSnackbar';
-import useBreakpoints from '../../../../hooks/useBreakpoints';
+import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
+import useBreakpoints from 'src/hooks/useBreakpoints';
 import { StyledCard, CertificateContent, PrimaryText, SecondaryText, AddedByYou, MenuIcon, ProgressIcon, ActionContainer, ActionButton } from '../../../MonitoringRenewal/ui';
 import CardActions from '../../../MonitoringRenewal/components/CardActions';
 

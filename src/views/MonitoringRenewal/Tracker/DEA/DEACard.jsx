@@ -4,7 +4,7 @@ import { Box } from '@mui/material';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { CertificateActions } from '../../../MonitoringRenewal/components/CertificateActions';
 import { getCertificateExpiryDetails } from '../../../../utils/getCertificateExpiryDetails';
-import useBreakpoints from '../../../../hooks/useBreakpoints';
+import useBreakpoints from 'src/hooks/useBreakpoints';
 import { StyledCard, CertificateContent, PrimaryText, SecondaryText, AddedByYou, MenuIcon, ProgressIcon, ActionContainer } from '../../../MonitoringRenewal/ui';
 import CardActions from '../../../MonitoringRenewal/components/CardActions';
 

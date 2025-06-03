@@ -6,8 +6,8 @@ import HeaderMenu from './HeaderMenu';
 import Backdrop from './Backdrop';
 import { useNavigate } from 'react-router-dom';
 import authService from '../../../services/authService';
-import useBreakpoints from '../../../hooks/useBreakpoints';
-import { useBlockNavigation } from '../../../hooks/useBlockNavigation';
+import useBreakpoints from 'src/hooks/useBreakpoints';
+import { useBlockNavigation } from 'src/hooks/useBlockNavigation';
 import { useSelector } from 'react-redux';
 import { StaffingContext } from '../../../context/StaffingContext';
 

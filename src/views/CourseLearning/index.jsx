@@ -3,7 +3,7 @@ import { useParams } from 'react-router';
 import { useSelector } from 'react-redux';
 import { Grid } from '@mui/material';
 import { LearningContext } from '../../context/LearningContext';
-import useBreakpoints from '../../hooks/useBreakpoints';
+import useBreakpoints from 'src/hooks/useBreakpoints';
 import authService from '../../services/authService';
 import myLearningService from '../../services/myLearningService';
 import Page from '../../components/Page';

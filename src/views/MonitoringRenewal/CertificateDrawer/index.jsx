@@ -5,7 +5,7 @@ import CertificateForm from './forms/CertificateForm';
 import CMEForm from './forms/CMEForm';
 import RegulatoryForm from './forms/RegulatoryForm';
 import { useCertificatesContext } from '../../../context/CertificatesContext';
-import useBreakpoints from '../../../hooks/useBreakpoints';
+import useBreakpoints from 'src/hooks/useBreakpoints';
 import { getCertificateTypeFromPage } from './utils';
 
 const CertificateDrawer = props => {

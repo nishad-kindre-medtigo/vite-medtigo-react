@@ -3,7 +3,7 @@ import React from 'react'
 import DownloadIcon from '@mui/icons-material/Download';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import { useLearningContext } from 'src/context/LearningContext';
-import useBreakpoints from '../../../hooks/useBreakpoints';
+import useBreakpoints from 'src/hooks/useBreakpoints';
 
 function CourseSyllabus() {
     const { userPlans } = useLearningContext();

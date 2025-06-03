@@ -8,8 +8,8 @@ import { StyledInputLabel } from '../../../new_staffing/components';
 import { AndroidSwitch } from '.';
 import * as Yup from 'yup';
 import passwordManagerServices from '../../../../services/passwordManagerService';
-import { useOpenSnackbar } from '../../../../hooks/useOpenSnackbar';
-import useBreakpoints from '../../../../hooks/useBreakpoints';
+import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
+import useBreakpoints from 'src/hooks/useBreakpoints';
 import { Loader } from '../../../../ui/Progress';
 import CryptoJS from 'crypto-js';
 

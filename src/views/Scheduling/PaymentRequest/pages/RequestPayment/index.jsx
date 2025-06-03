@@ -3,13 +3,13 @@ import { Box, Tooltip, Card, Button, Grid, TextField } from '@mui/material';
 import { LocalizationProvider, DatePicker } from '@mui/x-date-pickers';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import axios from '../../../../../utils/axios';
-import useIsMountedRef from '../../../../../hooks/useIsMountedRef';
+import useIsMountedRef from 'src/hooks/useIsMountedRef';
 import { useSelector } from 'react-redux';
 import moment from 'moment';
 import ShiftsTable from './ShiftsTable';
 import RequestPaymentPopup from './RequestPaymentPopup';
 import TableSkeleton from '../../components/TableSkeleton';
-import useBreakpoints from '../../../../../hooks/useBreakpoints';
+import useBreakpoints from 'src/hooks/useBreakpoints';
 
 export const mainStyles = {
   root: {

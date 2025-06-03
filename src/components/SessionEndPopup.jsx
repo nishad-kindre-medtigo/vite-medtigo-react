@@ -5,13 +5,13 @@ import * as Yup from 'yup';
 import PropTypes from 'prop-types';
 import CryptoJS from 'crypto-js';
 import authService from '../services/authService';
-import { useOpenSnackbar } from '../hooks/useOpenSnackbar';
+import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 import { FadeTransition } from '../layouts/NewLayout/TopBar/SearchBar';
 import { Loader } from '../ui/Progress';
 import { Grid, Button, Typography, Dialog, DialogTitle, DialogContent, IconButton, InputAdornment } from '@mui/material';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import { StyledInputLabel, CustomTextfield } from '../views/new_staffing/components';
-import useBreakpoints from '../hooks/useBreakpoints';
+import useBreakpoints from 'src/hooks/useBreakpoints';
 
 const ENCRYPTION_KEY = import.meta.env.VITE_ENCRYPTION_KEY;
 

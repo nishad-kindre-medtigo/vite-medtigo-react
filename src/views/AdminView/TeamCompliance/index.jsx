@@ -17,7 +17,7 @@ import hospitalsService from '../../../services/hospitalsService';
 import { useSelector } from 'react-redux';
 import UserCollapse from './components/UserAccordion';
 import ComplianceChart from './components/ComplianceChart';
-// import useBreakpoints from '../hooks/useBreakpoints';
+// import useBreakpoints from 'src/hooks/useBreakpoints';
 import { useSnackbar } from 'notistack';
 import DepartmentCollapse from './components/DepartmentAccordion';
 import { ReportFilterContext } from '../../../context/ReportFilterContext';

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Box, Button, Grid, Tooltip, Typography } from '@mui/material';
-import useBreakpoints from '../../../../../../hooks/useBreakpoints';
+import useBreakpoints from 'src/hooks/useBreakpoints';
 import { LearningContext } from '../../../../../../context/LearningContext';
 import { AutoProviderCardBox } from '../handlers';
 import CompleteIcon from '@mui/icons-material/CheckCircle';

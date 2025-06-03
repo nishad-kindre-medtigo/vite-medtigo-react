@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { Box, TextField, Grid, FormControl, Select, InputLabel, MenuItem, Tooltip } from '@mui/material';
 import { LocalizationProvider, DatePicker } from '@mui/x-date-pickers';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
-import { useOpenSnackbar } from '../../../../hooks/useOpenSnackbar';
+import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 import expenseService from '../../../../services/expenseService';
 import { serviceLine, siteList } from '../../../../appConstants';
 import { CommentBox, SubmitButton } from '../../components';

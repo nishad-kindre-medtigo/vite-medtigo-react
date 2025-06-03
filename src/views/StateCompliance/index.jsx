@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import StateSpecificCMECervices from '../../services/stateSpecificCMEService';
 import { Box, Grid, TableCell } from '@mui/material';
 import { tableCellClasses } from "@mui/material";
-import { useOpenSnackbar } from '../../hooks/useOpenSnackbar';
+import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 import FilterPanel from "./Components/filterPanel";
 import { PlaceHolder } from "../AdminView/TeamCompliance/components";
 import StatesAccordian from "./Components/statesAccordian";
