@@ -13,6 +13,13 @@ function Auth({ children }) {
   const [showResendLoginPage, setShowResendLoginPage] = useState(false);
   const { user } = useSelector(state => state.account);
 
+  const urlParams = new URLSearchParams(window.location.search);
+  const urlToken = urlParams.get('admin_token');
+
+  if(urlToken){
+    localStorage.setItem('accessToken', urlToken);
+  }
+
   useEffect(() => {
     if (window.location.href.includes('regenerate')) {
       setLoading(false);

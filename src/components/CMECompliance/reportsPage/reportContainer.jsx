@@ -244,8 +244,8 @@ function ReportContainer({ licenseStatus, compliance_report, title, state, isCom
                 display={'flex'} 
                 flexDirection={{ xs: 'column', sm: 'row' }}
                 alignItems={'baseline'}>
-                    <Typography style={{ fontWeight: '500', fontSize: '24px', color: cme_colors.dark }}> {title}</Typography>
-                    {showStatus && <Typography style={{  color:isCompliant? cme_colors.compliant:cme_colors.nonCompliant, padding: '0 10px' }}>
+                    <Typography style={{ fontWeight: '500', fontSize: '24px', color: cme_colors.dark, marginRight:'10px' }}> {title}</Typography>
+                    {showStatus && <Typography style={{  color:isCompliant? cme_colors.compliant:cme_colors.nonCompliant}}>
                         {isCompliant ? 'Compliant' : 'Not compliant'}
                     </Typography>}
                 </Box>
