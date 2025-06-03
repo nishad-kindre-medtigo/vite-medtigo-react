@@ -3,7 +3,7 @@ import * as moment from 'moment';
 import { states, certCategories } from '../../../../appConstants';
 import { Grid } from '@mui/material';
 import certificatesService from 'src/services/certificatesService';
-import { useCertificatesContext } from '../../../../context/CertificatesContext';
+import { useCertificatesContext } from 'src/context/CertificatesContext';
 import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 import { LICENSE_STATES, formatActiveData, scrollToCertificate, getCertificateNameFromPage } from '../utils';
 import { ActionButton, CustomDatePicker, SelectField, FileUploadField, ErrorMessage } from '../components';

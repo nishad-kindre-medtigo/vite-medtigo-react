@@ -4,7 +4,7 @@ import { AdminDonutChart } from '../components';
 import { CardTitle, DetailBox, GreyBox } from '../../../views/dashboard/components';
 import GroupFilter from '../components/Filters/GroupFilter';
 import adminService from 'src/services/adminService';
-import { ReportFilterContext } from '../../../context/ReportFilterContext';
+import { ReportFilterContext } from 'src/context/ReportFilterContext';
 import { ClickHere } from '../components';
 
 const CECME = () => {

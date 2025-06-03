@@ -12,7 +12,7 @@ import CallMadeIcon from '@mui/icons-material/CallMade';
 import VerifiedIcon from '@mui/icons-material/Verified';
 import useBreakpoints from 'src/hooks/useBreakpoints';
 import { simulationCasesData } from '../data';
-import { LearningContext } from '../../../../../../context/LearningContext';
+import { LearningContext } from 'src/context/LearningContext';
 import { AutoProviderCardBox } from '../handlers';
 
 const QuizSimulationCard = ({ parent, endQuiz }) => {

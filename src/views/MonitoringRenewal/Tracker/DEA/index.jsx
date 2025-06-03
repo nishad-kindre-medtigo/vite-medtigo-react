@@ -1,7 +1,7 @@
 import React from 'react';
 import DEACard from './DEACard';
 import { Grid } from '@mui/material';
-import { useCertificatesContext } from '../../../../context/CertificatesContext';
+import { useCertificatesContext } from 'src/context/CertificatesContext';
 import { PlaceHolder, PageTitle } from '../../../MonitoringRenewal/ui';
 import { CertificateSkeletonList } from '../../components/SkeletonLoaders';
 

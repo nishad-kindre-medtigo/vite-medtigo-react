@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useCertificatesContext } from '../../../context/CertificatesContext';
+import { useCertificatesContext } from 'src/context/CertificatesContext';
 import certificatesService from 'src/services/certificatesService';
 import { Button, Dialog, DialogActions, DialogTitle, Grid } from '@mui/material';
 import EditIcon from '@mui/icons-material/BorderColorRounded';

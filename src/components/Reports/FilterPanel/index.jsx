@@ -6,7 +6,7 @@ import { cme_states as states } from '../../../appConstants';
 // import hospitalsService from 'src/services/hospitalsService';
 // import StateSpecificCMECervices from 'src/services/stateSpecificCMEService';
 // import departmentsService from 'src/services/departmentsService';
-import { ReportFilterContext } from '../../../context/ReportFilterContext';
+import { ReportFilterContext } from 'src/context/ReportFilterContext';
 import { Button } from '@mui/material';
 
 const FilterPane = ({ currentTab, GenerateReport }) => {

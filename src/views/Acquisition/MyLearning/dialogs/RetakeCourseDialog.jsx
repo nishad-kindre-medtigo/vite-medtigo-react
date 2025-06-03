@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 import authService from 'src/services/authService';
 import orderServices from 'src/services/orderServices';
-import { useMyLearningContext } from '../../../../context/MyLearningContext';
+import { useMyLearningContext } from 'src/context/MyLearningContext';
 import { SERVER_URL } from '../../../../settings';
 
 // Course Plans To place order for TeamHealth User when clicked on Renew

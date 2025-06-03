@@ -5,7 +5,7 @@ import licenseReportServices from 'src/services/licenseReportServices';
 import { AccordionBox, AccordionTable, PageContainer, PlaceHolder, DefaultPlaceHolder } from '../../../../components/CMECompliance';
 import { useSelector } from 'react-redux';
 import { allCertificates } from '../../../../appConstants';
-import { ReportFilterContext } from '../../../../context/ReportFilterContext';
+import { ReportFilterContext } from 'src/context/ReportFilterContext';
 import { StatusFilter } from '../../../AdminView/ClinicalCertificate/UserView';
 import { ReportBackLink } from '../../ui';
 

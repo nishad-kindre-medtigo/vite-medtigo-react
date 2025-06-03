@@ -3,7 +3,7 @@ import { Box, Tabs, Tab, FormControlLabel } from '@mui/material';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import useBreakpoints from 'src/hooks/useBreakpoints';
-import { StaffingContext } from '../../../context/StaffingContext';
+import { StaffingContext } from 'src/context/StaffingContext';
 import { IOSSwitch } from '../../../views/AdminView/TeamCompliance/components';
 import { clearSessionStorage } from '../../../views/AdminView/utils';
 import { CustomToolbar, RightSection } from '../../../ui/Tabs';

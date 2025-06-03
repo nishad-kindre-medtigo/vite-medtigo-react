@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from 'react';
 import CMECard from './CMECards';
 import { Box, Grid, Typography } from '@mui/material';
 // import myLearningService from 'src/services/myLearningService';
-import { useCertificatesContext } from '../../../../context/CertificatesContext';
+import { useCertificatesContext } from 'src/context/CertificatesContext';
 // import ExplorePlansDialog from '../views/Acquisition/MyLearning/dialogs/ExplorePlansDialog';
 // import RetakeCourseDialog from '../views/Acquisition/MyLearning/dialogs/RetakeCourseDialog';
 // import StepperCardContainer from './StepperCards';

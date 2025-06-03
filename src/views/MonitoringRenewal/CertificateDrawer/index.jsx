@@ -4,7 +4,7 @@ import CloseIcon from '@mui/icons-material/CloseRounded';
 import CertificateForm from './forms/CertificateForm';
 import CMEForm from './forms/CMEForm';
 import RegulatoryForm from './forms/RegulatoryForm';
-import { useCertificatesContext } from '../../../context/CertificatesContext';
+import { useCertificatesContext } from 'src/context/CertificatesContext';
 import useBreakpoints from 'src/hooks/useBreakpoints';
 import { getCertificateTypeFromPage } from './utils';
 

@@ -5,7 +5,7 @@ import learningService from 'src/services/learningService';
 import myLearningService from 'src/services/myLearningService';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { LearningContext } from '../../../../../context/LearningContext';
+import { LearningContext } from 'src/context/LearningContext';
 import QuizContent from './components/QuizContent';
 import QuizSimulationCard from './components/QuizSimulationCard';
 import QuizActionsCard from './components/QuizActionsCard';

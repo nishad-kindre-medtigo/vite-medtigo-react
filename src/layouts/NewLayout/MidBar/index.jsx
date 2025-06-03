@@ -9,7 +9,7 @@ import authService from 'src/services/authService';
 import useBreakpoints from 'src/hooks/useBreakpoints';
 import { useBlockNavigation } from 'src/hooks/useBlockNavigation';
 import { useSelector } from 'react-redux';
-import { StaffingContext } from '../../../context/StaffingContext';
+import { StaffingContext } from 'src/context/StaffingContext';
 
 const StyledAppBar = styled(Box)({
   backgroundColor: '#fff',

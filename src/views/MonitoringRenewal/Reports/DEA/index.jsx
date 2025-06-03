@@ -3,7 +3,7 @@ import adminService from 'src/services/adminService';
 import { PlaceHolder, DefaultPlaceHolder, PageContainer } from '../../../../components/CMECompliance';
 import { useSelector } from 'react-redux';
 import { SingleUserData } from '../ClinicalCertificate';
-import { ReportFilterContext } from '../../../../context/ReportFilterContext';
+import { ReportFilterContext } from 'src/context/ReportFilterContext';
 import { ReportBackLink } from '../../ui';
 
 const DEAUserView = () => {

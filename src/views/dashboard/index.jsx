@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Box, Grid, Typography } from '@mui/material';
 import { StateLicenseCard, CertificateCard, CMEComplianceCard, CourseDetailsCard, ExpensesCard, CareerCard, ScheduleCard } from './cards';
-import { CertificatesContext } from '../../context/CertificatesContext';
-import { StaffingContext } from '../../context/StaffingContext';
+import { CertificatesContext } from 'src/context/CertificatesContext';
+import { StaffingContext } from 'src/context/StaffingContext';
 import { DashboardSkeleton } from './components';
 import { useSelector } from 'react-redux';
 import alertPage from 'src/services/alertPage';

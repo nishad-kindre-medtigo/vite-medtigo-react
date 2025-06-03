@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { getLicenseStatusImage, calculateStatus } from '../../../AdminView/utils';
 import adminService from 'src/services/adminService';
 import moment from 'moment';
-import { CertificateTypeOptions } from '../../../../context/ReportFilterContext';
+import { CertificateTypeOptions } from 'src/context/ReportFilterContext';
 import { StatusFilter } from '../../../AdminView/ClinicalCertificate/UserView';
 import { ReportBackLink } from '../../ui';
 

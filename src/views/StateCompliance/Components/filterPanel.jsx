@@ -23,7 +23,7 @@ import { AdapterMoment } from "@mui/x-date-pickers/AdapterMoment";
 import { useSnackbar } from "notistack";
 import HelpIcon from '@mui/icons-material/Help';
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
-import { CertificatesContext } from '../../../context/CertificatesContext';
+import { CertificatesContext } from 'src/context/CertificatesContext';
 import CMERulesPopup from "./viewRulePopup";
 import HelpPopup from "./helpPopup";
 import useBreakpoints from "../../../hooks/useBreakpoints";

@@ -11,7 +11,7 @@ import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleUp';
 import { scrollToTopButtonStyle } from '../style_guides';
 import BackButtonWithTitle from '../../Reports';
 import { InfoDialog, InfoIconTooltip } from '../../../views/AdminView/LicenseReports/Components';
-import { ReportFilterContext } from '../../../context/ReportFilterContext';
+import { ReportFilterContext } from 'src/context/ReportFilterContext';
 
 function SingleUserMultiState() {
     const location = useLocation();

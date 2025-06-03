@@ -4,7 +4,7 @@ import BookmarkOutlinedIcon from '@mui/icons-material/BookmarkOutlined';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
-import { StaffingContext } from '../../../../../context/StaffingContext';
+import { StaffingContext } from 'src/context/StaffingContext';
 import staffingServices from 'src/services/staffingServices';
 import ApplyForJobPopup from './ApplyForJobPopup';
 import { ApplyButton } from '../../../components';

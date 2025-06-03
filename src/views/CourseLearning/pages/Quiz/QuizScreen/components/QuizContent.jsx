@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { LearningContext } from '../../../../../../context/LearningContext';
-import { useCertificatesContext } from '../../../../../../context/CertificatesContext';
+import { LearningContext } from 'src/context/LearningContext';
+import { useCertificatesContext } from 'src/context/CertificatesContext';
 import { checkAnswer, formatQuestionText } from '../utils';
 import { teamhealthPlans, courseDetails } from '../data';
 import learningService from 'src/services/learningService';

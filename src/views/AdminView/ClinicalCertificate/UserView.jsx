@@ -5,7 +5,7 @@ import { AccordionBox, AccordionTable, PlaceHolder, DefaultPlaceHolder, PageCont
 import { InfoDialog, InfoIconTooltip } from '../LicenseReports/Components';
 import { useParams } from 'react-router';
 import { getLicenseStatusImage, calculateStatus, getMonthName } from '../utils';
-import { ReportFilterContext } from '../../../context/ReportFilterContext';
+import { ReportFilterContext } from 'src/context/ReportFilterContext';
 import adminService from 'src/services/adminService';
 import BackButtonWithTitle from '../../../components/Reports';
 import moment from 'moment';

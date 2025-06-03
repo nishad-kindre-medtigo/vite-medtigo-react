@@ -4,7 +4,7 @@ import CartIcon from '@mui/icons-material/ShoppingCartRounded';
 import AdminFilledIcon from '@mui/icons-material/AdminPanelSettings';
 import AdminOutlinedIcon from '@mui/icons-material/AdminPanelSettingsOutlined';
 import moment from 'moment';
-import { StaffingContext } from '../../../context/StaffingContext';
+import { StaffingContext } from 'src/context/StaffingContext';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';

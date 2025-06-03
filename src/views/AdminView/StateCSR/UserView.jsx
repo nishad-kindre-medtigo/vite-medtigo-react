@@ -4,7 +4,7 @@ import adminService from 'src/services/adminService';
 import BackButtonWithTitle from '../../../components/Reports';
 import { PlaceHolder, DefaultPlaceHolder, PageContainer } from '../../../components/CMECompliance';
 import { SingleUserData } from '../ClinicalCertificate/UserView';
-import { ReportFilterContext } from '../../../context/ReportFilterContext';
+import { ReportFilterContext } from 'src/context/ReportFilterContext';
 import { getMonthName } from '../utils';
 
 const StateCSRUserView = () => {

@@ -11,7 +11,7 @@ import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleUp';
 import { scrollToTopButtonStyle } from '../style_guides';
 import BackButtonWithTitle from '../../Reports';
 import { InfoDialog, InfoIconTooltip } from '../../../views/AdminView/LicenseReports/Components';
-import { ReportFilterContext } from '../../../context/ReportFilterContext';
+import { ReportFilterContext } from 'src/context/ReportFilterContext';
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import CloseIcon from "@mui/icons-material/Close";
 import Divider from '@mui/material/Divider';

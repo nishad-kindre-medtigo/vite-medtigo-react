@@ -1,5 +1,5 @@
 import React from 'react';
-import { useCertificatesContext } from '../../../context/CertificatesContext';
+import { useCertificatesContext } from 'src/context/CertificatesContext';
 import { CertificateActions } from './CertificateActions';
 import { CertificateIcon } from '../ui';
 import { SERVER_URL } from '../../../settings';

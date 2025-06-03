@@ -3,7 +3,7 @@ import moment from 'moment';
 import { Box } from '@mui/material';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { CertificateActions } from '../../../MonitoringRenewal/components/CertificateActions';
-import { useMyLearningContext } from '../../../../context/MyLearningContext';
+import { useMyLearningContext } from 'src/context/MyLearningContext';
 import { getCertificateExpiryDetails } from '../../../../utils/getCertificateExpiryDetails';
 import useBreakpoints from 'src/hooks/useBreakpoints';
 import { courses as courseContentData } from '../../../Acquisition/MyLearning/data';

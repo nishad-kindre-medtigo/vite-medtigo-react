@@ -1,7 +1,7 @@
 import React from 'react';
 import StateLicenseCard from './StateLicenseCard';
 import { Grid } from '@mui/material';
-import { useCertificatesContext } from '../../../../context/CertificatesContext';
+import { useCertificatesContext } from 'src/context/CertificatesContext';
 import { CertificateSkeletonList } from '../../components/SkeletonLoaders';
 import { PlaceHolder, PageTitle } from '../../../MonitoringRenewal/ui';
 

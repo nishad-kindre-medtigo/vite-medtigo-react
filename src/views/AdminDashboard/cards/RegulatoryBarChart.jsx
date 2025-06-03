@@ -4,7 +4,7 @@ import { DetailBox } from '../../../views/dashboard/components';
 import GroupFilter from '../components/Filters/GroupFilter';
 import MonthFilter from '../components/Filters/MonthFilter';
 import { BarChartTitleBox, FiltersBox } from '../components';
-import { ReportFilterContext } from '../../../context/ReportFilterContext';
+import { ReportFilterContext } from 'src/context/ReportFilterContext';
 import RegulatoryChart from '../components/Chart/RegulatoryChart';
 import adminService from 'src/services/adminService';
 import moment from 'moment';

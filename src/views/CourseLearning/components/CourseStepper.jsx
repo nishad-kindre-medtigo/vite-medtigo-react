@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Typography, Grid, Stepper, Step, StepLabel, LinearProgress } from '@mui/material';
-import { LearningContext } from '../../../context/LearningContext';
+import { LearningContext } from 'src/context/LearningContext';
 import { courseLessonTypes } from '../utils';
 import EmojiEventsTwoToneIcon from '@mui/icons-material/EmojiEventsTwoTone';
 import ErrorIcon from '@mui/icons-material/ErrorOutline';

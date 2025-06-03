@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router';
 import { useSelector } from 'react-redux';
 import { Grid } from '@mui/material';
-import { LearningContext } from '../../context/LearningContext';
+import { LearningContext } from 'src/context/LearningContext';
 import useBreakpoints from 'src/hooks/useBreakpoints';
 import authService from 'src/services/authService';
 import myLearningService from 'src/services/myLearningService';

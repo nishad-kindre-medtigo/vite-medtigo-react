@@ -6,7 +6,7 @@ import learningService from 'src/services/learningService';
 import orderServices from 'src/services/orderServices';
 import certificatesService from 'src/services/certificatesService';
 import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
-import { CertificatesContext } from '../../../context/CertificatesContext';
+import { CertificatesContext } from 'src/context/CertificatesContext';
 import MOCForm from '../components/MOCForm';
 import FormSubmitBackdrop from '../components/FormSubmitBackdrop';
 import { CREDENTIALS, NURSE_OPTIONS, PHYSICIAN_OPTIONS } from '../data';

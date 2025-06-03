@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Grid } from '@mui/material';
 import myLearningService from 'src/services/myLearningService';
-import { useCertificatesContext } from '../../../../context/CertificatesContext';
+import { useCertificatesContext } from 'src/context/CertificatesContext';
 import ExplorePlansDialog from '../../../Acquisition/MyLearning/dialogs/ExplorePlansDialog';
 import RetakeCourseDialog from '../../../Acquisition/MyLearning/dialogs/RetakeCourseDialog';
 import CertificateCard from './CertificateCard';

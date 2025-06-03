@@ -4,7 +4,7 @@ import DeleteIcon from '@mui/icons-material/ClearRounded';
 import SendIcon from '@mui/icons-material/Send';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { useCertificatesContext } from '../../../context/CertificatesContext';
+import { useCertificatesContext } from 'src/context/CertificatesContext';
 import { Transition } from '../../../ui/Transition';
 
 const SendMailDialog = () => {

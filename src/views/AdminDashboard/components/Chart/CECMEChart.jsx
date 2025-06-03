@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Chart from 'react-apexcharts';
 import { useNavigate } from 'react-router-dom';
 import useBreakpoints from 'src/hooks/useBreakpoints';
-import { ReportFilterContext } from '../../../../context/ReportFilterContext';
+import { ReportFilterContext } from 'src/context/ReportFilterContext';
 import { designations } from '../../../../appConstants';
 
 const CECMEChart = ({ data, selectedDepartments }) => {

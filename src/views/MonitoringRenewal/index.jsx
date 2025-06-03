@@ -7,7 +7,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { useParams } from 'react-router';
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
 import CertificateDrawer from './CertificateDrawer';
-import { useCertificatesContext } from '../../context/CertificatesContext';
+import { useCertificatesContext } from 'src/context/CertificatesContext';
 import Page from '../../components/Page';
 import SendMailDialog from './dialogs/SendMailDialog';
 import { PrimaryTabPanel, RightSection } from '../../ui/Tabs';

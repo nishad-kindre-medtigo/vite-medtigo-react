@@ -1,6 +1,6 @@
 /* eslint react/prop-types: 0 */
 import React from 'react';
-import { LearningContext } from '../../../../context/LearningContext';
+import { LearningContext } from 'src/context/LearningContext';
 import { useSelector } from 'react-redux';
 import moment from 'moment';
 import { courseDetails } from '../../../../appConstants';

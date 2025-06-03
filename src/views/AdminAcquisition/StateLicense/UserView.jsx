@@ -6,7 +6,7 @@ import { useParams } from 'react-router';
 import adminService from 'src/services/adminService';
 import BackButtonWithTitle from '../../../components/Reports';
 import moment from 'moment';
-import { ReportFilterContext } from '../../../context/ReportFilterContext';
+import { ReportFilterContext } from 'src/context/ReportFilterContext';
 import TasksPopup from '../components/TasksPopup';
 
 const SingleUserData = ({ userData, handleOpenUserInfo, handleTaskClick }) => {

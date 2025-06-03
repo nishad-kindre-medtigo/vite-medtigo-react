@@ -5,7 +5,7 @@ import { Transition } from '../../../../ui/Transition';
 import certificatesService from 'src/services/certificatesService';
 import { useSelector } from 'react-redux';
 import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
-import { useMyLearningContext } from '../../../../context/MyLearningContext';
+import { useMyLearningContext } from 'src/context/MyLearningContext';
 
 const FullSizeCertificateDialog = () => {
   const openSnackbar = useOpenSnackbar();

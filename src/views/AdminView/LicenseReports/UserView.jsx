@@ -7,7 +7,7 @@ import { AccordionBox, AccordionTable, PlaceHolder, PageContainer, DefaultPlaceH
 import { InfoDialog, InfoIconTooltip } from './Components';
 import { allCertificates } from '../../../appConstants';
 import BackButtonWithTitle from '../../../components/Reports';
-import { ReportFilterContext } from '../../../context/ReportFilterContext';
+import { ReportFilterContext } from 'src/context/ReportFilterContext';
 import { StatusFilter } from '../ClinicalCertificate/UserView';
 
 const SingleLicenseData = ({ licenseItem, handleOpen }) => {

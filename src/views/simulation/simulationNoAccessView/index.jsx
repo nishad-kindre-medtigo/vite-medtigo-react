@@ -3,7 +3,7 @@ import { Box, Grid, Button, Typography, Card, CardContent } from '@mui/material'
 import { ArrowBack, OpenInNew as ExploreIcon } from '@mui/icons-material';
 import { useSelector } from 'react-redux';
 import useBreakpoints from 'src/hooks/useBreakpoints';
-import { useMyLearningContext } from '../../../context/MyLearningContext';
+import { useMyLearningContext } from 'src/context/MyLearningContext';
 import myLearningService from 'src/services/myLearningService';
 import ExplorePlansDialog from '../../Acquisition/MyLearning/dialogs/ExplorePlansDialog';
 import { courses } from '../../Acquisition/MyLearning/data';

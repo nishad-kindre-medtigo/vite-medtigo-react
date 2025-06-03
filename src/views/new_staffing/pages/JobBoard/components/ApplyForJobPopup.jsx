@@ -6,7 +6,7 @@ import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 import useBreakpoints from 'src/hooks/useBreakpoints';
 import { FadeTransition } from '../../../../../layouts/NewLayout/TopBar/SearchBar';
 import staffingServices from 'src/services/staffingServices';
-import { StaffingContext } from '../../../../../context/StaffingContext';
+import { StaffingContext } from 'src/context/StaffingContext';
 import { Grid, Typography, Box, Dialog, DialogTitle, DialogContent, CircularProgress } from '@mui/material';
 import { Loader } from '../../../../../ui/Progress';
 import CloudUploadRoundedIcon from '@mui/icons-material/CloudUploadRounded';

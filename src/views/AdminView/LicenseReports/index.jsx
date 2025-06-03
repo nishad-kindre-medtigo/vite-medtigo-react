@@ -4,7 +4,7 @@ import { Typography } from '@mui/material';
 import licenseReportServices from 'src/services/licenseReportServices';
 import { PlaceHolder, PageContainer } from '../../../components/CMECompliance';
 import { ConfirmationDialog } from '../../../components/Reports/confirmationDilog';
-import { ReportFilterContext } from '../../../context/ReportFilterContext';
+import { ReportFilterContext } from 'src/context/ReportFilterContext';
 import { InfoDialog, InfoIconTooltip } from './Components';
 import DepartmentAccordion from './DepartmentAccordion';
 import { getMonthName } from '../utils';

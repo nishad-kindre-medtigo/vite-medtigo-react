@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Grid, Card, CardContent, Button, Step, StepLabel, Stepper } from '@mui/material';
-import { useMyLearningContext } from '../context/MyLearningContext';
+import { useMyLearningContext } from 'src/context/MyLearningContext';
 import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 import { courses } from '../views/Acquisition/MyLearning/data';
 import { stepperCardStyles } from './styles';

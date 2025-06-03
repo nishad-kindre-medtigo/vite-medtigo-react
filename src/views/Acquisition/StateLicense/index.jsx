@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import moment from 'moment';
-import { useLicenceContext } from '../../../context/LicenseContext';
+import { useLicenceContext } from 'src/context/LicenseContext';
 import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 import alertPage from 'src/services/alertPage';
 import history from '../../../utils/history';

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Box, Grid, Typography } from '@mui/material';
 import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
-import { LearningContext } from '../../../../../../context/LearningContext';
+import { LearningContext } from 'src/context/LearningContext';
 import { useNavigate } from 'react-router-dom';
 import { courseDetails } from '../data';
 import {

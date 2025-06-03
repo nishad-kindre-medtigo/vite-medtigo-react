@@ -4,7 +4,7 @@ import { ReportBackLink } from '../../ui';
 import { PlaceHolder, DefaultPlaceHolder, PageContainer } from '../../../../components/CMECompliance';
 import { useSelector } from 'react-redux';
 import { SingleUserData } from '../ClinicalCertificate';
-import { ReportFilterContext } from '../../../../context/ReportFilterContext';
+import { ReportFilterContext } from 'src/context/ReportFilterContext';
 
 const StateCSRUserView = () => {
   const user = useSelector(state => state.account.user);
