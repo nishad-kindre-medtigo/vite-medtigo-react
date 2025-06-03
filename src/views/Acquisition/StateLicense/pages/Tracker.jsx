@@ -30,16 +30,12 @@ const TrackerPage = props => {
 
   return (
     <Grid container spacing={{ xs: 2, sm: 3 }} alignItems="center">
-      <Grid item sm={12} md={6}>
+      <Grid size={{ sm: 12, md: 6 }}>
         <Typography sx={{ fontSize: { xs: '18px', sm: '20px' }, fontWeight: 600 }}>
           Acquisition Stages Tracker and Related Tasks
         </Typography>
       </Grid>
-      <Grid
-        item
-        xs={12}
-        sm={12}
-        md={6}
+      <Grid size={{ xs: 12, sm: 12, md: 6 }}
         sx={{
           display: 'flex',
           alignItems: 'center',

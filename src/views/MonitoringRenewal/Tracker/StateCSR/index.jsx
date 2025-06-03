@@ -22,7 +22,7 @@ const StateCSR = () => {
             {stateCSRCertificates &&
               stateCSRCertificates.map((certificate) => {
                 return (
-                  <Grid item xs={12} sm={6} md={4} key={certificate['id']}>
+                  <Grid size={{ xs: 12, sm: 6, md: 4 }} key={certificate['id']}>
                     <CertificateCard
                       page='STATE CSR/CSC'
                       data={certificate}

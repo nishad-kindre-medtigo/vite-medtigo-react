@@ -787,7 +787,7 @@ export const ReportViewCom = ({ View, reportView, setView }) => {
       <Typography sx={{ fontWeight: 600, fontSize: '22px' }}>
         {title}
       </Typography>
-      <Grid item>
+      <Grid>
         <Box display="flex" alignItems="center" gap={1}>
           <AntSwitch checked={View === 'graph'} onChange={handleToggle} />
           <Typography sx={{ fontSize: '14px' }}>Graph View</Typography>

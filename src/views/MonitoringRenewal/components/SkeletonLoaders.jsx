@@ -10,7 +10,7 @@ export const CertificateSkeletonList = ({ isCME = false, cards = 6 }) => {
     <>
       <Grid container spacing={3}>
         {[...Array(cards)].map((_, index) => (
-          <Grid item xs={12} sm={6} md={4} key={index}>
+          <Grid size={{ xs: 12, sm: 6, md: 4 }} key={index}>
             <StyledCard>
               <Box sx={{ display: 'flex', gap: 1 }}>
                 <Skeleton variant="circular" animation="wave" width={40} height={40} sx={{ background: '#E9F2FC' }} />

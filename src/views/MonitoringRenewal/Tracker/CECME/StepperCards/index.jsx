@@ -15,7 +15,7 @@ const StepperCardContainer = ({ cmeStepperData, setSelectedCourseID, setIsOrderT
 
   return Object.keys(cmeStepperData).length > 0
     ? CONNECT_CME_COURSES.map(courseId => (
-        <Grid item xs={12} sm={6} md={4} key={courseId}>
+        <Grid size={{ xs: 12, sm: 6, md: 4 }} key={courseId}>
           <StepperCMECard
             courseId={courseId}
             classes={classes}
@@ -26,7 +26,7 @@ const StepperCardContainer = ({ cmeStepperData, setSelectedCourseID, setIsOrderT
         </Grid>
       ))
     : STEPPER_TEXT.map(course => (
-        <Grid item xs={12} sm={6} md={4} key={course.name}>
+        <Grid size={{ xs: 12, sm: 6, md: 4 }} key={course.name}>
           <StepperSkeleton classes={classes} courseName={course.name} cmeCredits={course.cmeCredits}/>
         </Grid>
       )) 
@@ -77,7 +77,7 @@ const StepperCMECard = ({ courseId, classes, stepperData, setSelectedCourseID, s
     >
       <CardContent sx={classes.cardContentDiv}>
         <Grid container spacing={1}>
-          <Grid item xs={12} style={{ display: 'flex', flexDirection: 'row', gap: '10px' }}>
+          <Grid size={12} style={{ display: 'flex', flexDirection: 'row', gap: '10px' }}>
             <img src={`/icons/certificates/cme_stepper_lock.svg`} alt="Unlock" width={45} height={45} />
             <Box sx={classes.cardContent}>
               <Box sx={classes.typography} title={courseName}>
@@ -91,7 +91,7 @@ const StepperCMECard = ({ courseId, classes, stepperData, setSelectedCourseID, s
           </Grid>
 
           {/* Stepper Box */}
-          <Grid item xs={12} justifyContent="center" style={{ padding: '4px' }}>
+          <Grid size={12} justifyContent="center" style={{ padding: '4px' }}>
             <Stepper
               sx={classes.stepper}
               activeStep={currentStep - 1}
@@ -115,7 +115,7 @@ const StepperCMECard = ({ courseId, classes, stepperData, setSelectedCourseID, s
           </Grid>
 
           {/* Action Button */}
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Box style={{ display: 'flex', justifyContent: 'flex-end' }}>
               <Button variant="contained" color="primary" sx={classes.btn} onClick={handleClick}>
                 {buttonText}

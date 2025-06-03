@@ -134,7 +134,7 @@ const OpioidSurveyForm = (props) => {
         >
           {courseID && hash ? (
             <Grid container justifyContent="center" alignItems="center" spacing={2}>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <Typography sx={{ py: 2, color: '#2872C1', fontSize: '32px', fontWeight: 600, textAlign: 'center' }}>
                  {courseName} CME Credits Evaluation Form
                 </Typography>
@@ -142,7 +142,7 @@ const OpioidSurveyForm = (props) => {
                   Complete this evaluation form to receive your CME certificate.
                 </Typography>
               </Grid>
-                <Grid xs={12} md={8} style={{ padding: '24px' }}>
+                <Grid size={{ xs: 12, md: 8 }} style={{ padding: '24px' }}>
                   <form
                     autoComplete='off'
                     id={'cme-form'}

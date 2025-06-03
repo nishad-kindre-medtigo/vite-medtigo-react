@@ -973,7 +973,7 @@ const AvailabilityPage = () => {
           .filter(key => key !== 'schedule')
           .map((key, index) => {
             return (
-              <Grid key={index} item xs={12} md={2}>
+              <Grid key={index} size={{ xs: 12, md: 2 }}>
                 <InputLabel sx={{ color: '#102048' }} htmlFor={key}>
                   {filters[key].label}
                 </InputLabel>
@@ -1028,7 +1028,7 @@ const AvailabilityPage = () => {
               </Grid>
             );
           })}
-        <Grid item xs={12} md={8}>
+        <Grid size={{ xs: 12, md: 8 }}>
           <Card
             elevation={0}
             sx={{

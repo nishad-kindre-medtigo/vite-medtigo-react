@@ -78,7 +78,7 @@ const MOCForm = (props) => {
   return (
     <Page title="MOC/MOCA">
       <Grid container justifyContent="center" spacing={2} sx={{ p: 2 }}>
-        <Grid item xs={12} sm={6}>
+        <Grid size={{ xs: 12, sm: 6 }}>
           <Typography
             sx={{
               py: 2,

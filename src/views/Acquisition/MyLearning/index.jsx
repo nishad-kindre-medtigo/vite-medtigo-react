@@ -46,7 +46,7 @@ const MyLearningPage = () => {
         <>
           <Grid container spacing={3}>
             {CONNECT_COURSES.map(course => (
-              <Grid item xs={12} sm={6} md={4} key={course}>
+              <Grid size={{ xs: 12, sm: 6, md: 4 }} key={course}>
                 <NewCourseCard
                   courseID={course}
                   courseData={myLearningData[course]}

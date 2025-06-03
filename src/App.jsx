@@ -1,13 +1,7 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable react/display-name */
 import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import { SnackbarProvider } from "notistack";
-import {
-  createTheme,
-  ThemeProvider,
-  StyledEngineProvider,
-} from "@mui/material/styles";
+import { createTheme, CssBaseline, ThemeProvider, StyledEngineProvider } from "@mui/material";
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterMoment } from "@mui/x-date-pickers/AdapterMoment";
 import Auth from "./components/Auth";
@@ -22,7 +16,41 @@ import { ReportFilterContextProvider } from "./context/ReportFilterContext";
 import history from "./utils/history";
 import { CONNECT_URL } from "./settings";
 
-const theme = createTheme();
+// Default light theme
+const theme = createTheme({
+  palette: {
+    mode: "light", // Enforce light theme
+  },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          "&:focus": {
+            outline: "none",
+          },
+        },
+      },
+    },
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          "&:focus-within": {
+            outline: "none",
+          },
+        },
+      },
+    },
+    MuiTab: {
+      styleOverrides: {
+        root: {
+          "&:focus": {
+            outline: "none",
+          },
+        },
+      },
+    },
+  },
+});
 
 function App() {
   const params = new URLSearchParams(window.location.search);
@@ -137,6 +165,7 @@ function App() {
     return (
       <StyledEngineProvider injectFirst>
         <ThemeProvider theme={theme}>
+          <CssBaseline />
           <LocalizationProvider dateAdapter={AdapterMoment}>
             <SnackbarProvider maxSnack={1}>
               <Router history={history}>

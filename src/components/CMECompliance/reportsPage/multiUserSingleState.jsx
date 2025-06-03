@@ -25,14 +25,14 @@ function MultiUserSingleState() {
     return (
         <>
             <Grid container display={'flex'} direction={'row'} justifyContent={'space-between'} alignItems={'center'} style={{marginBottom:'10px'}}>
-                <Grid item>
+                <Grid size={12}>
                     <PageNav Title={`Compliance Report for ${state}`} />
                     <Box display={'flex'} gap={'6px'} flexWrap={'wrap'}>
                     <ComplianceTag variant={'standard'} title={`Not compliant users: ${stats.nonCompliantUsers}`}/>
                     <ComplianceTag variant={'standard'} title={`Compliant users: ${stats.compliantUsers}`}/>
                     </Box>
                 </Grid>
-                <Grid item display={'flex'} direction={'column'} justifyContent={'space-between'} alignItems={'flex-start'}>
+                <Grid size={12} display={'flex'} direction={'column'} justifyContent={'space-between'} alignItems={'flex-start'}>
                     <span style={{ fontSize: isMobile && '14px', display: 'inline-block', flexDirection: 'row', width: 'fit-content', justifyContent: 'flex-end' }}>
                         {<React.Fragment>
                             <p> <strong style={{ fontWeight: '600' }}> License Type :  </strong> Full License <br /> <strong style={{ fontWeight: '600' }}> Request Type :  </strong> {CME_RequestType[1].label}  <br />

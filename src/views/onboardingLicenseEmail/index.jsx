@@ -38,7 +38,7 @@ const OnboardingLicenseEmail = () => {
 
 
     return <Grid container direction="column" alignItems="center" paddingTop="250px" gap="10px">
-        <Grid item container direction="column" alignItems="center" gap="10px">
+        <Grid container direction="column" alignItems="center" gap="10px">
         <img src='./images/expiredLink.svg'/>
         <Typography style={{fontWeight: "600", fontSize: "24px", fontFamily: "Poppins"}}>Login Link Expired</Typography>
         <Typography style={{fontFamily: "Poppins"}}>Sorry, the previous link you received has either expired or is no longer valid.</Typography>

@@ -146,10 +146,7 @@ const CourseLearningPage = () => {
 
   // Render the Course Content based on the active step and course type and if the user is accessing the course for the first time
   const renderCourseUnits = () => (
-    <Grid
-      md={9}
-      xs={12}
-      item
+    <Grid size={{ xs: 12, md: 9 }}
       style={{
         display: isFirstTime ? 'none' : 'flex',
         background: '#fff'
@@ -187,7 +184,7 @@ const CourseLearningPage = () => {
   const renderCourseContainer = () => (
     <Grid container>
       {isFirstTime && (
-        <Grid item md={9} xs={12}>
+        <Grid size={{ xs: 12, md: 9 }}>
           {activeCourse ? (
             <Introduction setIsFirstTime={setIsFirstTime} courseID={activeCourse.id} />
           ) : (

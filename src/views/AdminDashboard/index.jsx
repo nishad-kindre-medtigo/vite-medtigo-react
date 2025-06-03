@@ -21,19 +21,19 @@ const AdminDashboardPage = () => {
       </Typography>
       <Grid container spacing={3} mb={10}>
         {donutCards.map(({ component: Component, key }) => (
-          <Grid item xs={12} sm={6} lg={4} key={key}>
+          <Grid size={{ xs: 12, sm: 6, lg: 4 }} key={key}>
             <Component />
           </Grid>
         ))}
-        <Grid item xs={12}>
+        <Grid size={12}>
           <Typography style={{ fontSize: '28px', fontWeight: 400 }}>
             Overview of Upcoming Renewal Status for All Reports Over the Next Six Months
           </Typography>
         </Grid>
-        <Grid item xs={12}>
+        <Grid size={12}>
           <CECMEBarChartCard />
         </Grid>
-        <Grid item xs={12}>
+        <Grid size={12}>
           <RegulatoryBarChartCard />
         </Grid>
       </Grid>

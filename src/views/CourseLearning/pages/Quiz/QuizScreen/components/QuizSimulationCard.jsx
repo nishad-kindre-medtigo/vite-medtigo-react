@@ -145,7 +145,7 @@ const QuizSimulationCard = ({ setEndQuiz, endQuiz }) => {
         </div>
         {all_cases_done ? (
           <Grid container spacing={2} justifyContent="center">
-            <Grid item xs={8}>
+            <Grid size={8}>
               <Button
                 fullWidth
                 disableRipple
@@ -166,7 +166,7 @@ const QuizSimulationCard = ({ setEndQuiz, endQuiz }) => {
           </Grid>
         ) : skipSim ? (
           <Grid container justifyContent="space-around" alignItems="center">
-            <Grid item xs={10}>
+            <Grid size={10}>
               <Button
                 disableElevation
                 fullWidth
@@ -194,7 +194,7 @@ const QuizSimulationCard = ({ setEndQuiz, endQuiz }) => {
           </Grid>
         ) : (
           <Grid container spacing={2} justifyContent="space-around">
-            {/* <Grid item xs={6}>
+            {/* <Grid size={6}>
               <Button
                 disableElevation
                 fullWidth
@@ -210,7 +210,7 @@ const QuizSimulationCard = ({ setEndQuiz, endQuiz }) => {
                 Skip
               </Button>
             </Grid> */}
-            <Grid item xs={6}>
+            <Grid size={6}>
               <Button
                 disableElevation
                 fullWidth

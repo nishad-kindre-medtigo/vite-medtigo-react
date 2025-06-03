@@ -65,7 +65,7 @@ const JobCard = props => {
       }}
     >
       <Grid container justifyContent="space-between" alignItems="flex-start">
-        <Grid item xs={12} md={10}>
+        <Grid size={{ xs: 12, md: 10 }}>
           <Typography mb={1} style={{ color: '#121224', fontWeight: 600, fontSize: '18px' }}>
             {data.Job_Title}
           </Typography>
@@ -104,7 +104,8 @@ const JobCard = props => {
             <span>State: {data.State || 'N/A'}</span>
           </Box>
         </Grid>
-        <Grid item xs={12} md={2} container
+        <Grid size={{ xs: 12, md:2 }} 
+          container
           direction={{ sm: 'row', md: 'column' }} // Change stacking of grid items based on view
           justifyContent={{ xs: 'flex-end', md: 'center' }}
           alignItems="flex-end"

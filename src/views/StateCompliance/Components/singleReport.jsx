@@ -88,7 +88,7 @@ function SingleReport() {
     return (
         <>
             <Grid container display={'flex'} direction={'row'} justifyContent={'space-between'} alignItems={'center'}>
-                <Grid item style={{ display: "flex", flexDirection: 'column'}}>
+                <Grid style={{ display: "flex", flexDirection: 'column'}}>
                     <PageNav backTo={'/monitoring-renewal/ce-cme/report'} Title={`Compliance Report`} /> 
                 </Grid>
 

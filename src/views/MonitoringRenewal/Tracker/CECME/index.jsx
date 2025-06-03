@@ -60,7 +60,7 @@ const CECME = () => {
             {CMECertificatesData &&
               CMECertificatesData.map((certificate) => {
                 return (
-                  <Grid item xs={12} sm={6} md={4} key={certificate['id']}>
+                  <Grid size={{ xs: 12, sm: 6, md: 4 }} key={certificate['id']}>
                     <CMECard
                       data={certificate}
                       completed={completedCert || highlightedCertID}
@@ -68,7 +68,7 @@ const CECME = () => {
                   </Grid>
                 );
               })}
-            {/* <Grid item xs={12}></Grid>
+            {/* <Grid size={12}></Grid>
             <StepperCardContainer
               cmeStepperData={cmeStepperData}
               setRefreshCMEStepper={setRefreshCMEStepper}

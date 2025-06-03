@@ -34,7 +34,7 @@ const ClerkChat = () => {
         {/* Main Content Grid */}
         <Grid container spacing={4}>
           {/* Left Column - iframe */}
-          <Grid item xs={12} md={6}>
+          <Grid size={{ xs: 12, md: 6 }}>
             <Box sx={{ height: "100%" }}>
             <iframe
               src="https://clerk.chat/misc/sms-opt-in/?widgetId=472a3861-4a04-43f3-afdf-d0b39a295cc6"
@@ -46,7 +46,7 @@ const ClerkChat = () => {
           </Grid>
 
           {/* Right Column - Content */}
-          <Grid item xs={12} md={6}>
+          <Grid size={{ xs: 12, md: 6 }}>
             <Box>
               <Typography 
                 variant="subtitle1" 

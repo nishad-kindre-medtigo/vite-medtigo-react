@@ -24,7 +24,7 @@ const StateLicense = () => {
             {grantedLicenses &&
               grantedLicenses.map((certificate) => {
                 return (
-                  <Grid item xs={12} md={4} key={certificate['id']}>
+                  <Grid size={{ xs: 12, md: 4 }} key={certificate['id']}>
                     <StateLicenseCard
                       data={certificate}
                       completed={completedCert || highlightedCertID}

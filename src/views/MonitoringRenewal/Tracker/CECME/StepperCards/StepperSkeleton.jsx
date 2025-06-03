@@ -7,7 +7,7 @@ export const StepperSkeleton = ({ classes, courseName, cmeCredits }) => {
     <Card sx={classes.certificateContainer}>
       <CardContent sx={classes.cardContentDiv}>
         <Grid container spacing={1}>
-          <Grid item xs={12} style={{ display: 'flex', flexDirection: 'row', gap: '10px' }}>
+          <Grid size={12} style={{ display: 'flex', flexDirection: 'row', gap: '10px' }}>
             <img src={`/icons/certificates/cme_stepper_lock.svg`} alt="Unlock" width={45} height={45} />
             <Box sx={classes.cardContent}>
               <Box sx={classes.typography}>
@@ -21,7 +21,7 @@ export const StepperSkeleton = ({ classes, courseName, cmeCredits }) => {
           </Grid>
 
           {/* Stepper Box */}
-          <Grid item xs={12} justifyContent="center" style={{ padding: '4px' }}>
+          <Grid size={12} justifyContent="center" style={{ padding: '4px' }}>
             <Stepper
               sx={classes.stepper}
               activeStep={-1}
@@ -45,7 +45,7 @@ export const StepperSkeleton = ({ classes, courseName, cmeCredits }) => {
           </Grid>
 
           {/* Action Button */}
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Box style={{ display: 'flex', justifyContent: 'flex-end' }}>
               <Button variant="contained" color="primary" sx={classes.btn}>
                 Loading...

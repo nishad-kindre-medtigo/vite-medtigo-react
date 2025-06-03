@@ -89,7 +89,7 @@ const DashboardPage = () => {
         Welcome to Activity Overview
       </Typography>
         <Grid container spacing={3} mb={15}>
-          <Grid item xs={12} sm={6} lg={4}>
+          <Grid size={{ xs: 12, sm: 6, lg: 4 }}>
             <StateLicenseCard
               overdueTaskCount={overdueTaskCount}
               timelyTaskCount={timelyTaskCount}
@@ -98,17 +98,17 @@ const DashboardPage = () => {
               monitoringLicensesCount={monitoringLicenses.length}
             />
           </Grid>
-          <Grid item xs={12} sm={6} lg={4}>
+          <Grid size={{ xs: 12, sm: 6, lg: 4 }}>
             <CourseDetailsCard myLearningData={myLearningData} setRefresh={setRefresh} />
           </Grid>
-          <Grid item xs={12} sm={6} lg={4}>
+          <Grid size={{ xs: 12, sm: 6, lg: 4 }}>
             <CertificateCard
               generatedCertificatesCount={generatedCertificates.length}
               addedCertificatesCount={addedCertificates.length}
               oldCertificatesCount={oldCertificates.length}
             />
           </Grid>
-          <Grid item xs={12} sm={6} lg={4}>
+          <Grid size={{ xs: 12, sm: 6, lg: 4 }}>
             <CMEComplianceCard
               claimedCreditPoints={claimedCreditPoints}
               cmeClaimPendingCount={cmeClaimPendingCount}
@@ -117,16 +117,16 @@ const DashboardPage = () => {
           </Grid>
           {scheduling && (
             <>
-              <Grid item xs={12} sm={6} lg={4}>
+              <Grid size={{ xs: 12, sm: 6, lg: 4 }}>
                 <ScheduleCard />
               </Grid>
-              <Grid item xs={12} sm={6} lg={4}>
+              <Grid size={{ xs: 12, sm: 6, lg: 4 }}>
                 <ExpensesCard />
               </Grid>
             </>
           )}
           {country === 'United States' && (
-            <Grid item xs={12} sm={6} lg={4}>
+            <Grid size={{ xs: 12, sm: 6, lg: 4 }}>
               <CareerCard
                 savedJobsCount={savedJobs.length}
                 appliedJobsCount={appliedJobs.length}

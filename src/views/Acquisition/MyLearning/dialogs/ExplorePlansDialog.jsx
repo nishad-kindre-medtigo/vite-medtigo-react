@@ -21,24 +21,22 @@ const ExplorePlansDialog = ({ fullAccess }) => {
     // Display Single Plan Card for NRP, ASC CE
     if (id == 79132 || id == 151904) {
       return (
-        <Grid container my={2} justifyContent="center">
-          <Grid item xs={12}>
-            <SingleCard title={title} cardImg1={cardImg1} isMobile={isMobile} fullAccess={fullAccess} currentPlan={currentPlan} />
-          </Grid>
+        <Grid size={12} my={2}>
+          <SingleCard title={title} cardImg1={cardImg1} isMobile={isMobile} fullAccess={fullAccess} currentPlan={currentPlan} />
         </Grid>
       );
     }
 
     // Display Three Plan Cards - Basic, Standard, Best Value/ Addon for ACLS, BLS & PALS Course
     return (
-      <Grid item xs={12} container my={2} columnSpacing={2} rowSpacing={isTablet && 2}>
-        <Grid item xs={12} md={4}>
+      <Grid size={12} container my={2} columnSpacing={2} rowSpacing={isTablet && 2}>
+        <Grid size={{ xs: 12, md: 4 }}>
           <BasicPlanCard title={title} cardImg1={cardImg1} currentPlan={currentPlan} isMobile={isMobile}/>
         </Grid>
-        <Grid item xs={12} md={4}>
+        <Grid size={{ xs: 12, md: 4 }}>
           <StandardPlanCard title={title} cardImg1={cardImg1} currentPlan={currentPlan} isMobile={isMobile}/>
         </Grid>
-        <Grid item xs={12} md={4}>
+        <Grid size={{ xs: 12, md: 4 }}>
           <BestValuePlanCard title={title} creditsBadge={creditsBadge} cardImg2={cardImg2} isMobile={isMobile} cmeCredits={cmeCredits} currentPlan={currentPlan} fullAccess={fullAccess}/>
           {/* REMOVED ADDON PLAN CARD */}
           {/* {currentPlan === 'basic' || currentPlan === 'standard' ? (

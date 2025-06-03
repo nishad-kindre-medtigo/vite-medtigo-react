@@ -207,7 +207,7 @@ const PlatformDetailsDialog = ({
                 <DialogContent>
                   <Grid container spacing={2}>
 
-                    <Grid item xs={12} sm={6}>
+                    <Grid size={{ xs: 12, sm: 6 }}>
                       <StyledInputLabel htmlFor="platformName">Site Name</StyledInputLabel>
                       <Field
                         as={TextField}
@@ -222,7 +222,7 @@ const PlatformDetailsDialog = ({
                       />
                     </Grid>
 
-                    <Grid item xs={12} sm={6}>
+                    <Grid size={{ xs: 12, sm: 6 }}>
                       <StyledInputLabel htmlFor="platformUrl"> Site URL</StyledInputLabel>
                       <Field
                         as={TextField}
@@ -236,7 +236,7 @@ const PlatformDetailsDialog = ({
                       />
                     </Grid>
 
-                    <Grid item xs={12} sm={6}>
+                    <Grid size={{ xs: 12, sm: 6 }}>
                       <StyledInputLabel htmlFor="username">User Name</StyledInputLabel>
                       <Field
                         as={TextField}
@@ -251,7 +251,7 @@ const PlatformDetailsDialog = ({
                       />
                     </Grid>
 
-                    <Grid item xs={12} sm={6}>
+                    <Grid size={{ xs: 12, sm: 6 }}>
                       <StyledInputLabel htmlFor="password">Password</StyledInputLabel>
                       <Field
                         as={TextField}
@@ -280,7 +280,7 @@ const PlatformDetailsDialog = ({
                       />
                     </Grid>
 
-                    <Grid item xs={12}>
+                    <Grid size={12}>
                       <FormControlLabel
                         control={
                           <AndroidSwitch

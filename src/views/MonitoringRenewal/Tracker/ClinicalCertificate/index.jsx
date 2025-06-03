@@ -52,7 +52,7 @@ const ClinicalCertificate = () => {
             {generatedCertificates &&
               generatedCertificates.map((certificate, key) => {
                 return (
-                  <Grid item xs={12} sm={6} md={4} key={certificate['id']}>
+                  <Grid size={{ xs: 12, sm: 6, md: 4 }} key={certificate['id']}>
                     <CertificateCard
                       data={certificate}
                       completed={completedCert || highlightedCertID}
@@ -67,7 +67,7 @@ const ClinicalCertificate = () => {
             {nonRenewCertificates &&
               nonRenewCertificates.map((certificate, key) => {
                 return (
-                  <Grid item xs={12} sm={6} md={4} key={certificate['id']}>
+                  <Grid size={{ xs: 12, sm: 6, md: 4 }} key={certificate['id']}>
                     <CertificateCard
                       data={certificate}
                       completed={completedCert || highlightedCertID}

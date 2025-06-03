@@ -82,7 +82,7 @@ const NewSessionEndPopup = ({ open, setOpen }) => {
           {({ values, handleChange, handleBlur, errors, touched }) => (
             <Form>
               <Grid container spacing={1} px={1} justifyContent="center">
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <StyledInputLabel htmlFor="email">Email</StyledInputLabel>
                   <Field
                     as={CustomTextfield}
@@ -99,7 +99,7 @@ const NewSessionEndPopup = ({ open, setOpen }) => {
                     placeholder="Enter Email"
                   />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <StyledInputLabel htmlFor="password">
                     Password
                   </StyledInputLabel>
@@ -128,7 +128,7 @@ const NewSessionEndPopup = ({ open, setOpen }) => {
                     }}
                   />
                 </Grid>
-                <Grid item xs={12} mt={1} align="center">
+                <Grid size={12} mt={1} align="center">
                   <Button
                     type="submit"
                     variant="contained"

@@ -116,12 +116,12 @@ function Security({ className, ...rest }) {
           }) => (
             <form onSubmit={handleSubmit}>
               <Grid container spacing={2}>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h6" textAlign="center">
                     Change Password
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <TextField
                     size="small"
                     error={Boolean(
@@ -140,7 +140,7 @@ function Security({ className, ...rest }) {
                     fullWidth
                   />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <TextField
                     size="small"
                     error={Boolean(touched.newPassword && errors.newPassword)}
@@ -155,7 +155,7 @@ function Security({ className, ...rest }) {
                     fullWidth
                   />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <TextField
                     size="small"
                     error={Boolean(
@@ -175,9 +175,8 @@ function Security({ className, ...rest }) {
                   />
                 </Grid>
                 <Grid
-                  item
                   container
-                  xs={12}
+                  size={12}
                   justifyContent="center"
                   alignItems="center"
                 >

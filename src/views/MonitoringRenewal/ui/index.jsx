@@ -337,7 +337,7 @@ export const ShowMoreText = ({ showAll, setShowAll, ...props }) => {
   };
 
   return (
-    <Grid item xs={12}>
+    <Grid size={12}>
       <Typography
         style={{
           fontSize: '16px',

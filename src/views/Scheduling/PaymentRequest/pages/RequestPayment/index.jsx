@@ -138,7 +138,7 @@ const PaymentRequests = () => {
           id={id}
         />
         <Grid container spacing={2} alignItems="center" style={{marginBlock: '12px'}}>
-          <Grid item xs={isMobile ? 6 : undefined}>
+          <Grid size={isMobile ? 6 : undefined}>
             <DatePicker
               id="start-date-picker"
               margin="normal"
@@ -151,7 +151,7 @@ const PaymentRequests = () => {
               renderInput={params => <TextField {...params} fullWidth />}
             />
           </Grid>
-          <Grid item xs={isMobile ? 6 : undefined}>
+          <Grid size={isMobile ? 6 : undefined}>
             <DatePicker
               margin="normal"
               id="end-date-picker"
@@ -164,13 +164,13 @@ const PaymentRequests = () => {
               renderInput={params => <TextField {...params} fullWidth />}
             />
           </Grid>
-          <Grid item xs={isMobile ? 12 : undefined}>
+          <Grid size={isMobile ? 12 : undefined}>
             <Button variant="contained" color="primary" size="large" fullWidth={isMobile} onClick={handleApplyFilter}>
               Apply
             </Button>
           </Grid>
-          {!isMobile && <Grid item xs></Grid>}
-          <Grid item xs={isMobile ? 12 : undefined}>
+          {!isMobile && <Grid></Grid>}
+          <Grid size={isMobile ? 12 : undefined}>
             <Tooltip arrow title={`${shiftsData.length < 1 ? 'You do not have shifts to create request payment' : 'You can request payment for the shifts in the current timeframe'}`}>
               <Button
                 variant="contained"
@@ -184,16 +184,16 @@ const PaymentRequests = () => {
               </Button>
             </Tooltip>
           </Grid>
-          {isMobile && <Grid item xs></Grid>}
+          {isMobile && <Grid></Grid>}
         </Grid>
         <Grid container spacing={2}>
-          <Grid item xs={12}>
+          <Grid size={12}>
               <Card sx={classes.infoCard} elevation={0}>
                 <span style={{fontWeight: 600}}>Info: </span>You can request payment for shifts worked for specific start date and end date, which can be changed. You can also check past payments created & details in the Payment History tab.
               </Card>
           </Grid>
           {totalShifts && 
-            <Grid item xs={12}>
+            <Grid size={12}>
                 <Card sx={classes.textCard} elevation={0}>
                   Number of shifts in current time frame: <span style={{fontWeight: 600}}>{totalShifts}</span>
                 </Card>

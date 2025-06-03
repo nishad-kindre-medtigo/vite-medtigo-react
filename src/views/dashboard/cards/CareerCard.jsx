@@ -41,7 +41,7 @@ const CareerCard = ({ savedJobsCount, appliedJobsCount }) => (
         description="This tab connects you with locum tenens opportunities, helping  you to find temporary positions that match your schedule and expertise."
       />
       <Grid container spacing={2}>
-        <Grid item xs={6}>
+        <Grid size={6}>
           <JobInfoBox
             type="Saved Job"
             count={savedJobsCount}
@@ -49,7 +49,7 @@ const CareerCard = ({ savedJobsCount, appliedJobsCount }) => (
             color="#E8F3FF"
           />
         </Grid>
-        <Grid item xs={6}>
+        <Grid size={6}>
           <JobInfoBox
             type="Applied Job"
             count={appliedJobsCount}

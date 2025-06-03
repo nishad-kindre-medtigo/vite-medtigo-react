@@ -165,9 +165,7 @@ const LocumsPage = () => {
         >
           <Grid container spacing={isMobile ? 2 : 4}>
             <Grid
-              item
-              xs={12}
-              md={6}
+              size={{ xs: 12, md: 6 }}
               sx={{
                 pl: { xs: 0, md: 5 },
                 paddingRight: isMobile ? '0px !important' : '140px !important',
@@ -249,9 +247,7 @@ const LocumsPage = () => {
               </Box>
             </Grid>
             <Grid
-              item
-              xs={12}
-              md={6}
+              size={{ xs: 12, md: 6 }}
               sx={{
                 display: 'flex',
                 alignItems: 'center',
@@ -285,10 +281,7 @@ const LocumsPage = () => {
 
     return (
       <Grid
-        item
-        xs={12}
-        sm={isMobile ? 12 : 6}
-        md={4}
+        size={{ xs: 12, sm: isMobile ? 12 : 6, md: 4 }}
         style={{
           paddingLeft: isMobile ? '24px' : '38px',
           paddingTop: isMobile ? '24px' : '38px'
@@ -429,9 +422,7 @@ const LocumsPage = () => {
       <Box>
         <Grid container spacing={6} alignItems="center">
           <Grid
-            item
-            xs={12}
-            md={6}
+            size={{ xs: 12, md: 6 }}
             style={{ paddingLeft: isMobile ? '55px' : '55px' }}
           >
             <div
@@ -533,9 +524,7 @@ const LocumsPage = () => {
             </div>
           </Grid>
           <Grid
-            item
-            xs={12}
-            md={6}
+            size={{ xs: 12, md: 6 }}
             style={{
               paddingLeft: '0px',
               marginLeft: isMobile ? '46px' : '0px'
@@ -597,7 +586,7 @@ const LocumsPage = () => {
           justifyContent="center"
         >
           {specialties.map((item, index) => (
-            <Grid item xs={12} sm={6} md={4} lg={3} key={item.title}>
+            <Grid size={{ xs: 12, sm: 6, md: 4 }} lg={3} key={item.title}>
               <Box
                 sx={{
                   p: 4,
@@ -728,9 +717,7 @@ const LocumsPage = () => {
           >
             {/* Left Section */}
             <Grid
-              item
-              xs={12}
-              md={6}
+              size={{ xs: 12, md: 6 }}
               sx={{
                 paddingRight: isMobile ? '0px' : '200px',
                 textAlign: isMobile ? 'center' : 'left'
@@ -819,7 +806,7 @@ const LocumsPage = () => {
             </Grid>
 
             {/* Right Section - Contact Form */}
-            <Grid item xs={12} md={6}>
+            <Grid size={{ xs: 12, md: 6 }}>
               <Paper
                 sx={{
                   p: 4,
@@ -865,7 +852,7 @@ const LocumsPage = () => {
                   {({ values, handleChange, handleBlur, errors, touched }) => (
                     <Form>
                       <Grid container spacing={2}>
-                        <Grid item xs={12}>
+                        <Grid size={12}>
                           <StyledInputLabel
                             style={{ textAlign: isMobile ? 'justify' : '' }}
                             htmlFor="name"
@@ -886,7 +873,7 @@ const LocumsPage = () => {
                             placeholder="Enter Name"
                           />
                         </Grid>
-                        <Grid item xs={12}>
+                        <Grid size={12}>
                           <StyledInputLabel
                             style={{ textAlign: isMobile ? 'justify' : '' }}
                             htmlFor="email"
@@ -907,7 +894,7 @@ const LocumsPage = () => {
                             placeholder="Enter Email"
                           />
                         </Grid>
-                        <Grid item xs={12}>
+                        <Grid size={12}>
                           <StyledInputLabel
                             style={{ textAlign: isMobile ? 'justify' : '' }}
                             htmlFor="message"
@@ -932,8 +919,7 @@ const LocumsPage = () => {
                           />
                         </Grid>
                         <Grid
-                          item
-                          xs={12}
+                          size={12}
                           display="flex"
                           justifyContent="center"
                         >
@@ -1074,7 +1060,7 @@ const LocumsPage = () => {
         </Typography>
         <Grid container spacing={4}>
           {blogs.map((blog, index) => (
-            <Grid item xs={12} md={4} key={index}>
+            <Grid size={{ xs: 12, md: 4 }} key={index}>
               <BlogCard {...blog} />
             </Grid>
           ))}
@@ -1110,7 +1096,7 @@ const LocumsPage = () => {
             spacing={isMobile ? 2 : 3}
             sx={classes.contentContainer}
           >
-            <Grid item xs={12} md={6} style={{ paddingTop: '0px' }}>
+            <Grid size={{ xs: 12, md: 6 }} style={{ paddingTop: '0px' }}>
               <Typography sx={classes.title}>We Fill The Gaps,</Typography>
               <Typography sx={classes.title}>You Deliver The Care</Typography>
               <Box
@@ -1162,7 +1148,7 @@ const LocumsPage = () => {
               </Button>
             </Grid>
 
-            <Grid item xs={12} md={6} sx={classes.illustrationContainer}>
+            <Grid size={{ xs: 12, md: 6 }} sx={classes.illustrationContainer}>
               {/* People illustration would go here. You could use an SVG or image */}
               <Box
                 component="img"

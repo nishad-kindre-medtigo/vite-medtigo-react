@@ -81,7 +81,7 @@ export const DashboardSkeleton = () => {
   return (
     <Grid container spacing={3} mb={2} justifyContent="center">
       {["State License", "Course Details", "Certificates"].map((title, index) => (
-        <Grid item xs={12} sm={6} lg={4} key={index}>
+        <Grid size={{ xs: 12, sm: 6, lg: 4 }} key={index}>
           <DetailBox>
             <CardTitle title={title} description="Loading..." />
             <Skeleton variant="rounded" animation="wave" width="100%" height={283} sx={{ background: '#F8F8F8' }} />

@@ -23,22 +23,22 @@ const FilterPanel = ({
   return (
     <Grid container mb={4} spacing={2} alignItems="normal">
 
-      <Grid item xs={12} sm={4} md={2}>
+      <Grid size={{ xs: 12, sm: 4, md: 2 }}>
         <DepartmentFilter departmentList={departmentList} selectedDepartments={selectedDepartments} onDepartmentChange={onDepartmentChange} />
       </Grid>
 
-      <Grid item xs={12} sm={6} md={2}>
+      <Grid size={{ xs: 12, sm: 6, md: 2 }}>
         <ProfessionFilter selectedProfessions={selectedProfessions} setSelectedProfessions={setSelectedProfessions} />
       </Grid>
 
-      <Grid item xs={12} sm={4} md={2}>
+      <Grid size={{ xs: 12, sm: 4, md: 2 }}>
         <StateFilter stateOptions={stateOptions} selectedStates={selectedStates} onStateChange={onStateChange} isAllSelected={isAllSelected} />
       </Grid>
-      <Grid item xs={12} sm={6} md={2}>
+      <Grid size={{ xs: 12, sm: 6, md: 2 }}>
         <UserFilter userOptions={userOptions} userInputValue={userInputValue} setUserInputValue={setUserInputValue} />
       </Grid>
 
-      <Grid item xs={12} sm={4} md={2}>
+      <Grid size={{ xs: 12, sm: 4, md: 2 }}>
         <GenerateReportButton disable={disable} GenerateReport={GenerateReport} />
       </Grid>
     </Grid>

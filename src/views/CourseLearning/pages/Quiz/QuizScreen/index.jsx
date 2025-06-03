@@ -306,7 +306,7 @@ const QuizScreen = ({ quiz, uniqueID, shuffle = true }) => {
           <QuizCompletion {...CardProps} />
         ) : (
           <Grid container justifyContent="center" spacing={2} sx={{ my: 2 }}>
-            <Grid item xs={12} sm={isACLS ? 12 : 7}>
+            <Grid size={{ xs: 12, sm: isACLS ? 12 : 7 }}>
               <Box display="flex" justifyContent="flex-end">
                 <Button
                   size="large"
@@ -319,15 +319,15 @@ const QuizScreen = ({ quiz, uniqueID, shuffle = true }) => {
             </Grid>
             {isACLS ? (
               <>
-                <Grid item xs={12} sm={6}>
+                <Grid size={{ xs: 12, sm: 6 }}>
                   <QuizActionsCard {...CardProps} />
                 </Grid>
-                <Grid item xs={12} sm={6}>
+                <Grid size={{ xs: 12, sm: 6 }}>
                   <QuizSimulationCard setEndQuiz={setEndQuiz} endQuiz={false} />
                 </Grid>
               </>
             ) : (
-              <Grid item xs={12} sm={7}>
+              <Grid size={{ xs: 12, sm: 7 }}>
                 <QuizActionsCard {...CardProps} />
               </Grid>
             )}

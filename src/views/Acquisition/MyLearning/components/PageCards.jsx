@@ -125,10 +125,10 @@ const styles = {
 export const FullAccessPlanCard = React.memo(({ handleBuyPlan }) => {
     return (
       <Grid container p={{xs: 1.5, sm: 2}} style={styles.card}>
-        <Grid item sm={12} md={6}>
+        <Grid size={{ sm: 12, md: 6 }}>
           <img src={FullAccessPlanImage} alt="Medtigo Full Access Plan" style={{width: '100%'}}/>
         </Grid>
-        <Grid item sm={12} md={6} sx={{ pl: {xs: 0, sm: 2}, pr: {xs: 0, sm: 2} }}>
+        <Grid size={{ sm: 12, md: 6 }} sx={{ pl: {xs: 0, sm: 2}, pr: {xs: 0, sm: 2} }}>
           <Box sx={styles.title}>
             medtigo Full Access Plan
           </Box>

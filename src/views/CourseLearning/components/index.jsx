@@ -55,10 +55,10 @@ export const AccessDeniedScreen = ({ text }) => {
           }}
         >
           <Grid container spacing={1} justifyContent="center" alignItems="center">
-            <Grid item xs={12}>
+            <Grid size={12}>
               <ErrorOutlineIcon sx={{ fontSize: 80, color: 'error.main' }} />
             </Grid>
-            <Grid item xs={12}>
+            <Grid size={12}>
               <Typography
                 sx={{
                   fontSize: { xs: '18px', sm: '24px' },
@@ -69,7 +69,7 @@ export const AccessDeniedScreen = ({ text }) => {
                 Access Denied
               </Typography>
             </Grid>
-            <Grid item xs={12}>
+            <Grid size={12}>
               <Typography
                 sx={{
                   fontSize: { xs: '14px', sm: '16px' },
@@ -80,7 +80,7 @@ export const AccessDeniedScreen = ({ text }) => {
                 {text}
               </Typography>
             </Grid>
-            <Grid item xs={12}>
+            <Grid size={12}>
               <Button
                 color="error"
                 variant="contained"

@@ -103,7 +103,7 @@ const ApplyForJobPopup = props => {
             {({ values, setFieldValue, handleChange, handleBlur, errors, touched }) => (
               <Form>
                 <Grid container spacing={2}>
-                  <Grid item xs={12}>
+                  <Grid size={12}>
                     <StyledInputLabel htmlFor="name">Name</StyledInputLabel>
                     <Field
                       as={CustomTextfield}
@@ -120,7 +120,7 @@ const ApplyForJobPopup = props => {
                       placeholder="Enter Name"
                     />
                   </Grid>
-                  <Grid item xs={12}>
+                  <Grid size={12}>
                     <StyledInputLabel htmlFor="email">Email</StyledInputLabel>
                     <Field
                       as={CustomTextfield}
@@ -137,7 +137,7 @@ const ApplyForJobPopup = props => {
                       placeholder="Enter Email"
                     />
                   </Grid>
-                  <Grid item xs={12}>
+                  <Grid size={12}>
                     <StyledInputLabel htmlFor="phoneNumber">
                       Phone Number
                     </StyledInputLabel>
@@ -158,7 +158,7 @@ const ApplyForJobPopup = props => {
                   </Grid>
 
                   {/* Upload CV Section */}
-                  <Grid item xs={12}>
+                  <Grid size={12}>
                     <StyledInputLabel htmlFor="upload-cv">
                       Upload CV
                     </StyledInputLabel>
@@ -198,7 +198,7 @@ const ApplyForJobPopup = props => {
                     )}
                   </Grid>
 
-                  <Grid item xs={12} mt={1} display="flex" gap={2} justifyContent="flex-end" flexWrap="wrap">
+                  <Grid size={12} mt={1} display="flex" gap={2} justifyContent="flex-end" flexWrap="wrap">
                     <OutlinedButton variant="outlined" onClick={handleClose}>
                       SKIP FOR NOW
                     </OutlinedButton>

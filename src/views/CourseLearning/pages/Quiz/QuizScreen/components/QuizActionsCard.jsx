@@ -199,7 +199,7 @@ const QuizActionsCard = (props) => {
         <Grid container spacing={2} justifyContent="center">
           {
             quizPassed?
-            <Grid item sm={10} md={6}>
+            <Grid size={{ sm: 10, md: 6 }}>
               <Button
               sx={{
                 cursor: 'default',
@@ -220,7 +220,7 @@ const QuizActionsCard = (props) => {
               </Button>
             </Grid>
             :
-          <Grid item sm={10} md={6}>
+          <Grid size={{ sm: 10, md: 6 }}>
               <Button
                 fullWidth
                 disableElevation

@@ -84,7 +84,7 @@ const ContactPage = () => {
       >
         <Box sx={boxStyles}>
           <Grid container spacing={4}>
-            <Grid item xs={12} md={6}>
+            <Grid size={{ xs: 12, md: 6 }}>
               <Typography mb={1} style={{ fontSize: '32px', fontWeight: 600, lineHeight: '48px', letterSpacing: '4%' }}>
                 {contactData.title}
               </Typography>
@@ -95,7 +95,7 @@ const ContactPage = () => {
                 {contactData.h2}
               </Typography>
             </Grid>
-            <Grid item xs={12} md={6}>
+            <Grid size={{ xs: 12, md: 6 }}>
               <Box
                 component="img"
                 src={contactData.heroImg}
@@ -149,7 +149,7 @@ const ContactPage = () => {
               {({ values, handleChange, handleBlur, errors, touched }) => (
                 <Form>
                   <Grid container spacing={2}>
-                    <Grid item xs={12}>
+                    <Grid size={12}>
                       <StyledInputLabel htmlFor="name">Name</StyledInputLabel>
                       <Field
                         as={TextField}
@@ -165,7 +165,7 @@ const ContactPage = () => {
                         placeholder="Enter Name"
                       />
                     </Grid>
-                    <Grid item xs={12}>
+                    <Grid size={12}>
                       <StyledInputLabel htmlFor="email">Email</StyledInputLabel>
                       <Field
                         as={TextField}
@@ -181,7 +181,7 @@ const ContactPage = () => {
                         placeholder="Enter Email"
                       />
                     </Grid>
-                    <Grid item xs={12}>
+                    <Grid size={12}>
                       <StyledInputLabel htmlFor="subject">
                         Subject
                       </StyledInputLabel>
@@ -202,7 +202,7 @@ const ContactPage = () => {
                         placeholder="Enter Subject"
                       />
                     </Grid>
-                    <Grid item xs={12}>
+                    <Grid size={12}>
                       <StyledInputLabel htmlFor="message">
                         Your Message
                       </StyledInputLabel>
@@ -223,7 +223,7 @@ const ContactPage = () => {
                         placeholder="Enter your message here"
                       />
                     </Grid>
-                    <Grid item xs={12} display="flex" justifyContent="center">
+                    <Grid size={12} display="flex" justifyContent="center">
                       <SubmitButton type="submit" variant="contained" disabled={isSubmitting} disableElevation sx={{ minWidth: '140px' }}>
                         {isSubmitting ? <CircularProgress size={28} style={{ color: '#fff'}} /> : 'SUBMIT NOW'}
                       </SubmitButton>
@@ -242,7 +242,7 @@ const ContactPage = () => {
     return (
       <Box sx={{ maxWidth: '750px', margin: '0 auto' }}>
         <Grid container spacing={4} my={3} justifyContent="center">
-          <Grid item xs={12} sm={6}>
+          <Grid size={{ xs: 12, sm: 6 }}>
             <ContactInfoBox
               icon={contactData.contactIcon}
               title="Phone"
@@ -250,7 +250,7 @@ const ContactPage = () => {
               linkText=" 413-419-0592"
             />
           </Grid>
-          <Grid item xs={12} sm={6}>
+          <Grid size={{ xs: 12, sm: 6 }}>
             <ContactInfoBox
               icon={contactData.emailIcon}
               title="Email"

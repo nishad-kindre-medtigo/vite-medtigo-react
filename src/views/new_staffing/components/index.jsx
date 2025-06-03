@@ -138,7 +138,7 @@ export const JobCardSkeleton = () => {
   return (
     <Grid container spacing={2}>
       {Array.from(new Array(7)).map((_, index) => (
-        <Grid item xs={12} key={index}>
+        <Grid size={12} key={index}>
           <Box
             sx={{
               p: 2,

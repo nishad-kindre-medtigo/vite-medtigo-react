@@ -300,7 +300,7 @@ export const FullAccessPlanCard = ({ isMobile, courseID, currentPlan, fullAccess
   };
 
   return (
-    <Grid item xs={12}>
+    <Grid size={12}>
       <Box
         sx={{
           p: 2,
@@ -311,7 +311,7 @@ export const FullAccessPlanCard = ({ isMobile, courseID, currentPlan, fullAccess
       >
         <Grid container>
           <Grid container>
-            <Grid item xs={12} md={8}>
+            <Grid size={{ xs: 12, md: 8 }}>
               {isPlanPurchased && (
                 <CurrentPlanText>CURRENT PLAN</CurrentPlanText>
               )}
@@ -344,7 +344,7 @@ export const FullAccessPlanCard = ({ isMobile, courseID, currentPlan, fullAccess
                 ))}
               </ul>
             </Grid>
-            <Grid item xs={12} md={4}>
+            <Grid size={{ xs: 12, md: 4 }}>
               <img
                 src={fullAccessPlanPreview}
                 alt="Course Preview"
@@ -352,7 +352,7 @@ export const FullAccessPlanCard = ({ isMobile, courseID, currentPlan, fullAccess
               />
             </Grid>
           </Grid>
-          <Grid item xs textAlign="right">
+          <Grid size={12} textAlign="right">
             <Button
               variant="contained"
               style={styles.buyButton}

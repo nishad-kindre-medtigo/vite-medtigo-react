@@ -44,8 +44,8 @@ const MedtigoOrangePage = () => {
   const HeroContainer = () => (
     <Grid container justifyContent="center" alignItems="center" sx={{ py: 4, width: '100vw' }}>
       <Box sx={boxStyles}>
-        <Grid container spacing={{ xs: 2, md: 4 }}>
-          <Grid item xs={12} md={6} sx={{ order: { xs: 2, md: 1 } }}>
+        <Grid container size={{ xs: 2, md: 4 }}>
+          <Grid size={{ xs: 12, md: 6 }} sx={{ order: { xs: 2, md: 1 } }}>
             <Typography mb={1} style={{ fontWeight: 600, fontSize: isTablet ? '18px' : '32px', lineHeight: '40px', color: '#1C5087', textAlign: isTablet ? 'center' : 'left' }}>
               Congratulations! {first_name}
             </Typography>
@@ -53,7 +53,7 @@ const MedtigoOrangePage = () => {
               {"You've just been enrolled in a new program medtigo has launched."}
             </Typography>
           </Grid>
-          <Grid item xs={12} md={6} sx={{ display: 'flex', justifyContent: { xs: 'center', md: 'flex-end' }, alignItems: 'center', order: { xs: 1, md: 2 } }}>
+          <Grid size={{ xs: 12, md: 6 }} sx={{ display: 'flex', justifyContent: { xs: 'center', md: 'flex-end' }, alignItems: 'center', order: { xs: 1, md: 2 } }}>
             <img src="/images/medtigoOrange/medtigo_orange_tile.svg" alt="Medtigo Orange" loading="lazy" style={{ maxWidth: '100%', height: 'auto' }} />
           </Grid>
         </Grid>
@@ -64,7 +64,7 @@ const MedtigoOrangePage = () => {
   const Section = ({ title, children }) => (
     <>
       {!isTablet && <DividerText text={title} />}
-      <Grid container spacing={{ xs: 2, md: 5 }} my={2} alignItems="stretch" justifyContent="center">
+      <Grid container size={{ xs: 2, md: 5 }} my={2} alignItems="stretch" justifyContent="center">
         {children}
       </Grid>
     </>
@@ -73,7 +73,7 @@ const MedtigoOrangePage = () => {
   const BenefitsSection = () => (
     <Section title="Your Benefits">
       {benefits.map((item, index) => (
-        <Grid item xs={12} sm={6} lg={4} key={item.title}>
+        <Grid size={{ xs: 12, sm: 6, md: 4 }} key={item.title}>
           <Box sx={{ py: { xs: 2, md: 4 }, px: 6, mb: 2, textAlign: 'center', height: '100%' }}>
             <Box
               component="img"
@@ -108,12 +108,12 @@ const MedtigoOrangePage = () => {
       <Box sx={boxStyles}>
         {!isTablet && <DividerText text="About This Program" />}
         <Grid container spacing={isTablet ? 0 : 4} mt={2}>
-          <Grid item xs={12} md={6}>
+          <Grid size={{ xs: 12, md: 6 }}>
             <Typography mb={1} style={{ fontWeight: 300, fontSize: isTablet ? '13px' : '18px', textAlign: isTablet ? 'center' : 'left', lineHeight: '36px', color: '#102048' }}>
               {aboutInfo.description}
             </Typography>
           </Grid>
-          <Grid item xs={12} md={5} sx={{ display: 'flex', justifyContent: { xs: 'center', md: 'flex-end' }, alignItems: 'center' }}>
+          <Grid size={{ xs: 12, md: 5 }} sx={{ display: 'flex', justifyContent: { xs: 'center', md: 'flex-end' }, alignItems: 'center' }}>
             <img src="/images/medtigoOrange/about.svg" alt="Medtigo Orange" loading="lazy" style={{ maxWidth: '100%', height: 'auto' }} />
           </Grid>
         </Grid>
@@ -129,7 +129,7 @@ const MedtigoOrangePage = () => {
       <Grid container justifyContent="center" alignItems="center" sx={{ py: 4, mb: 6, width: '100vw', background: '#F6F6F6' }}>
         <Box sx={{ ...boxStyles, display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 1 }}>
           <img src="/images/medtigoOrange/caroline.svg" alt="Medtigo Orange" loading="lazy" style={{ maxWidth: '141px' }} />
-          <Box item xs={6} md={6} style={{ fontSize: isTablet ? '13px' : '20px' }}>
+          <Box style={{ fontSize: isTablet ? '13px' : '20px' }}>
             <div style={{ fontWeight: 600, lineHeight: '30px' }}>Caroline Mascarenhas</div>
             <div style={{ fontWeight: 500, lineHeight: '30px' }}>medtigo Services</div>
             <a href={`mailto:cmascarenhas@medtigo.com`} style={{ fontWeight: 500, lineHeight: '30px', textDecoration: 'underline', color: '#2872C1' }}>
