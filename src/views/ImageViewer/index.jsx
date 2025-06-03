@@ -44,7 +44,7 @@ function ImageViewer() {
       <AppBar position="static" sx={{ backgroundColor: '#fff' }}>
         <Toolbar>
           <a href="http://medtigo.com/">
-            <img src="static/images/logo.png" alt="Logo" width="168px" />
+            <img src="/images/logo.png" alt="Logo" width="168px" />
           </a>
         </Toolbar>
       </AppBar>

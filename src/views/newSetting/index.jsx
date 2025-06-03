@@ -11,11 +11,11 @@ import ActiveInactive from './General/ActiveInactive';
 import GeneralSettings from './General/GeneralSettings';
 import ProfileDetails from './General/ProfileDetails';
 
-const EditIcon = 'static/icons/settings/editIcon.svg';
-const lineBreak = 'static/icons/settings/lineBreak.svg';
-const mailIcon = 'static/icons/settings/MailIcon.svg';
-const SchoolIcon = 'static/icons/settings/SchoolIcon.svg';
-const CallIcon = 'static/icons/settings/CallIcon.svg';
+const EditIcon = '/icons/settings/editIcon.svg';
+const lineBreak = '/icons/settings/lineBreak.svg';
+const mailIcon = '/icons/settings/MailIcon.svg';
+const SchoolIcon = '/icons/settings/SchoolIcon.svg';
+const CallIcon = '/icons/settings/CallIcon.svg';
 
 const tabs = [
   { value: 'institutions', label: 'MY INSTITUTIONS' },

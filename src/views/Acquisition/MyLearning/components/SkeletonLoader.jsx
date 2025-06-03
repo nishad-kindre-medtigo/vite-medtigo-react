@@ -4,25 +4,21 @@ import { courses } from '../data';
 import { CourseCard, ImageBox, CourseImage, CardActions } from '../ui';
 
 export const CourseCardSkeleton = ({ CONNECT_COURSES }) => {
-  return (
-    <Grid container rowSpacing={3} columnSpacing={3}>
-      {CONNECT_COURSES.map((_, index) => (
-        <Grid size={{ xs: 12, sm: 6, md: 4 }} key={index}>
-          <CourseCard>
-            <ImageBox>
-              <CourseImage
-                src={courses[index].image}
-                alt={courses[index].title}
-              />
-            </ImageBox>
-            <CardActions>
-              <Skeleton variant="rounded" animation="wave" width="25%" height={32} sx={{ my: 0.5, background: '#E9F2FC' }}/>
-            </CardActions>
-          </CourseCard>
-        </Grid>
-      ))}
+  return CONNECT_COURSES.map((_, index) => (
+    <Grid size={{ xs: 12, sm: 6, md: 4 }} key={index}>
+      <CourseCard>
+        <ImageBox>
+          <CourseImage
+            src={courses[index].image}
+            alt={courses[index].title}
+          />
+        </ImageBox>
+        <CardActions>
+          <Skeleton variant="rounded" animation="wave" width="25%" height={32} sx={{ my: 0.5, background: '#E9F2FC' }}/>
+        </CardActions>
+      </CourseCard>
     </Grid>
-  );
+  ));
 };
 
 export const OldCertificateSkeleton = () => {

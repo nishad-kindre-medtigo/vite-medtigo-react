@@ -136,7 +136,7 @@ const QuizActionsCard = props => {
           <img
             style={{ padding: '20px 0px' }}
             width={isMobile ? 100 : 170}
-            src="/static/images/lms/quiz_card.png"
+            src="/images/lms/quiz_card.png"
           />
 
           <Box>
@@ -155,11 +155,11 @@ const QuizActionsCard = props => {
 
             {/* QUIZ GUIDE TEXT- PASSING CRITERIA, PASS/ FAIL MESSAGE, RENEW MESSAGE */}
             {isCourseCompleted ? (
-              <Typography paragraph>
+              <Typography>
                 You have already passed the Quiz.
               </Typography>
             ) : quizPassed ? (
-              <Typography paragraph>
+              <Typography>
                 on completing the quiz with a score of{' '}
                 <b>
                   {Math.round((percentage / 100) * totalQuestionsCount)} out of{' '}
@@ -169,7 +169,6 @@ const QuizActionsCard = props => {
               </Typography>
             ) : endQuiz ? (
               <Typography
-                paragraph
                 style={{ color: '#C52A34', fontSize: '16px' }}
               >
                 You got{' '}
@@ -186,7 +185,7 @@ const QuizActionsCard = props => {
                 Note: Renew plan to unlock the quiz again.
               </Typography>
             ) : (
-              <Typography paragraph>
+              <Typography>
                 you are required to score at least <b>{passingCriteria}</b> on
                 the quiz to earn your{' '}
                 {isOpioid || isNIHSS ? 'CME certificate' : 'provider card'},
@@ -204,60 +203,37 @@ const QuizActionsCard = props => {
         )} */}
 
         {/* BUTTONS SECTION - COMPLETE REQUIREMENT, RETAKE QUIZ, RENEW, DOWNLOAD PROVIDER CARD, CLAIM CME, CLAIMED CME */}
-        <Grid container spacing={2} justifyContent="center">
-          {quizPassed ? (
-            <Grid size={6}>
+        <Grid container spacing={2} justifyContent="center" sx={{ width: '100%' }}>
+          <Grid size={6}>
+            <Tooltip
+              title={
+                disableStartQuiz
+                  ? 'Please attempt the simulation cases first'
+                  : ''
+              }
+              arrow
+            >
               <Button
-                sx={{
-                  cursor: 'default',
-                  pointerEvents: 'none', // Disables interactions like hover, click
-                  '&:hover': {
-                    backgroundColor: 'success.main' // Ensures no hover effect
-                  }
-                }}
-                disableRipple
-                color="success"
-                disableElevation
                 fullWidth
+                disableElevation
                 variant="contained"
-                // onClick={handleAttemptQuiz}
-                endIcon={<CompleteIcon />}
+                onClick={handleAttemptQuiz}
+                // disabled={disableStartQuiz}
+                sx={{
+                  // background: disableStartQuiz ? 'lightgray' : 'primary.main',
+                  // color: '#fff',
+                  // '&:hover': {
+                  //   background: disableStartQuiz
+                  //     ? 'lightgray'
+                  //     : 'primary.main'
+                  // },
+                  cursor: disableStartQuiz ? 'default' : 'pointer'
+                }}
               >
-                Completed
+                {!quizPassed && endQuiz ? 'Retake quiz' : 'Complete'}
               </Button>
-            </Grid>
-          ) : (
-            <Grid size={6}>
-              <Tooltip
-                title={
-                  disableStartQuiz
-                    ? 'Please attempt the simulation cases first'
-                    : ''
-                }
-                arrow
-              >
-                <Button
-                  fullWidth
-                  disableElevation
-                  variant="contained"
-                  onClick={handleAttemptQuiz}
-                  // disabled={disableStartQuiz}
-                  sx={{
-                    // background: disableStartQuiz ? 'lightgray' : 'primary.main',
-                    // color: '#fff',
-                    // '&:hover': {
-                    //   background: disableStartQuiz
-                    //     ? 'lightgray'
-                    //     : 'primary.main'
-                    // },
-                    cursor: disableStartQuiz ? 'default' : 'pointer'
-                  }}
-                >
-                  {!quizPassed && endQuiz ? 'Retake quiz' : 'Complete'}
-                </Button>
-              </Tooltip>
-            </Grid>
-          )}
+            </Tooltip>
+          </Grid>
         </Grid>
       </AutoProviderCardBox>
     </>

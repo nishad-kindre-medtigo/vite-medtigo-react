@@ -80,7 +80,7 @@ function CourseSyllabus() {
             >
                 {syllabusItems.map((item, index) => (
                     !item.locked &&
-                    <Grid item key={index} flex minWidth={250} m={1} alignItems={'baseline'} justifyContent={'center'} display="flex" >
+                    <Grid key={index} flex minWidth={250} m={1} alignItems={'baseline'} justifyContent={'center'} display="flex" >
                         <Paper
                             elevation={2}
                             sx={{
