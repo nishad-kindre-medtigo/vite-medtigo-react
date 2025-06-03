@@ -1360,7 +1360,7 @@ export const courseDetails = [
   {
     name: 'asls-course',
     full_name: 'Annual Stroke Center Continuing Education (ASC CE)',
-    short_name: 'ASLS',
+    short_name: 'ASC CE',
     id: 151904,
     time_in_minutes: 600,
     cme_credits: 3,
