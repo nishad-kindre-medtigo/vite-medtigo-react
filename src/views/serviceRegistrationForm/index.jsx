@@ -25,7 +25,7 @@ import InfoIcon from '@mui/icons-material/Info';
 
 const steps = ['Personal Information', 'Professional Information', 'Documents', 'Terms & Conditions'];
 
-const ENCRYPTION_KEY = import.meta.env.VITE_REACT_APP_ENCRYPTION_KEY;
+const ENCRYPTION_KEY = import.meta.env.VITE_ENCRYPTION_KEY;
 
 const HelperTextWithTooltip = () => {
     const [open, setOpen] = useState(false);
@@ -254,7 +254,7 @@ const ServiceRegistationForm = ({onFormSubmit}) => {
     className='form-page'
     style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "15px", fontFamily: "Poppins"}}>
         <div>
-            <img src='static/images/logo.png' height="100px" width="250px" style={{
+            <img src='/images/logo.png' height="100px" width="250px" style={{
                 height: '100px',
                 width: '250px',
                 paddingLeft: '20px',

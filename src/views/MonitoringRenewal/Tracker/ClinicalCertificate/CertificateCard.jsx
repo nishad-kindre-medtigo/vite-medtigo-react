@@ -115,7 +115,7 @@ const CertificateCard = props => {
 
         {/* RENEW BUTTON DISPLAYED ONLY FOR LATEST PROVIDER CARD FOR EACH COURSE*/}
         {hasRenewButton && (
-          <ActionButton onClick={handleCertificateButtonClick} buttonText={courseCertData?.buttonText || <Loader width="24" />} />
+          <ActionButton onClick={handleCertificateButtonClick} buttonText={courseCertData?.buttonText || ". . ."} />
         )}
       </ActionContainer>
     </StyledCard>

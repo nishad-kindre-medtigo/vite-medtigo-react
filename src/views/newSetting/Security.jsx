@@ -7,7 +7,7 @@ import { Box, Button, Grid, Typography, TextField } from '@mui/material';
 import authService from '../../services/authService';
 import CryptoJS from 'crypto-js';
 
-const ENCRYPTION_KEY = import.meta.env.VITE_REACT_APP_ENCRYPTION_KEY;
+const ENCRYPTION_KEY = import.meta.env.VITE_ENCRYPTION_KEY;
 
 function Security({ className, ...rest }) {
   const openSnackbar = useOpenSnackbar();

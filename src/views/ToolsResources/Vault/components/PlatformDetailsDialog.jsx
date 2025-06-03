@@ -13,7 +13,7 @@ import useBreakpoints from '../../../../hooks/useBreakpoints';
 import { Loader } from '../../../../ui/Progress';
 import CryptoJS from 'crypto-js';
 
-const ENCRYPTION_KEY = import.meta.env.VITE_REACT_APP_ENCRYPTION_KEY;
+const ENCRYPTION_KEY = import.meta.env.VITE_ENCRYPTION_KEY;
 
 const PlatformDetailsDialog = ({
   open,

@@ -297,23 +297,23 @@ const QuizScreen = props => {
           <QuizCompletion {...CardProps} />
         ) : (
           <Grid container justifyContent="center" spacing={2} sx={{ my: 2 }}>
-            <Grid item xs={12} sm={exitButtonGrid}>
+            <Grid size={12} sm={exitButtonGrid}>
               <ExitButton onClick={handleBackLink} />
             </Grid>
-            <Grid item xs={12} />
+            <Grid size={12} />
             {isACLS ? (
               <>
                 {showSimulationCard && (
-                  <Grid item xs={12} sm={6}>
+                  <Grid size={{ xs: 12, sm: 6 }}>
                     <QuizSimulationCard parent="QuizScreen" endQuiz={false} />
                   </Grid>
                 )}
-                <Grid item xs={12} sm={6}>
+                <Grid size={{ xs: 12, sm: 6 }}>
                   <QuizActionsCard {...CardProps} />
                 </Grid>
               </>
             ) : (
-              <Grid item xs={12} sm={6}>
+              <Grid size={{ xs: 12, sm: 6 }}>
                 <QuizActionsCard {...CardProps} />
               </Grid>
             )}

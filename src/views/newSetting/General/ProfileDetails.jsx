@@ -75,7 +75,7 @@ function ProfileDetails({ user, onProfilePictureUpdate }) {
       >
         <Box
           component="img"
-          src={EditIcon}
+          src="/icons/settings/editIcon.svg"
           alt="Edit"
           sx={{
             width: { xs: 12, sm: 16 },

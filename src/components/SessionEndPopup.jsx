@@ -13,7 +13,7 @@ import { Visibility, VisibilityOff } from '@mui/icons-material';
 import { StyledInputLabel, CustomTextfield } from '../views/new_staffing/components';
 import useBreakpoints from '../hooks/useBreakpoints';
 
-const ENCRYPTION_KEY = import.meta.env.VITE_REACT_APP_ENCRYPTION_KEY;
+const ENCRYPTION_KEY = import.meta.env.VITE_ENCRYPTION_KEY;
 
 const NewSessionEndPopup = ({ open, setOpen }) => {
   const { email } = useSelector(state => state.account.user);

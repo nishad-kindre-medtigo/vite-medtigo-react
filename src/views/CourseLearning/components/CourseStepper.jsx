@@ -13,7 +13,7 @@ function CourseStepper({ activeStep, steps, setActiveStep, closePopup }) {
     startQuiz
   } = React.useContext(LearningContext);
 
-  const courseBackground = `/static/images/lms/${activeCourse?.slug}.png`;
+  const courseBackground = `/images/lms/${activeCourse?.slug}.png`;
 
   const progressPercentage = courseProgress.isCourseCompleted
     ? 100

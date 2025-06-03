@@ -51,7 +51,7 @@ function RegenerateView() {
         backgroundColor:'#2C365E',
         height: '60px',
     }}>
-        <img src='static/images/logo.png' style={{
+        <img src='/images/logo.png' style={{
             height: 'inherit',
             width: 'inherit',
             paddingLeft: '20px',

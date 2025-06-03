@@ -130,7 +130,7 @@ const QuizSimulationCard = ({ parent, endQuiz }) => {
           <img
             style={{ marginTop: '0px', padding: '20px 0px' }}
             width={isMobile ? 100 : 170}
-            src="/static/images/lms/simulation_card.png"
+            src="/images/lms/simulation_card.png"
           />
           <Typography
             variant="h4"
