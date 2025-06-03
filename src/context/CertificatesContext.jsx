@@ -34,8 +34,6 @@ export const CertificatesContextProvider = ({ children }) => {
   const [deaCertificates, setDEACertificates] = React.useState([]); // DEA Certificates
   const [stateCSRCertificates, setStateCSRCertificates] = React.useState([]); // State CSR Certificates
 
-  const [oldFullAccessOrder, setOldFullAccessOrder] = React.useState({}); // Store if old dull access order exists for user
-
   const [creditPoints, setCreditPoints] = React.useState(0); // Total Credit Points of All CME Certificates
 
   // For Dashboard CME Compliance Card
@@ -142,16 +140,6 @@ export const CertificatesContextProvider = ({ children }) => {
     }
   };
 
-  const fetchOldFullAccessOrder = async () => {
-    try {
-      const fullAccessOrder = await orderServices.isFullAccessOrder();
-      setOldFullAccessOrder(fullAccessOrder);
-    } catch (error) {
-      console.log(error);
-      setOldFullAccessOrder({});
-    }
-  }
-
   // OBJECT TO RUN FETCH DATA METHODS BASED ON CURRENT PAGE - FOR EDIT, DELETE & ADD CERTIFICATE ACTIONS
   const METHODS = {
     'CE/CME': fetchCMECertificates,
@@ -168,7 +156,6 @@ export const CertificatesContextProvider = ({ children }) => {
     fetchCMECertificates();
     fetchDEACertificates();
     fetchStateCSRCertificates();
-    fetchOldFullAccessOrder();
     setIsLoading(false);
   };
 
@@ -236,7 +223,6 @@ export const CertificatesContextProvider = ({ children }) => {
     oldCertificates,
     deaCertificates,
     stateCSRCertificates,
-    oldFullAccessOrder,
     latestCertIds,
     setLatestCertIds,
     setCreditPoints,
