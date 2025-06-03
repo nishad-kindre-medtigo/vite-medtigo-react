@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import hospitalsService from 'src/services/hospitalsService';
 import StateSpecificCMECervices from 'src/services/stateSpecificCMEService';
 import departmentsService from 'src/services/departmentsService';
-import { designations, cme_states as states } from '../appConstants';
+import { designations, cme_states as states } from 'src/appConstants';
 import { filter, isEqual } from 'lodash';
 
 export const CertificateTypeOptions = [

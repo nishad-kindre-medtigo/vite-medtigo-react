@@ -3,7 +3,7 @@ import { Box, Collapse, IconButton, Table, TableBody, TableCell, TableContainer,
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import { AccordionBox, AccordionHead, AccordionTabs, AccordionExpandIcon, StatesButton, styles, UserAccordionTabs } from '.';
 import useBreakpoints from 'src/hooks/useBreakpoints';
-import { ReportTypes, states } from '../../../../appConstants';
+import { ReportTypes, states } from 'src/appConstants';
 import { Link } from 'react-router-dom';
 import { StateWiseRenew } from '../../../../views/StateCompliance';
 import DisabledByDefaultIcon from '@mui/icons-material/DisabledByDefaultRounded';

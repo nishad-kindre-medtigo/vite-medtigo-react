@@ -24,7 +24,7 @@ import IndeterminateCheckBoxRoundedIcon from '@mui/icons-material/IndeterminateC
 import { ClickableTooltip } from './Components';
 import { grey } from '@mui/material/colors';
 import moment from 'moment';
-import { cme_states } from '../../appConstants';
+import { cme_states } from 'src/appConstants';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 

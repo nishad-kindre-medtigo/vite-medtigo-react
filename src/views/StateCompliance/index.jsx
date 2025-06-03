@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { cme_states as states } from '../../appConstants';
+import { cme_states as states } from 'src/appConstants';
 import './style.css';
 import { useSelector } from "react-redux";
 import StateSpecificCMECervices from 'src/services/stateSpecificCMEService';

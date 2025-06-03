@@ -4,7 +4,7 @@ import { getLicenseStatusImage, formatDate, RenewalCycle, calculateStatus } from
 import licenseReportServices from 'src/services/licenseReportServices';
 import { AccordionBox, AccordionTable, PageContainer, PlaceHolder, DefaultPlaceHolder } from '../../../../components/CMECompliance';
 import { useSelector } from 'react-redux';
-import { allCertificates } from '../../../../appConstants';
+import { allCertificates } from 'src/appConstants';
 import { ReportFilterContext } from 'src/context/ReportFilterContext';
 import { StatusFilter } from '../../../AdminView/ClinicalCertificate/UserView';
 import { ReportBackLink } from '../../ui';

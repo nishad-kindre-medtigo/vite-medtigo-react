@@ -5,7 +5,7 @@ import { LocalizationProvider, DatePicker } from '@mui/x-date-pickers';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 import expenseService from 'src/services/expenseService';
-import { serviceLine, siteList } from '../../../../appConstants';
+import { serviceLine, siteList } from 'src/appConstants';
 import { CommentBox, SubmitButton } from '../../components';
 import moment from 'moment';
 

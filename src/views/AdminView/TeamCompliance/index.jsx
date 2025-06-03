@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext, forwardRef, useImperativeHandle, useRef  } from 'react';
 import { Drawer, Box, debounce, Typography } from '@mui/material';
-import { cme_states as states } from '../../../appConstants';
+import { cme_states as states } from 'src/appConstants';
 import StateAccordion from './components/StateAccordion';
 import CertificateDrawer from '../../../views/MonitoringRenewal/CertificateDrawer';
 import { CertificatesContext } from 'src/context/CertificatesContext';

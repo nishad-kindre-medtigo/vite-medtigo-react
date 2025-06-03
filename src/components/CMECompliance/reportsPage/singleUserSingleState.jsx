@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom';
 import ArrowBackIosNewRoundedIcon from '@mui/icons-material/ArrowBackIosNewRounded';
 import { Box, Grid, IconButton } from '@mui/material';
-import { CME_RequestType, states } from '../../../appConstants';
+import { CME_RequestType, states } from 'src/appConstants';
 import moment from 'moment';
 import { StateWiseRenew } from '../../../views/StateCompliance';
 import useBreakpoints from 'src/hooks/useBreakpoints';

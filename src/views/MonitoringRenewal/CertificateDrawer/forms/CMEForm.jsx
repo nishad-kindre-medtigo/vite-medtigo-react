@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import * as moment from 'moment';
-import { certCategories, creditTypes, specificDesignations } from '../../../../appConstants';
+import { certCategories, creditTypes, specificDesignations } from 'src/appConstants';
 import { Box, Grid, TextField } from '@mui/material';
 import certificatesService from 'src/services/certificatesService';
 import { useCertificatesContext } from 'src/context/CertificatesContext';

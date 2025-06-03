@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { Typography } from '@mui/material';
 import ArrowBackIosNewRoundedIcon from '@mui/icons-material/ArrowBackIosNewRounded';
 import { Box, Grid, IconButton } from '@mui/material';
-import { CME_RequestType, states } from '../../../appConstants.js';
+import { CME_RequestType, states } from 'src/appConstants.js';
 import moment from 'moment';
 import useBreakpoints from 'src/hooks/useBreakpoints.js';
 import ReportContainer from './reportContainer';

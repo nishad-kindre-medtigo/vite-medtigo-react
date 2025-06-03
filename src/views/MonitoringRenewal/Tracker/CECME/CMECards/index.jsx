@@ -7,7 +7,7 @@ import { getCertificateExpiryDetails } from '../../../../../utils/getCertificate
 import useBreakpoints from 'src/hooks/useBreakpoints';
 import { StyledCard, CertificateContent, PrimaryText, SecondaryText, AddedByYou, MenuIcon, ProgressIcon, ActionContainer } from '../../../../MonitoringRenewal/ui';
 import CardActions from '../../../../MonitoringRenewal/components/CardActions';
-import { creditTypes } from '../../../../../appConstants';
+import { creditTypes } from 'src/appConstants';
 
 const CMECard = props => {
   const { isMobile } = useBreakpoints();

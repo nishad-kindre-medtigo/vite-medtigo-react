@@ -12,7 +12,7 @@ import FormSubmissionPopup from '../components/FormSubmissionPopup';
 import { CREDENTIALS, NURSE_OPTIONS, PHYSICIAN_OPTIONS } from '../data';
 import { DecisionOptions, RatingOptions } from '../components/Options';
 import { AccessDeniedScreen } from '../../CourseLearning/components';
-import { courseDetails } from '../../../appConstants';
+import { courseDetails } from 'src/appConstants';
 
 // SURVEY FORM VALID FOR ACLS, BLS, PALS, ASC CE COURSE
 const RegularCourseForm = (props) => {

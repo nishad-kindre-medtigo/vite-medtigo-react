@@ -12,7 +12,7 @@ import FormSubmitBackdrop from '../components/FormSubmitBackdrop';
 import { CREDENTIALS, NURSE_OPTIONS, PHYSICIAN_OPTIONS } from '../data';
 import { DecisionOptions, RatingOptions } from '../components/Options';
 import { AccessDeniedScreen } from '../../CourseLearning/components';
-import { CertificateVariants } from '../../../appConstants';
+import { CertificateVariants } from 'src/appConstants';
 
 // SURVEY FORM VALID FOR OPIOID & NIHSS COURSE
 const OpioidSurveyForm = (props) => {

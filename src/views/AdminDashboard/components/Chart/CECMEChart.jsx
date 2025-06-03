@@ -4,7 +4,7 @@ import Chart from 'react-apexcharts';
 import { useNavigate } from 'react-router-dom';
 import useBreakpoints from 'src/hooks/useBreakpoints';
 import { ReportFilterContext } from 'src/context/ReportFilterContext';
-import { designations } from '../../../../appConstants';
+import { designations } from 'src/appConstants';
 
 const CECMEChart = ({ data, selectedDepartments }) => {
   const navigate = useNavigate();

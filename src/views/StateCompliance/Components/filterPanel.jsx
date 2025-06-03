@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { cme_states as states, CME_LicenseType, CME_RequestType, ProfessionWithCertificates } from '../../../appConstants';
+import { cme_states as states, CME_LicenseType, CME_RequestType, ProfessionWithCertificates } from 'src/appConstants';
 import { useSelector } from "react-redux";
 import { Checkbox, Popper, Grid, Button, DialogContent, Box, DialogActions, Typography } from '@mui/material';
 

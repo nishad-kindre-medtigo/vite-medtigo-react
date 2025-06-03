@@ -3,7 +3,7 @@ import { Box, Button, CircularProgress, Collapse, IconButton, TableBody, TableCe
 import { StatesButton } from '.';
 import { AccordionExpandIcon, AccordionBox, AccordionHead, AccordionTable, UserClick } from '../../../../components/CMECompliance';
 import useBreakpoints from 'src/hooks/useBreakpoints';
-import { ReportTypes, states } from '../../../../appConstants';
+import { ReportTypes, states } from 'src/appConstants';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { cme_colors } from '../../../../components/CMECompliance/style_guides';

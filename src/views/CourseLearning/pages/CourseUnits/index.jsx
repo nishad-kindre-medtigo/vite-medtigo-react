@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useRef } from 'react';
 import { Autocomplete, TextField, Button, Box } from '@mui/material';
 import { LearningContext } from 'src/context/LearningContext';
 // import MapViewer from '../../../map';
-import { courseLanguages } from '../../../../appConstants';
+import { courseLanguages } from 'src/appConstants';
 import useroptionsServices from 'src/services/userOptionsService';
 import { useNavigate } from 'react-router-dom';
 import useBreakpoints from 'src/hooks/useBreakpoints';

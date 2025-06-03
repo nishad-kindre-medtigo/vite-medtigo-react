@@ -17,7 +17,7 @@ import {
     CircularProgress
 } from "@mui/material";
 import MailIconWithDialog from '../../../../components/Reports/IconWithPopup';
-import { ReportTypes } from '../../../../appConstants';
+import { ReportTypes } from 'src/appConstants';
 import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 import { cme_colors } from '../../../../components/CMECompliance/style_guides';
 import CloseIcon from "@mui/icons-material/Close";

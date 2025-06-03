@@ -3,7 +3,7 @@ import { Box, Collapse, IconButton, Tab, Table, TableBody, TableCell, TableConta
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import { AccordionBox, AccordionHead, AccordionTabs, AccordionExpandIcon, StatesButton, styles } from '../../AdminView/TeamCompliance/components';
 import useBreakpoints from 'src/hooks/useBreakpoints';
-import { ReportTypes, states } from '../../../appConstants';
+import { ReportTypes, states } from 'src/appConstants';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { StateWiseRenew } from '../../StateCompliance';

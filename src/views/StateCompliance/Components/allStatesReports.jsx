@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import { useLocation } from 'react-router-dom';
 import ReportContainer from '../../../components/CMECompliance/reportsPage/reportContainer';
-import { CME_RequestType, cme_states, states } from '../../../appConstants';
+import { CME_RequestType, cme_states, states } from 'src/appConstants';
 import { Box, FormControl, Grid, IconButton, MenuItem, Select, Tooltip, Typography } from '@mui/material';
 import { StateWiseRenew } from '../../StateCompliance';
 import useBreakpoints from 'src/hooks/useBreakpoints';

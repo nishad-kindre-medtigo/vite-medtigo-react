@@ -5,7 +5,7 @@ import { getLicenseStatusImage, formatDate, getLicenseStatus, RenewalCycle, calc
 import licenseReportServices from 'src/services/licenseReportServices';
 import { AccordionBox, AccordionTable, PlaceHolder, PageContainer, DefaultPlaceHolder } from '../../../components/CMECompliance';
 import { InfoDialog, InfoIconTooltip } from './Components';
-import { allCertificates } from '../../../appConstants';
+import { allCertificates } from 'src/appConstants';
 import BackButtonWithTitle from '../../../components/Reports';
 import { ReportFilterContext } from 'src/context/ReportFilterContext';
 import { StatusFilter } from '../ClinicalCertificate/UserView';

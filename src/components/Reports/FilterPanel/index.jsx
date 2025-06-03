@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import Filters from './filters';
-import { cme_states as states } from '../../../appConstants';
+import { cme_states as states } from 'src/appConstants';
 // import useBreakpoints from 'src/hooks/useBreakpoints';
 // import hospitalsService from 'src/services/hospitalsService';
 // import StateSpecificCMECervices from 'src/services/stateSpecificCMEService';

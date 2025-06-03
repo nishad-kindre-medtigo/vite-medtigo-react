@@ -6,7 +6,7 @@ import "./style.css"
 import { Box, InputLabel, MenuItem, TextField, Typography, IconButton, FormControl, Select, FormControlLabel, FormLabel, RadioGroup, Radio, TextareaAutosize, Checkbox, Button, ThemeProvider, Divider, Tooltip } from '@mui/material';
 import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 
-import { countryList } from '../../appConstants';
+import { countryList } from 'src/appConstants';
 import { DatePicker, LocalizationProvider, DesktopDatePicker} from '@mui/x-date-pickers';
 import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment';
 import moment from 'moment';
