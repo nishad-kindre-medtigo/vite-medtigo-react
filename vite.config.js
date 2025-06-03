@@ -4,6 +4,9 @@ import path from "path";
 
 export default defineConfig({
   plugins: [react()],
+  server: {
+    port: 3001
+  },
   esbuild: {
     loader: "jsx",
     include: /\.jsx?$/, // This tells Vite to process JSX in .js files too
