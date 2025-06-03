@@ -14,7 +14,7 @@ import passwordManagerServices from '../../../../services/passwordManagerService
 import { useOpenSnackbar } from '../../../../hooks/useOpenSnackbar';
 import Label from '../../../../components/Label';
 
-const ENCRYPTION_KEY = import.meta.env.VITE_REACT_APP_ENCRYPTION_KEY;
+const ENCRYPTION_KEY = import.meta.env.VITE_ENCRYPTION_KEY;
 
 const PasswordCard = ({ data, setRefresh }) => {
   const [showPassword, setShowPassword] = useState(false);

@@ -25,7 +25,7 @@ import InfoIcon from '@mui/icons-material/Info';
 
 const steps = ['Personal Information', 'Professional Information', 'Documents', 'Terms & Conditions'];
 
-const ENCRYPTION_KEY = import.meta.env.VITE_REACT_APP_ENCRYPTION_KEY;
+const ENCRYPTION_KEY = import.meta.env.VITE_ENCRYPTION_KEY;
 
 const HelperTextWithTooltip = () => {
     const [open, setOpen] = useState(false);

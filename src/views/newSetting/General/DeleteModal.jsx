@@ -7,7 +7,7 @@ import HelpOutlineIcon from '@mui/icons-material/HelpOutlineOutlined';
 import { useOpenSnackbar } from '../../../hooks/useOpenSnackbar';
 import { Transition } from '../../../ui/Transition';
 
-const ENCRYPTION_KEY = import.meta.env.VITE_REACT_APP_ENCRYPTION_KEY;
+const ENCRYPTION_KEY = import.meta.env.VITE_ENCRYPTION_KEY;
 
 const DeleteModal = ({ openDeleteModal, setOpenDeleteModal, user, onInactivate }) => {
   const openSnackbar = useOpenSnackbar();
