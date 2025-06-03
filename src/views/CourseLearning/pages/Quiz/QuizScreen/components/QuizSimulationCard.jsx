@@ -15,13 +15,15 @@ import { simulationCasesData } from '../data';
 import { LearningContext } from '../../../../../../context/LearningContext';
 import { AutoProviderCardBox } from '../handlers';
 
-const QuizSimulationCard = ({ setEndQuiz, endQuiz }) => {
-  const {setSimulationStatus} = useContext(LearningContext);
+const QuizSimulationCard = ({ parent, endQuiz }) => {
+  // console.log("parent: ", parent);
+
+  const { setSimulationStatus } = useContext(LearningContext);
   const [simualtionCaseDilog, showSimualtionCaseDilog] = useState(false);
   const [all_cases_done, setAllCasesDone] = useState(false);
   const [skipSim, setSkipSim] = useState(false);
   const [case_status, setCaseStatuses] = useState(simulationCasesData);
-  const { user } = useSelector((state) => state.account);
+  const { user } = useSelector(state => state.account);
   const [case_started, SetCaseStarted] = useState(null);
   const [updatePage, SetUpdatePage] = useState(0);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -30,7 +32,7 @@ const QuizSimulationCard = ({ setEndQuiz, endQuiz }) => {
   const [intervalId, setIntervalId] = useState(null);
   const { isMobile } = useBreakpoints();
 
-  const openPopup = (url) => {
+  const openPopup = url => {
     setIframeUrl(url); // Set iframe URL
     setIsPopupOpen(true); // Open the popup
   };
@@ -80,9 +82,12 @@ const QuizSimulationCard = ({ setEndQuiz, endQuiz }) => {
         let started_cases = case_started;
         copy_cases.map((item, index) => {
           let found = res.find(
-            (item2) =>
+            item2 =>
               item.case.includes(item2.case_name.toLowerCase()) &&
-              item2.source.includes('connect_acls')
+              item2.source != null &&
+              ['connect_acls', 'featured_simulation'].some(type =>
+                item2.source.includes(type)
+              )
           );
           if (!found) {
             cases_completed = false;
@@ -98,7 +103,7 @@ const QuizSimulationCard = ({ setEndQuiz, endQuiz }) => {
         });
         SetUpdatePage(cases_completed_count);
         setAllCasesDone(cases_completed);
-        setSimulationStatus(cases_completed?'done':'incomplete');
+        setSimulationStatus(cases_completed ? 'done' : 'incomplete');
         setCaseStatuses(copy_cases);
       }
     } catch (error) {
@@ -106,22 +111,31 @@ const QuizSimulationCard = ({ setEndQuiz, endQuiz }) => {
     }
   };
 
+  const completeSimulation = () => {
+    if (isMobile) showSimualtionMobileDilog(true);
+    else showSimualtionCaseDilog(true); // Comment to enable Simulation Hack
+    // setSimulationStatus('done'); // Uncomment to enable Simulation Hack
+    // setAllCasesDone(true); // Uncomment to enable Simulation Hack
+  };
+
   return (
     <>
-      <AutoProviderCardBox sx={{ justifyContent: endQuiz ? 'normal' : 'space-between' }}>
+      <AutoProviderCardBox
+        sx={{ justifyContent: endQuiz ? 'normal' : 'space-between' }}
+      >
         <div>
-          <Typography style={{ fontWeight: 600, fontSize: '24px' }}>
-            Simulations
+          <Typography style={{ fontWeight: 400, fontSize: '24px' }}>
+            Step 1
           </Typography>
           <img
             style={{ marginTop: '0px', padding: '20px 0px' }}
             width={isMobile ? 100 : 170}
-            src="/images/lms/simulation_card.png"
+            src="/static/images/lms/simulation_card.png"
           />
           <Typography
             variant="h4"
             style={{
-              color: '#008000',
+              color: all_cases_done ? '#008000' : '#000',
               paddingBottom: '10px',
               fontSize: '22px',
               fontWeight: 600
@@ -130,14 +144,16 @@ const QuizSimulationCard = ({ setEndQuiz, endQuiz }) => {
             {all_cases_done
               ? 'Congratulations'
               : skipSim
-                ? 'Skipped'
-                : 'Attempt Simulations'}
+              ? 'Skipped'
+              : 'Attempt Simulations'}
           </Typography>
           <Typography paragraph>
             {all_cases_done ? (
-              <>on attempting 6 out of 6 simulation cases</>
+              <>Completed 6 out of 6 simulation cases</>
             ) : skipSim ? (
               <>You have skipped the simulation.</>
+            ) : isMobile ? (
+              'Note: All ACLS course simulation cases can be attempted from your desktop. Simulation is not available on mobile devices.'
             ) : (
               'you are required to attempt all ACLS course simulation cases without needing to fully complete them.'
             )}
@@ -145,8 +161,8 @@ const QuizSimulationCard = ({ setEndQuiz, endQuiz }) => {
         </div>
         {all_cases_done ? (
           <Grid container spacing={2} justifyContent="center">
-            <Grid size={8}>
-              <Button
+            <Grid size={{ sm: 10, md: 6 }}>
+              {/* <Button
                 fullWidth
                 disableRipple
                 disableElevation
@@ -158,27 +174,28 @@ const QuizSimulationCard = ({ setEndQuiz, endQuiz }) => {
                     backgroundColor: 'success.main' // Ensures no hover effect
                   }
                 }}
-                endIcon={<VerifiedIcon />}
+                endIcon={<CompleteIcon />}
               >
                 Completed
-              </Button>
+              </Button> */}
             </Grid>
           </Grid>
         ) : skipSim ? (
           <Grid container justifyContent="space-around" alignItems="center">
-            <Grid size={10}>
+            <Grid size={6}>
               <Button
                 disableElevation
                 fullWidth
+                sx={{ minWidth: '150px', marginBottom: '10px' }}
                 variant="contained"
                 color="success"
-                endIcon={<VerifiedIcon />}
+                // endIcon={<VerifiedIcon />}
               >
                 Skipped
               </Button>
             </Grid>
 
-            <Grid item>
+            {/* <Grid item>
               <Tooltip title="Retake" placement="bottom" arrow>
                 <IconButton
                   color="primary"
@@ -190,41 +207,39 @@ const QuizSimulationCard = ({ setEndQuiz, endQuiz }) => {
                   <CachedIcon />
                 </IconButton>
               </Tooltip>
-            </Grid>
+            </Grid> */}
           </Grid>
         ) : (
-          <Grid container spacing={2} justifyContent="space-around">
-            {/* <Grid size={6}>
+          <Grid container justifyContent="center" spacing={2}>
+            {/* {isMobile && <Grid item xs={6}>
               <Button
                 disableElevation
                 fullWidth
                 variant="outlined"
-                endIcon={<SkipNextIcon />}
+                sx={{minWidth: '150px', marginBottom: '10px'}}
                 onClick={() => {
                   setSkipSim(true);
-                  setEndQuiz(true);
+                  // setEndQuiz(true);
                   clearInterval(intervalId);
                   sessionStorage.setItem('skipSim', true);
                 }}
               >
                 Skip
               </Button>
-            </Grid> */}
-            <Grid size={6}>
-              <Button
-                disableElevation
-                fullWidth
-                variant="contained"
-                // endIcon={<CallMadeIcon />}
-                onClick={() => {
-                  // showSimualtionCaseDilog(true);
-                  setSimulationStatus('done');
-                  setAllCasesDone(true);
-                }}
-              >
-                Complete
-              </Button>
-            </Grid>
+            </Grid>} */}
+            {!isMobile && (
+              <Grid size={6}>
+                <Button
+                  disableElevation
+                  fullWidth
+                  variant="contained"
+                  // endIcon={<CallMadeIcon />}
+                  onClick={completeSimulation}
+                >
+                  Complete
+                </Button>
+              </Grid>
+            )}
           </Grid>
         )}
       </AutoProviderCardBox>
@@ -238,7 +253,7 @@ const QuizSimulationCard = ({ setEndQuiz, endQuiz }) => {
         open={simualtionMobileDilog}
         PaperProps={{
           sx: {
-            padding: '20px', // Padding inside the dialog
+            // padding: '20px', // Padding inside the dialog
             borderRadius: '10px', // Rounded corners
             boxShadow: 24, // Custom shadow
             minWidth: 'fit-content',
@@ -247,15 +262,14 @@ const QuizSimulationCard = ({ setEndQuiz, endQuiz }) => {
         }}
       >
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <DialogTitle sx={{ m: 0, p: 2 }}>Note</DialogTitle>
-          <div style={{ padding: '20px', cursor: 'pointer' }}>
+          <DialogTitle>Note</DialogTitle>
+          <IconButton>
             <CloseIcon onClick={() => showSimualtionMobileDilog(false)} />
-          </div>
+          </IconButton>
         </div>
         <DialogContent className="my-dialog">
           <Typography>
-            Simulation is unavailable on mobile. Please use a desktop for
-            access.
+            Simulation is unavailable on mobile. Please use desktop for access.
           </Typography>
         </DialogContent>
       </Dialog>
@@ -264,7 +278,7 @@ const QuizSimulationCard = ({ setEndQuiz, endQuiz }) => {
         open={simualtionCaseDilog}
         PaperProps={{
           sx: {
-            padding: '20px', // Padding inside the dialog
+            // padding: '20px', // Padding inside the dialog
             borderRadius: '10px', // Rounded corners
             boxShadow: 24, // Custom shadow
             minWidth: 'fit-content',
@@ -412,7 +426,6 @@ const QuizSimulationCard = ({ setEndQuiz, endQuiz }) => {
           })}
         </DialogContent>
       </Dialog>
-
     </>
   );
 };
@@ -424,8 +437,12 @@ const CustomPopup = ({ isOpen, iframeUrl, onClose }) => {
 
   return (
     <div className="popup-overlay" onClick={onClose}>
-      <div className="popup" onClick={(e) => e.stopPropagation()}>
-        <div className="close-btn" onClick={onClose}>
+      <div className="popup" onClick={e => e.stopPropagation()}>
+        <div
+          className="close-btn"
+          style={{ background: '#FFF', borderRadius: '2px' }}
+          onClick={onClose}
+        >
           <CloseIcon />
         </div>
         <iframe

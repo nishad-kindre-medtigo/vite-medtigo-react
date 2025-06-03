@@ -15,12 +15,14 @@ import './courseContent.css';
 const AVAILABLE_COURSES = [4526, 9985, 9238, 151904, 79132, 11159, 192797];
 
 const CourseLearningPage = () => {
+  // CONSTANT VALUES
   const { courseID } = useParams(); // Get the course ID from the URL
   const { isTablet } = useBreakpoints(); // Check if the user is on screen size of tablet or smaller
   const user = useSelector((state) => state.account.user);
   const { language, activeCourse, activeCourseProgress: courseProgress, updateCourseProgress } = useContext(LearningContext);
   const isValidCourseID = AVAILABLE_COURSES.includes(parseInt(courseID)); // Check if the course ID is valid
 
+  // STATE VALUES
   const [activeStep, setActiveStep] = useState(0); // Store current active Step/Lesson
   const [scrollEl, setScrollEl] = useState(); // Scroll to top when changing course units
   const [lastStoredStep, setLastStoredStep] = useState(0); // Store last Step/ Lesson for Course Stepper
@@ -155,7 +157,7 @@ const CourseLearningPage = () => {
       <div
         style={{
           width: '100%',
-          height: "calc(100vh - 135px)",
+          height: "calc(100vh - 58px)",
           overflow: 'auto'
         }}
       >

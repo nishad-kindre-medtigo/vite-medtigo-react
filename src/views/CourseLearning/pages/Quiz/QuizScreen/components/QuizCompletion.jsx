@@ -1,41 +1,81 @@
-import React, { useState, useContext } from 'react';
-import { Box, Button, Grid, Typography } from '@mui/material';
-import BackIcon from '@mui/icons-material/ChevronLeft';
+import React, { useContext } from 'react';
+import { Box, Grid, Typography } from '@mui/material';
 import { useOpenSnackbar } from '../../../../../../hooks/useOpenSnackbar';
 import { LearningContext } from '../../../../../../context/LearningContext';
-import Confetti from 'react-dom-confetti';
 import { useNavigate } from 'react-router-dom';
-import { config } from '../data';
+import { courseDetails } from '../data';
 import {
   CompletionCard,
   CompletionLoadingScreen as LoadingScreen,
-  APIErrorMessage
+  APIErrorMessage,
+  ExitButton
 } from '../handlers';
 
-const QuizCompletion = (props) => {
+/**
+ * @component QuizCompletion
+ * @description Handles the display of quiz completion actions and information.
+ *
+ * This component is responsible for showing the user their quiz results, providing options to download certificates, claim CME credits
+ *
+ * @hierarchy
+ * - Child of: QuizScreen, QuizContent
+ *
+ * @flow
+ * 1. Takes props from parent component to determine the current course and quiz status.
+ * 2. Displays the quiz score and completion status.
+ * 3. Provides buttons for downloading the provider card, claiming CME.
+ * 4. Handles the logic for revisiting the quiz page, including displaying appropriate messages and buttons based on the user's progress and course requirements.
+ * 5. Manages the loading state and error handling for certificate generation.
+ *
+ * @behavior
+ * - After Quiz Pass:
+ *   • Displays User Score & congratulations message with a confetti burst.
+ *   • Displays "Download Provider Card" & "Claim CME" buttons based on current course & plan.
+ *
+ * - Revisiting Quiz Page:
+ *   • Displays User's Score.
+ *   • Displays button "Download Provider Card" with "Claim CME" or "Download Claimed CME" button displayed conditionally.
+ *
+ * @props {boolean} quizPassed - Pass/ Fail status of quiz.
+ * @props {Object} currentOrder - Details of the current course order.
+ * @props {string} hash - Hash value for individual order for cme claim purpose.
+ * @props {boolean} isCMEValid - Indicates if the CME is valid for the course.
+ * @props {string} certificateID - ID of provider card which is currently generated or linked with order.
+ * @props {string} cmeID - ID of cme certificate which is currently generated or linked with order.
+ * @props {string} providerCardPath - Path for downloading the provider card.
+ * @props {string} cmePath - Path for downloading the CME certificate.
+ * @props {boolean} loading - State indicating if the component is in a loading state.
+ * @props {number} percentage - Score of Quiz.
+ * @props {string} certificateGenerateError - Error message from failure of genreateCertificate API.
+ */
+
+const QuizCompletion = props => {
   const {
+    parent,
+    quizPassed,
     currentOrder,
     hash,
     isCMEValid,
-    activeCourse,
     certificateID,
     cmeID,
     providerCardPath,
     cmePath,
     loading,
-    endQuiz,
     percentage,
     certificateGenerateError = ''
   } = props;
 
+  // console.log("parent: ", parent);
+
   const navigate = useNavigate();
   const openSnackbar = useOpenSnackbar();
-  const { activeCourseProgress,simulationStatus } = useContext(LearningContext);
+  const { activeCourse, activeCourseProgress } = useContext(LearningContext);
 
-  let quizPassed = percentage >= 80;
-  const [startConfetti, setStartConfetti] = useState(false); // start confetti when quiz passed
   const hasCME = currentOrder?.hasCME;
   const courseID = activeCourse.id;
+
+  // Check whether the user is revisiting this page using parent component for reference
+  const isRevisit = parent === 'QuizScreen';
 
   const showCMELoader = hasCME;
 
@@ -43,12 +83,14 @@ const QuizCompletion = (props) => {
   const isNIHSS = courseID === 192797;
   const isACLS = courseID === 4526;
 
+  const quizScoreGrid = hasCME
+    ? isOpioid || isNIHSS
+      ? 10
+      : 12
+    : 10;
+
   let isCourseCompleted = false;
-  
-  if(isACLS && simulationStatus!='done'){
-    quizPassed = false;
-  }
-  
+
   // ONLY FOR OPIOID & NIHSS AFTER PASSING QUIZ AND USER HASNT CLAIMED CME WHILE RETURNING TO COURSE PAGE
   if ((isOpioid || isNIHSS) && !quizPassed) {
     isCourseCompleted = activeCourseProgress.isCourseCompleted;
@@ -64,6 +106,8 @@ const QuizCompletion = (props) => {
     }
   };
 
+  const goToDashboard = () => history.push('/dashboard');
+
   // Redirect to CME Survey Form with hash & courseID as query params
   const handleClaimCME = () => {
     if (hasCME && hash) {
@@ -77,86 +121,45 @@ const QuizCompletion = (props) => {
 
   const downloadCME = () => window.open(cmePath, '_blank');
 
-  const totalQuestionsCount = isOpioid ? 24 : isNIHSS ? 25 : 50;
-  const passingQuestionsCount = isOpioid || isNIHSS ? 20 : 40;
-
-  const quizTitle = quizPassed ? 'Congratulations' : 'Quiz Completed';
-
   return (
-    <Grid container spacing={2} justifyContent="center" sx={{ py: 2 }}>
+    <Grid container spacing={2} justifyContent="center" sx={{ my: 2 }}>
       <Grid size={{ xs: 10, sm: 8 }}>
         <Grid container justifyContent="center" spacing={2}>
-          {/* SHOW CONFETTI AFTER PASSING QUIZ */}
-          {quizPassed && (
-            <Confetti
-              ref={() => {
-                setStartConfetti(true);
-              }}
-              active={startConfetti}
-              config={config}
-            />
+          {/* SHOW EXIT BUTTON ONLY WHEN QUIZ IS PASSED FOR FIRST TIME AND NOT ON REVISIT */}
+          {parent === 'QuizContent' && (
+            <Grid size={12}>
+              <Box
+                sx={{
+                  width: '100%',
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  flexWrap: 'wrap-reverse'
+                }}
+              >
+                <QuizScore courseID={courseID} percentage={percentage} />
+                <ExitButton disabled={loading} onClick={handleBackLink} />
+              </Box>
+            </Grid>
           )}
-
-          <Grid size={12}>
-            <Box display="flex" justifyContent="flex-end">
-              <Button
-                size="large"
-                disabled={loading}
-                onClick={handleBackLink}
-                startIcon={<BackIcon />}
-              >
-                EXIT
-              </Button>
-            </Box>
-          </Grid>
-
-          {/* QUIZ STATUS SECTION - COURSE NAME, TITLE, GUIDE TEXT */}
-          <Grid size={12}>
-            {/* QUIZ TITLE */}
-            <Typography
-              variant="h4"
-              align="center"
-              style={{
-                color: '#008000',
-                paddingBottom: '10px',
-                fontSize: '22px',
-                fontWeight: 600
-              }}
-            >
-              {quizTitle}
-            </Typography>
-
-            {/* QUIZ GUIDE TEXT- PASSING CRITERIA, PASS/ FAIL MESSAGE, RENEW MESSAGE */}
-            {isCourseCompleted ? (
-              <Typography paragraph align="center">
-                You have already passed the Quiz.
+          {/* COURSE COMPLETION TEXT */}
+          {isRevisit ? (
+            <Grid size={12}>
+              <QuizScore courseID={courseID} percentage={percentage} />
+              <Typography>
+                to find renewal and tracking options,{' '}
+                <span style={{ color: '#2872C1', fontWeight: 600 }}>
+                  Click{' '}
+                  <span
+                    style={{ textDecoration: 'underline', cursor: 'pointer' }}
+                    onClick={goToDashboard}
+                  >
+                    Dashboard
+                  </span>
+                </span>
               </Typography>
-            ) : quizPassed ? (
-              <Typography paragraph align="center">
-                on completing the course with a score of{' '}
-                <b>
-                  {Math.round((percentage / 100) * totalQuestionsCount)}/
-                  {totalQuestionsCount}
-                </b>{' '}
-                on the quiz!
-              </Typography>
-            ) : endQuiz ? (
-              <Typography
-                paragraph
-                align="center"
-                style={{ color: '#C52A34', fontSize: '16px' }}
-              >
-                You got{' '}
-                <b>
-                  {Math.round((percentage / 100) * totalQuestionsCount)}/
-                  {totalQuestionsCount}
-                </b>{' '}
-                answers correct. You must score at least {passingQuestionsCount}{' '}
-                on the quiz to pass{' '}
-                {isOpioid || isNIHSS ? 'CME Certificate' : 'Provider Card'}.
-              </Typography>
-            ) : null}
-          </Grid>
+            </Grid>
+          ) : null}
 
           {/* BUTTONS SECTION - COMPLETE REQUIREMENT, RETAKE QUIZ, RENEW, DOWNLOAD PROVIDER CARD, CLAIM CME, CLAIMED CME */}
           {quizPassed || (isCourseCompleted && !cmeID) ? (
@@ -245,6 +248,30 @@ const QuizCompletion = (props) => {
         </Grid>
       </Grid>
     </Grid>
+  );
+};
+
+const QuizScore = ({ courseID, percentage }) => {
+  const isOpioid = courseID === 11159;
+  const isNIHSS = courseID === 192797;
+  const totalQuestionsCount = isOpioid ? 24 : isNIHSS ? 25 : 50;
+
+  const courseShortName = courseDetails.find(course => course.id == courseID)
+    ?.short_name;
+
+  return (
+    <Typography>
+      {courseShortName} course completed{' '}
+      {percentage ? (
+        <>
+          with a quiz score of{' '}
+          <b>
+            {Math.round((percentage / 100) * totalQuestionsCount)}/
+            {totalQuestionsCount}.
+          </b>
+        </>
+      ) : null}
+    </Typography>
   );
 };
 

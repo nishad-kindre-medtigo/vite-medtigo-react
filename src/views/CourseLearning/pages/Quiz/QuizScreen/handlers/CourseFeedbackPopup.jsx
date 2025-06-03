@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Dialog, Box, Button, Collapse, Typography, Stack, TextareaAutosize, useTheme } from '@mui/material';
+import Confetti from 'react-dom-confetti';
 import { useOpenSnackbar } from '../../../../../../hooks/useOpenSnackbar';
 import useBreakpoints from '../../../../../../hooks/useBreakpoints';
 import LearningService from '../../../../../../services/learningService';
@@ -8,6 +9,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { Loader } from '../../../../../../ui/Progress';
 import { motion } from 'framer-motion';
+import { config } from '../data';
 
 const StarRating = ({ value, onChange, error }) => {
   const labels = ['Very Poor', 'Poor', 'Average', 'Good', 'Excellent'];
@@ -68,11 +70,18 @@ const StarRating = ({ value, onChange, error }) => {
   );
 };
 
-const CourseFeedbackPopup = ({ open, setOpen }) => {
+const CourseFeedbackPopup = ({ open, setOpen, courseID, percentage }) => {
   const theme = useTheme();
   const { isMobile } = useBreakpoints();
   const openSnackbar = useOpenSnackbar();
-  const user = useSelector((state) => state.account.user);
+  const user = useSelector(state => state.account.user);
+  const [startConfetti, setStartConfetti] = useState(false); // start confetti
+
+  const isOpioid = courseID === 11159;
+  const isNIHSS = courseID === 192797;
+  const totalQuestionsCount = isOpioid ? 24 : isNIHSS ? 25 : 50;
+
+  const hasProviderCard = !isOpioid && !isNIHSS;
 
   const formik = useFormik({
     initialValues: {
@@ -128,6 +137,15 @@ const CourseFeedbackPopup = ({ open, setOpen }) => {
       aria-describedby="course-feedback-popup"
       maxWidth="sm"
     >
+      <Box className="confetti-container">
+        <Confetti
+          ref={() => {
+            setStartConfetti(true);
+          }}
+          active={startConfetti}
+          config={config}
+        />
+      </Box>
       <Stack
         spacing={2}
         sx={{
@@ -147,8 +165,15 @@ const CourseFeedbackPopup = ({ open, setOpen }) => {
           Well Done!
         </Typography>
         <Typography align="center" fontWeight={400} px={2} color="#3A3A3A">
-          you have successfully earned your <strong>provider card</strong>,
-          which has been emailed to {user.email}.
+          you have successfully passed the quiz with a score of{' '}
+          {Math.round((percentage / 100) * totalQuestionsCount)} out of{' '}
+          {totalQuestionsCount}{' '}
+          {hasProviderCard && (
+            <span>
+              and earned your <strong>provider card</strong>, which has been
+              emailed to {user.email}.
+            </span>
+          )}
         </Typography>
       </Stack>
       <Stack spacing={2} sx={{ p: { xs: 2, sm: 4 } }}>
@@ -172,7 +197,7 @@ const CourseFeedbackPopup = ({ open, setOpen }) => {
           </Typography>
           <StarRating
             value={formik.values.Rating}
-            onChange={(newValue) => formik.setFieldValue('Rating', newValue)}
+            onChange={newValue => formik.setFieldValue('Rating', newValue)}
             error={formik.touched.Rating && formik.errors.Rating}
           />
         </Box>
