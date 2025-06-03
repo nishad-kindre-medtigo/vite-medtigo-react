@@ -8,7 +8,6 @@ import { SERVER_URL } from '../../../../settings';
 import AddIcon from '@mui/icons-material/Add';
 import ReplayIcon from '@mui/icons-material/Replay';
 import { useOpenSnackbar } from '../../../../hooks/useOpenSnackbar';
-import { Comment } from 'react-loader-spinner';
 
 const formatTimestamp = (timestamp) => {
   if (!timestamp) return '';
@@ -235,29 +234,11 @@ const MessageDialog = ({
         >
           {loading ? (
             <Box style={{ height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              <Comment
-                visible={true}
-                height="80"
-                width="80"
-                ariaLabel="comment-loading"
-                wrapperStyle={{}}
-                wrapperClass="comment-wrapper"
-                color="#fff"
-                backgroundColor="#E9F2FC"
-              />
+              <></>
             </Box>
           ) : messages.length === 0 ? (
             <Box style={{ height: '100%', display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center' }}>
-              <Comment
-                visible={true}
-                height="80"
-                width="80"
-                ariaLabel="comment-loading"
-                wrapperStyle={{}}
-                wrapperClass="comment-wrapper"
-                color="#fff"
-                backgroundColor="#E9F2FC"
-              />
+              <></>
             <Typography
               color="textSecondary"
             >
