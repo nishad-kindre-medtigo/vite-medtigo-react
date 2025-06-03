@@ -18,7 +18,7 @@ function CourseStepper({ activeStep, steps, setActiveStep, closePopup }) {
     : Math.round((activeStep / steps.length) * 100);
 
   return (
-    <Grid md={3} xs={12} item>
+    <Grid size={{ xs: 12, md: 3 }} item>
       {activeCourse && (
         <div>
           <CourseProgressCard

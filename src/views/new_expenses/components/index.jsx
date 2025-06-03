@@ -15,7 +15,7 @@ export const pageStyles = {
 
 export const CommentBox = ({ Comments, onChange }) => {
   return (
-    <Grid item xs={12}>
+    <Grid size={12}>
       <label style={{ color: '#000' }}>Comments:</label>
       <TextareaAutosize
         style={{
@@ -66,7 +66,7 @@ export const FileUpload = ({ index, handleFormChange, Receipt }) => {
   };
 
   return (
-    <Grid item sm={6} xs={12}>
+    <Grid size={{ xs: 12, sm: 6 }}>
       <input
         type="file"
         accept=".xlsx,.xls,image/*,.doc,.docx,.ppt,.pptx,.pdf"
@@ -132,7 +132,7 @@ export const AmountInput = ({ index, setAmountValues, handleFormChange, Amount }
   };
 
   return (
-    <Grid item sm={6} xs={12}>
+    <Grid size={{ xs: 12, sm: 6 }}>
       <TextField
         fullWidth
         label="Amount"
@@ -152,7 +152,7 @@ export const AmountInput = ({ index, setAmountValues, handleFormChange, Amount }
 
 export const UserNameField = ({ Name, handleChange}) => {
   return (
-    <Grid item sm={6} xs={12}>
+    <Grid size={{ xs: 12, sm: 6 }}>
     <TextField
       fullWidth
       label="Name"
@@ -170,7 +170,7 @@ export const DisabledEmailField = () => {
   const { user } = useSelector(state => state.account);
 
   return (
-    <Grid item sm={6} xs={12}>
+    <Grid size={{ xs: 12, sm: 6 }}>
       <Tooltip title="Email" followCursor>
         <span>
           <TextField
@@ -190,7 +190,7 @@ export const DisabledEmailField = () => {
 
 export const DisabledTotalField = ({ Total, error, helperText }) => {
   return (
-    <Grid item sm={6} xs={12}>
+    <Grid size={{ xs: 12, sm: 6 }}>
       <Tooltip title="Total Reimbursement Request" followCursor>
         <span>
           <TextField

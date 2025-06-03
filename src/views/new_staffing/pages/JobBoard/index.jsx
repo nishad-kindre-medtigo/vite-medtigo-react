@@ -82,22 +82,22 @@ const JobBoardPage = () => {
   }
 
   return (
-    <Box sx={{ background: '#F8F9FA', pb: 2, mb: 2 }}>
+    <Box sx={{ background: '#F8F9FA', py: 2, mb: 2 }}>
       <ContentBox>
         {currentJobs.applied && (
-          <Box my={2}>
-            <Grid container spacing={2} mt={2}>
-              <Grid item xs={12}>
+          <Box>
+            <Grid container spacing={2}>
+              <Grid size={12}>
                 <Typography component='span' onClick={showAllJobs} style={{ fontSize: '20px', fontWeight: 600, cursor: 'pointer' }}>
                   {'< Applied Jobs'}
                 </Typography>
               </Grid>
-              <Grid item container spacing={2}>
+              <Grid size={12} container spacing={2}>
                 {appliedJobs.length === 0 ? (
                   <PlaceHolder text="No Applied Jobs Found" />
                 ) : (
                   appliedJobs.map((job, key) => (
-                    <Grid item xs={12} key={key}>
+                    <Grid size={12} key={key}>
                       <JobCard data={job} userSavedJobs={userSavedJobs} />
                     </Grid>
                   ))
@@ -107,19 +107,19 @@ const JobBoardPage = () => {
           </Box>
         )}
         {currentJobs.saved && (
-          <Box my={2}>
-            <Grid container spacing={2} mt={2}>
-              <Grid item xs={12}>
+          <Box>
+            <Grid container spacing={2}>
+              <Grid size={12}>
                 <Typography component='span' onClick={showAllJobs} style={{ fontSize: '20px', fontWeight: 600, cursor: 'pointer' }}>
                   {'< Saved Jobs'}
                 </Typography>
               </Grid>
-              <Grid item container spacing={2}>
+              <Grid size={12} container spacing={2}>
                 {savedJobs.length === 0 ? (
                   <PlaceHolder text="No Saved Jobs Found" />
                 ) : (
                   savedJobs.map((job, key) => (
-                    <Grid item xs={12} sm={9} key={key}>
+                    <Grid size={{ xs: 12, sm: 9 }} key={key}>
                       <JobCard data={job} userSavedJobs={userSavedJobs} />
                     </Grid>
                   ))
@@ -130,14 +130,14 @@ const JobBoardPage = () => {
         )}
         {currentJobs.all && (
           <>
-            <Grid container spacing={2} my={2}>
-              <Grid item xs={12} sm={6} md={5}>
+            <Grid container spacing={2}>
+              <Grid size={{ xs: 12, sm: 6, md: 5 }}>
                 <JobSearchbar searchJobTitle={searchJobTitle} setSearchJobTitle={setSearchJobTitle} updateFilter={updateFilter}/>
               </Grid>
-              <Grid item xs={12} sm={6} md={3}>
+              <Grid size={{ xs: 12, sm: 6, md: 3 }}>
                 <JobSpecialtyFilter specialityOptions={specialityOptions} updateFilter={updateFilter}/>
               </Grid>
-              <Grid item xs={12} md={4}>
+              <Grid size={{ xs: 12, md: 4 }}>
                 <Box
                   sx={{
                     height: '100%',
@@ -161,7 +161,7 @@ const JobBoardPage = () => {
                 </Box>
               </Grid>
               {isTablet && (
-                <Grid item xs={12} md={2}>
+                <Grid size={{ xs: 12, md: 2 }}>
                   <Box
                     sx={{
                       height: '100%',
@@ -184,7 +184,7 @@ const JobBoardPage = () => {
             </Grid>
             <Box my={2}>
               <Grid container spacing={2}>
-                <Grid item sm={0} md={3} display={isTablet && 'none'}>
+                <Grid size={{ sm: 0, md: 3 }} display={isTablet && 'none'}>
                   <JobFilterPanel
                     showAppliedJobs={showAppliedJobs}
                     appliedJobs={appliedJobs}
@@ -194,7 +194,7 @@ const JobBoardPage = () => {
                     setOpenFilterDrawer={setOpenFilterDrawer}
                   />
                 </Grid>
-                <Grid item sm={12} md={9}>
+                <Grid size={{ sm: 12, md: 9 }}>
                   {isLoading ? (
                     <JobCardSkeleton />
                   ) : (

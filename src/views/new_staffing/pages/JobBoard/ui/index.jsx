@@ -5,7 +5,7 @@ import FindIcon from '@mui/icons-material/FindInPageRounded';
 export const PlaceHolder = ({ text = 'No Jobs Found' }) => {
   return (
     <Grid
-      xs={12}
+      size={12}
       sx={{
         height: '50vh',
         display: 'flex',

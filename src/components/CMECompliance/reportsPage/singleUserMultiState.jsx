@@ -87,7 +87,7 @@ function SingleUserMultiState() {
 
                     </Box>
                 </Grid>
-                <Grid item display={'flex'} direction={'column'} justifyContent={'space-between'} alignItems={'flex-start'}>
+                <Grid size={12} display={'flex'} direction={'column'} justifyContent={'space-between'} alignItems={'flex-start'}>
                     <span style={{ fontSize: isMobile && '14px', display: 'inline-block', flexDirection: 'row', width: 'fit-content', justifyContent: 'flex-end' }}>
                         {<React.Fragment>
                             <p> <strong style={{ fontWeight: '600' }}> License Type :  </strong> Full License <br /> <strong style={{ fontWeight: '600' }}> Request Type :  </strong> {CME_RequestType[1].label}  <br />

@@ -90,27 +90,27 @@ const SupportPage = ({ supportData, goBack }) => {
 
   return (
     <Grid container spacing={2}>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <PageBackText goBack={goBack} text={isMobile ? "Contact our support team" : "Contact our support team for licensing queries"} />
       </Grid>
       {analyst && (
-        <Grid item xs={12} sm={6} md={3}>
+        <Grid size={{ xs: 12, sm: 6, md: 3 }}>
           <ContactCard name={analyst?.name} title="Analyst" email={analyst.email} />
         </Grid>
       )}
       {lead && (
-        <Grid item xs={12} sm={6} md={3}>
+        <Grid size={{ xs: 12, sm: 6, md: 3 }}>
           <ContactCard name={lead?.name} title="Lead Analyst" email={lead?.email} />
         </Grid>
       )}
-      <Grid item xs={12} sm={6} md={3}>
+      <Grid size={{ xs: 12, sm: 6, md: 3 }}>
         <ContactCard
           name="Rajashree Shinde"
           title="Licensing Manager"
           email="rshinde@medtigo.com"
         />
       </Grid>
-      <Grid item xs={12} sm={6} md={3}>
+      <Grid size={{ xs: 12, sm: 6, md: 3 }}>
         <BookMeetingCard />
       </Grid>
     </Grid>

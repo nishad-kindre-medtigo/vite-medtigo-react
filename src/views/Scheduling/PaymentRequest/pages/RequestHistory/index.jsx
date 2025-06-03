@@ -143,7 +143,7 @@ const RequestHistoryTable = () => {
   return (
     <Box sx={classes.root}>
       <Grid container spacing={2} alignItems="center" style={{marginBlock: '8px'}}>
-        <Grid item xs={isMobile ? 12 : 2} sm={3} md={2}>
+        <Grid size={{ xs: isMobile ? 12 : 2, sm: 3, md: 2 }}>
           <TextField
             id="status-filter"
             select
@@ -163,13 +163,13 @@ const RequestHistoryTable = () => {
         </Grid>
       </Grid>
       <Grid container spacing={2}>
-        <Grid item xs={12}>
+        <Grid size={12}>
           <Card sx={classes.infoCard} elevation={0}>
                 <span style={{fontWeight: 600}}>Info: </span>You can view all payment requests created & details of the request by clicking on view.
           </Card>
         </Grid>
         {shiftsData.length > 0 &&
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Card sx={classes.textCard} elevation={0}>
               Number of payment requests created till date: {shiftsData.length}
             </Card>

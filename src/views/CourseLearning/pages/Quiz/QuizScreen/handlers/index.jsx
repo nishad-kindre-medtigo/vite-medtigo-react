@@ -316,7 +316,7 @@ export const CompletionLoadingScreen = ({ courseID, showCMELoader }) => {
   return (
     <>
     {showProviderCardLoader && (
-      <Grid item xs={12} sm={6}>
+      <Grid size={{ xs: 12, sm: 6 }}>
         <CompletionCard
           card="Provider Card"
           disabled={true}
@@ -324,7 +324,7 @@ export const CompletionLoadingScreen = ({ courseID, showCMELoader }) => {
       </Grid>
     )}
     {showCMELoader && (
-      <Grid item xs={12} sm={6}>
+      <Grid size={{ xs: 12, sm: 6 }}>
         <CompletionCard
           card="CME Certificate"
           disabled={true}
@@ -398,7 +398,7 @@ export const APIErrorMessage = ({ errorMessage }) => {
   };
 
   return (
-    <Grid item xs={12}>
+    <Grid size={12}>
       <Box
         role="alert"
         aria-live="assertive"

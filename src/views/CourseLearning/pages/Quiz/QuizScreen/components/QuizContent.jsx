@@ -643,7 +643,7 @@ const QuizContent = (props) => {
           columnSpacing={2}
           rowSpacing={0.5}
         >
-          <Grid item xs={12} sx={isACLS ? 12 : 7}>
+          <Grid size={{ xs: 12, sm: isACLS ? 12 : 7 }}>
              <Box display="flex" justifyContent="flex-end">
                <Button
                  size="large"
@@ -655,21 +655,21 @@ const QuizContent = (props) => {
                </Button>
              </Box>
             </Grid>
-          <Grid item xs={12}></Grid>
-          <Grid item xs={12} sm={isACLS ? 6 : 7}>
+          <Grid size={12}></Grid>
+          <Grid size={{ xs: 12, sm: isACLS ? 6 : 7 }}>
             <QuizActionsCard {...CardProps} />
           </Grid>
 
           {/* DISPLAY QUIZ HINT ACCORDION ONLY FOR MOBILE VIEW  */}
           {isMobile && percentage < 80 && (
-            <Grid item xs={12}>
+            <Grid size={12}>
               <QuizHintAccordion>
                 {renderQuizResultQuestions(filteredValue)}
               </QuizHintAccordion>
             </Grid>
           )}
           {isACLS && (
-            <Grid item xs={12} sm={6}>
+            <Grid size={{ xs: 12, sm: 6 }}>
               <QuizSimulationCard
                 setEndQuiz={setEndQuiz}
                 endQuiz={false}
@@ -679,7 +679,7 @@ const QuizContent = (props) => {
           )}
           {/* QUIZ HINT SECTION FOR LAPTOP VIEW  */}
           {!isMobile && percentage < 80 && (
-            <Grid item xs={12} sm={isACLS ? 12 : 10}>
+            <Grid size={{ xs: 12, sm: isACLS ? 12 : 10 }}>
               <Typography
                 sx={{
                   fontWeight: 600,

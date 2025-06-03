@@ -147,7 +147,7 @@ function Results() {
         <Grid container spacing={4}>
           <UserNameField Name={Name} handleChange={event => setName(event.target.value)} />
           <DisabledEmailField />
-          <Grid item sm={6} xs={12}>
+          <Grid size={{ xs: 12, sm: 6 }}>
             <TextField
               fullWidth
               label="Mileage Claimed"
@@ -175,7 +175,7 @@ function Results() {
           helperText={paymentError}
           />
 
-          <Grid item xs={12}>
+          <Grid size={12}>
             <FormControl fullWidth required>
               <InputLabel>Total # of non-Mileage Reimburesements</InputLabel>
               <Select
@@ -200,7 +200,7 @@ function Results() {
           </Grid>
 
           {Non_Mileage_Reimburesement !== '0' && inputFields.map((input, index) => (
-            <Grid container spacing={3} key={index} item md={12} xs={12}>
+            <Grid container spacing={3} key={index} size={12}>
               <AmountInput index={index} Amount={Amount} setAmountValues={setAmountValues} handleFormChange={handleFormChange}/>
               <FileUpload index={index} handleFormChange={handleFormChange} Receipt={Receipt} />
             </Grid>

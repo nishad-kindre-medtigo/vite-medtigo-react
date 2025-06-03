@@ -84,7 +84,7 @@ const QuizCompletion = (props) => {
 
   return (
     <Grid container spacing={2} justifyContent="center" sx={{ py: 2 }}>
-      <Grid item xs={10} sm={8}>
+      <Grid size={{ xs: 10, sm: 8 }}>
         <Grid container justifyContent="center" spacing={2}>
           {/* SHOW CONFETTI AFTER PASSING QUIZ */}
           {quizPassed && (
@@ -97,7 +97,7 @@ const QuizCompletion = (props) => {
             />
           )}
 
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Box display="flex" justifyContent="flex-end">
               <Button
                 size="large"
@@ -111,7 +111,7 @@ const QuizCompletion = (props) => {
           </Grid>
 
           {/* QUIZ STATUS SECTION - COURSE NAME, TITLE, GUIDE TEXT */}
-          <Grid item xs={12}>
+          <Grid size={12}>
             {/* QUIZ TITLE */}
             <Typography
               variant="h4"
@@ -169,7 +169,7 @@ const QuizCompletion = (props) => {
               <>
                 {/* DOWNLOAD CERTIFICATE BUTTON  */}
                 {!(isOpioid || isNIHSS) && (
-                  <Grid item xs={12} sm={6}>
+                  <Grid size={{ xs: 12, sm: 6 }}>
                     <CompletionCard
                       card="Provider Card"
                       onClick={downloadProviderCard}
@@ -180,7 +180,7 @@ const QuizCompletion = (props) => {
 
                 {/* CLAIM CME BUTTON */}
                 {isCMEValid && hash && !cmeID && (
-                  <Grid item xs={12} sm={6}>
+                  <Grid size={{ xs: 12, sm: 6 }}>
                     <CompletionCard
                       card="CME Certificate"
                       action="Claim"
@@ -202,7 +202,7 @@ const QuizCompletion = (props) => {
                 <>
                   {/* DOWNLOAD CERTIFICATE BUTTON  */}
                   {!(isOpioid || isNIHSS) && (
-                    <Grid item xs={12} sm={6}>
+                    <Grid size={{ xs: 12, sm: 6 }}>
                       <CompletionCard
                         card="Provider Card"
                         onClick={downloadProviderCard}
@@ -213,7 +213,7 @@ const QuizCompletion = (props) => {
 
                   {/* CLAIM CME BUTTON */}
                   {isCMEValid && hash && !cmeID ? (
-                    <Grid item xs={12} sm={6}>
+                    <Grid size={{ xs: 12, sm: 6 }}>
                       <CompletionCard
                         card="CME Certificate"
                         action="Claim"
@@ -223,7 +223,7 @@ const QuizCompletion = (props) => {
                     </Grid>
                   ) : (
                     isCMEValid && (
-                      <Grid item xs={12} sm={6}>
+                      <Grid size={{ xs: 12, sm: 6 }}>
                         {/* DOWNLOAD CME BUTTON */}
                         <CompletionCard
                           card="CME Certificate"

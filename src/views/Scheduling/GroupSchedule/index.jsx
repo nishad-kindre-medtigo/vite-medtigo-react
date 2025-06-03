@@ -761,7 +761,7 @@ const handleEventClick = (eventInfo) => {
         }}
       >
          {Object.entries(filters).map(([key, filter], index) => (
-      <Grid xs={12} sm={3} key={index} style={{ maxWidth: '20%' }}>
+      <Grid size={{ xs: 12, sm: 3 }} key={index} style={{ maxWidth: '20%' }}>
         <TextField
           fullWidth
           label={filter.label}
@@ -783,7 +783,7 @@ const handleEventClick = (eventInfo) => {
         </TextField>
       </Grid>
     ))}
-        <Grid xs={12} sm={3}>
+        <Grid size={{ xs: 12, sm: 3 }}>
           <Typography
             style={{
               fontFamily: 'Poppins',

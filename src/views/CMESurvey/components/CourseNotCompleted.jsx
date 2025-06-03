@@ -17,10 +17,10 @@ function CourseNotCompleted({ courseID }) {
           }}
         >
           <Grid container spacing={1} justifyContent="center" alignItems="center">
-            <Grid item xs={12}>
+            <Grid size={12}>
               <img src="/icons/myLearning/warning_icon.svg" alt="Warning Icon" />
             </Grid>
-            <Grid item xs={12}>
+            <Grid size={12}>
               <Typography
                 sx={{
                   fontSize: { xs: '18px', sm: '24px' },
@@ -31,7 +31,7 @@ function CourseNotCompleted({ courseID }) {
                 Warning: Course Not Completed
               </Typography>
             </Grid>
-            <Grid item xs={12}>
+            <Grid size={12}>
               <Typography
                 sx={{
                   fontSize: { xs: '14px', sm: '16px' },
@@ -42,7 +42,7 @@ function CourseNotCompleted({ courseID }) {
                 Please complete your course to access the certificate.
               </Typography>
             </Grid>
-            <Grid item xs={12}>
+            <Grid size={12}>
               <Button
                 color="warning"
                 variant="contained"

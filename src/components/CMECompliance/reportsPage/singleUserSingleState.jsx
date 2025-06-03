@@ -41,7 +41,7 @@ function SingleUserSingleState() {
     return (
         <>
             <Grid container display={'flex'} direction={'row'} justifyContent={'space-between'} alignItems={'center'}>
-                <Grid item style={{ display: "flex", flexDirection: 'column'}}>
+                <Grid style={{ display: "flex", flexDirection: 'column'}}>
                     <Box mb={2}>
                     <BackButtonWithTitle Title={`Compliance Report for ${user}`}/>
                     </Box>

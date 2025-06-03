@@ -147,7 +147,7 @@ const RequestPaymentPopup = ({ open, setOpen, startDate, endDate, shiftsData, id
             <form onSubmit={handleSubmit}>
               <Box>
                 <Grid container spacing={2} alignItems="center">
-                  <Grid item sm={6} xs={12}>
+                  <Grid size={{ xs: 12, sm: 6 }}>
                     <Box sx={classes.gridItem}>
                       <Typography sx={classes.label}>
                         Start Date:{' '}
@@ -157,7 +157,7 @@ const RequestPaymentPopup = ({ open, setOpen, startDate, endDate, shiftsData, id
                       </Typography>
                     </Box>
                   </Grid>
-                  <Grid item sm={6} xs={12}>
+                  <Grid size={{ xs: 12, sm: 6 }}>
                     <Box sx={classes.gridItem}>
                       <Typography sx={classes.label}>
                         End Date:{' '}
@@ -167,7 +167,7 @@ const RequestPaymentPopup = ({ open, setOpen, startDate, endDate, shiftsData, id
                       </Typography>
                     </Box>
                   </Grid>
-                  <Grid item sm={6} xs={12}>
+                  <Grid size={{ xs: 12, sm: 6 }}>
                     <Box sx={classes.gridItem}>
                       <Typography sx={classes.label}>
                         Total Hours:{' '}
@@ -181,7 +181,7 @@ const RequestPaymentPopup = ({ open, setOpen, startDate, endDate, shiftsData, id
                       </Typography>
                     </Box>
                   </Grid>
-                  <Grid item sm={6} xs={12}>
+                  <Grid size={{ xs: 12, sm: 6 }}>
                     <Box sx={classes.gridItem}>
                       <Typography sx={classes.label}>
                         Total Payment:{' '}sx
@@ -196,7 +196,7 @@ const RequestPaymentPopup = ({ open, setOpen, startDate, endDate, shiftsData, id
                     </Box>
                   </Grid>
                 </Grid>
-                <Grid item sx={classes.commentField}>
+                <Grid sx={classes.commentField}>
                   <TextField
                     name="comment"
                     disableElevation

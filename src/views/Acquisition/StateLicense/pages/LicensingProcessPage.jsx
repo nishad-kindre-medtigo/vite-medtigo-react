@@ -164,19 +164,19 @@ const LicensingProcessPage = () => {
         Overview of the Medical Licensing Process
       </Typography>
       <Grid container spacing={3} justifyContent="center">
-      <Grid item >
+      <Grid>
           <ProcessStep {...steps[0]} />
         </Grid>
-        <Grid item >
+        <Grid>
           <ProcessStep {...steps[1]} />
         </Grid>
-        <Grid item >
+        <Grid>
           <ProcessStep {...steps[2]} />
         </Grid>
-        <Grid item >
+        <Grid>
           <ProcessStep {...steps[3]} />
         </Grid>
-        <Grid item>
+        <Grid>
           <ProcessStep {...steps[4]} />
         </Grid>
       </Grid>

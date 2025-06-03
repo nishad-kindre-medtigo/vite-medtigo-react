@@ -80,8 +80,8 @@ function FilterPanel({
     return (
         <>
             <Grid container direction="row" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', }}>
-                <Grid container item xs={12} md={8} style={{ display: 'flex', alignItems: 'center', gap: "10px" }}>
-                    <Grid item xs={2} style={{ width: '50px' }}>
+                <Grid container size={{ xs: 12, md: 8 }} style={{ display: 'flex', alignItems: 'center', gap: "10px" }}>
+                    <Grid size={2} style={{ width: '50px' }}>
                     <Box
                             sx={{
                                 height: 50,
@@ -104,7 +104,7 @@ function FilterPanel({
                             />
                         </Box>
                     </Grid>
-                    <Grid item xs={12} md={3}>
+                    <Grid size={{ xs: 12, md: 3 }}>
                         <Autocomplete
                             multiple
                             disableCloseOnSelect
@@ -181,7 +181,7 @@ function FilterPanel({
                     </Grid>
 
 
-                    <Grid item xs={12} md={3}>
+                    <Grid size={{ xs: 12, md: 3 }}>
                         <Button
                             disabled={selectedStates.length === 0}
                             fullWidth
@@ -204,7 +204,7 @@ function FilterPanel({
                     {
                         selectedStates.length > 0
                         &&
-                        <Grid item xs={12} md={2}>
+                        <Grid size={{ xs: 12, md: 2 }}>
                             <Button
                                 fullWidth
                                 disabled={selectedStates.length === 0}
@@ -224,7 +224,7 @@ function FilterPanel({
 
                         </Grid>
                     }
-                    <Grid item xs={12} md={1}>
+                    <Grid size={{ xs: 12, md: 1 }}>
                         <span className="help_button"
                             onClick={() => setHelpPopup(true)}
                         >
@@ -237,7 +237,7 @@ function FilterPanel({
                 </Grid>
                 {
                     reportGenerated && selectedStates.length!=0 &&
-                    <Grid container item xs={12} md={2}>
+                    <Grid container isize={{ xs: 12, md: 2 }}>
                         <div >
                             <div style={{
                                 '@media (min-width: 960px)': {

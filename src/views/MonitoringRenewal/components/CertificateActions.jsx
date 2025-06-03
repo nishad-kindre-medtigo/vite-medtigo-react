@@ -129,10 +129,10 @@ export const CertificateActions = ({ page, certificateData, icon, isMobile, anch
       <Dialog open={open} onClose={handleCloseDialog} TransitionComponent={Transition} disableEnforceFocus>
         <DialogTitle>
           <Grid container spacing={1}>
-            <Grid item xs={isMobile ? 2 : undefined}>
+            <Grid size={isMobile ? 2 : undefined}>
               <img src="/icons/certificates/bin.svg" alt='Delete Icon' />
             </Grid>
-            <Grid item xs={isMobile ? 10 : undefined}>
+            <Grid size={isMobile ? 10 : undefined}>
               <div style={classes.title}>
                 Are you sure you want to delete this
               </div>

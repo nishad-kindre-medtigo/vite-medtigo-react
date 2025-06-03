@@ -61,13 +61,13 @@ const AllLicenseTasksPage = props => {
 
   return (
     <Grid container spacing={3} alignItems="center">
-      <Grid item xs={12} sm={12} lg={4}>
+      <Grid size={{ xs: 12, sm: 12, lg: 4 }}>
         <PageBackText goBack={goBackToTracker} text="State License All Tasks" />
       </Grid>
-      <Grid item xs={12} sm={6} lg={3}>
+      <Grid size={{ xs: 12, sm: 6, lg: 3 }}>
         <SearchByLicenseFilter />
       </Grid>
-      <Grid item xs={6} sm={3} lg={2.5}>
+      <Grid size={{ xs: 12, sm: 3, lg: 2.5 }}>
         <CountBox
           type="Overdue"
           count={overdueCount}
@@ -75,7 +75,7 @@ const AllLicenseTasksPage = props => {
           onClick={() => toggleCategory('overdue')}
         />
       </Grid>
-      <Grid item xs={6} sm={3} lg={2.5}>
+      <Grid size={{ xs: 6, sm: 3, lg: 2.5 }}>
         <CountBox
           type="Timely"
           count={timelyCount}
@@ -85,37 +85,37 @@ const AllLicenseTasksPage = props => {
       </Grid>
       {taskLoading ? (
         [...Array(3)].map((_, index) => (
-          <Grid item xs={12} sm={6} lg={4} key={index}>
+          <Grid size={{ xs: 12, sm: 6, lg: 4 }} key={index}>
             <TaskSkeleton />
           </Grid>
         ))
       ) : (
         <>
           {noTasksAvailable ? (
-            <Grid item xs={12}>
+            <Grid size={12}>
               <PlaceHolder text="No Tasks Available" />
             </Grid>
           ) : (
             <>
               {(taskCategory === 'all' || taskCategory === 'overdue') && overdueTasks.length > 0
                 ? overdueTasks.map((task, index) => (
-                    <Grid item xs={12} sm={6} lg={4} key={index}>
+                    <Grid size={{ xs: 12, sm: 6, lg: 4 }} key={index}>
                       <LicenseTaskCard type="Overdue" data={task} {...props} />
                     </Grid>
                   ))
                 :  (taskCategory === 'overdue' && pendingTasks.length === 0) ? (
-                  <Grid item xs={12}>
+                  <Grid size={12}>
                     <PlaceHolder text="No Tasks Available" />
                   </Grid>
                 ) : null}
               {(taskCategory === 'all' || taskCategory === 'timely') && pendingTasks.length > 0
                 ? pendingTasks.map((task, index) => (
-                    <Grid item xs={12} sm={6} lg={4} key={index}>
+                    <Grid size={{ xs: 12, sm: 6, lg: 4 }} key={index}>
                       <LicenseTaskCard type="Timely" data={task} {...props} />
                     </Grid>
                   ))
                 : (taskCategory === 'timely' && pendingTasks.length === 0) ? (
-                  <Grid item xs={12}>
+                  <Grid size={12}>
                     <PlaceHolder text="No Tasks Available" />
                   </Grid>
                 ) : null}

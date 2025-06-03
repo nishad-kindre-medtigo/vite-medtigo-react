@@ -119,7 +119,7 @@ const Filters = ({
   return (
     <Grid container mt={1} mb={2} spacing={2} alignItems="center">
       {(role === "hospital_admin" || role === "admin") && (
-        <Grid item xs={12} sm={4} md={2}>
+        <Grid size={{ xs: 12, sm: 4, md: 2 }}>
           <DepartmentFilter
             setErrorMsg={setErrorMsg}
             departmentList={departmentList}
@@ -130,7 +130,7 @@ const Filters = ({
       )}
       {
         currentTab == 'ce_cme' ?
-        <Grid item xs={12} sm={6} md={2}>
+        <Grid size={{ xs: 12, sm: 6, md: 2 }}>
           <CMEProfessionFilter
             setErrorMsg={setErrorMsg}
             professionOptions={professionOptions}
@@ -139,7 +139,7 @@ const Filters = ({
           />
         </Grid>
         :
-        <Grid item xs={12} sm={6} md={2}>
+        <Grid size={{ xs: 12, sm: 6, md: 2 }}>
           <ProfessionFilter
             setErrorMsg={setErrorMsg}
             professionOptions={professionOptions}
@@ -151,7 +151,7 @@ const Filters = ({
 
       {
         currentTab != 'clinical-certificate' &&
-        <Grid item xs={12} sm={4} md={2}>
+        <Grid size={{ xs: 12, sm: 4, md: 2 }}>
           <StateFilter
             setErrorMsg={setErrorMsg}
             stateOptions={stateOptions}
@@ -164,7 +164,7 @@ const Filters = ({
 
       {
         currentTab == 'clinical-certificate' &&
-        <Grid item xs={12} sm={6} md={2}>
+        <Grid size={{ xs: 12, sm: 6, md: 2 }}>
           <CertificateTypeFilter
             setErrorMsg={setErrorMsg}
             certificateTypeOptions={certificateTypeOptions}
@@ -175,7 +175,7 @@ const Filters = ({
       }
 
       {byUser && (
-        <Grid item xs={12} sm={6} md={2}>
+        <Grid size={{ xs: 12, sm: 6, md: 2 }}>
           <UserFilter
             setErrorMsg={setErrorMsg}
             selectedUsers={selectedUsers}
@@ -187,11 +187,11 @@ const Filters = ({
         </Grid>
       )}
 
-      <Grid item xs={12} sm={4} md={2}>
+      <Grid size={{ xs: 12, sm: 4, md: 2 }}>
         <GenerateReportButton setRegenrateReport={setRegenrateReport} regenerateReport={regenerateReport} loading={loading} errorMsg={errorMsg} disable={disable} GenerateReport={GenerateReport} currentTab={currentTab} filtersStatus={filtersStatus} filterDetails={filterDetails} byUser={byUser}/>
       </Grid>
 
-      <Grid item xs={12} sm={4} md={2}>
+      <Grid size={{ xs: 12, sm: 4, md: 2 }}>
         <Box
           sx={{
             height: 50,

@@ -165,7 +165,7 @@ function GeneralSettings({ user, setUser, open, handleClose }) {
           <form onSubmit={handleSubmit}>
             <DialogContent>
               <Grid container spacing={2}>
-                <Grid item xs={12} md={6}>
+                <Grid size={{ xs: 12, md: 6 }}>
                   <TextField
                     variant="outlined"
                     size="small"
@@ -179,7 +179,7 @@ function GeneralSettings({ user, setUser, open, handleClose }) {
                     fullWidth
                   />
                 </Grid>
-                <Grid item xs={12} md={6}>
+                <Grid size={{ xs: 12, md: 6 }}>
                   <TextField
                     variant="outlined"
                     size="small"
@@ -193,7 +193,7 @@ function GeneralSettings({ user, setUser, open, handleClose }) {
                     fullWidth
                   />
                 </Grid>
-                <Grid item xs={12} md={6}>
+                <Grid size={{ xs: 12, md: 6 }}>
                   <TextField
                     variant="outlined"
                     size="small"
@@ -204,7 +204,7 @@ function GeneralSettings({ user, setUser, open, handleClose }) {
                     fullWidth
                   />
                 </Grid>
-                <Grid item xs={12} md={6}>
+                <Grid size={{ xs: 12, md: 6 }}>
                   <TextField
                     variant="outlined"
                     size="small"
@@ -218,7 +218,7 @@ function GeneralSettings({ user, setUser, open, handleClose }) {
                     fullWidth
                   />
                 </Grid>
-                <Grid item xs={12} md={6}>
+                <Grid size={{ xs: 12, md: 6 }}>
                   <Autocomplete
                     getOptionLabel={option => option.name}
                     id="designation_id"
@@ -268,7 +268,7 @@ function GeneralSettings({ user, setUser, open, handleClose }) {
                   />
                 </Grid>
                 {specialityType && (
-                  <Grid item md={6} xs={12}>
+                  <Grid size={{ xs: 12, sm: 6 }}>
                     <Autocomplete
                       getOptionLabel={option => option}
                       id="specialty"
@@ -298,7 +298,7 @@ function GeneralSettings({ user, setUser, open, handleClose }) {
                   </Grid>
                 )}
                 {showNPIField && (
-                  <Grid item xs={12} md={6}>
+                  <Grid size={{ xs: 12, md: 6 }}>
                     <TextField
                       variant="outlined"
                       size="small"
@@ -313,7 +313,7 @@ function GeneralSettings({ user, setUser, open, handleClose }) {
                     />
                   </Grid>
                 )}
-                <Grid item xs={12} md={6}>
+                <Grid size={{ xs: 12, md: 6 }}>
                   <Autocomplete
                     getOptionLabel={option => option['name']}
                     defaultValue={

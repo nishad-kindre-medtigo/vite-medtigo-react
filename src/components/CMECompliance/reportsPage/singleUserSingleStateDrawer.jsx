@@ -98,7 +98,7 @@ function SingleUserSingleStateDrawer({ data, stats, departmentName, close }) {
 
                     </Box>
                 </Grid>
-                <Grid item display={'flex'} direction={'column'} justifyContent={'space-between'} alignItems={'flex-end'}>
+                <Grid display={'flex'} direction={'column'} justifyContent={'space-between'} alignItems={'flex-end'}>
                     <IconButton
                         onClick={close}
                         sx={{

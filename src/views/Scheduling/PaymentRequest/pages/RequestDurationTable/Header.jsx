@@ -11,7 +11,7 @@ const Header = ({ status, userRequest, startDate, endDate }) => {
   const PaymentRequestDetails = () => {
     return (
       <Grid container justifyContent="space-between" alignItems="flex-end">
-        <Grid item xs={12} sm={6}>
+        <Grid size={{ xs: 12, sm: 6 }}>
           <Typography variant="body1" style={{ margin: '12px 0 10px', color: 'black' }}>
             Request Payment Details:&nbsp;
             {status === 'Initiated' &&  <Label color="primary">{status}</Label>}
@@ -45,7 +45,7 @@ const Header = ({ status, userRequest, startDate, endDate }) => {
           )}
         </Grid>
         {userRequest.providerComment && (
-          <Grid item xs={12} sm={6} style={{textAlign: 'right'}}>
+          <Grid size={{ xs: 12, sm: 6 }} style={{textAlign: 'right'}}>
             <Button onClick={() => setOpenReasonDialog(true)} disableRipple
               style={{
                 background: 'none',

@@ -50,7 +50,7 @@ const JobsContainer = ({ allJobs, userSavedJobs }) => {
         ) : (
           <>
             {currentJobs.map((job, key) => (
-              <Grid item xs={12} key={key}>
+              <Grid size={12} key={key}>
                 <JobCard data={job} userSavedJobs={userSavedJobs} />
               </Grid>
             ))}

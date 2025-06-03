@@ -207,7 +207,7 @@ function Results() {
       <form onSubmit={handleSubmit}>
         <Box>
           <Grid container spacing={4}>
-            <Grid item sm={4} xs={12}>
+            <Grid size={{ xs: 12, sm: 4 }}>
               <TextField
                 fullWidth
                 label="Name"
@@ -218,7 +218,7 @@ function Results() {
                 type="text"
               />
             </Grid>
-            <Grid item sm={4} xs={12}>
+            <Grid size={{ xs: 12, sm: 4 }}>
               <Tooltip title="Email" followCursor>
                 <span>
                   <TextField
@@ -233,7 +233,7 @@ function Results() {
                 </span>
               </Tooltip>
             </Grid>
-            <Grid item sm={4} xs={12}>
+            <Grid size={{ xs: 12, sm: 4 }}>
               <Tooltip title="Total Expected Payment" followCursor>
                 <span>
                   <TextField
@@ -250,7 +250,7 @@ function Results() {
               {/* {paymentError && <ErrorMessage error={paymentError} />} */}
             </Grid>
 
-            <Grid item sm={4} xs={12}>
+            <Grid size={{ xs: 12, sm: 4 }}>
               <FormControl fullWidth required>
                 <InputLabel>Assignment Worked</InputLabel>
                 <Select
@@ -271,7 +271,7 @@ function Results() {
                 </Select>
               </FormControl>
             </Grid>
-            <Grid item sm={4} xs={12}>
+            <Grid size={{ xs: 12, sm: 4 }}>
               <FormControl fullWidth>
                 <DatePicker
                   fullWidth
@@ -285,7 +285,7 @@ function Results() {
               </FormControl>
               {startDateError && <ErrorMessage error={startDateError} />}
             </Grid>
-            <Grid item sm={4} xs={12}>
+            <Grid size={{ xs: 12, sm: 4 }}>
               <FormControl fullWidth>
                 <DatePicker
                   fullWidth
@@ -302,14 +302,14 @@ function Results() {
 
             {inputFields.map((input, index) => {
               return (
-                <Grid container spacing={3} key={index} item md={12} xs={12}>
-                  <Grid item xs={12}>
+                <Grid container spacing={3} key={index} size={12}>
+                  <Grid size={12}>
                     <h3 style={{ color: '#000', marginBottom: '12px' }}>
                       Assignment - {index + 1}
                     </h3>
                     <hr></hr>
                   </Grid>
-                  <Grid item sm={6} xs={12}>
+                  <Grid size={{ xs: 12, sm: 6 }}>
                     <FormControl fullWidth required>
                       <InputLabel>Site</InputLabel>
                       <Select
@@ -332,7 +332,7 @@ function Results() {
                       </Select>
                     </FormControl>
                   </Grid>
-                  <Grid item sm={6} xs={12}>
+                  <Grid size={{ xs: 12, sm: 6 }}>
                     <FormControl fullWidth required>
                       <InputLabel>Service Line</InputLabel>
                       <Select
@@ -355,7 +355,7 @@ function Results() {
                       </Select>
                     </FormControl>
                   </Grid>
-                  <Grid item sm={6} xs={12}>
+                  <Grid size={{ xs: 12, sm: 6 }}>
                     <TextField
                       fullWidth
                       label="Hours Worked"
@@ -381,7 +381,7 @@ function Results() {
                       }}
                     />
                   </Grid>
-                  <Grid item sm={6} xs={12}>
+                  <Grid size={{ xs: 12, sm: 6 }}>
                     <Tooltip title="Your Expected Payment" followCursor>
                       <span>
                         <TextField

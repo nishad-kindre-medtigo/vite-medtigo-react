@@ -11,20 +11,20 @@ const LicenseStepperCardContainer = props => {
 
   return licenseLoading ? (
     [...Array(3)].map((_, index) => (
-      <Grid item xs={12} sm={6} lg={4} key={index}>
+      <Grid size={{ xs: 12, sm: 6, lg: 4 }} key={index}>
         <StepperSkeleton />
       </Grid>
     ))
   ) : (
     <>
       {data.length === 0 && (
-        <Grid item xs={12}>
+        <Grid size={12}>
           <PlaceHolder text="No Licenses in Acquisiton Stage Available" />
         </Grid>
       )}
       {data && data.map((license, index) => {
         return (
-          <Grid item xs={12} sm={6} lg={4} key={index}>
+          <Grid size={{ xs: 12, sm: 6, lg: 4 }} key={index}>
             <LicenseStepperCard
               licenseData={license}
               setLicenseID={setLicenseID}

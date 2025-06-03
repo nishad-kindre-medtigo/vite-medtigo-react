@@ -55,7 +55,7 @@ const Introduction = ({ setIsFirstTime, courseID }) => {
         justifyContent='center'
       >
         {hasProviderCard && (
-          <Grid item md={4} sm={6} xs={12}>
+          <Grid size={{ xs: 12, sm: 6, md: 4 }}>
             <RegularCard
               imageName="certificate.svg"
               title="Earn a Certificate"
@@ -64,7 +64,7 @@ const Introduction = ({ setIsFirstTime, courseID }) => {
           </Grid>
         )}
         {hasCME && (
-          <Grid item md={4} sm={6} xs={12}>
+          <Grid size={{ xs: 12, sm: 6, md: 4 }}>
             <RegularCard
               imageName="CME.svg"
               title={`${courseData.cme_credits} CME Credits`}
@@ -72,28 +72,28 @@ const Introduction = ({ setIsFirstTime, courseID }) => {
             />
           </Grid>
         )}
-        <Grid item md={4} sm={6} xs={12}>
+        <Grid size={{ xs: 12, sm: 6, md: 4 }}>
           <RegularCard
             imageName="doctor.svg"
             title="Course Audit"
             description="The course is audited by medical professionals"
           />
         </Grid>
-        <Grid item md={4} sm={6} xs={12}>
+        <Grid size={{ xs: 12, sm: 6, md: 4 }}>
           <RegularCard
             imageName="rising.svg"
             title="Progress Tracking"
             description="You can easily see your progress in the course at all times"
           />
         </Grid>
-        <Grid item md={4} sm={6} xs={12}>
+        <Grid size={{ xs: 12, sm: 6, md: 4 }}>
           <RegularCard
             imageName="quiz.svg"
             title="Quiz Included"
             description="Attempt a quiz at the end to assess your learning"
           />
         </Grid>
-        <Grid item md={4} sm={6} xs={12}>
+        <Grid size={{ xs: 12, sm: 6, md: 4 }}>
           <RegularCard
             imageName="hospital.svg"
             title="Nationwide Acceptance"
