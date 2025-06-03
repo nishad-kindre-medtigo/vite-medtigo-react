@@ -7,11 +7,11 @@ import orderServices from '../../services/orderServices';
 import certificatesService from '../../services/certificatesService';
 import { useOpenSnackbar } from '../../hooks/useOpenSnackbar';
 import { CertificatesContext } from '../../context/CertificatesContext';
-import MOCForm from './components/MOCForm';
-import FormSubmitBackdrop from './components/FormSubmitBackdrop';
-import { CREDENTIALS, NURSE_OPTIONS, PHYSICIAN_OPTIONS } from './data';
-import { DecisionOptions, RatingOptions } from './components/Options';
-import { AccessDeniedScreen } from '../CourseLearning/components';
+import MOCForm from '../components/MOCForm';
+import FormSubmitBackdrop from '../components/FormSubmitBackdrop';
+import { CREDENTIALS, NURSE_OPTIONS, PHYSICIAN_OPTIONS } from '../data';
+import { DecisionOptions, RatingOptions } from '../components/Options';
+import { AccessDeniedScreen } from '../../CourseLearning/components';
 import { CertificateVariants } from '../../appConstants';
 
 // SURVEY FORM VALID FOR OPIOID & NIHSS COURSE
@@ -92,7 +92,7 @@ const OpioidSurveyForm = (props) => {
       // store cme certificate id for order in orders table
       if (response) {
         await orderServices.addBenefit(currentOrderID,'cme_certificate',parseInt(response.certificate_id));
-        await certificatesService.sendCMECertificateEmail({ courseID, provider_card_link: response.filePath})
+        await certificatesService.sendCMECertificateEmail({ courseID, cme_certificate_link: response.filePath })
       }
 
       fetchCMECertificates();
@@ -127,7 +127,7 @@ const OpioidSurveyForm = (props) => {
       <Page title='Course Name to be updated'>
         <Box 
           sx={{
-            height: { xs: 'auto', sm: 'calc(100vh - 135px)' },
+            height: { xs: 'auto', sm: 'calc(100vh - 58px)' },
             overflow: 'auto',
             px: 2
           }}

@@ -7,12 +7,12 @@ import orderServices from '../../services/orderServices';
 import certificatesService from '../../services/certificatesService';
 import { useOpenSnackbar } from '../../hooks/useOpenSnackbar';
 import { CertificatesContext } from '../../context/CertificatesContext';
-import FormSubmitBackdrop from './components/FormSubmitBackdrop';
-import FormSubmissionPopup from './components/FormSubmissionPopup';
-import { CREDENTIALS, NURSE_OPTIONS, PHYSICIAN_OPTIONS } from './data';
-import { DecisionOptions, RatingOptions } from './components/Options';
-import { AccessDeniedScreen } from '../CourseLearning/components';
-import { CertificateVariants } from '../../appConstants';
+import FormSubmitBackdrop from '../components/FormSubmitBackdrop';
+import FormSubmissionPopup from '../components/FormSubmissionPopup';
+import { CREDENTIALS, NURSE_OPTIONS, PHYSICIAN_OPTIONS } from '../data';
+import { DecisionOptions, RatingOptions } from '../components/Options';
+import { AccessDeniedScreen } from '../../CourseLearning/components';
+import { courseDetails } from '../../../appConstants';
 
 // SURVEY FORM VALID FOR ACLS, BLS, PALS, ASC CE COURSE
 const RegularCourseForm = (props) => {
@@ -26,7 +26,7 @@ const RegularCourseForm = (props) => {
   const [showSpecialtyOptions, setShowSpecialtyOptions] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [openSuccessPopup, setOpenSuccessPopup] = useState(false);
-  const courseName = CertificateVariants.find(c => c.Course_id == courseID)?.name
+  const courseName = courseDetails.find((course) => course.id == courseID)?.short_name;
 
   // CHANGE PROFESSION
   const handleProfession = value => {
@@ -99,7 +99,7 @@ const RegularCourseForm = (props) => {
         // store cme certificate id for order in orders table benefits column
         if (response) {
           await orderServices.addBenefit(currentOrderID, 'cme_certificate', parseInt(response.certificate_id));
-          await certificatesService.sendCMECertificateEmail({ courseID, cme_certificate_link: response.filePath})
+          await certificatesService.sendCMECertificateEmail({ courseID, cme_certificate_link: response.filePath })
           setOpenSuccessPopup(true);
         }
         const nonCMECertId = activeCertificateData['id'];
@@ -136,7 +136,7 @@ const RegularCourseForm = (props) => {
     <Page title='Course Name to be updated'>
       <Box 
         sx={{
-          height: { xs: 'auto', sm: 'calc(100vh - 135px)' },
+          height: { xs: 'auto', sm: 'calc(100vh - 58px)' },
           overflow: 'auto',
           px: 2
         }}

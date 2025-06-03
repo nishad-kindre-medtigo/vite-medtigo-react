@@ -4,14 +4,14 @@ import { useSelector } from 'react-redux';
 import learningService from '../../services/learningService';
 import orderServices from '../../services/orderServices';
 import myLearningService from '../../services/myLearningService';
-import RegularCourseForm from './RegularCourseForm';
-import OpioidSurveyForm from './OpioidCourseForm';
+import RegularCourseForm from './forms/RegularCourseForm';
+import OpioidSurveyForm from './forms/OpioidCourseForm';
 import { AccessDeniedScreen } from '../CourseLearning/components';
 import SurveyFormLoader from './components/SurveyFormLoader';
 import CourseNotCompleted from './components/CourseNotCompleted';
 import './styles.css'
 
-const CME_COURSES = [4526, 9985, 9238, 11159, 192797];
+const CME_COURSES = [4526, 9985, 9238, 151904, 11159, 192797];
 
 const CMESurveyForm = () => {
   const location = useLocation();
