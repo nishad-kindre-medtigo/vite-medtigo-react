@@ -12,6 +12,7 @@ function SchedulingNavBar() {
   const tabs = showSchedulingPayment ? [
     { value: 'my schedule', label: 'My Schedule', link: '/schedule/my-schedule' },
     { value: 'group schedule', label: 'Group Schedule', link: '/schedule/group-schedule' },
+    { value: 'draft schedule', label: 'Draft Schedule', link: '/schedule/draft-schedule' },
     { value: 'availability', label: 'Availability', link: '/schedule/availability' },
     { value: 'swap request', label: 'Swap Request', link: '/schedule/swap-request' },
     { value: 'payment request', label: 'Payment Request', link: '/schedule/payment-request' },
@@ -19,6 +20,7 @@ function SchedulingNavBar() {
   ] : [
     { value: 'my schedule', label: 'My Schedule', link: '/schedule/my-schedule' },
     { value: 'group schedule', label: 'Group Schedule', link: '/schedule/group-schedule' },
+    { value: 'draft schedule', label: 'Draft Schedule', link: '/schedule/draft-schedule' },
     { value: 'availability', label: 'Availability', link: '/schedule/availability' },
     { value: 'swap request', label: 'Swap Request', link: '/schedule/swap-request' }
   ];

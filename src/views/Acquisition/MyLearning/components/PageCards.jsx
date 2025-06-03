@@ -177,7 +177,7 @@ FullAccessPlanCard.displayName = "FullAccessPlanCard"
 // Divider
 export const DividerText = () => {
     return (
-      <Grid style={{ position: 'relative', paddingBlock: '2rem' }}>
+      <Grid size={12} sx={{ position: 'relative', py: 1 }}>
         <Divider style={{ background: '#A9A9A9' }} />
         <Typography
           style={{

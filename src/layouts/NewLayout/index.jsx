@@ -28,7 +28,7 @@ const NewLayout = ({ children }) => {
   return (
     <div style={{ overflow: 'hidden', minHeight: '100vh', background: '#fff' }}>
       <TopBar />
-      <MidBar />
+      {!isCoursePage && <MidBar />}
       {!hideCarouselAndServicesBar && (
         <>
           <Carousel />

@@ -6,14 +6,13 @@ import { useCertificatesContext } from '../../../../../../context/CertificatesCo
 import { checkAnswer, formatQuestionText } from '../utils';
 import { teamhealthPlans, courseDetails } from '../data';
 import learningService from '../../../../../../services/learningService';
-import RenewOrderServices from '../../../../../../services/renewOrderService';
 import orderServices from '../../../../../../services/orderServices';
 import certificatesService from '../../../../../../services/certificatesService';
 import { useOpenSnackbar } from '../../../../../../hooks/useOpenSnackbar';
 import useBreakpoints from '../../../../../../hooks/useBreakpoints';
 import { Box, Button, Grid, Typography } from '@mui/material';
 import { KeyboardArrowRightRounded as Right, KeyboardArrowLeftRounded as Left, ChevronLeft as BackIcon } from '@mui/icons-material';
-import { QuizProgress, renderQuizAnswerIcon, renderSelectedAnswersResult, renderTags, QuizHint, AnswerCheck, QuizResultFilter, CourseFeedbackPopup, QuizHintAccordion, MultipleChoiceText } from '../handlers';
+import { QuizProgress, renderQuizAnswerIcon, renderSelectedAnswersResult, renderTags, QuizHint, AnswerCheck, QuizResultFilter, CourseFeedbackPopup, QuizHintAccordion, MultipleChoiceText, ExitButton } from '../handlers';
 import QuizSimulationCard from './QuizSimulationCard';
 import QuizActionsCard from './QuizActionsCard';
 import QuizCompletion from './QuizCompletion';
@@ -22,38 +21,48 @@ import QuizCompletion from './QuizCompletion';
  * @component QuizContent
  * @description Component for rendering quiz questions and handling quiz completion
  *
- * Displays interactive quiz questions for the currently active course and
- * shows appropriate QuizActionsCard upon completion with pass/fail outcomes.
+ * @summary
+ * Displays Quiz Questions and Answers, allows users to navigate through questions,
+ * and handles quiz completion logic.
+ * When the quiz is completed, it checks if the user passed or failed based on their score.
+ * If the user passes, it generates a provider card and displays the QuizCompletion component.
+ * If the user fails, it shows the QuizActionsCard with options to retake the quiz and review answers.
  *
  * @hierarchy
  * - Child of: QuizScreen
+ * - Parent of: QuizActionsCard, QuizCompletion, QuizSimulationCard
  *
  * @flow
  * 1. User navigates through questions with "Back" and "Next" buttons
- * 2. Component activates when user clicks "Complete Requirement" on QuizActionsCard
- * 3. On completion, displays appropriate success or failure interface
+ * 2. User selects answers for each question
+ * 3. On completion, the component checks the user's score
+ * 4. If the user passes, it generates provider card and displays the QuizCompletion component
+ * 5. If the user fails, it displays the QuizActionsCard with options to retake the quiz and review answers
+ * 6. The component also handles quiz logs and user input tracking
  *
  * @behavior
  * - Success scenario:
- *   • Automatically generates provider card & calls provider card-order link API
- *   • Displays "Download Provider Card" and "Claim CME" on the QuizActionsCard based on course
+ *   • Automatically generates provider card & calls provider card-order link API, quizID order link API
+ *   • Displays mandatory Course Feedback Popup after passing quiz
+ *   • Displays QuizCompletion with provider card, CME certificate, and course completion details
  *
  * - Failure scenario:
- *   • Shows QuizActionsCard with "Retake Quiz" option
+ *   • Shows QuizActionsCard with "Retake Quiz" option & quiz score
  *   • Shows Quiz Hints Section with Selected Option & Explanation text from LMS API
- *   • Clicking redirects user back to Quiz Start Page
+ *   • Clicking "Retake Quiz" redirects user back to Quiz Start Page
  *
  * @props {Array} questions - Array of question objects with text and answer options
  * @props {string} uniqueID - Unique id for quiz logs feature to track each quiz attempt
  * @props {Object} quiz - formatted LMS quiz data
  * @props {boolean} endQuiz - State indicating if quiz is completed
+ * @props {Function} setStart - State setter function to control quiz initiation
  * @props {Function} setEndQuiz - State setter function for quiz completion status
- * @props {Function} setStart - Context State setter function to control quiz initiation
  *
  * @impact
  * - Reduced user friction for provider card generation by automating the old three step process.
  * - Eliminated support issues related to manual provider card creation.
  * - Enhanced user satisfaction by streamlining the course and quiz flow.
+ * - New Mail Notification for provider card generation errors.
  */
 
 const QuizContent = (props) => {
@@ -64,10 +73,14 @@ const QuizContent = (props) => {
   const openSnackbar = useOpenSnackbar();
   const { isMobile } = useBreakpoints();
   const { user } = useSelector((state) => state.account);
-  const { setActiveCertificateData, fetchClinicalCertificates, oldFullAccessOrder} = useCertificatesContext();
-  const { activeCourseProgress, activeCourse, updateCourseProgress, fetchCourseProgress, startQuiz, setStartQuiz, userPlans, simulationStatus, setSimulationStatus, allowRedirectionRef } = useContext(LearningContext);
+  const { fetchClinicalCertificates} = useCertificatesContext();
+  const { activeCourse, updateCourseProgress, fetchCourseProgress, startQuiz, setStartQuiz, userPlans, simulationStatus, setSimulationStatus, allowRedirectionRef } = useContext(LearningContext);
   const courseFullName = courseDetails.find((course) => course.id == activeCourse.id)?.full_name; // Displayed at the top of card
   const isACLS = activeCourse.id === 4526;
+  const isTeamHealthUser = user.email.split('@')[1] === 'teamhealth.com';
+  const showSimulationCard = (isTeamHealthUser && isACLS) || (isACLS && userPlans.acls == 'best_value');
+  const showHintData = [4526, 9985, 9238].includes(activeCourse.id); // Hints shown only for ACLS, BLS & PALS
+  const hasProviderCard = ![11159, 192797].includes(parseInt(activeCourse.id)); // To run generateProviderCard API
 
   // QUIZ ATTEMPT DATA STATE VALUES
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -99,9 +112,12 @@ const QuizContent = (props) => {
   const [isCMEValid, setisCMEValid] = useState(null); // hash value used for claim CME
   const [certificateGenerateError, setCertificateGenerateError] = useState(null); // error message for provider card generation
   const [openFeedbackPopup, setOpenFeedbackPopup] = useState(false); // open course feedback popup after passing quiz
-  
+
+  const isLastQuestion = currentQuestionIndex + 1 === questions.length; // Check if current question is last question in quiz
+  const exitButtonGrid = isACLS ? (isTeamHealthUser ? 12 : currentOrder?.hasCME ? 12 : 6) : 6;
+
   // Quiz Percentage Calculation
-  let percentage = activeCourseProgress.progressPercentage || (correct.length / questions.length) * 100;
+  let percentage = (correct.length / questions.length) * 100;
 
   //! Quiz Hack - Uncomment this useEffect to enable quiz bypass
   // percentage = 90;
@@ -137,83 +153,45 @@ const QuizContent = (props) => {
     }
   };
 
-  // Store Current Order for Normal User & Place order for teamhealth user on Quiz Success
-  // Store hash & isCMEValid for Claim CME Button
-  // Store provider_card & cme_certificate ID is present in order_benefits
-  const fetchOrderData = async () => {
-    const isTeamHealthUser = user.email.split('@')[1] === 'teamhealth.com';
-    let orderID; // orderID used for add Benefits API
+  // Place order for teamhealth user on Quiz Success
+  const placeOrderForTeamHealthUser = async () => {
+    const order_number = await orderServices.getRecentOrderNumber();
+    const orderPlan = teamhealthPlans[activeCourse.id];
+    await orderServices.addOrderFromMarket({
+      items: [orderPlan],
+      order_number: order_number,
+      bill_amount: 0,
+      order_status: 'processing',
+      email: user.email
+    });
+  };
+
+  // Fetch Current Order Details for a Course
+  const fetchCurrentOrderDetails = async () => {
+    let latestOrderID; // orderID used for add Benefits API
     try {
-      if (endQuiz && quizPassed && isTeamHealthUser) {
-        const order_number = await orderServices.getRecentOrderNumber();
-        const orderPlan = teamhealthPlans[activeCourse.id];
-        const orderData = await orderServices.addOrderFromMarket({
-          items: [orderPlan],
-          order_number: order_number,
-          bill_amount: 0,
-          order_status: 'processing',
-          email: user.email
-        });
+      const latestOrder = await orderServices.getCourseLatestOrder(activeCourse.id);
+      console.log(latestOrder);
+      if (latestOrder) {
+        const { orderID, hash, hasCME, order_benefits } = latestOrder;
+        latestOrderID = orderID;
 
-        // Store id of new order placed
-        orderID = orderData.orders[0].id;
+        setCurrentOrder(latestOrder);
 
-        // Validate the order access status
-        const certificateOrder = await RenewOrderServices.isOrderItemWithValidHash(activeCourse.id);
-        // console.log('certificateOrder: ', certificateOrder)
+        // Store Hash & CME Validity for Claim CME Button
+        setHash(hash);
+        setisCMEValid(hasCME);
 
-        // Set hash and related states
-        setHash(certificateOrder.hash);
-        setisCMEValid(certificateOrder.isCMEValid);
-      } else {
-        // Validate the order access status
-        const certificateOrder = await RenewOrderServices.isOrderItemWithValidHash(activeCourse.id);
-        // console.log('certificateOrder: ', certificateOrder)
-        
-        setHash(oldFullAccessOrder.hash || certificateOrder.hash);
-        setisCMEValid(
-          oldFullAccessOrder.isCMEValid || certificateOrder.isCMEValid
-        );
-      }
+        // Store if provider card id exists for current order
+        setCertificateID(order_benefits?.provider_card);
 
-      const isOpioid = activeCourse.id == 11159;
-      if (isOpioid) {
-        setisCMEValid(true);
-      }
-
-      const allOrders = await orderServices.getOrderItemsDetailsForCourses(
-        user.email
-      );
-      let currentOrder;
-      if (user.email.includes('teamhealth')) {
-        currentOrder = allOrders.find((order) => order.orderID == orderID);
-      } else {
-        currentOrder = allOrders
-          .reverse()
-          .find((order) => order.courseID == activeCourse.id);
-      }
-
-      // To Use Order information in Quiz Cards
-      setCurrentOrder(currentOrder);
-
-      // Store id of existing order for normal user
-      if (!user.email.includes('teamhealth')) {
-        orderID = currentOrder.orderID;
-      }
-
-      // Store if provider card id exists for current order
-      if (currentOrder?.order_benefits?.provider_card) {
-        setCertificateID(currentOrder.order_benefits.provider_card);
-      }
-
-      // Store if cme certificate id exists for current order
-      if (currentOrder?.order_benefits?.cme_certificate) {
-        setCMEID(currentOrder.order_benefits.cme_certificate);
+        // Store if cme certificate id exists for current order
+        setCMEID(order_benefits?.cme_certificate);
       }
     } catch (error) {
       console.error('Error setting current order ID', error);
     }
-    return orderID;
+    return latestOrderID;
   };
 
   // Go to Next/ Previous Question using Keyboard Arrow Keys
@@ -240,9 +218,6 @@ const QuizContent = (props) => {
   useEffect(() => {
     setQuestion(questions[currentQuestionIndex]);
   }, [currentQuestionIndex]);
-  
-  useEffect(() => {
-  }, [simulationStatus,activeCourseProgress]);
 
   useEffect(() => {
     if (scrollEl) {
@@ -295,36 +270,37 @@ const QuizContent = (props) => {
       window.removeEventListener('beforeunload', beforeUnloadListener);
       window.removeEventListener('popstate', popstateListener);
     };
-  }, [startQuiz, hideAlert]); // Depend on `endQuiz`
+  }, [startQuiz, hideAlert]); // Depend on `startQuiz` context value
 
   const runQuizComplete = async () => {
     try {
       setIsSubmitting(true);
 
-      const orderID = await fetchOrderData();
+      if (endQuiz && quizPassed && isTeamHealthUser) {
+        await placeOrderForTeamHealthUser();
+      }
+
+      const orderID = await fetchCurrentOrderDetails();
       // console.log('currentOrderID: ', orderID);
 
       // Generate Provider card on quiz success only if certificate ID does not exist for current order
       if (endQuiz && !certificateID) {
         setStartQuiz(false);
         if (quizPassed) {
-          await updateCourseProgress('0000', activeCourse.id);
+          // Mandatory Course Feedback Popup after passing quiz
+          setOpenFeedbackPopup(true);
+
+          // ADD QUIZ LESSON ENTRY IN USERPROGRESS TABLE
+          updateCourseProgress('0000', activeCourse.id);
 
           // FETCH CONNECT COURSE PROGRESS TO UPDATE COURSE STEPPER - TO HIGHLIGHT LAST STEP
-          await fetchCourseProgress(user.id, activeCourse.id);
+          fetchCourseProgress(user.id, activeCourse.id);
           
           // LINK QUIZ UNIQUE ID WITH ORDER
-          await orderServices.addOrderQuizIDLink(orderID, uniqueID);
+          orderServices.addOrderQuizIDLink(orderID, uniqueID);
 
-          const hasProviderCard = ![11159, 192797].includes(parseInt(activeCourse.id));
           if (hasProviderCard) {
-            // Mandatory Course Feedback Popup after passing quiz for provider card courses
-            setOpenFeedbackPopup(true);
-            if (isACLS) {
-              if ((simulationStatus=='done' || userPlans.acls == 'basic' || userPlans.acls == 'standard')) {
-                await generateProviderCard(orderID);
-              }
-            } else await generateProviderCard(orderID); // Ensure this is awaited if it's async
+            await generateProviderCard(orderID);
           }
         }
       }
@@ -345,12 +321,8 @@ const QuizContent = (props) => {
     handleQuizCompletion();
   }, [endQuiz, simulationStatus]);
 
-  useEffect(() => {
-  }, [isSubmitting, generatedCertificatePath]); 
-
   useEffect(()=>{
-    setSimulationStatus(() => userPlans.acls != 'best_value' ? 'done' : simulationStatus);
-
+    setSimulationStatus(() => userPlans.acls != 'best_value' ? 'done' : isACLS && isMobile ? 'done': simulationStatus);
   },[userPlans])
 
   // Go to Next Question
@@ -419,53 +391,59 @@ const QuizContent = (props) => {
         );
       }
     }
-    return (filteredQuestions ? filteredQuestions : questions).map(
-      (question, index) => {
-        const userInputIndex = filteredUserInput
-          ? filteredUserInput[index]
-          : userInput[index];
-
-        // Default single to avoid code breaking due to automatic version upgrade
-        let answerSelectionType = question.answerSelectionType || 'single';
-
-        // This will display hint for only those questions where the selected option is incorrect
-        // Change the filteredValue to "all" to display all responses - currently set as "incorrect"
-        return (
-          <div key={index + 1}>
-            <h3
-              className="question-text"
-              dangerouslySetInnerHTML={{
-                __html: formatQuestionText(question.question),
-              }}
-            />
-            {question && question.questionPic && (
-              <img src={question.questionPic} alt="image" />
-            )}
-            {question &&
-              renderTags(
-                answerSelectionType,
-                question.correctAnswer.length,
-                question.segment
-              )}
-            <Box sx={{ border: '1px solid #C8C8C8', p: 3, borderRadius: 1 }}>
-              <div
-                style={{
-                  fontWeight: 700,
-                  textAlign: 'left'
-                }}
-              >
-                Options:{' '}
+    return (
+      <div className="questionBox">
+        {
+        (filteredQuestions ? filteredQuestions : questions).map(
+          (question, index) => {
+            const userInputIndex = filteredUserInput
+              ? filteredUserInput[index]
+              : userInput[index];
+    
+            // Default single to avoid code breaking due to automatic version upgrade
+            let answerSelectionType = question.answerSelectionType || 'single';
+    
+            // This will display hint for only those questions where the selected option is incorrect
+            // Change the filteredValue to "all" to display all responses - currently set as "incorrect"
+            return (
+              <div key={index + 1}>
+                <h3
+                  className="question-text"
+                  dangerouslySetInnerHTML={{
+                    __html: formatQuestionText(question.question),
+                  }}
+                />
+                {question && question.questionPic && (
+                  <img src={question.questionPic} alt="image" />
+                )}
+                {question &&
+                  renderTags(
+                    answerSelectionType,
+                    question.correctAnswer.length,
+                    question.segment
+                  )}
+                <Box sx={{ border: '1px solid #C8C8C8', p: 3, borderRadius: 1 }}>
+                  <div
+                    style={{
+                      fontWeight: 700,
+                      textAlign: 'left'
+                    }}
+                  >
+                    Options:{' '}
+                  </div>
+                  <div className="result-answer">
+                    {renderSelectedAnswersResult(question, userInputIndex)}
+                  </div>
+                  {answerSelectionType === 'multiple' && <MultipleChoiceText />}
+                  <QuizHint question={question}/>
+                </Box>
               </div>
-              <div className="result-answer">
-                {renderSelectedAnswersResult(question, userInputIndex)}
-              </div>
-              {answerSelectionType === 'multiple' && <MultipleChoiceText />}
-              <QuizHint question={question}/>
-            </Box>
-          </div>
-        );
-      }
-    );
+            );
+          }
+        )
+        }
+      </div>
+    ) 
   };
 
   // Display Quiz Question Answers/ Options
@@ -559,45 +537,43 @@ const QuizContent = (props) => {
       designation_id: user.designation_id || null,
       specialty: user.specialty || null,
       program: user.program || null,
-      course_id: activeCourse.id + ''
+      course_id: activeCourse.id + '',
+      orderID: orderID
     };
 
     try {
-      const Certificate_Order = await RenewOrderServices.isOrderItemWithValidHash(activeCourse.id);
-      payload['product_type'] = Certificate_Order.product_type;
-
-      try {
-        const res2 = await RenewOrderServices.getCertificateRenewalData(
-          activeCourse.id
-        );
-        if (res2) {
-          payload['certificiate_uid'] = res2[res2.length - 1].Certificate_UID;
-        }
-      } catch (error) {
-        console.error('Error fetching Certificiate Renewal date: ', error);
+      let productType = 'basic';
+      if([4526, 9985, 9238].includes(parseInt(activeCourse.id))){
+        productType = currentOrder?.plan || 'basic';
       }
+      payload['product_type'] = productType;
 
       const response = await learningService.generateCertificate(payload);
 
       // Add Provider Card ID in benefits section for current order ID
       if (response) {
-        await certificatesService.sendProviderCardEmail({ courseID: activeCourse.id, provider_card_link: response.filePath})
-
         // console.log('This is current id: ', currentOrderID)
         setGeneratedCertificatePath(response.filePath);
         setGeneratedCertificateID(response.certificate_id);
         fetchClinicalCertificates();
 
+        // Send Provider Card Mail to User
+        await certificatesService.sendProviderCardEmail({ courseID: activeCourse.id, provider_card_link: response.filePath});
+
         // LINK PROVIDER CARD WITH ORDER
         await orderServices.addBenefit(orderID, 'provider_card', parseInt(response.certificate_id));
-      }
-      if (response) {
         openSnackbar('Provider card generated successfully!');
       }
-      setActiveCertificateData({ ...response, id: response.certificate_id });
     } catch (error) {
       console.error(error.error);
       setCertificateGenerateError(error.error);
+
+      const payload = {
+        courseID: activeCourse.id,
+        uniqueID,
+        errorMessage: error.error
+      }
+      await certificatesService.sendGenerateCertificateErrorMail(payload);
       openSnackbar('Error generating provider card!. Please Contact Support', 'error');
     }
   };
@@ -610,6 +586,8 @@ const QuizContent = (props) => {
   }
 
   const CardProps = {
+    parent: 'QuizContent',
+    isTeamHealthUser: isTeamHealthUser,
     quizPassed: quizPassed,
     isACLS: isACLS,
     currentOrder: currentOrder,
@@ -630,76 +608,62 @@ const QuizContent = (props) => {
 
   // Return Quiz Complete Page
   if (endQuiz) {
-    return (quizPassed && ((isACLS && simulationStatus=='done') || !isACLS)) ? (
+    return quizPassed ? (
       <>
         <QuizCompletion {...CardProps} />
-        <CourseFeedbackPopup open={openFeedbackPopup} setOpen={setOpenFeedbackPopup} />
+        <CourseFeedbackPopup
+          open={openFeedbackPopup}
+          setOpen={setOpenFeedbackPopup}
+          courseID={activeCourse.id}
+          percentage={percentage}
+        />
       </>
     ) : (
-      <div>
-        <Grid
-          container
-          justifyContent="center"
-          columnSpacing={2}
-          rowSpacing={0.5}
-        >
-          <Grid size={{ xs: 12, sm: isACLS ? 12 : 7 }}>
-             <Box display="flex" justifyContent="flex-end">
-               <Button
-                 size="large"
-                 disabled={isSubmitting}
-                 onClick={handleBackLink}
-                 startIcon={<BackIcon />}
-               >
-                 EXIT
-               </Button>
-             </Box>
-            </Grid>
-          <Grid size={12}></Grid>
-          <Grid size={{ xs: 12, sm: isACLS ? 6 : 7 }}>
-            <QuizActionsCard {...CardProps} />
-          </Grid>
-
-          {/* DISPLAY QUIZ HINT ACCORDION ONLY FOR MOBILE VIEW  */}
-          {isMobile && percentage < 80 && (
-            <Grid size={12}>
-              <QuizHintAccordion>
-                {renderQuizResultQuestions(filteredValue)}
-              </QuizHintAccordion>
-            </Grid>
-          )}
-          {isACLS && (
-            <Grid size={{ xs: 12, sm: 6 }}>
-              <QuizSimulationCard
-                setEndQuiz={setEndQuiz}
-                endQuiz={false}
-                setStart={setStart}
-              />
-            </Grid>
-          )}
-          {/* QUIZ HINT SECTION FOR LAPTOP VIEW  */}
-          {!isMobile && percentage < 80 && (
-            <Grid size={{ xs: 12, sm: isACLS ? 12 : 10 }}>
-              <Typography
-                sx={{
-                  fontWeight: 600,
-                  my: 2,
-                  fontSize: '22px',
-                  textAlign: 'left'
-                }}
-              >
-                Quiz Questions and Hints to Help You Find the Right Answer.
-              </Typography>
-
-              {/* ONLY FOR DEVELOPMENT & TESTING PURPOSE - DONT USE THIS FOR PROD */}
-              {/* UNCOMMENT THIS LINE TO DISPLAY SELECT FIELD WHICH FILTERS CORRECT/ INCORRECT ANSWER RESPONSES */}
-              {/* <QuizResultFilter filteredValue={filteredValue} setFilteredValue={setFilteredValue} /> */}
-
-              {renderQuizResultQuestions(filteredValue)}
-            </Grid>
-          )}
+      <Grid container justifyContent="center" spacing={2} sx={{ my: 2 }}>
+        <Grid size={12} sm={exitButtonGrid}>
+          <ExitButton disabled={isSubmitting} onClick={handleBackLink} />
         </Grid>
-      </div>
+        <Grid size={12}></Grid>
+        {showSimulationCard ? (
+          <Grid size={{ xs: 12, sm: 6 }}>
+            <QuizSimulationCard parent="QuizContent" endQuiz={false} />
+          </Grid>
+        ) : null}
+        <Grid size={{ xs: 12, sm: 6 }}>
+          <QuizActionsCard {...CardProps} />
+        </Grid>
+
+        {/* DISPLAY QUIZ HINT ACCORDION ONLY FOR MOBILE VIEW  */}
+        {isMobile && percentage < 80 && (
+          <Grid size={12}>
+            <QuizHintAccordion>
+              {renderQuizResultQuestions(filteredValue)}
+            </QuizHintAccordion>
+          </Grid>
+        )}
+
+        {/* QUIZ HINT SECTION FOR LAPTOP VIEW  */}
+        {!isMobile && percentage < 80 && (
+          <Grid size={{ xs: 12, sm: isACLS ? 12 : 10 }}>
+            <Typography
+              sx={{
+                fontWeight: 600,
+                my: 2,
+                fontSize: '22px',
+                textAlign: 'left'
+              }}
+            >
+              Quiz Questions and Hints to Help You Find the Right Answer.
+            </Typography>
+
+            {/* ONLY FOR DEVELOPMENT & TESTING PURPOSE - DONT USE THIS FOR PROD */}
+            {/* UNCOMMENT THIS LINE TO DISPLAY SELECT FIELD WHICH FILTERS CORRECT/ INCORRECT ANSWER RESPONSES */}
+            {/* <QuizResultFilter filteredValue={filteredValue} setFilteredValue={setFilteredValue} /> */}
+
+            {renderQuizResultQuestions(filteredValue)}
+          </Grid>
+        )}
+      </Grid>
     );
   }
 
@@ -708,7 +672,7 @@ const QuizContent = (props) => {
     <Box ref={(ref) => setScrollEl(ref)} sx={quizBoxSx}>
       {/* Quiz Title */}
       <div>
-        <Typography sx={{ fontSize: { xs: '18px', sm: '24px' }, mt: 1, fontWeight: 600}}>{courseFullName}</Typography>
+        <Typography sx={{ fontSize: { xs: '18px', sm: '24px' }, mt: 2, fontWeight: 600}}>{courseFullName}</Typography>
         <QuizProgress
           currentQuestionIndex={currentQuestionIndex}
           quiz={quiz}
@@ -717,7 +681,7 @@ const QuizContent = (props) => {
       </div>
 
       {/* Quiz Question & Answers */}
-      <div className="questionWrapperBody">
+      <div className="questionWrapperBody questionBox">
         <h3 style={{ textAlign: 'left', fontSize: '17px' }}>
           Q{currentQuestionIndex + 1}:&nbsp;
           {question && (
@@ -757,13 +721,68 @@ const QuizContent = (props) => {
             disabled={!quizResponses[question.questionID]?.option} // Disable Next Button if User has not selected any option for current question
             endIcon={<Right />}
           >
-            NEXT
+            {isLastQuestion ? 'SUBMIT' : 'NEXT'}
           </Button>
         </Box>
       </div>
     </Box>
   );
 };
+
+/**
+ * Certificate Generation Schema
+ * This schema validates the user inputs for generating a certificate.
+ * Fields and their validation rules:
+ * 
+ * - first_name: 
+ *   - Type: String
+ *   - Constraints: Minimum 1 character, Maximum 50 characters
+ *   - Required: Yes
+ *   - Error Message: "Please enter a valid first name"
+ * 
+ * - last_name: 
+ *   - Type: String
+ *   - Constraints: Minimum 1 character, Maximum 50 characters
+ *   - Required: Yes
+ *   - Error Message: "Please enter a valid last name"
+ * 
+ * - course_id: 
+ *   - Type: String
+ *   - Required: Yes
+ *   - Error Message: "Course ID is required"
+ * 
+ * - designation_id: 
+ *   - Type: String
+ *   - Constraints: Minimum 19 characters, Numeric only
+ *   - Required: Yes
+ *   - Error Message: "Provide a valid designation id"
+ * 
+ * - npi_number: 
+ *   - Type: Any
+ *   - Required: No (Optional)
+ *   - Additional Notes: Can be empty or null
+ * 
+ * - specialty: 
+ *   - Type: String
+ *   - Required: No (Optional)
+ *   - Additional Notes: Can be empty or null
+ * 
+ * - program: 
+ *   - Type: String
+ *   - Required: No (Optional)
+ *   - Additional Notes: Can be empty or null
+ * 
+ * - certificiate_uid: 
+ *   - Type: String
+ *   - Required: No (Optional)
+ *   - Additional Notes: Can be empty or null
+ * 
+ * - product_type: 
+ *   - Type: String
+ *   - Required: No (Optional)
+ *   - Additional Notes: Can be empty or null
+ */
+
 
 const quizBoxSx = {
   display: 'flex',

@@ -238,7 +238,7 @@ class AuthService {
                 resolve("isNotification")
                 return 
               }
-              this.logout();
+              this.logout({sessionExpired: true});
             }
             reject(response.data.error);
           }
@@ -255,7 +255,7 @@ class AuthService {
         });
     });
 
-  logout = () => {
+  logout = (logoutDetails) => {
     if(sessionStorage.getItem("onBoardingPage")){
       const encryptedEmail = sessionStorage.getItem("email")
       const route = sessionStorage.getItem("route")
@@ -277,7 +277,7 @@ class AuthService {
 
     // window.location.href = AUTH_URL + '?path=logout' +"&route="+currentUrl;
     setTimeout(() => {
-    window.location.href = AUTH_URL + '?path=logout' +"&route="+currentUrl;
+    window.location.href = AUTH_URL + '?path=logout' +"&route="+currentUrl + `${logoutDetails && logoutDetails.sessionExpired ? '&sessionExpired=true' : ''}`;
     localStorage.removeItem("data")
     }, 1000);
     sessionStorage.clear();

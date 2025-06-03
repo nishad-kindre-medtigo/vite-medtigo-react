@@ -38,7 +38,7 @@ function CourseUnits(props) {
   }, [activeStep]);
 
   return (
-    <div style={{display: 'flex', flexDirection: 'column', height: 'calc(100vh - 135px)'}}>
+    <div style={{display: 'flex', flexDirection: 'column', height: 'calc(100vh - 58px)'}}>
       {/* BACK TO COURSES BTN & COURSE UNIT NAME */}
       <Topbar isACLS={isACLS} unitTitle={unitTitle} isMobile={isMobile} sx={{ flexDirection: isACLSArabic ? 'row-reverse' : 'row' }} />
 
@@ -121,7 +121,8 @@ const topBarSx = {
   justifyContent: 'space-between',
   alignItems: 'flex-start',
   flexShrink: 0,
-  my: 1,
+  mt: 2,
+  mb: 1,
   px: 1
 };
 

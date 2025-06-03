@@ -91,6 +91,21 @@ class OrderServices {
         });
     });
 
+    getCourseLatestOrder = courseID => new Promise((resolve, reject) => {
+      
+      axios.get(`/order/latest/${courseID}`)
+      .then((response) => {
+        if (response.data) {
+          resolve(response.data.data);
+        } else {
+            reject(response.data.error);
+          }
+        })
+        .catch((error) => {
+          reject(error);
+        });
+    });
+
     oderValidationForSimulation = (userId) => new Promise((resolve, reject) => {
       
       axios.get(`/order/get-order-for-simulation-validation/${userId}`)

@@ -4,7 +4,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import { useSelector } from 'react-redux';
 
 const FormSubmissionPopup = ({ open, handleClose }) => {
-  const user = useSelector((state) => state.account.user);
+  const user = useSelector(state => state.account.user);
 
   return (
     <Dialog
@@ -19,7 +19,7 @@ const FormSubmissionPopup = ({ open, handleClose }) => {
         sx={{
           background: '#FBFFFB',
           textAlign: 'center',
-          p: 4,
+          p: { xs: 1, sm: 4 },
           position: 'relative' // Ensure absolute positioning works
         }}
       >
@@ -48,7 +48,16 @@ const FormSubmissionPopup = ({ open, handleClose }) => {
         <Typography variant="h5" fontWeight="bold" color="success.main">
           Well Done!
         </Typography>
-        <Typography align="center" fontWeight={400} px={2} color="#3A3A3A">
+        <Typography
+          align="center"
+          fontWeight={400}
+          px={2}
+          color="#3A3A3A"
+          sx={{
+            whiteSpace: 'normal',
+            wordBreak: 'break-word' // Ensures long words or emails wrap properly
+          }}
+        >
           you have successfully claimed CME, your{' '}
           <strong>CME certificate</strong> has been emailed to {user.email}.
         </Typography>

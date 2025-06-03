@@ -15,6 +15,7 @@ import Square from '@mui/icons-material/CheckBoxOutlineBlank';
 import CheckBox from '@mui/icons-material/CheckBox';
 import DownloadIcon from '@mui/icons-material/Download';
 import CallMadeIcon from '@mui/icons-material/CallMade';
+import BackIcon from '@mui/icons-material/KeyboardArrowLeft';
 import QuizHint from './QuizHint';
 import AnswerCheck from './AnswerCheck';
 import QuizResultFilter from './QuizResultFilter';
@@ -268,8 +269,8 @@ export const CompletionCard = ({
     card === 'Provider Card'
       ? 'download_provider_card.svg'
       : action === 'Claim'
-        ? 'claim_cme.svg'
-        : 'download_cme.svg';
+      ? 'claim_cme.svg'
+      : 'download_cme.svg';
 
   return (
     <Box
@@ -304,7 +305,7 @@ export const CompletionCard = ({
         onClick={onClick}
         sx={{ my: 1 }}
       >
-        {disabled ? <Loader color="#2872C1" width="26" /> : card}
+        {disabled ? "Loading..." : action === "Claim" ? "Claim CME" : card}
       </Button>
     </Box>
   );
@@ -315,22 +316,16 @@ export const CompletionLoadingScreen = ({ courseID, showCMELoader }) => {
 
   return (
     <>
-    {showProviderCardLoader && (
-      <Grid size={{ xs: 12, sm: 6 }}>
-        <CompletionCard
-          card="Provider Card"
-          disabled={true}
-        />
-      </Grid>
-    )}
-    {showCMELoader && (
-      <Grid size={{ xs: 12, sm: 6 }}>
-        <CompletionCard
-          card="CME Certificate"
-          disabled={true}
-        />
-      </Grid>
-    )}
+      {showProviderCardLoader && (
+        <Grid size={{ xs: 12, sm: 6 }}>
+          <CompletionCard card="Provider Card" disabled={true} />
+        </Grid>
+      )}
+      {showCMELoader && (
+        <Grid size={{ xs: 12, sm: 6 }}>
+          <CompletionCard card="CME Certificate" disabled={true} />
+        </Grid>
+      )}
     </>
   );
 };
@@ -386,6 +381,36 @@ export const MultipleChoiceText = () => (
   >
     <WarningIcon sx={{ color: '#FF9800' }} />
     This is a multi-select question. It is mandatory to select every correct option.
+  </Box>
+);
+
+export const ExitButton = ({ onClick, disabled, ...props }) => (
+  <Box
+    display="flex"
+    justifyContent="flex-end"
+    sx={{ ml: 'auto', cursor: disabled ? 'not-allowed' : 'pointer' }}
+  >
+    <Typography
+      component="span"
+      onClick={!disabled ? onClick : undefined}
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+        textTransform: 'none',
+        textDecoration: disabled ? 'none' : 'underline',
+        color: disabled ? 'text.disabled' : 'primary.main',
+        fontSize: '20px',
+        px: 0,
+        opacity: disabled ? 0.5 : 1,
+        '&:hover': {
+          color: 'primary.light'
+        }
+      }}
+      {...props}
+    >
+      <BackIcon fontSize="large" />
+      Exit
+    </Typography>
   </Box>
 );
 

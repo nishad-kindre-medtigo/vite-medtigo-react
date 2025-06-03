@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Typography, Grid, Stepper, Step, StepLabel, LinearProgress } from '@mui/material';
 import { LearningContext } from '../../../context/LearningContext';
-import { courseLessonTypes, courseColors } from '../utils';
+import { courseLessonTypes } from '../utils';
 import EmojiEventsTwoToneIcon from '@mui/icons-material/EmojiEventsTwoTone';
 import ErrorIcon from '@mui/icons-material/ErrorOutline';
 
@@ -13,6 +13,8 @@ function CourseStepper({ activeStep, steps, setActiveStep, closePopup }) {
     startQuiz
   } = React.useContext(LearningContext);
 
+  const courseBackground = `/static/images/lms/${activeCourse?.slug}.png`;
+
   const progressPercentage = courseProgress.isCourseCompleted
     ? 100
     : Math.round((activeStep / steps.length) * 100);
@@ -22,7 +24,7 @@ function CourseStepper({ activeStep, steps, setActiveStep, closePopup }) {
       {activeCourse && (
         <div>
           <CourseProgressCard
-            activeCourse={activeCourse}
+            courseBackground={courseBackground}
             progressPercentage={progressPercentage}
           />
           <StepperBox>
@@ -119,9 +121,9 @@ function CourseStepper({ activeStep, steps, setActiveStep, closePopup }) {
 const StepperBox = ({ children, ...props }) => (
   <Box
     sx={{
-      height: { xs: 'auto', sm: 'calc(100vh - 300px)' }
+      height: { xs: 'auto', sm: 'calc(100vh - 244px)' }
     }}
-    className='thin-scrollbar'
+    className="thin-scrollbar"
     {...props}
   >
     <Box
@@ -130,7 +132,7 @@ const StepperBox = ({ children, ...props }) => (
         position: 'relative',
         minHeight: '100%',
         '&:hover .overlay': { opacity: 1 },
-        backgroundColor: '#e9f2fc',
+        backgroundColor: '#e9f2fc'
       }}
     >
       {children}
@@ -173,7 +175,7 @@ const OverlayText = ({ text = 'Disabled During Quiz' }) => (
       borderRadius: 2,
       fontSize: '14px',
       fontWeight: 500,
-      gap: 1,
+      gap: 1
     }}
   >
     <ErrorIcon sx={{ color: '#D32F2F' }} />
@@ -181,89 +183,49 @@ const OverlayText = ({ text = 'Disabled During Quiz' }) => (
   </Box>
 );
 
-
-const CourseProgressCard = ({ activeCourse, progressPercentage }) => {
-  const courseBackground =
-    activeCourse?.slug == 'asls-course'
-      ? 'https://courses.medtigo.com/wp-content/uploads/2024/12/ascce.webp'
-      : `/images/lms/${activeCourse?.slug}.png`;
-
-  const progressBarColor = courseColors[activeCourse.id] || '#fff';
-  const courseName = activeCourse.id == 11159 ? 'OPIOID' : activeCourse.name.replace(/course/i, '');
-
+const CourseProgressCard = ({ courseBackground, progressPercentage }) => {
   return (
-    <Box
-      sx={{
-        height: '160px',
-        position: 'relative',
-        backgroundColor: '#5C97FF',
-        color: '#fff',
-        overflow: 'hidden',
-        boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
-        zIndex: 999
-      }}
-    >
-      {/* Background Layer */}
+    <Box sx={{ backgroundColor: '#e9f2fc' }}>
       <Box
         sx={{
-          position: 'absolute',
-          inset: 0,
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url(${courseBackground})`,
+          height: '140px',
+          backgroundImage: `url(${courseBackground})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          zIndex: 1
+          backgroundRepeat: 'no-repeat'
         }}
       />
 
       {/* Foreground Content */}
       <Box
         sx={{
-          position: 'relative',
-          zIndex: 2,
+          mt: 1,
           height: '100%',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center',
-          p: 3,
           textAlign: 'center'
         }}
       >
-        <Typography
-          variant="h5"
-          component="div"
-          sx={{
-            mb: 2,
-            textTransform: 'capitalize',
-            textShadow: '0 2px 4px rgba(255, 255, 255, 0.7)', // White shadow
-          }}
-        >
-          {courseName}
-        </Typography>
-
         <LinearProgress
           variant="determinate"
           value={progressPercentage}
           sx={{
             width: '100%',
-            height: '8px',
-            borderRadius: '4px',
-            backgroundColor: 'rgba(255, 255, 255, 0.2)',
-            '& .MuiLinearProgress-bar': {
-              backgroundColor: progressBarColor
-            }
+            backgroundColor: '#D9D9D9'
           }}
         />
 
         <Typography
           variant="body2"
           sx={{
-            mt: 2,
-            fontSize: '14px',
+            px: 2,
+            pt: 1,
             textAlign: 'left',
+            fontWeight: 500,
             width: '100%',
-            textShadow: '0 1px 3px rgba(0, 0, 0, 0.5)'
+            color: '#5A5A5A'
           }}
         >
           {progressPercentage}% Complete
@@ -350,10 +312,9 @@ const stepperSx = {
   '& .MuiStepLabel-labelContainer': {
     height: '14px'
   },
-  '& .MuiStepIcon-root.MuiStepIcon-active, & .MuiStepIcon-root.MuiStepIcon-completed':
-    {
-      color: '#2872C1'
-    },
+  '& .MuiStepIcon-root.MuiStepIcon-active, & .MuiStepIcon-root.MuiStepIcon-completed': {
+    color: '#2872C1'
+  },
   '& .MuiStepLabel-vertical.Mui-disabled span.MuiStepLabel-labelContainer': {
     height: '14px'
   },

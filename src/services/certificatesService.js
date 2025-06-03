@@ -240,6 +240,20 @@ class CertificatesService {
       });
   });
 
+  sendGenerateCertificateErrorMail  = (values) => new Promise((resolve, reject) => {
+    axios.post('/certificates/send-certificate-error-mail', values)
+      .then((response) => {
+        if (response.data) {
+          resolve(response.data.data);
+        } else {
+          reject(response.data.error);
+        }
+      })
+      .catch((error) => {
+        reject(error);
+      });
+  });
+
   addLicenseTypeCertificates  = (values, fileUploadAction) => new Promise((resolve, reject) => {
     axios.post('/certificates/licenseType', values, fileUploadAction)
       .then((response) => {

@@ -117,6 +117,20 @@ class LearningServices {
       });
   });
 
+  getCompletedQuizDetails  = (uniqueID) => new Promise((resolve, reject) => {
+    axios.get(`/quizLog/uniqueID/${uniqueID}`, uniqueID)
+      .then((response) => {
+        if (response.data) {
+          resolve(response.data.data);
+        } else {
+          reject(response.data.error);
+        }
+      })
+      .catch((error) => {
+        reject(error);
+      });
+  });
+
   updateCourseProgress = (id, courseID) => new Promise((resolve, reject) => {
     axios.put(`/lms/courses/update-progress/${id}`, {courseID})
       .then((response) => {

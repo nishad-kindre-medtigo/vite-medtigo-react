@@ -137,7 +137,6 @@ p.has-text-align-center {
 
 .course-content-container ol, .course-content-container ul {
     margin: var(--universal-margin);
-    padding-left: calc(2 * var(--universal-margin));
 }
 
 .course-content-container ol li, .course-content-container ul li {
@@ -146,6 +145,14 @@ p.has-text-align-center {
 
 .course-content-container b, .course-content-container strong {
     font-weight: 700;
+}
+
+/* Zero margin for mobile view */
+@media (max-width: 768px) { /* Adjust max-width as needed for your breakpoint */
+    .course-content-container ol, 
+    .course-content-container ul {
+        margin: 0;
+    }
 }
 
 .course-content-container hr {
@@ -282,13 +289,13 @@ p.has-text-align-center {
 .course-content-container li {
     line-height: 1.5;
     word-wrap: break-word; /* Ensures words break if necessary */
-    word-break: break-all; /* Break words at any character to prevent overflow */
+    /* word-break: break-all; Break words at any character to prevent overflow */
 }
 
 .course-content-container medtigocourse {
     line-height: 1.5;
     word-wrap: break-word; /* Ensures words break if necessary */
-    word-break: break-all; /* Break words at any character to prevent overflow */
+    /* word-break: break-all; Break words at any character to prevent overflow */
     white-space: pre-wrap; /* Ensures whitespace is preserved and wrapping works */
 }
 
@@ -2254,7 +2261,7 @@ button.primary, .course-content-container [type="button"].primary, .course-conte
 @media (min-width: 646px) {
     .course-content-container.short{
         position: relative;
-        min-height: calc(100vh - 135px);
+        min-height: calc(100vh - 58px);
     }
     .course-content-container.short .course-html-content{
         padding-bottom: 30px;

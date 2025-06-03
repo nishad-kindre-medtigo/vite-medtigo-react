@@ -39,8 +39,7 @@ const Introduction = ({ setIsFirstTime, courseID }) => {
           my: 2
         }}
       >
-        Meet Your {hasOnlyCME ? 'CME' : courseData?.short_name}{' '}
-        Requirement Easily
+        Meet Your {hasOnlyCME ? `${courseData?.short_name} CME` : courseData?.short_name} Requirement Easily
       </Typography>
 
       <Grid
@@ -153,9 +152,9 @@ const ActionButtonGroup = ({ handleBackClick, handleStartNow }) => (
       left: { xs: 0 },
       backgroundColor: { xs: '#fff' },
       width: '100%',
-      padding: '16px 0',
       display: 'flex',
       justifyContent: 'center',
+      py: 2,
       mt: 2,
       gap: 2,
       zIndex: 1000

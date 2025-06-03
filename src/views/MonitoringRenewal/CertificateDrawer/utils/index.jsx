@@ -1,4 +1,4 @@
-import * as moment from 'moment';
+import moment from 'moment';
 import { states, certCategories } from '../../../../appConstants';
 
 // FILTER OUT HEALTH, CERTIFICATE COURSES, MALPRACTICE, AND TRANSCRIPTS AND SCORES

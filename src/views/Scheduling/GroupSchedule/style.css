@@ -1,19 +1,19 @@
-.group-schedule-page .fc .fc-daygrid-day-top {
+.fc .fc-daygrid-day-top {
   background: #F6F6F6;
 }
 
-.group-schedule-page .fc .fc-toolbar {
+.fc .fc-toolbar {
   border: none !important; /* Remove border from the toolbar */
 }
 
-.group-schedule-page .fc .fc-dayGrid-header {
+.fc .fc-dayGrid-header {
   border: none !important; /* Remove border from the day header */
 }
 
-.group-schedule-page .fc-dayGrid-day {
+.fc-dayGrid-day {
   padding: 10px; /* Adjust as needed for spacing */
 }
-.group-schedule-page .fc-col-header {
+.fc-col-header {
   border: none !important; /* Remove border from the
 }
   .fc .fc-daygrid-body-natural .fc-daygrid-day-events {
@@ -33,7 +33,7 @@ font-weight: 500;
 }
 
 /* Custom style for the FullCalendar container */
-.group-schedule-page .custom-calendar {
+.custom-calendar {
 border-top: 2px solid #000; /* Border color and width */
 position: relative; /* Ensures the border is correctly positioned */
 }
@@ -44,30 +44,30 @@ border: none !important;
 } */
 
 /* Remove any other borders in the FullCalendar header */
-.group-schedule-page .fc .fc-toolbar {
+.fc .fc-toolbar {
 border: none !important;
 }
 
 /* Ensure that other calendar components are not affected */
-.group-schedule-page .fc .fc-daygrid-day-frame,
-.group-schedule-page .fc .fc-daygrid-day-top,
-.group-schedule-page .fc .fc-daygrid-day-number {
+.fc .fc-daygrid-day-frame,
+.fc .fc-daygrid-day-top,
+.fc .fc-daygrid-day-number {
 border: none !important;
 }
 
-.group-schedule-page .fc .fc-scrollgrid {
+.fc .fc-scrollgrid {
 border: none;
 }
 
-.group-schedule-page .fc-theme-standard td {
+.fc-theme-standard td {
 border: 12px solid #fff;
 }
 
-.group-schedule-page .fc-theme-standard td:last-child {
+.fc-theme-standard td:last-child {
 border-right: none;
 }
 
-.group-schedule-page .fc-theme-standard th {
+.fc-theme-standard th {
 border: none;
 background: #fff;
 height: 50px;
@@ -77,16 +77,16 @@ font-weight: 600;
 line-height: 30px;
 }
 
-.group-schedule-page .fc-scrollgrid-sync-table {
+.fc-scrollgrid-sync-table {
 border-collapse: separate;
 border-spacing: 2px 0;
 }
-.group-schedule-page .fc-daygrid-day-top{
+.fc-daygrid-day-top{
 background: #fff;
 }
 
 /* styles.css */
-.group-schedule-page .fc .fc-col-header-cell-cushion {
+.fc .fc-col-header-cell-cushion {
   display: inline-block;
   padding: 2px 4px;
   font-family: 'Poppins', sans-serif;
@@ -104,36 +104,36 @@ background: #fff;
 margin-right: 9px;
 margin-bottom: 10px;
 } */
-.group-schedule-page .fc .fc-daygrid-day-frame, .group-schedule-page .fc .fc-daygrid-day-top, .group-schedule-page .fc .fc-daygrid-day-number {
+.fc .fc-daygrid-day-frame, .fc .fc-daygrid-day-top, .fc .fc-daygrid-day-number {
 border: none !important;
 background: #fff;
 /* margin: 10px; */
 }
 
-.group-schedule-page .fc .fc-toolbar.fc-header-toolbar {
+.fc .fc-toolbar.fc-header-toolbar {
 display: none;
 }
 
-.group-schedule-page .css-ijsi3p-MuiPaper-root-MuiAccordion-root::before {
+.css-ijsi3p-MuiPaper-root-MuiAccordion-root::before {
 background: none;
 }
 
-.group-schedule-page .fc .fc-daygrid-day-frame {
+.fc .fc-daygrid-day-frame {
  border: 1px solid #E5E5E5 !important;
   background: #fff;
   /* margin: 10px; */
 }
 
-.group-schedule-page .fc .fc-daygrid-day-top{
+.fc .fc-daygrid-day-top{
   background-color: #F6F6F6;
 }
 
-.group-schedule-page .fc-scrollgrid-sync-table {
+.fc-scrollgrid-sync-table {
   border-collapse: separate;
   border-spacing: 2px 0;
 }
 
-.group-schedule-page .fc .fc-daygrid-day-number {
+.fc .fc-daygrid-day-number {
   padding: 4px;
   position: relative;
   z-index: 4;
@@ -147,31 +147,31 @@ background: none;
   background-color: #F6F6F6;
 }
 
-.group-schedule-page .fc-direction-ltr .fc-daygrid-event.fc-event-end, .fc-direction-rtl .fc-daygrid-event.fc-event-start {
+.fc-direction-ltr .fc-daygrid-event.fc-event-end, .fc-direction-rtl .fc-daygrid-event.fc-event-start {
  background:  #FFFFFF;
  border: #FFFFFF;
  cursor: pointer;
 }
 
 
-.group-schedule-page .fc .fc-toolbar.fc-header-toolbar{
+.fc .fc-toolbar.fc-header-toolbar{
   display: none;
 }
 
-.group-schedule-page .MuiSelect-icon {
+.MuiSelect-icon {
   color: #000000;
 }
 
-.group-schedule-page .MuiSelect-select.MuiSelect-select {
+.MuiSelect-select.MuiSelect-select {
   /* padding-right: 24px; */
   padding: 15px;
   /* border-radius: 10px; */
 }
 
-.group-schedule-page .MuiSelect-icon {
+.MuiSelect-icon {
   right: 12px;
 }
 
-.group-schedule-page .MuiPaper-rounded {
+.MuiPaper-rounded {
   border-radius: 2px;
 }

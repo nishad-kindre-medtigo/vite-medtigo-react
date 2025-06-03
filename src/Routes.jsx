@@ -31,16 +31,16 @@ import MonitoringRenewal from './views/MonitoringRenewal';
 import StateCompliance from './views/StateCompliance';
 import ToolsResources from './views/ToolsResources';
 import Acquisition from './views/Acquisition';
+import CourseSyllabus from './views/Acquisition/MyLearning/courseSyllabus';
 import TeamCompliance from './views/AdminView/TeamCompliance';
 import NewSetting from './views/newSetting';
 import CourseLearning from './views/CourseLearning';
-import RegularCourseForm from './views/CMESurvey/RegularCourseForm';
-import OpioidCourseForm from './views/CMESurvey/OpioidCourseForm';
 import CMESurveyForm from './views/CMESurvey';
 import SwapRequest from './views/Scheduling/SwapRequest';
 import MySchedule from './views/Scheduling/MySchedule';
 import Availability from './views/Scheduling/Availability';
 import GroupSchedule from './views/Scheduling/GroupSchedule';
+import DraftSchedule from './views/Scheduling/DraftSchedule';
 import RequestPayment from './views/Scheduling/PaymentRequest/pages/RequestPayment';
 import RequestHistory from './views/Scheduling/PaymentRequest/pages/RequestHistory';
 import RequestDurationTable from './views/Scheduling/PaymentRequest/pages/RequestDurationTable';
@@ -243,6 +243,10 @@ const serviceRoutes = [
     element: Acquisition
   },
   {
+    path: '/course-syllabi',
+    element: CourseSyllabus
+  },
+  {
     path: '/learning/course/:courseID',
     element: CourseLearning
   },
@@ -270,6 +274,11 @@ const serviceRoutes = [
     path: '/schedule/group-schedule',
     guard: SchedulingGuard,
     element: GroupSchedule
+  },
+  {
+    path: '/schedule/draft-schedule',
+    guard: SchedulingGuard,
+    element: DraftSchedule
   },
   {
     guard: PaymentGuard,
