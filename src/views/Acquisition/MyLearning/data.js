@@ -87,7 +87,7 @@ export const FullAccessPlanInfo = [
         description: 'A complete set of downloadable PDF documents that will help you study whenever, wherever you want to.'
     },
     {
-        title: '16.25 AMA PRA Category 1 CME/CE Credits - ',
+        title: '22.25 AMA PRA Category 1 CME/CE Credits - ',
         description: 'Meet your CME/CE requirements by getting these credits upon successful course completion.'
     },
     {

@@ -7,6 +7,7 @@ import { useOpenSnackbar } from '../../../../hooks/useOpenSnackbar';
 import authService from '../../../../services/authService';
 import orderServices from '../../../../services/orderServices';
 import { useMyLearningContext } from '../../../../context/MyLearningContext';
+import { SERVER_URL } from '../../../../settings';
 
 // Course Plans To place order for TeamHealth User when clicked on Renew
 const TEAMHEALTH_COURSE_PLANS = {
@@ -38,7 +39,8 @@ const RetakeCourseDialog = ({ course_id, handleRefresh }) => {
   const resetCourseProgress = async (email, course_id, token) => {
     try {
       setLoading(true);
-      const apiUrl = `https://backend.medtigo.com/wp-json/ldlms/v1/reset_course_progress?email=${email}&course_id=${course_id}&token=${token}&platform=dev`;
+      const devParameter = SERVER_URL === "https://dev.medtigo.com/" ? '&platform=dev' : ''
+      const apiUrl = `https://backend.medtigo.com/wp-json/ldlms/v1/reset_course_progress?email=${email}&course_id=${course_id}&token=${token}${devParameter}`;
       const response = await axios.get(apiUrl);
 
       if (response) {

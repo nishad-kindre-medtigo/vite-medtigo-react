@@ -388,14 +388,14 @@ export const SingleCard = ({ title, cardImg1, isMobile, fullAccess, currentPlan 
       </Typography>
       <ul style={styles.listContainer}>
         <li>{title} Provider Card</li>
-        {/* {title === 'ASC CE' && (
+        {title === 'ASC CE' && (
           <li>
-            2 CME/CE Credits -{' '}
+            6 CME/CE Credits -{' '}
             <span style={{ fontWeight: 500 }}>
               Meet your CME/CE requirements by getting these credits upon successful course completion.
             </span>
           </li>
-        )} */}
+        )}
         <li>
           Course Syllabus and Study Guide -{' '}
           <span style={{ fontWeight: 500 }}>
