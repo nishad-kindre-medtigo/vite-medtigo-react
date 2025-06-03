@@ -123,7 +123,8 @@ const PaymentRequests = () => {
     setPage(0)
     setStartDate(tempStartDate);
     setEndDate(tempEndDate);
-    getShiftsData(page, limit, tempStartDate, tempEndDate);
+    const subtractedStartDate = moment(tempStartDate).subtract(1, 'day');
+    getShiftsData(page, limit, subtractedStartDate, tempEndDate);
   };
 
   return (

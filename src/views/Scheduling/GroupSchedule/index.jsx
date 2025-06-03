@@ -7,20 +7,23 @@ import './style.css';
 import { useEffect } from 'react';
 import schedullingServices from '../../../services/schedullingServices';
 import { useSelector } from 'react-redux';
-import { Box,CircularProgress,Grid,IconButton, Snackbar, TextField, Divider, Dialog, DialogActions, Typography, Button} from '@mui/material';
+import { Box,CircularProgress,Grid,IconButton, Snackbar, TextField, Divider, Dialog, DialogActions, Typography, Button, useMediaQuery,
+  useTheme} from '@mui/material';
 import hospitalsService from '../../../services/hospitalsService';
 import departmentsService from '../../../services/departmentsService';
 import { useLocation } from 'react-router-dom';
 import moment from 'moment';
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
-import { useOpenSnackbar } from '../../../hooks/useOpenSnackbar';
+import { useSnackbar } from 'notistack';
 import shiftServices from '../../../services/shiftServices';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
 
-const GroupSchedulePage = () => {
-  const openSnackbar = useOpenSnackbar();
+const Calender = () => {
+  const theme = useTheme();
+  const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
+  const { enqueueSnackbar } = useSnackbar();
   const [data, setData] = useState([]);
   const [data2, setData2] = useState([]);
   const [currentDate, setCurrentDate] = useState(new Date());
@@ -238,41 +241,35 @@ const handleFilters = async (index, value) => {
           const resp = await departmentsService.getDepartments(
             filters.hospital.value
           );
-
-          let newResp;
           const filteredOptions = resp.filter(item =>
             departmentID.includes(item.id)
           );
-          if (filteredOptions.length > 0)
-            newResp = [{ name: 'Please Select' }].concat(filteredOptions);
-          else {
-            newResp = [{ name: 'Not available' }];
-          }
-          if (currentDepartmentId) {
-            setFilters({
-              ...filters,
-              department: {
-                ...filters['department'],
-                options: newResp,
-                value: currentDepartmentId
-              }
-            });
-          } else {
-            setFilters({
-              ...filters,
-              department: {
-                ...filters['department'],
-                options: newResp,
-                value: ''
-              }
-            });
-          }
+          const newResp = filteredOptions.length > 0
+            ? [{ name: 'Please Select' }, ...filteredOptions]
+            : [{ name: 'Not available' }];
+
+          setFilters(prev => ({
+            ...prev,
+            department: {
+              ...prev.department,
+              options: newResp,
+              value: schedulesFilterData.current?.departmentId || ''
+            }
+          }));
         } catch (err) {
-          console.error(err);
+          console.error("Failed to load departments:", err);
+          setFilters(prev => ({
+            ...prev,
+            department: {
+              ...prev.department,
+              options: [{ name: 'Not available' }],
+              value: ''
+            }
+          }));
         }
       }
     })();
-  }, [filters.hospital.value]);
+  }, [filters.hospital.value, departmentID]);
 
   const getScheduleData = async (selectedScheduleID) => {
     let scheduleCount = 0; 
@@ -425,14 +422,14 @@ const handleFilters = async (index, value) => {
   }, []);
 
   const clearDepartmentAndSchedule = () => {
-    setFilters({
-      ...filters,
+    setFilters(prev => ({
+      ...prev,
       department: {
-        ...filters['department'],
+        ...prev.department,
         options: [{ name: 'Not available' }],
         value: ''
       }
-    });
+    }));
   };
 
   useEffect(() => {
@@ -686,7 +683,7 @@ const handleEventClick = (eventInfo) => {
     return false;
     }
 
-  //  if(allow){
+     //  if(allow){
   //   const receiverSwap = receiverSwapInfo
   //   const senderSwap = senderSwapInfo
   //  let isValidSwap = false
@@ -747,196 +744,277 @@ const handleEventClick = (eventInfo) => {
   //     setClickedCount(0)
   //   }
 
-   
+  
   return (
     <>
-      <Grid
-        className='group-schedule-page'
-        alignItems="center"
-        style={{
-          gap: '15px',
-          display: 'flex',
-          marginTop: '12px',
-          marginBottom: '16px'
-        }}
-      >
-         {Object.entries(filters).map(([key, filter], index) => (
-      <Grid size={{ xs: 12, sm: 3 }} key={index} style={{ maxWidth: '20%' }}>
-        <TextField
-          fullWidth
-          label={filter.label}
-          name={key}
-          onChange={e => handleFilters(key, e.target.value)}
-          select
-          SelectProps={{ native: true }}
-          value={filter.value}
-          required
-          InputLabelProps={{
-            shrink: true, // This will prevent the label from overlapping
+     <Grid
+      container={!isDesktop} // Grid container for mobile, flex for desktop
+      alignItems="center"
+      spacing={!isDesktop ? 2 : 0} // Spacing for mobile, none for desktop
+      sx={{
+        display: isDesktop ? 'flex' : 'grid',
+        gap: isDesktop ? '15px' : 0, // Desktop: flex with gap, Mobile: normal grid spacing
+        marginTop: '12px',
+        marginBottom: '16px',
+      }}
+    >
+      {Object.entries(filters).map(([key, filter], index) => (
+        <Grid size={{ xs: 12, sm: 6, md: 3 }}
+          key={index}
+          sx={{
+            maxWidth: isDesktop && index === 0 ? '20%' : 'unset', // Apply maxWidth only to the first filter on desktop
           }}
         >
-          {filter.options.map(option => (
-            <option key={option.id} value={option.id}>
-              {option.name}
-            </option>
-          ))}
-        </TextField>
-      </Grid>
-    ))}
-        <Grid size={{ xs: 12, sm: 3 }}>
-          <Typography
-            style={{
-              fontFamily: 'Poppins',
-              fontSize: '12px',
-              fontWeight: 400,
-              lineHeight: '18px',
-              letterSpacing: '0.03em',
-              textAlign: 'left',
-              height: '24px',
-              width: '505px'
+          <TextField
+            fullWidth
+            label={filter.label}
+            name={key}
+            onChange={(e) => handleFilters(key, e.target.value)}
+            select
+            SelectProps={{ native: true }}
+            value={filter.value}
+            required
+            InputLabelProps={{
+              shrink: true, // Prevents label overlap
             }}
           >
-            Info: Send a swap request to your co-members by selecting your time
-            zone and theirs, enabling you to exchange shifts that they will
-            approve for convenience.
-          </Typography>
+            {filter.options.map((option) => (
+              <option key={option.id} value={option.id}>
+                {option.name}
+              </option>
+            ))}
+          </TextField>
         </Grid>
-      </Grid>     
-      
-      {schedule && showCalendar ? (
-  <Box p={2} style={{ border: '1px solid #DFDFDF', marginTop: '10px' }}>
-    <Box>
-      <Grid
-        container
-        justifyContent="center"
-        alignItems="center"
-        style={{
-          marginBottom: '10px',
-          paddingBottom: '20px',
-          borderBottom: '1px solid #DFDFDF',
-          marginTop: '5px'
-        }}
-      >
+      ))}
+
+      <Grid size={{ xs: 12, sm: 3 }}>
         <Typography
-          style={{
-            fontWeight: '600',
-            fontSize: '20px',
+          sx={{
+            fontFamily: 'Poppins',
+            fontSize: '12px',
+            fontWeight: 400,
+            lineHeight: '18px',
             letterSpacing: '0.03em',
-            marginRight: '10px',
-            color: '#3A3A3A',
-            textTransform: 'uppercase'
+            textAlign: { xs: 'center', md: 'left' }, // Center align on mobile, left for desktop
+            width: '100%',
+            maxWidth: '505px',
           }}
         >
-          {currentDate.toLocaleString('default', {
-            month: 'long',
-            year: 'numeric'
-          })}
+          Info: Send a swap request to your co-members by selecting your time
+          zone and theirs, enabling you to exchange shifts that they will
+          approve for convenience.
         </Typography>
-        <div style={{ display: 'flex', gap: '10px' }}>
-          <IconButton
-            onClick={handlePrev}
-            style={{
-              border: '1px solid #2872C1',
-              borderRadius: '2px',
-              padding: '3px',
-              backgroundColor: '#fff'
-            }}
-          >
-            <ChevronLeftIcon style={{ color: '#2872C1' }} />
-          </IconButton>
-          <IconButton
-            onClick={handleNext}
-            style={{
-              border: '1px solid #2872C1',
-              borderRadius: '2px',
-              padding: '3px',
-              backgroundColor: '#fff'
-            }}
-          >
-            <ChevronRightIcon style={{ color: '#2872C1' }} />
-          </IconButton>
-        </div>
-        <Button
-          onClick={handleToday}
-          variant="contained"
-          color="primary"
-          size="small"
-        >
-          Today
-        </Button>
       </Grid>
-      { isLoading ? <CircularProgress style={{display: "flex", margin: "150px 0px", marginLeft: "50%"}}/> 
-      : <FullCalendar
-        ref={calendarRef}
-        plugins={[resourceTimelinePlugin, dayGridPlugin, interactionPlugin]}
-        initialView="dayGridMonth"
-        schedulerLicenseKey="GPL-My-Project-Is-Open-Source"
-        editable={false}
-        aspectRatio={1.5}
-        contentHeight="auto"
-        resourceAreaWidth="210px"
-        events={events}
-        key={schedule}
-        initialDate={currentDate}
-        resources={[]}
-        eventClick={handleEventClick}
-        showNonCurrentDates={false}
-        eventContent={eventInfo => {
-          const { event } = eventInfo;
-          const CurrentUser = `${user.first_name} ${user.last_name}`;
-          const isCurrentUser = event.extendedProps.name === CurrentUser;
-          const isPastShift = moment(event.start).isBefore(moment(), 'day');
-          
-          return (
-            <div style={{ padding: '5px' , width:'-webkit-fill-available'}}>
-              <Typography variant="caption" style={{ fontWeight: 600 }}>
-                {event.extendedProps.shiftname}
-              </Typography>
-              <Typography variant="caption" display="block">
-                {event.title}
-              </Typography>
-              <div style={{ 
-                background: isCurrentUser ? '#DFEEFF' : '#FAF4D6', 
-                padding: '5px', 
-                display: 'flex', 
-                alignItems: 'center', 
-                marginTop: '5px',
-                width:'100%', 
-              }}>
-               <span onClick={(e) => handleCheckBoxClick(
-                  e, 
-                  event.id, 
-                  event.extendedProps.dndID, 
-                  isPastShift, 
-                  event.extendedProps.name, 
-                  event.extendedProps.onDate, 
-                  event.extendedProps.beginTime, 
-                  event.extendedProps.closeTime,
-                  event.extendedProps.providerId,
-                  event.extendedProps.email
-                )}>
-                  {checkedStates[event.extendedProps.dndID] ? 
-                    <CheckBoxIcon style={{ fontSize: '18px', color: '#2872C1' , marginRight:'7px'}} /> : 
-                    <CheckBoxOutlineBlankIcon style={{ fontSize: '18px', marginRight:'7px' }} />
-                  }
-                </span>
-                <Typography variant="caption" style={{ fontWeight: 600 }}>
-                  {event.extendedProps.name}
-                </Typography>
-              </div>
+    </Grid>
+  
+      
+      {schedule && showCalendar ?
+       (
+      <Box p={2} style={{ border: '1px solid #DFDFDF', marginTop: '10px' }}>
+        <Box>
+          <Grid
+            container
+            justifyContent="center"
+            alignItems="center"
+            style={{
+              marginBottom: '10px',
+              paddingBottom: '20px',
+              borderBottom: '1px solid #DFDFDF',
+              marginTop: '5px',
+            }}
+          >
+            <Typography
+              style={{
+                fontWeight: '600',
+                fontSize: '20px',
+                letterSpacing: '0.03em',
+                marginRight: '10px',
+                color: '#3A3A3A',
+                textTransform: 'uppercase',
+              }}
+            >
+              {currentDate.toLocaleString('default', {
+                month: 'long',
+                year: 'numeric',
+              })}
+            </Typography>
+            <div style={{ display: 'flex', gap: '10px' }}>
+              <IconButton
+                onClick={handlePrev}
+                style={{
+                  border: '1px solid #2872C1',
+                  borderRadius: '2px',
+                  padding: '3px',
+                  backgroundColor: '#fff',
+                }}
+              >
+                <ChevronLeftIcon style={{ color: '#2872C1' }} />
+              </IconButton>
+              <IconButton
+                onClick={handleNext}
+                style={{
+                  border: '1px solid #2872C1',
+                  borderRadius: '2px',
+                  padding: '3px',
+                  backgroundColor: '#fff',
+                }}
+              >
+                <ChevronRightIcon style={{ color: '#2872C1' }} />
+              </IconButton>
             </div>
-          );
-        }}
-        views={{
-          dayGridMonth: {
-            dayHeaderFormat: { weekday: 'long' }
-          }
+            <Button onClick={handleToday} variant="contained" color="primary" size="small" style={{marginLeft:'5px'}}>
+              Today
+            </Button>
+          </Grid>
+      
+          {isLoading ? (
+            <CircularProgress style={{ display: 'flex', margin: '150px 0px', marginLeft: '50%' }} />
+          ) : (
+            // Scrollable wrapper for FullCalendar
+            <Box
+              sx={{
+                width: '100%',
+                overflowX: 'auto', // Enables horizontal scrolling
+                display: 'block',
+                paddingBottom: '10px', // Prevents scrollbar overlap
+              }}
+            >
+              <Box sx={{ minWidth: '1000px' }}>
+                <FullCalendar
+                  ref={calendarRef}
+                  plugins={[resourceTimelinePlugin, dayGridPlugin, interactionPlugin]}
+                  initialView="dayGridMonth"
+                  schedulerLicenseKey="GPL-My-Project-Is-Open-Source"
+                  editable={false}
+                  aspectRatio={1.5}
+                  contentHeight="auto"
+                  resourceAreaWidth="210px"
+                  events={events}
+                  key={schedule}
+                  initialDate={currentDate}
+                  resources={[]}
+                  eventClick={handleEventClick}
+                  showNonCurrentDates={false}
+                  eventContent={(eventInfo) => {
+                    const { event } = eventInfo;
+                    const CurrentUser = `${user.first_name} ${user.last_name}`;
+                    const isCurrentUser = event.extendedProps.name === CurrentUser;
+                    const isPastShift = moment(event.start).isBefore(moment(), 'day');
+                  
+                    return (
+                      <div
+                        style={{
+                          padding: '5px',
+                          width: '100%',
+                          display: 'flex',
+                          flexDirection: 'column',
+                          alignItems: 'flex-start', // Ensures content aligns properly
+                          wordWrap: 'break-word',
+                          overflow: 'hidden',
+                          textOverflow: 'ellipsis',
+                          maxWidth: '100%',
+                        }}
+                      >
+                        {/* Shift Name Inside a Div to Prevent Overflow */}
+                        <div
+                          style={{
+                            fontWeight: 600,
+                            fontSize: '12px',
+                            whiteSpace: 'nowrap',
+                            overflow: 'hidden',
+                            textOverflow: 'ellipsis',
+                            width: '100%',
+                          }}
+                        >
+                          {event.extendedProps.shiftname}
+                        </div>
+                  
+                        <Typography variant="caption" display="block">
+                          {event.title}
+                        </Typography>
+                  
+                        <div
+  style={{
+    background: isCurrentUser ? '#DFEEFF' : '#FAF4D6',
+    padding: '5px',
+    display: 'flex',
+    alignItems: 'center',
+    marginTop: '5px',
+    width: '100%',
+    flexWrap: 'wrap', // Ensures content adjusts on small screens
+  }}
+>
+  <span
+    onClick={(e) =>
+      handleCheckBoxClick(
+        e,
+        event.id,
+        event.extendedProps.dndID,
+        isPastShift,
+        event.extendedProps.name,
+        event.extendedProps.onDate,
+        event.extendedProps.beginTime,
+        event.extendedProps.closeTime,
+        event.extendedProps.providerId,
+        event.extendedProps.email
+      )
+    }
+  >
+    {checkedStates[event.extendedProps.dndID] ? (
+      <CheckBoxIcon
+        style={{
+          fontSize: '18px',
+          color: '#2872C1',
+          marginRight: '5px',
+          position: 'relative',
+          top: '3px',
         }}
       />
-      }
-    </Box>
-  </Box>
-) : <Box mt={2} style={{
+    ) : (
+      <CheckBoxOutlineBlankIcon
+        style={{
+          fontSize: '18px',
+          marginRight: '5px',
+          position: 'relative',
+          top: '3px',
+        }}
+      />
+    )}
+  </span>
+
+  {/* Wrapped event.extendedProps.name inside a div to control width and overflow */}
+  <div
+    style={{
+      maxWidth: 'calc(100% - 30px)', // Prevents it from taking full width
+      overflow: 'hidden',
+      textOverflow: 'ellipsis',
+      whiteSpace: 'nowrap',
+      flexShrink: 1, // Prevents text from growing beyond available space
+      minWidth: 0, // Ensures proper shrinking behavior in flexbox
+    }}
+  >
+    <Typography variant="caption" style={{ fontWeight: 600 }}>
+      {event.extendedProps.name}
+    </Typography>
+  </div>
+</div>
+                      </div>
+                    );
+                  }}
+                  views={{
+                    dayGridMonth: {
+                      dayHeaderFormat: { weekday: 'long' },
+                    },
+                  }}
+                />
+              </Box>
+            </Box>
+          )}
+        </Box>
+      </Box>
+      
+) 
+: <Box mt={2} style={{
   fontSize: '16px',
   backgroundColor: '#F8F8F8',
   height: '55vh',
@@ -1046,7 +1124,9 @@ const handleEventClick = (eventInfo) => {
     (async () => {
       try {
         const swapData = await schedullingServices.swapRequest(swapRequestData);
-        openSnackbar('Your swap request is sent successfully!');
+        enqueueSnackbar('Your swap request is sent successfully!', {
+          variant: 'success'
+        });
         // setSnackbarOpen(true);
         resetSwapStates();  // Reset all states after successful request
       } catch (error) {
@@ -1093,7 +1173,7 @@ const handleEventClick = (eventInfo) => {
           <Typography>SEND SWAP REQUEST</Typography>
           <Divider></Divider>
           <div style={{}}>
-            <Typography>{`There should be at least 8 hours of off time between shifts.`}</Typography>
+            <Typography>There should be at least 8 hours of off time between shifts.</Typography>
           </div>
           <div style={{ display: 'flex', flexDirection: 'row', gap: '25px', }}>
             <DialogActions>
@@ -1208,4 +1288,4 @@ const handleEventClick = (eventInfo) => {
   );
 };
 
-export default GroupSchedulePage;
+export default Calender;
