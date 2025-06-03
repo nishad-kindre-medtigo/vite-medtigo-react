@@ -1,6 +1,6 @@
 import React, { forwardRef, useEffect, useState, useImperativeHandle, useContext } from 'react';
 import { Typography } from '@mui/material';
-import adminService from '../../../services/adminService';
+import adminService from 'src/services/adminService';
 import { ReportFilterContext } from '../../../context/ReportFilterContext';
 import DepartmentAccordion from './DepartmentAccordion';
 import { PlaceHolder, DefaultPlaceHolder, PageContainer } from '../../../components/CMECompliance';

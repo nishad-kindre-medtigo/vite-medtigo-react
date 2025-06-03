@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Autocomplete, TextField, Button, Box } from '@mui/material';
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
 import PasswordContainer from '../../ToolsResources/Vault/components/PasswordContainer';
-import passwordManagerServices from '../../../services/passwordManagerService';
+import passwordManagerServices from 'src/services/passwordManagerService';
 import { useSelector } from 'react-redux';
 
 const VaultPage = () => {

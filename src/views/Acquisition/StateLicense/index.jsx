@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import moment from 'moment';
 import { useLicenceContext } from '../../../context/LicenseContext';
 import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
-import alertPage from '../../../services/alertPage';
+import alertPage from 'src/services/alertPage';
 import history from '../../../utils/history';
 import Page from '../../../components/Page';
 import { TrackerPage, SupportPage, AllLicenseTasksPage, SingleLicenseTasksPage, UpdatesPage, } from './pages';

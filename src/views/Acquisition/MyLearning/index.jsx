@@ -9,7 +9,7 @@ import { FullAccessPlanCard, DividerText } from './components/PageCards';
 import NewCourseCard from './components/NewCourseCard';
 import { CourseCardSkeleton } from './components/SkeletonLoader';
 import { useMyLearningContext } from '../../../context/MyLearningContext';
-import myLearningService from '../../../services/myLearningService';
+import myLearningService from 'src/services/myLearningService';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { useLearningContext } from '../../../context/LearningContext';
 import useBreakpoints from 'src/hooks/useBreakpoints';

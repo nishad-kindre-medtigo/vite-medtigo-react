@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Send as SendIcon } from '@mui/icons-material';
 import { Dialog, DialogContent, TextField, InputAdornment, IconButton, Typography, Box, CircularProgress, List, ListItem, Chip, Tooltip } from '@mui/material';
-import taskChatServices from '../../../../services/taskChat';
+import taskChatServices from 'src/services/taskChat';
 import CancelIcon from '@mui/icons-material/Close';
 import { useSelector } from 'react-redux';
 import { SERVER_URL } from '../../../../settings';

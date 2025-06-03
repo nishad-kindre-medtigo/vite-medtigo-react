@@ -1,7 +1,7 @@
 import React, { forwardRef, useEffect, useState, useImperativeHandle, useContext } from 'react';
 import DepartmentAccordion from '../ClinicalCertificate/DepartmentAccordion';
 import { Typography } from '@mui/material';
-import adminService from '../../../services/adminService';
+import adminService from 'src/services/adminService';
 import { ReportFilterContext } from '../../../context/ReportFilterContext';
 import { PlaceHolder, DefaultPlaceHolder, PageContainer } from '../../../components/CMECompliance';
 import { InfoDialog, InfoIconTooltip } from '../LicenseReports/Components/index';

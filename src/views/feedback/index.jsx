@@ -4,7 +4,7 @@ import { Box, Button, FormControl, FormControlLabel, RadioGroup, Radio, Typograp
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
-import alertPage from '../../services/alertPage';
+import alertPage from 'src/services/alertPage';
 import { Loader } from '../../ui/Progress';
 import { motion } from 'framer-motion';
 

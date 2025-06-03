@@ -3,7 +3,7 @@ import { Box, Grid, Button, TextField, IconButton, Typography, Dialog, Backdrop,
 import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 import CloseIcon from '@mui/icons-material/Close';
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
-import UserAccessService from '../../services/userAccessService';
+import UserAccessService from 'src/services/userAccessService';
 import useBreakpoints from 'src/hooks/useBreakpoints';
 
 const MyInstitutions = () => {

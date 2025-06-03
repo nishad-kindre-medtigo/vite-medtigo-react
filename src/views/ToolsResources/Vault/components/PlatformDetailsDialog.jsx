@@ -7,7 +7,7 @@ import { Transition } from '../../../../ui/Transition';
 import { StyledInputLabel } from '../../../new_staffing/components';
 import { AndroidSwitch } from '.';
 import * as Yup from 'yup';
-import passwordManagerServices from '../../../../services/passwordManagerService';
+import passwordManagerServices from 'src/services/passwordManagerService';
 import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 import useBreakpoints from 'src/hooks/useBreakpoints';
 import { Loader } from '../../../../ui/Progress';

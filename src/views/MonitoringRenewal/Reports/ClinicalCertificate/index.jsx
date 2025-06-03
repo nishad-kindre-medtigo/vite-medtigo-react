@@ -3,7 +3,7 @@ import { Box, TableBody, TableCell, TableContainer, TableHead, TableRow } from '
 import { AccordionBox, AccordionTable, PlaceHolder, DefaultPlaceHolder, PageContainer } from '../../../../components/CMECompliance';
 import { useSelector } from 'react-redux';
 import { getLicenseStatusImage, calculateStatus } from '../../../AdminView/utils';
-import adminService from '../../../../services/adminService';
+import adminService from 'src/services/adminService';
 import moment from 'moment';
 import { CertificateTypeOptions } from '../../../../context/ReportFilterContext';
 import { StatusFilter } from '../../../AdminView/ClinicalCertificate/UserView';

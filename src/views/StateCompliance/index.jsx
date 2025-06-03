@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import { cme_states as states } from '../../appConstants';
 import './style.css';
 import { useSelector } from "react-redux";
-import StateSpecificCMECervices from '../../services/stateSpecificCMEService';
+import StateSpecificCMECervices from 'src/services/stateSpecificCMEService';
 import { Box, Grid, TableCell } from '@mui/material';
 import { tableCellClasses } from "@mui/material";
 import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';

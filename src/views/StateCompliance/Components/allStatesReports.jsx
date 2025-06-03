@@ -10,7 +10,7 @@ import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleUp';
 import { PageNav } from '../../AdminView/TeamCompliance/components';
 import { DefaultPlaceHolder, PlaceHolder } from '../../../components/CMECompliance';
 import { useParams } from 'react-router-dom';
-import StateSpecificCMECervices from '../../../services/stateSpecificCMEService';
+import StateSpecificCMECervices from 'src/services/stateSpecificCMEService';
 
 function SingleUserMultiState() {
     const location = useLocation();

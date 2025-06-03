@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 import { useSelector } from 'react-redux';
-import certificatesService from '../services/certificatesService';
-import orderServices from '../services/orderServices';
+import certificatesService from 'src/services/certificatesService';
+import orderServices from 'src/services/orderServices';
 import calculateCreditPoints from '../utils/calculateCreditPoints';
-import alertPage from '../services/alertPage';
+import alertPage from 'src/services/alertPage';
 import { groupBy } from 'lodash';
 
 export const CertificatesContext = React.createContext({});

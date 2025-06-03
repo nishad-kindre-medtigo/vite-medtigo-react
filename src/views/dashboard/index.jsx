@@ -5,8 +5,8 @@ import { CertificatesContext } from '../../context/CertificatesContext';
 import { StaffingContext } from '../../context/StaffingContext';
 import { DashboardSkeleton } from './components';
 import { useSelector } from 'react-redux';
-import alertPage from '../../services/alertPage';
-import myLearningService from '../../services/myLearningService';
+import alertPage from 'src/services/alertPage';
+import myLearningService from 'src/services/myLearningService';
 
 const DashboardPage = () => {
   const { generatedCertificates, addedCertificates, oldCertificates, certificatesData, grantedLicenses, claimedCreditPoints, userAddedCreditPoints } = useContext(CertificatesContext);

@@ -3,7 +3,7 @@ import moment from 'moment';
 import { Box } from '@mui/material';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { CertificateActions } from '../../../MonitoringRenewal/components/CertificateActions';
-import certificatesService from '../../../../services/certificatesService';
+import certificatesService from 'src/services/certificatesService';
 import { useSelector } from 'react-redux';
 import { getCertificateExpiryDetails } from '../../../../utils/getCertificateExpiryDetails';
 import RenewLicenseDialog from '../../../MonitoringRenewal/dialogs/RenewLicenseDialog';

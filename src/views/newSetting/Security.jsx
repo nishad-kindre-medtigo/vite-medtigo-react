@@ -4,7 +4,7 @@ import * as Yup from 'yup';
 import { Formik } from 'formik';
 import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 import { Box, Button, Grid, Typography, TextField } from '@mui/material';
-import authService from '../../services/authService';
+import authService from 'src/services/authService';
 import CryptoJS from 'crypto-js';
 
 const ENCRYPTION_KEY = import.meta.env.VITE_ENCRYPTION_KEY;

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Box, IconButton, Dialog, DialogTitle, DialogContent, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@mui/material';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import { AccordionBox, AccordionTable } from '../../../components/CMECompliance';
-import adminService from '../../../services/adminService';
+import adminService from 'src/services/adminService';
 import moment from 'moment';
 
 const TasksPopup = ({

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Box, Grid, Button, Dialog, DialogContent, DialogTitle, IconButton, Typography, Tooltip } from '@mui/material';
-import simulationService from '../../../../../../services/simulationServices';
+import simulationService from 'src/services/simulationServices';
 import { useSelector } from 'react-redux';
 import RetryIcon from '@mui/icons-material/Refresh';
 import CompleteIcon from '@mui/icons-material/CheckCircle';

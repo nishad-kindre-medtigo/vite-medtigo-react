@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useCertificatesContext } from '../../../context/CertificatesContext';
-import certificatesService from '../../../services/certificatesService';
+import certificatesService from 'src/services/certificatesService';
 import { Button, Dialog, DialogActions, DialogTitle, Grid } from '@mui/material';
 import EditIcon from '@mui/icons-material/BorderColorRounded';
 import DeleteIcon from '@mui/icons-material/DeleteRounded';

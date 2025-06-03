@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { Box, Grid, FormControl, Select, InputLabel, MenuItem } from '@mui/material';
 import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
-import expenseService from '../../../../services/expenseService';
+import expenseService from 'src/services/expenseService';
 import { CommentBox, SubmitButton, FileUpload, AmountInput, UserNameField, DisabledEmailField, DisabledTotalField } from '../../components';
 
 function Results() {

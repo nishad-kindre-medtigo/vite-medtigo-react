@@ -4,7 +4,7 @@ import NewLabel from '../../components/Label';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import moment from 'moment';
 import { tableStyles } from '../Scheduling/PaymentRequest/pages/RequestPayment/ShiftsTable';
-import orderServices from '../../services/orderServices';
+import orderServices from 'src/services/orderServices';
 import { useSelector } from 'react-redux';
 import OrderViewDialog from './OrderView';
 import TableSkeleton from '../Scheduling/PaymentRequest/components/TableSkeleton';

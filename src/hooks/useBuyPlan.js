@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { MARKET_URL } from '../settings';
-import authService from '../services/authService';
+import authService from 'src/services/authService';
 
 // Redirect to medtigo store based on course & selected plan
 export const useBuyPlan = () => {

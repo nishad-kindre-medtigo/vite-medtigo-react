@@ -3,7 +3,7 @@ import { Dialog, Box, Button, Collapse, Typography, Stack, TextareaAutosize, use
 import Confetti from 'react-dom-confetti';
 import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 import useBreakpoints from 'src/hooks/useBreakpoints';
-import LearningService from '../../../../../../services/learningService';
+import LearningService from 'src/services/learningService';
 import { useSelector } from 'react-redux';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';

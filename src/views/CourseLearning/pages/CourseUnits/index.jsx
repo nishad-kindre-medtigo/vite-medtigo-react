@@ -4,7 +4,7 @@ import { Autocomplete, TextField, Button, Box } from '@mui/material';
 import { LearningContext } from '../../../../context/LearningContext';
 // import MapViewer from '../../../map';
 import { courseLanguages } from '../../../../appConstants';
-import useroptionsServices from '../../../../services/userOptionsService';
+import useroptionsServices from 'src/services/userOptionsService';
 import { useNavigate } from 'react-router-dom';
 import useBreakpoints from 'src/hooks/useBreakpoints';
 

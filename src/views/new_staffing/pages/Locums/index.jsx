@@ -9,7 +9,7 @@ import axios from 'axios';
 import { Formik, Form, Field } from 'formik';
 import { useSelector } from 'react-redux';
 import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
-import staffingServices from '../../../../services/staffingServices';
+import staffingServices from 'src/services/staffingServices';
 import { CONNECT_URL } from '../../../../settings';
 
 const LocumsHeader = '/images/staffing/locumsheader.svg';

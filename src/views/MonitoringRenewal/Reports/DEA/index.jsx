@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react';
-import adminService from '../../../../services/adminService';
+import adminService from 'src/services/adminService';
 import { PlaceHolder, DefaultPlaceHolder, PageContainer } from '../../../../components/CMECompliance';
 import { useSelector } from 'react-redux';
 import { SingleUserData } from '../ClinicalCertificate';

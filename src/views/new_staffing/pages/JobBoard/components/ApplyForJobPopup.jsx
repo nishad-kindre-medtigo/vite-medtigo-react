@@ -5,7 +5,7 @@ import * as Yup from 'yup';
 import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 import useBreakpoints from 'src/hooks/useBreakpoints';
 import { FadeTransition } from '../../../../../layouts/NewLayout/TopBar/SearchBar';
-import staffingServices from '../../../../../services/staffingServices';
+import staffingServices from 'src/services/staffingServices';
 import { StaffingContext } from '../../../../../context/StaffingContext';
 import { Grid, Typography, Box, Dialog, DialogTitle, DialogContent, CircularProgress } from '@mui/material';
 import { Loader } from '../../../../../ui/Progress';

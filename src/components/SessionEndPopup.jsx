@@ -4,7 +4,7 @@ import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import PropTypes from 'prop-types';
 import CryptoJS from 'crypto-js';
-import authService from '../services/authService';
+import authService from 'src/services/authService';
 import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 import { FadeTransition } from '../layouts/NewLayout/TopBar/SearchBar';
 import { Loader } from '../ui/Progress';

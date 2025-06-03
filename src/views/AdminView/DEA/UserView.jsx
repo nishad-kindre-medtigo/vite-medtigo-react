@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { useParams } from 'react-router';
-import adminService from '../../../services/adminService';
+import adminService from 'src/services/adminService';
 import BackButtonWithTitle from '../../../components/Reports';
 import { PlaceHolder, DefaultPlaceHolder, PageContainer } from '../../../components/CMECompliance';
 import { SingleUserData } from '../ClinicalCertificate/UserView';

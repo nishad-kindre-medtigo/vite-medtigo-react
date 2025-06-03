@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import SplashScreen from './SplashScreen';
 import { setUserData, logout } from '../actions/accountActions';
-import authService from '../services/authService';
+import authService from 'src/services/authService';
 import OnboardingLicenseEmail from '../views/onboardingLicenseEmail';
 import { CONNECT_URL } from '../settings';
 

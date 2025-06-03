@@ -4,7 +4,7 @@ import { Box, TextField, Grid, FormControl, Select, InputLabel, MenuItem, Toolti
 import { LocalizationProvider, DatePicker } from '@mui/x-date-pickers';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
-import expenseService from '../../../../services/expenseService';
+import expenseService from 'src/services/expenseService';
 import { serviceLine, siteList } from '../../../../appConstants';
 import { CommentBox, SubmitButton } from '../../components';
 import moment from 'moment';

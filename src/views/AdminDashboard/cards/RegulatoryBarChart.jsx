@@ -6,7 +6,7 @@ import MonthFilter from '../components/Filters/MonthFilter';
 import { BarChartTitleBox, FiltersBox } from '../components';
 import { ReportFilterContext } from '../../../context/ReportFilterContext';
 import RegulatoryChart from '../components/Chart/RegulatoryChart';
-import adminService from '../../../services/adminService';
+import adminService from 'src/services/adminService';
 import moment from 'moment';
 import { generateMonthRange } from '../utils';
 

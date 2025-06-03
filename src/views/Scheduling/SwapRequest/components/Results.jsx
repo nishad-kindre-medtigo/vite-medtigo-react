@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import { TableContainer, Paper, Table, TableBody, TableFooter, TableCell, TableHead, TableRow, Box, TablePagination } from '@mui/material';
-import schedullingServices from '../../../../services/schedullingServices';
+import schedullingServices from 'src/services/schedullingServices';
 import { useSelector } from 'react-redux';
 import { tableStyles } from '../../PaymentRequest/pages/RequestPayment/ShiftsTable';
 import { Placeholder, CancelButton, AcceptButton, RejectButton } from './StyledComponents';

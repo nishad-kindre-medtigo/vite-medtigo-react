@@ -4,8 +4,8 @@ import { Loader } from '../../../../ui/Progress';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
 import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
-import authService from '../../../../services/authService';
-import orderServices from '../../../../services/orderServices';
+import authService from 'src/services/authService';
+import orderServices from 'src/services/orderServices';
 import { useMyLearningContext } from '../../../../context/MyLearningContext';
 import { SERVER_URL } from '../../../../settings';
 

@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { Button, TextField, Typography, Box,useTheme, useMediaQuery} from '@mui/material';
 import PDFPreviewComponent from './PDFPreviewComponent';
 import * as pdfjsLib from 'pdfjs-dist/legacy/build/pdf';
-import eSignatureService from '../../services/esignatureService';
+import eSignatureService from 'src/services/esignatureService';
 import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import CloseIcon from '@mui/icons-material/Close';

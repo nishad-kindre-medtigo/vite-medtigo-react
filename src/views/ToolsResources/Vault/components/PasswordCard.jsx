@@ -10,7 +10,7 @@ import { PasswordCardBox, TextIconBox, TooltipIcon } from '.';
 import PlatformDetailsDialog from './PlatformDetailsDialog';
 import { format } from 'date-fns';
 import CryptoJS from 'crypto-js';
-import passwordManagerServices from '../../../../services/passwordManagerService';
+import passwordManagerServices from 'src/services/passwordManagerService';
 import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 import Label from '../../../../components/Label';
 

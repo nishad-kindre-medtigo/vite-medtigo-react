@@ -23,7 +23,7 @@ import { cme_colors } from '../../../../components/CMECompliance/style_guides';
 import CloseIcon from "@mui/icons-material/Close";
 import SingleUserSingleStateDrawer from '../../../../components/CMECompliance/reportsPage/singleUserSingleStateDrawer';
 import { tr } from 'date-fns/locale';
-import StateSpecificCMECervices from '../../../../services/stateSpecificCMEService';
+import StateSpecificCMECervices from 'src/services/stateSpecificCMEService';
 const ReportTable = (
     {
         title,

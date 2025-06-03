@@ -9,7 +9,7 @@ import useBreakpoints from 'src/hooks/useBreakpoints';
 import ReportContainer from '../../../components/CMECompliance/reportsPage/reportContainer';
 import { ComplianceTag, ComplianceTagSmall, PageNav } from '../../AdminView/TeamCompliance/components';
 import { useParams } from "react-router-dom";
-import StateSpecificCMECervices from '../../../services/stateSpecificCMEService';
+import StateSpecificCMECervices from 'src/services/stateSpecificCMEService';
 import { PlaceHolder } from '../../../components/CMECompliance';
 
 

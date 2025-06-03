@@ -13,7 +13,7 @@ import {
   Box,
   TextField,
 } from '@mui/material';
-import mailPreferenceService from '../../../../services/mailPreferenceService';
+import mailPreferenceService from 'src/services/mailPreferenceService';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { useSelector } from 'react-redux';
 import { useSnackbar } from 'notistack';

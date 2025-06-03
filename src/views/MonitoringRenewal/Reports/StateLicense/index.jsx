@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { TableBody, TableCell, TableContainer, TableHead, TableRow, Box } from '@mui/material';
 import { getLicenseStatusImage, formatDate, RenewalCycle, calculateStatus } from '../../../AdminView/utils';
-import licenseReportServices from '../../../../services/licenseReportServices';
+import licenseReportServices from 'src/services/licenseReportServices';
 import { AccordionBox, AccordionTable, PageContainer, PlaceHolder, DefaultPlaceHolder } from '../../../../components/CMECompliance';
 import { useSelector } from 'react-redux';
 import { allCertificates } from '../../../../appConstants';

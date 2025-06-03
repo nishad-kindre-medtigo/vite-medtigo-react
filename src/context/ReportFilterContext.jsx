@@ -1,8 +1,8 @@
 import React, { useEffect, useState, createContext } from 'react';
 import { useSelector } from 'react-redux';
-import hospitalsService from '../services/hospitalsService';
-import StateSpecificCMECervices from '../services/stateSpecificCMEService';
-import departmentsService from '../services/departmentsService';
+import hospitalsService from 'src/services/hospitalsService';
+import StateSpecificCMECervices from 'src/services/stateSpecificCMEService';
+import departmentsService from 'src/services/departmentsService';
 import { designations, cme_states as states } from '../appConstants';
 import { filter, isEqual } from 'lodash';
 

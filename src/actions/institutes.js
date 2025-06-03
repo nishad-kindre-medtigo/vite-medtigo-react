@@ -1,4 +1,4 @@
-import UserAccessService from '../services/userAccessService';
+import UserAccessService from 'src/services/userAccessService';
 export const GET_INSTITUTES = 'GET_INSTITUTES';
 
 export function getInstitutes() {

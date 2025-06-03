@@ -3,7 +3,7 @@ import { Box, TableBody, TableCell, TableContainer, TableHead, TableRow, Typogra
 import { AccordionBox, AccordionTable, PlaceHolder, DefaultPlaceHolder, PageContainer } from '../../../components/CMECompliance';
 import { InfoDialog, InfoIconTooltip } from '../../../views/AdminView/LicenseReports/Components';
 import { useParams } from 'react-router';
-import adminService from '../../../services/adminService';
+import adminService from 'src/services/adminService';
 import BackButtonWithTitle from '../../../components/Reports';
 import moment from 'moment';
 import { ReportFilterContext } from '../../../context/ReportFilterContext';

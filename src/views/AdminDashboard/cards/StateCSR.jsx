@@ -3,7 +3,7 @@ import { Box } from '@mui/material';
 import { AdminDonutChart } from '../components';
 import { CardTitle, ClickText, DetailBox, GreyBox } from '../../../views/dashboard/components';
 import GroupFilter from '../components/Filters/GroupFilter';
-import adminService from '../../../services/adminService';
+import adminService from 'src/services/adminService';
 import { ReportFilterContext } from '../../../context/ReportFilterContext';
 import { ClickHere } from '../components';
 

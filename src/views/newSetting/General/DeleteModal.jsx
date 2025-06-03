@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Dialog, DialogTitle, DialogActions, DialogContent, TextField, Typography } from '@mui/material';
-import authService from '../../../services/authService';
+import authService from 'src/services/authService';
 import AfterAccountDeleteModal from '../../../views/newSetting/General/AfterAccountDeleteModal';
 import CryptoJS from 'crypto-js';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutlineOutlined';

@@ -9,9 +9,9 @@ import FullCalendar from '@fullcalendar/react'; // must go before plugins
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import resourceTimelinePlugin from '@fullcalendar/resource-timeline';
-import hospitalsService from '../../../services/hospitalsService';
-import departmentsService from '../../../services/departmentsService';
-import schedullingServices from '../../../services/schedullingServices';
+import hospitalsService from 'src/services/hospitalsService';
+import departmentsService from 'src/services/departmentsService';
+import schedullingServices from 'src/services/schedullingServices';
 import useBreakpoints from 'src/hooks/useBreakpoints';
 import moment from 'moment';
 import '../GroupSchedule/style.css';

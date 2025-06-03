@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useCallback, useContext } from 'react';
 import { Grid } from '@mui/material';
-import authService from '../../../../../services/authService';
-import learningService from '../../../../../services/learningService';
-import myLearningService from '../../../../../services/myLearningService';
+import authService from 'src/services/authService';
+import learningService from 'src/services/learningService';
+import myLearningService from 'src/services/myLearningService';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { LearningContext } from '../../../../../context/LearningContext';

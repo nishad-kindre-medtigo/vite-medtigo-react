@@ -10,7 +10,7 @@ import timeGridPlugin from '@fullcalendar/timegrid';
 // import "@fullcalendar/timegrid/main.css";
 // import timeGridPlugin from "@fullcalendar/timegrid";
 import './style.css';
-import schedullingServices from '../../../services/schedullingServices';
+import schedullingServices from 'src/services/schedullingServices';
 import { useSelector } from 'react-redux';
 import {
   Grid,
@@ -36,10 +36,10 @@ import ArrowDropDownRoundedIcon from '@mui/icons-material/ArrowDropDownRounded';
 import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import hospitalsService from '../../../services/hospitalsService';
-import departmentsService from '../../../services/departmentsService';
+import hospitalsService from 'src/services/hospitalsService';
+import departmentsService from 'src/services/departmentsService';
 import { useLocation } from 'react-router-dom';
-import shiftServices from '../../../services/shiftServices';
+import shiftServices from 'src/services/shiftServices';
 import moment from 'moment';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';

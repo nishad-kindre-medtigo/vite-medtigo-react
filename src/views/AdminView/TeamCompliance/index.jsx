@@ -6,14 +6,14 @@ import CertificateDrawer from '../../../views/MonitoringRenewal/CertificateDrawe
 import { CertificatesContext } from '../../../context/CertificatesContext';
 import { ReportTabs, ReportViewCom } from './components';
 import { PlaceHolder } from '../../../components/CMECompliance';
-import StateSpecificCMECervices from '../../../services/stateSpecificCMEService';
+import StateSpecificCMECervices from 'src/services/stateSpecificCMEService';
 import { useParams } from 'react-router-dom';
 import SingleUserSingleState from '../../../components/CMECompliance/reportsPage/singleUserSingleState';
 import SingleUserMultiState from '../../../components/CMECompliance/reportsPage/singleUserMultiState';
 import MultiUserSingleState from '../../../components/CMECompliance/reportsPage/multiUserSingleState';
 import MultiUserMultiState from '../../../components/CMECompliance/reportsPage/multiUserMultiState';
-import departmentsService from '../../../services/departmentsService';                  
-import hospitalsService from '../../../services/hospitalsService'; 
+import departmentsService from 'src/services/departmentsService';                  
+import hospitalsService from 'src/services/hospitalsService'; 
 import { useSelector } from 'react-redux';
 import UserCollapse from './components/UserAccordion';
 import ComplianceChart from './components/ComplianceChart';

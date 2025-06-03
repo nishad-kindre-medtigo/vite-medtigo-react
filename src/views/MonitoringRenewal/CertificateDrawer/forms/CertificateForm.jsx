@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import * as moment from 'moment';
 import { states, certCategories } from '../../../../appConstants';
 import { Grid } from '@mui/material';
-import certificatesService from '../../../../services/certificatesService';
+import certificatesService from 'src/services/certificatesService';
 import { useCertificatesContext } from '../../../../context/CertificatesContext';
 import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 import { formatActiveData, scrollToCertificate } from '../utils';
