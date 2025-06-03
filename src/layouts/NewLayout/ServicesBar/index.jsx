@@ -58,9 +58,9 @@ function ServicesBar() {
     { value: 'dashboard', label: 'Dashboard', link: '/dashboard', navLink: '/dashboard' },
     { value: 'acquisition', label: 'Acquisition', link: '/state-licensing', navLink: '/state-licensing' },
     { value: 'monitoring & renewal', label: 'Monitoring & Renewal', link: '/monitoring-renewal/ce-cme', navLink: '/monitoring-renewal' },
-    { value: 'tools & resources', label: 'Tools & Resources', link: '/tools/esign', navLink: '/tools' },
+    { value: 'tools & resources', label: 'Tools & Resources', link: '/tools/vault', navLink: '/tools' },
   ];
-
+  
   const schedulingNavConfig = scheduling
     ? [{ value: 'schedule', label: 'Schedule', link: '/schedule/my-schedule', navLink: '/schedule' }]
     : [];
