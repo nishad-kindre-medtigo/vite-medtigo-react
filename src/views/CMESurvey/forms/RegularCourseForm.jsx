@@ -1,12 +1,12 @@
 import React, { useState, useContext } from 'react';
 import { Autocomplete, Button, Box, TextField, Checkbox, FormControl, FormControlLabel, FormGroup, FormLabel, Typography, Grid, RadioGroup } from '@mui/material';
 import DownloadIcon from '@mui/icons-material/Download';
-import Page from '../../components/Page';
-import learningService from '../../services/learningService';
-import orderServices from '../../services/orderServices';
-import certificatesService from '../../services/certificatesService';
-import { useOpenSnackbar } from '../../hooks/useOpenSnackbar';
-import { CertificatesContext } from '../../context/CertificatesContext';
+import Page from '../../../components/Page';
+import learningService from '../../../services/learningService';
+import orderServices from '../../../services/orderServices';
+import certificatesService from '../../../services/certificatesService';
+import { useOpenSnackbar } from '../../../hooks/useOpenSnackbar';
+import { CertificatesContext } from '../../../context/CertificatesContext';
 import FormSubmitBackdrop from '../components/FormSubmitBackdrop';
 import FormSubmissionPopup from '../components/FormSubmissionPopup';
 import { CREDENTIALS, NURSE_OPTIONS, PHYSICIAN_OPTIONS } from '../data';

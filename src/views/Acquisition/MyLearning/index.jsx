@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Grid, Box, Link, Typography } from '@mui/material';
+import { Grid, Box, Typography } from '@mui/material';
+import { Link } from 'react-router-dom';
 import ExplorePlansDialog from './dialogs/ExplorePlansDialog';
 import RetakeCourseDialog from './dialogs/RetakeCourseDialog';
 import FullSizeCertificateDialog from './dialogs/FullSizeCertificateDialog';
@@ -46,15 +47,16 @@ const MyLearningPage = () => {
   }, [refresh])
 
   return (
-    <Box>
+    <Grid container spacing={3}>
       {(isOrderTypeFullAccess || userPlans?.acls != null  || userPlans?.pals != null  || userPlans?.bls != null ) &&
-        <Link to="/course-syllabi" style={{ color:'#2872C1', textDecoration: 'none', float:'right', display:'flex', alignItems:'center',marginBottom:'-5px'}}>
-      <Typography sx={{fontWeight:isMobile?'600':'700', textDecoration: 'underline', m:0,p:0 }} >Courses Syllabus</Typography><ArrowForwardIcon fontSize='small' />
-      </Link>
+      <Grid size={12}>
+        <Link to="/course-syllabi" style={{ color:'#2872C1', textDecoration: 'none', float:'right', display:'flex', alignItems:'center',marginBottom:'-5px' }}>
+          <Typography sx={{ fontWeight: isMobile ? '600' : '700', textDecoration: 'underline', m: 0,p: 0 }} >Courses Syllabus</Typography><ArrowForwardIcon fontSize='small' />
+        </Link>
+      </Grid>
       }
       {Object.keys(myLearningData).length > 0 ? (
         <>
-          <Grid container spacing={3}>
             {CONNECT_COURSES.map(course => (
               <Grid size={{ xs: 12, sm: 6, md: 4 }} key={course}>
                 <NewCourseCard
@@ -66,7 +68,6 @@ const MyLearningPage = () => {
                 />
               </Grid>
             ))}
-          </Grid>
 
           {/* DISPLAY FULL ACCESS PLAN CARD ONLY FOR NON TH USERS */}
           {!isTeamHealthUser && (
@@ -84,7 +85,7 @@ const MyLearningPage = () => {
       <ExplorePlansDialog fullAccess={isOrderTypeFullAccess}/>
       <RetakeCourseDialog course_id={courseData.id} handleRefresh={handleRefresh}/>
       <FullSizeCertificateDialog />
-    </Box>
+    </Grid>
   );
 };
 

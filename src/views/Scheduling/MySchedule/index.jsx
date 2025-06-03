@@ -8,8 +8,7 @@ import { Box, Typography, IconButton, Button, Grid, Tooltip, useMediaQuery, useT
   DialogTitle,
   DialogContent,
   DialogContentText,
-  DialogActions,
-  Close as CloseIcon } from '@mui/material';
+  DialogActions } from '@mui/material';
 import schedullingServices from '../../../services/schedullingServices';
 import { useSelector } from 'react-redux';
 import moment from 'moment';

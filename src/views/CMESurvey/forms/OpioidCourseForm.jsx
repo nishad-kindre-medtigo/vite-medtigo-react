@@ -1,18 +1,18 @@
 import React, { useState, useContext } from 'react';
 import { Autocomplete, TextField, Button, Box, Checkbox, FormControl, FormControlLabel, FormGroup, FormLabel, Typography, Grid, RadioGroup } from '@mui/material';
 import DownloadIcon from '@mui/icons-material/Download';
-import Page from '../../components/Page';
-import learningService from '../../services/learningService';
-import orderServices from '../../services/orderServices';
-import certificatesService from '../../services/certificatesService';
-import { useOpenSnackbar } from '../../hooks/useOpenSnackbar';
-import { CertificatesContext } from '../../context/CertificatesContext';
+import Page from '../../../components/Page';
+import learningService from '../../../services/learningService';
+import orderServices from '../../../services/orderServices';
+import certificatesService from '../../../services/certificatesService';
+import { useOpenSnackbar } from '../../../hooks/useOpenSnackbar';
+import { CertificatesContext } from '../../../context/CertificatesContext';
 import MOCForm from '../components/MOCForm';
 import FormSubmitBackdrop from '../components/FormSubmitBackdrop';
 import { CREDENTIALS, NURSE_OPTIONS, PHYSICIAN_OPTIONS } from '../data';
 import { DecisionOptions, RatingOptions } from '../components/Options';
 import { AccessDeniedScreen } from '../../CourseLearning/components';
-import { CertificateVariants } from '../../appConstants';
+import { CertificateVariants } from '../../../appConstants';
 
 // SURVEY FORM VALID FOR OPIOID & NIHSS COURSE
 const OpioidSurveyForm = (props) => {
