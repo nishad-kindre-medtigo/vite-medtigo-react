@@ -26,7 +26,7 @@ const NewLayout = ({ children }) => {
   const coursePagePadding = { xs: 0, md: 4, lg: 5 };
 
   return (
-    <div style={{ overflow: 'hidden', minHeight: '100vh' }}>
+    <div style={{ overflow: 'hidden', minHeight: '100vh', background: '#fff' }}>
       <TopBar />
       <MidBar />
       {!hideCarouselAndServicesBar && (
