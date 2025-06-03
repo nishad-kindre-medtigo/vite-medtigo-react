@@ -216,6 +216,17 @@ class SchedullingService {
         })
       })
 
+    getDraftSchedule = id =>
+      new Promise((resolve, reject) => {
+        axios.get(`/schedule/draft/${id}`).then(response => {
+          if (response.data) {
+            resolve(response.data.data);
+          } else {
+            reject(response.data.error);
+          }
+        });
+      });
+
 
     getUserSchedulednd=Data =>
     
