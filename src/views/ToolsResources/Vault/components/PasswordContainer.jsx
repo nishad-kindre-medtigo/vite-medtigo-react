@@ -5,7 +5,7 @@ import PlatformDetailsDialog from './PlatformDetailsDialog';
 import { PlaceHolder } from 'src/views/MonitoringRenewal/ui';
 import { PasswordCardSkeleton } from '.';
 
-const PasswordContainer = ({loading, passwords, open, onClose, setRefresh}) => {
+const PasswordContainer = ({loading, passwords, open, onClose, fetchPasswords}) => {
   return (
     <>
       <Grid container spacing={3} mb={3}>
@@ -24,7 +24,7 @@ const PasswordContainer = ({loading, passwords, open, onClose, setRefresh}) => {
         ) : (
           passwords.map((item, index) => (
             <Grid key={index} size={{ xs: 12, sm: 6, md: 4 }}>
-              <PasswordCard data={item} setRefresh={setRefresh} />
+              <PasswordCard data={item} fetchPasswords={fetchPasswords} />
             </Grid>
           ))
         )}
@@ -33,7 +33,7 @@ const PasswordContainer = ({loading, passwords, open, onClose, setRefresh}) => {
         mode="add"
         open={open}
         onClose={onClose}
-        setRefresh={setRefresh}
+        fetchPasswords={fetchPasswords}
       />
     </>
   );

@@ -20,7 +20,7 @@ const PlatformDetailsDialog = ({
   onClose,
   initialValues,
   mode = 'edit',
-  setRefresh,
+  fetchPasswords,
   handleTaskResponse,
   responseData,
   passwordTaskID
@@ -92,7 +92,7 @@ const PlatformDetailsDialog = ({
       if(handleTaskResponse) {
         handleTaskResponse();
       }
-      setRefresh(prev => !prev);
+      fetchPasswords();
       openSnackbar('Platform details added successfully');
     } catch (error) {
       console.error('Error adding password:', error);
@@ -111,7 +111,7 @@ const PlatformDetailsDialog = ({
           ENCRYPTION_KEY
         ).toString()
       });
-      setRefresh(prev => !prev);
+      fetchPasswords();
       openSnackbar('Site details edited successfully');
     } catch (error) {
       console.error('Error editing password:', error);
