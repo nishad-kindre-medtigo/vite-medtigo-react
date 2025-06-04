@@ -57,7 +57,7 @@ const VaultPage = () => {
         <Autocomplete
           value={vaultSearch || null}
           onChange={(event, newValue) => setVaultSearch(newValue || 'All')}
-          options={['All', 'Generic', ...vaultOptions] || []}
+          options={['All', 'Generic', ...vaultOptions]}
           disabled={passwords.length === 0}
           renderInput={params => (
             <TextField

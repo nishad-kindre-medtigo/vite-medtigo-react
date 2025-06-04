@@ -245,13 +245,7 @@ function FilterPanel({
                                 }
                             }}>
                                 <span style={{ fontSize: isMobile && '14px', display: 'inline-block', flexDirection: 'row', width: 'fit-content', justifyContent: 'flex-end' }}>
-                                    {true && <React.Fragment>
-                                        <p> <strong style={{ fontWeight: '600' }}> License Type :  </strong> {CME_LicenseType.find(it => it.value == license_type).label} <br /> <strong style={{ fontWeight: '600' }}> Request Type :  </strong> {CME_RequestType.find(it => it.value == request_type).label}
-
-                                        </p>
-                                    </React.Fragment>
-                                    }
-
+                                        <p> <strong style={{ fontWeight: '600' }}> License Type :  </strong> {CME_LicenseType.find(it => it.value == license_type).label} <br /> <strong style={{ fontWeight: '600' }}> Request Type :  </strong> {CME_RequestType.find(it => it.value == request_type).label}</p>
                                 </span>
                             </div>
                         </div>

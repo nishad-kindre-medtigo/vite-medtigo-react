@@ -1,4 +1,3 @@
-/* eslint-disable react/no-array-index-key */
 import React, { Suspense, Fragment } from 'react';
 import { Routes, Navigate, Route } from 'react-router-dom';
 import NewLayout from './layouts/NewLayout';

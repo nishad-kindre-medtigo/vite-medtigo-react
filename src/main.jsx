@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { enablePatches } from 'immer';
 import React from 'react';
 import ReactDOM from 'react-dom/client'; // Updated import
