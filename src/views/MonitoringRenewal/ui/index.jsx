@@ -1,14 +1,13 @@
 import React from 'react';
 import { Box, Button, Grid, IconButton, Typography, Tooltip } from '@mui/material';
 import FindIcon from '@mui/icons-material/FindInPageRounded';
-
 import StartIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 import RenewIcon from '@mui/icons-material/Autorenew';
 import ContinueIcon from '@mui/icons-material/SkipNext';
 import StartQuizIcon from '@mui/icons-material/CallMade';
 import ExploreIcon from '@mui/icons-material/OpenInNew';
 import BackArrow from '@mui/icons-material/ArrowBackIosRounded';
-import history from 'src/utils/history';
+import { useNavigate } from 'react-router';
 
 const StyledBox = ({ children, id, sx }) => (
   <Box
@@ -46,6 +45,7 @@ export const PageTitle = ({ title }) => {
 };
 
 export const ReportBackLink = ({ title, tab }) => {
+  const navigate = useNavigate();
   
   return (
     <Box
@@ -59,7 +59,7 @@ export const ReportBackLink = ({ title, tab }) => {
         gap: 0.5,
         my: 1
       }}
-      onClick={() => {history.push(`/monitoring-renewal/${tab}`)}}
+      onClick={() => navigate(`/monitoring-renewal/${tab}`)}
     >
       <BackArrow sx={{ fontSize: '20px', fontWeight: 'bold' }} />
       {title}

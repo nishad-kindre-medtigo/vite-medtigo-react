@@ -106,7 +106,7 @@ const QuizCompletion = props => {
     }
   };
 
-  const goToDashboard = () => history.push('/dashboard');
+  const goToDashboard = () => navigate('/dashboard');
 
   // Redirect to CME Survey Form with hash & courseID as query params
   const handleClaimCME = () => {
