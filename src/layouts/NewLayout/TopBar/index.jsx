@@ -298,7 +298,7 @@ const TopBar = () => {
                   <Avatar
                     src={profilePicture}
                     alt="User"
-                    sx={{ width: 28, height: 28 }}
+                    sx={{ width: 26, height: 26 }}
                   />
                   {/* Crown only for medtigo Orange Users */}
                   {user.isMedtigoOrange && (
