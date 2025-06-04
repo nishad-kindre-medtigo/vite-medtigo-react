@@ -43,7 +43,7 @@ function ImageViewer() {
       {/* Header */}
       <AppBar position="static" sx={{ backgroundColor: '#fff' }}>
         <Toolbar>
-          <a href="http://medtigo.com/">
+          <a href="http://medtigo.com/" aria-label="home">
             <img src="/images/logo.png" alt="Logo" width="168px" />
           </a>
         </Toolbar>
@@ -79,7 +79,7 @@ function ImageViewer() {
           >
             <Typography>
               PDF cannot be displayed.{' '}
-              <a href={attachment} target="_blank" rel="noopener noreferrer">
+              <a href={attachment} target="_blank" aria-label="pdf" rel="noopener noreferrer">
                 Download PDF
               </a>
             </Typography>

@@ -302,6 +302,7 @@ const MessageDialog = ({
                           <a
                             href={`${SERVER_URL}${message.attachments}`}
                             target="_blank"
+                            aria-label="attachment"
                             rel="noopener noreferrer"
                             style={{ color: '#57b9ff' }}
                           >

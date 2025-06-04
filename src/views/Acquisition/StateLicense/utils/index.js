@@ -46,6 +46,6 @@ export const formatLicenseTaskName = data => {
 export const convertMarkdownLinksToHtml = (text) => {
   return text?.replace(
     /\[([^\]]+)\]\(([^)]+)\)/g, 
-    '<a href="$2" target="_blank" rel="noopener noreferrer" style="color: blue; text-decoration: underline">$1</a>'
+    '<a href="$2" target="_blank" rel="noopener noreferrer" aria-label="website" style="color: blue; text-decoration: underline">$1</a>'
   );
 };

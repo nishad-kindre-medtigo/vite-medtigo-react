@@ -216,6 +216,7 @@ const TaskDetailsPopup = ({
                   </span>
                   <a
                     target="_blank"
+                    aria-label="Attachment"
                     rel="noreferrer"
                     href={`${CONNECT_URL}/${data}`}
                   >

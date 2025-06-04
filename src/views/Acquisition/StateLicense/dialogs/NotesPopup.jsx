@@ -125,6 +125,7 @@ const NotesPopup = ({ viewNotesData, openNotesDialog, setOpenNotesDialog }) => {
             </span>{' '}
             <a
               target="_blank"
+              aria-label="Note"
               rel="noreferrer"
               href={`${viewNotesData &&
                 `${CONNECT_URL}` +

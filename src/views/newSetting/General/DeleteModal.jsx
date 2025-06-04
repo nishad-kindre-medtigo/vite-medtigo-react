@@ -103,6 +103,7 @@ const DeleteModal = ({ openDeleteModal, setOpenDeleteModal, user, onInactivate }
               <a
                 style={{ textDecoration: 'none', color: '#2872C1' }}
                 href="mailto:delete@medtigo.com"
+                aria-label="Mail"
               >
                 delete@medtigo.com.
               </a>
