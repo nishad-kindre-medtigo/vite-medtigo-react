@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Typography  } from '@mui/material';
-import { CardTitle, ClickText, DetailBox, DonutChart, GreyBox } from '../components';
+import { CardTitle,  DetailBox, DonutChart, GreyBox } from '../components';
 
 const CMEComplianceCard = ({ claimedCreditPoints, cmeClaimPendingCount, userAddedCreditPoints }) => {
 
@@ -10,6 +10,7 @@ const CMEComplianceCard = ({ claimedCreditPoints, cmeClaimPendingCount, userAdde
       <CardTitle
         title="CME Compliance"
         description="CME compliance helps you monitor your CME credits and claim credit for completed courses. Additionally, generate compliance reports for all 50 states in the USA."
+        link="/monitoring-renewal/ce-cme"
       />
       <GreyBox sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
         <Typography mt={1} mb={2} style={{ fontSize: '14px', fontWeight: 600 }}>
@@ -26,7 +27,6 @@ const CMEComplianceCard = ({ claimedCreditPoints, cmeClaimPendingCount, userAdde
           labelThree="Added by you"
         />
       </GreyBox>
-      <ClickText link="/monitoring-renewal/ce-cme" />
     </DetailBox>
   );
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Typography, Box, List, ListItem, ListItemIcon } from '@mui/material';
 import CheckBoxRoundedIcon from '@mui/icons-material/CheckBoxRounded';
-import { CardTitle, ClickText, DetailBox, GreyBox } from '../components';
+import { CardTitle,  DetailBox, GreyBox } from '../components';
 
 const schedulePages = ['My Schedule', 'Group Schedule', 'Availability', 'Swap Request', 'Payment Request', 'Payment History'];
 
@@ -21,6 +21,7 @@ const ScheduleCard = () => (
     <CardTitle
       title="Schedules"
       description="Manage your schedules effortlessly. Send shift swap requests to your colleagues, and set your availability. Easily request payments for your shifts and track your complete payment history — all in one place."
+      link="/schedule/my-schedule"
     />
     <GreyBox sx={{ flexGrow: 1 }}>
       <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
@@ -30,7 +31,6 @@ const ScheduleCard = () => (
         <img src="/images/dashboard/schedule.svg" alt="Schedule" />
       </Box>
     </GreyBox>
-    <ClickText link="/schedule/my-schedule" />
   </DetailBox>
 );
 

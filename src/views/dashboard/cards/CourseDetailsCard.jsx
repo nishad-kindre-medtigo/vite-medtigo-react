@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Typography, Tooltip, Box, List, ListItem } from '@mui/material';
-import { CardTitle, ClickText, DetailBox, GreyBox, ListItemSkeleton } from '../components';
+import { CardTitle,  DetailBox, GreyBox, ListItemSkeleton } from '../components';
 import { useMyLearningContext } from 'src/context/MyLearningContext';
 import ExplorePlansDialog from 'src/views/Acquisition/MyLearning/dialogs/ExplorePlansDialog';
 import RetakeCourseDialog from 'src/views/Acquisition/MyLearning/dialogs/RetakeCourseDialog';
@@ -72,6 +72,7 @@ const CourseDetailsCard = ({ myLearningData, setRefresh }) => {
       <CardTitle
         title="Course Details"
         description="Check and analyze information about the courses you have purchased."
+        link="/my-learning"
       />
       <GreyBox sx={{ flexGrow: 1 }}>
         {Object.keys(myLearningData).length > 0 ? (
@@ -95,7 +96,6 @@ const CourseDetailsCard = ({ myLearningData, setRefresh }) => {
           </List>
         )}
       </GreyBox>
-      <ClickText link="/my-learning" />
       <ExplorePlansDialog fullAccess={isOrderTypeFullAccess}/>
       <RetakeCourseDialog course_id={selectedCourseID} handleRefresh={handleRefresh}/>
     </DetailBox>

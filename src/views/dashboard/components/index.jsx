@@ -14,7 +14,8 @@ export const DetailBox = ({ children, sx }) => {
   );
 };
 
-export const CardTitle = ({ title, description }) => {
+export const CardTitle = ({ title, description, link }) => {
+  const navigate = useNavigate();
   const [open, setOpen] = useState(false); // State to control tooltip visibility
 
   const handleIconClick = (event) => {
@@ -28,9 +29,9 @@ export const CardTitle = ({ title, description }) => {
 
   return (
     <Box mb={1} display="flex" alignItems="center">
-      <Typography component="span" style={{ fontSize: '20px', fontWeight: 500 }}>
+      <StyledLink onClick={() => navigate(link)} style={{ fontSize: '20px', fontWeight: 500 }}>
         {title}
-      </Typography>
+      </StyledLink>
       {description && (
         <Tooltip
           arrow
@@ -85,7 +86,6 @@ export const DashboardSkeleton = () => {
           <DetailBox>
             <CardTitle title={title} description="Loading..." />
             <Skeleton variant="rounded" animation="wave" width="100%" height={283} sx={{ background: '#F8F8F8' }} />
-            <ClickText link={'/'} />
           </DetailBox>
         </Grid>
       ))}

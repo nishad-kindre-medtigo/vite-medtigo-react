@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Box, Typography, List, ListItem } from '@mui/material';
-import { Arrow, CardTitle, ClickText, DetailBox, GreyBox } from '../components';
+import { Arrow, CardTitle,  DetailBox, GreyBox } from '../components';
 
 const CertificateListItem = ({ title, count }) => {
   return (
@@ -25,6 +25,7 @@ const CertificateCard = ({generatedCertificatesCount, addedCertificatesCount, ol
       <CardTitle
         title="Certificates"
         description="Track your generated provider card, and with the 'Add Certificate' feature, you can easily upload your existing provider cards. We will also keep your old certificates."
+        link="/monitoring-renewal/clinical-certificate"
       />
       <GreyBox sx={{ flexGrow: 1 }}>
         <List style={{ padding: 0, paddingTop: '20px', flexGrow: 1 }}>
@@ -33,7 +34,6 @@ const CertificateCard = ({generatedCertificatesCount, addedCertificatesCount, ol
           <CertificateListItem title="Old Provider Cards" count={oldCertificatesCount} />
         </List>
       </GreyBox>
-      <ClickText link="/monitoring-renewal/clinical-certificate" />
     </DetailBox>
   );
 };
