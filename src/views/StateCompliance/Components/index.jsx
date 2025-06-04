@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { IconButton, styled, Tooltip, tooltipClasses } from "@mui/material";
-import useBreakpoints from "../../../hooks/useBreakpoints";
+import useBreakpoints from "src/hooks/useBreakpoints";
 import ErrorIcon from '@mui/icons-material/Error';
 
 export const ClickableTooltip = ({ title, placement, Icon, customIcon }) => {

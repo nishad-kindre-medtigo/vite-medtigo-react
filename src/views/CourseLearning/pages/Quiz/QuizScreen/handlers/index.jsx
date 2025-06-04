@@ -20,8 +20,8 @@ import QuizHint from './QuizHint';
 import AnswerCheck from './AnswerCheck';
 import QuizResultFilter from './QuizResultFilter';
 import CourseFeedbackPopup from './CourseFeedbackPopup';
-import { useOpenSnackbar } from '../../../../../../hooks/useOpenSnackbar';
-import { Loader } from '../../../../../../ui/Progress';
+import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
+import { Loader } from 'src/ui/Progress';
 
 // Progress Bar displaying number of questions answered and total number of questions in quiz
 export const QuizProgress = ({ currentQuestionIndex, quiz }) => {

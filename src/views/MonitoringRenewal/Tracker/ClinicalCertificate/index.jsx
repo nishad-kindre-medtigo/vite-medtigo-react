@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Grid } from '@mui/material';
-import myLearningService from '../../../../services/myLearningService';
-import { useCertificatesContext } from '../../../../context/CertificatesContext';
-import ExplorePlansDialog from '../../../Acquisition/MyLearning/dialogs/ExplorePlansDialog';
-import RetakeCourseDialog from '../../../Acquisition/MyLearning/dialogs/RetakeCourseDialog';
+import myLearningService from 'src/services/myLearningService';
+import { useCertificatesContext } from 'src/context/CertificatesContext';
+import ExplorePlansDialog from 'src/views/Acquisition/MyLearning/dialogs/ExplorePlansDialog';
+import RetakeCourseDialog from 'src/views/Acquisition/MyLearning/dialogs/RetakeCourseDialog';
 import CertificateCard from './CertificateCard';
-import { PlaceHolder, PageTitle } from '../../../MonitoringRenewal/ui';
+import { PlaceHolder, PageTitle } from 'src/views/MonitoringRenewal/ui';
 import { CertificateSkeletonList } from '../../components/SkeletonLoaders';
 import {useSelector} from 'react-redux';
 

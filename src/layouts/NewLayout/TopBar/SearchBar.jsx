@@ -3,8 +3,8 @@ import { debounce } from 'lodash';
 import { Dialog, DialogContent, InputAdornment, TextField, IconButton, Box, Typography, Fade, styled } from '@mui/material';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
-import { GradientCircularProgress } from '../../../ui/Progress';
-import { useOpenSnackbar } from '../../../hooks/useOpenSnackbar';
+import { GradientCircularProgress } from 'src/ui/Progress';
+import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 
 const SearchField = styled(TextField)(() => ({
   borderColor: '#8B8B8B',

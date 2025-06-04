@@ -1,13 +1,13 @@
 import React, { useState, useContext, useEffect } from 'react';
 import CMECard from './CMECards';
 import { Box, Grid, Typography } from '@mui/material';
-// import myLearningService from '../services/myLearningService';
-import { useCertificatesContext } from '../../../../context/CertificatesContext';
-// import ExplorePlansDialog from '../views/Acquisition/MyLearning/dialogs/ExplorePlansDialog';
-// import RetakeCourseDialog from '../views/Acquisition/MyLearning/dialogs/RetakeCourseDialog';
+// import myLearningService from 'src/services/myLearningService';
+import { useCertificatesContext } from 'src/context/CertificatesContext';
+// import ExplorePlansDialog from 'src/views/Acquisition/MyLearning/dialogs/ExplorePlansDialog';
+// import RetakeCourseDialog from 'src/views/Acquisition/MyLearning/dialogs/RetakeCourseDialog';
 // import StepperCardContainer from './StepperCards';
-import { PlaceHolder, PageTitle } from '../../../MonitoringRenewal/ui';
-import { CertificateSkeletonList } from '../../../MonitoringRenewal/components/SkeletonLoaders';
+import { PlaceHolder, PageTitle } from 'src/views/MonitoringRenewal/ui';
+import { CertificateSkeletonList } from 'src/views/MonitoringRenewal/components/SkeletonLoaders';
 // import {useSelector} from 'react-redux';
 
 const CECME = () => {

@@ -1,8 +1,8 @@
 import React from 'react';
 import CertificateCard from '../DEA/DEACard';
 import { Grid } from '@mui/material';
-import { useCertificatesContext } from '../../../../context/CertificatesContext';
-import { PlaceHolder, PageTitle } from '../../../MonitoringRenewal/ui';
+import { useCertificatesContext } from 'src/context/CertificatesContext';
+import { PlaceHolder, PageTitle } from 'src/views/MonitoringRenewal/ui';
 import { CertificateSkeletonList } from '../../components/SkeletonLoaders';
 
 const StateCSR = () => {

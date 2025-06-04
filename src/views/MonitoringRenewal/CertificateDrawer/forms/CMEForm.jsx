@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import * as moment from 'moment';
-import { certCategories, creditTypes, specificDesignations } from '../../../../appConstants';
+import { certCategories, creditTypes, specificDesignations } from 'src/appConstants';
 import { Box, Grid, TextField } from '@mui/material';
-import certificatesService from '../../../../services/certificatesService';
-import { useCertificatesContext } from '../../../../context/CertificatesContext';
-import { useOpenSnackbar } from '../../../../hooks/useOpenSnackbar';
+import certificatesService from 'src/services/certificatesService';
+import { useCertificatesContext } from 'src/context/CertificatesContext';
+import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 import { formatActiveData, scrollToCertificate } from '../utils';
 import { ActionButton, AddCategoryButton, CustomDatePicker, SelectField, CreditHoursField, FileUploadField, MultipleCategoryBox, ErrorMessage } from '../components';
 

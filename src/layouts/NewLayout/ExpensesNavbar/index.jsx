@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { PrimaryTabPanel } from '../../../ui/Tabs';
+import { PrimaryTabPanel } from 'src/ui/Tabs';
 
 function ExpensesNavbar() {
   const location = useLocation();

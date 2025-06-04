@@ -4,8 +4,8 @@ import { Grid, Typography, TextField, Box, CircularProgress } from '@mui/materia
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
-import { useOpenSnackbar } from '../../../../hooks/useOpenSnackbar';
-import useBreakpoints from '../../../../hooks/useBreakpoints';
+import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
+import useBreakpoints from 'src/hooks/useBreakpoints';
 import { contactData } from '../../data';
 import { boxStyles, ContentBox, StyledInputLabel, SubmitButton, ContactInfoBox } from '../components';
 

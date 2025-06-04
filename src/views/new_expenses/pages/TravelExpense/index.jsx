@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Container } from '@mui/material';
-import Page from '../../../../components/Page';
+import Page from 'src/components/Page';
 import Results from './Results';
 import { pageStyles } from '../../components';
 

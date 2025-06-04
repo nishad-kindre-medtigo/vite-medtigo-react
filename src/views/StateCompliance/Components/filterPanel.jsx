@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { cme_states as states, CME_LicenseType, CME_RequestType, ProfessionWithCertificates } from '../../../appConstants';
+import { cme_states as states, CME_LicenseType, CME_RequestType, ProfessionWithCertificates } from 'src/appConstants';
 import { useSelector } from "react-redux";
 import { Checkbox, Popper, Grid, Button, DialogContent, Box, DialogActions, Typography } from '@mui/material';
 
@@ -9,13 +9,13 @@ import DisabledByDefaultRoundedIcon from '@mui/icons-material/DisabledByDefaultR
 import IndeterminateCheckBoxRoundedIcon from '@mui/icons-material/IndeterminateCheckBoxRounded';
 import { grey } from '@mui/material/colors';
 import { DatePicker, LocalizationProvider, DesktopDatePicker, MobileDatePicker } from '@mui/x-date-pickers';
-import StateSpecificCMECervices from '../../../services/stateSpecificCMEService';
+import StateSpecificCMECervices from 'src/services/stateSpecificCMEService';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import CheckIcon from '@mui/icons-material/Check';
 import { TextField, Tooltip, Autocomplete, Select, DialogTitle, Dialog, DialogContentText, tooltipClasses, ToggleButton, ListItemText } from '@mui/material';
 import moment from "moment";
-import { SERVER_URL } from "../../../settings";
+import { SERVER_URL } from "src/settings";
 // import { Page } from "@react-pdf/renderer";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { createFilterOptions, tableCellClasses } from "@mui/material";
@@ -23,11 +23,11 @@ import { AdapterMoment } from "@mui/x-date-pickers/AdapterMoment";
 import { useSnackbar } from "notistack";
 import HelpIcon from '@mui/icons-material/Help';
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
-import { CertificatesContext } from '../../../context/CertificatesContext';
+import { CertificatesContext } from 'src/context/CertificatesContext';
 import CMERulesPopup from "./viewRulePopup";
 import HelpPopup from "./helpPopup";
-import useBreakpoints from "../../../hooks/useBreakpoints";
-import { IOSSwitch } from "../../../components/CMECompliance";
+import useBreakpoints from "src/hooks/useBreakpoints";
+import { IOSSwitch } from "src/components/CMECompliance";
 
 function FilterPanel({
     states_options,

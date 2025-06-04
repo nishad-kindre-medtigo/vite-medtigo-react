@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { Box, Grid, Button, Typography, Menu } from '@mui/material';
 import ArrowDropDownRoundedIcon from '@mui/icons-material/ArrowDropDownRounded';
 import LicenseStepperCardContainer from '../components/StepperCards';
-import useBreakpoints from '../../../../hooks/useBreakpoints';
+import useBreakpoints from 'src/hooks/useBreakpoints';
 import { PageLink } from '../ui';
-import { CONNECT_URL } from '../../../../settings';
+import { CONNECT_URL } from 'src/settings';
 
 const TrackerPage = props => {
   const { fetchUserTasks, setShowAllTasks, setShowSupport, setShowUpdates, handleOpenFeedback, handleOpenMailPreference } = props;

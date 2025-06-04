@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Backdrop, Typography } from '@mui/material';
-import { Loader } from '../../../ui/Progress';
+import { Loader } from 'src/ui/Progress';
 
 export default function FormSubmitBackdrop({ open }) {
   return (

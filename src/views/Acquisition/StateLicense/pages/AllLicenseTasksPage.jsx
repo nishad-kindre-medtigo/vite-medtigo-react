@@ -1,7 +1,7 @@
 import React from 'react';
 import { Autocomplete, TextField, Grid } from '@mui/material';
 import LicenseTaskCard from '../components/LicenseTaskCard';
-import { PlaceHolder } from '../../../../views/MonitoringRenewal/ui';
+import { PlaceHolder } from 'src/views/MonitoringRenewal/ui';
 import { CountBox, TaskSkeleton, PageBackText } from '../ui';
 
 const AllLicenseTasksPage = props => {

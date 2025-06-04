@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid } from '@mui/material';
 import PasswordCard from './PasswordCard';
 import PlatformDetailsDialog from './PlatformDetailsDialog';
-import { PlaceHolder } from '../../../MonitoringRenewal/ui';
+import { PlaceHolder } from 'src/views/MonitoringRenewal/ui';
 import { PasswordCardSkeleton } from '.';
 
 const PasswordContainer = ({loading, passwords, open, onClose, setRefresh}) => {

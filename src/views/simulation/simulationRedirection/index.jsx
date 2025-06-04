@@ -1,6 +1,6 @@
 import { useParams } from "react-router";
 import { useSelector } from "react-redux";
-import OrderServices from '../../../services/orderServices';
+import OrderServices from 'src/services/orderServices';
 
 
 const SimulationCaseRedirection = async () => {

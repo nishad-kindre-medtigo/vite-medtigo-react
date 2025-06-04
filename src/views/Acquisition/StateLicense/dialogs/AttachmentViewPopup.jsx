@@ -3,7 +3,7 @@ import { ListItemText, Dialog, DialogTitle, DialogContent, ListItemSecondaryActi
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import CloseIcon from '@mui/icons-material/Close';
 import { FilePresent } from '@mui/icons-material';
-import { SERVER_URL } from '../../../../settings';
+import { SERVER_URL } from 'src/settings';
 
 export default function AttachmentViewPopup({ open, onClose, attachments, fileName }) {
   const handleViewAttachment = attachment => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import orderServices from '../services/orderServices';
+import orderServices from 'src/services/orderServices';
 import { useLocation } from 'react-router-dom';
 
 function CMEGuard({ children }) {

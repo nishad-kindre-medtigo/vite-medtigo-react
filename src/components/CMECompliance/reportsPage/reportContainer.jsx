@@ -11,13 +11,13 @@ import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import AnnouncementOutlinedIcon from '@mui/icons-material/FmdBad'; 
 // import PriorityHighOutlinedIcon from '@mui/icons-material/';
 import React from 'react'
-import { StyledTableCell } from "../../../views/StateCompliance";
+import { StyledTableCell } from "src/views/StateCompliance";
 import { grey } from "@mui/material/colors";
 import moment from "moment";
-import { states } from "../../../appConstants";
+import { states } from "src/appConstants";
 import { cme_colors } from "../style_guides";
 import { ComplianceTagSmall } from "../index";
-import { ClickableTooltip } from "../../../views/StateCompliance/Components";
+import { ClickableTooltip } from "src/views/StateCompliance/Components";
 import { tooltipClasses } from "@mui/material";
 const tableStyles = {
     tableHead: {

@@ -9,7 +9,7 @@ import {
   CircularProgress
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
-import { SERVER_URL } from '../../settings';
+import { SERVER_URL } from 'src/settings';
 import './style.css'
 
 const geoUrl = 'https://cdn.jsdelivr.net/npm/us-atlas/states-10m.json'; // GeoJSON for the USA map

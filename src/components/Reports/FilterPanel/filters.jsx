@@ -23,12 +23,11 @@ import {
   ListSubheader,
   CircularProgress,
 } from "@mui/material";
-import { ReportFilterContext } from "../../../context/ReportFilterContext";
-import { IOSSwitch } from "../../../views/AdminView/TeamCompliance/components";
+import { ReportFilterContext } from "src/context/ReportFilterContext";
+import { IOSSwitch } from "src/views/AdminView/TeamCompliance/components";
 import { isEqual } from "lodash";
 import RestartAltIcon from '@mui/icons-material/Cached';
-import { clearSessionStorage } from "../../../views/AdminView/utils";
-
+import { clearSessionStorage } from "src/views/AdminView/utils";
 const Filters = ({
   loading,
   role,

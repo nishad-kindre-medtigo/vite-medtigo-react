@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 import { Box, Collapse, IconButton, Table, TableBody, TableCell, TableContainer, TableFooter, TableHead, TableRow, Tooltip, Typography } from '@mui/material';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import { AccordionBox, AccordionHead, AccordionTabs, AccordionExpandIcon, StatesButton, styles, UserAccordionTabs } from '.';
-import useBreakpoints from '../../../../hooks/useBreakpoints';
-import { ReportTypes, states } from '../../../../appConstants';
+import useBreakpoints from 'src/hooks/useBreakpoints';
+import { ReportTypes, states } from 'src/appConstants';
 import { Link } from 'react-router-dom';
-import { StateWiseRenew } from '../../../../views/StateCompliance';
+import { StateWiseRenew } from 'src/views/StateCompliance';
 import DisabledByDefaultIcon from '@mui/icons-material/DisabledByDefaultRounded';
 import CheckBoxIcon from '@mui/icons-material/CheckBoxRounded';
 import moment from 'moment';
 import MailOutlineIcon from '@mui/icons-material/Email';
-import { cme_colors } from '../../../../components/CMECompliance/style_guides';
+import { cme_colors } from 'src/components/CMECompliance/style_guides';
 
 const UserCollapse = ({ userId, title,stateData, selectedStates, nonCompliantStates, compliantStates, tableData, complianceReports, tableHeadData }) => {
   const { isMobile } = useBreakpoints();

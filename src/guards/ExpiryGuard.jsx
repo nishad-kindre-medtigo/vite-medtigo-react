@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { jwtDecode } from 'jwt-decode';
-import authService from '../services/authService';
+import authService from 'src/services/authService';
 import PropTypes from 'prop-types';
 import NewSessionEndPopup from '../components/SessionEndPopup';
 

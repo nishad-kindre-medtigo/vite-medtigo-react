@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, Typography, Box, Container, IconButton, 
 import { MenuItem, FormControl, InputLabel, Select as MuiSelect } from "@mui/material";
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Chip } from "@mui/material";
 import { TablePagination, Dialog, DialogTitle, DialogContent, DialogActions, Button, CircularProgress, DialogContentText } from "@mui/material";
-import invoiceService from "../../../../services/expenseService";
+import invoiceService from "src/services/expenseService";
 import moment from "moment";
 import InfoIcon from '@mui/icons-material/Info';
 // Status component for color coding

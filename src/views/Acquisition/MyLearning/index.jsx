@@ -8,11 +8,11 @@ import { useSelector } from 'react-redux';
 import { FullAccessPlanCard, DividerText } from './components/PageCards';
 import NewCourseCard from './components/NewCourseCard';
 import { CourseCardSkeleton } from './components/SkeletonLoader';
-import { useMyLearningContext } from '../../../context/MyLearningContext';
-import myLearningService from '../../../services/myLearningService';
+import { useMyLearningContext } from 'src/context/MyLearningContext';
+import myLearningService from 'src/services/myLearningService';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import { useLearningContext } from '../../../context/LearningContext';
-import useBreakpoints from '../../../hooks/useBreakpoints';
+import { useLearningContext } from 'src/context/LearningContext';
+import useBreakpoints from 'src/hooks/useBreakpoints';
 
 const CONNECT_COURSES = [4526, 9985, 9238, 79132, 151904, 192797, 11159];
 

@@ -1,12 +1,12 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { Box, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography, Tooltip } from '@mui/material';
-import { AccordionBox, AccordionTable, PlaceHolder, DefaultPlaceHolder, PageContainer } from '../../../components/CMECompliance';
-import { InfoDialog, InfoIconTooltip } from '../../../views/AdminView/LicenseReports/Components';
+import { AccordionBox, AccordionTable, PlaceHolder, DefaultPlaceHolder, PageContainer } from 'src/components/CMECompliance';
+import { InfoDialog, InfoIconTooltip } from 'src/views/AdminView/LicenseReports/Components';
 import { useParams } from 'react-router';
-import adminService from '../../../services/adminService';
-import BackButtonWithTitle from '../../../components/Reports';
+import adminService from 'src/services/adminService';
+import BackButtonWithTitle from 'src/components/Reports';
 import moment from 'moment';
-import { ReportFilterContext } from '../../../context/ReportFilterContext';
+import { ReportFilterContext } from 'src/context/ReportFilterContext';
 import TasksPopup from '../components/TasksPopup';
 
 const SingleUserData = ({ userData, handleOpenUserInfo, handleTaskClick }) => {

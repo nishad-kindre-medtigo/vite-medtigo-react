@@ -1,16 +1,16 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { specialties, features, whyJobBoard, blogs } from '../../data';
 import { Grid, Typography, Box, CircularProgress, Card, CardContent, useTheme, useMediaQuery, Paper, Button, CardMedia, TextField, } from '@mui/material';
-import useBreakpoints from '../../../../hooks/useBreakpoints';
+import useBreakpoints from 'src/hooks/useBreakpoints';
 import { LearnMoreButton, StyledInputLabel, SubmitButton } from '../../components';
 import { useLocation } from 'react-router-dom';
 import * as Yup from 'yup';
 import axios from 'axios';
 import { Formik, Form, Field } from 'formik';
 import { useSelector } from 'react-redux';
-import { useOpenSnackbar } from '../../../../hooks/useOpenSnackbar';
-import staffingServices from '../../../../services/staffingServices';
-import { CONNECT_URL } from '../../../../settings';
+import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
+import staffingServices from 'src/services/staffingServices';
+import { CONNECT_URL } from 'src/settings';
 
 const LocumsHeader = '/images/staffing/locumsheader.svg';
 const jobboardinterface = '/images/staffing/Job board mobile.svg';

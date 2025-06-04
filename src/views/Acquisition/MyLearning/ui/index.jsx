@@ -8,7 +8,7 @@ import ContinueIcon from '@mui/icons-material/SkipNext';
 import StartQuizIcon from '@mui/icons-material/CallMade';
 import ExploreIcon from '@mui/icons-material/OpenInNew';
 import FreeIcon from '@mui/icons-material/School';
-import useBreakpoints from '../../../../hooks/useBreakpoints';
+import useBreakpoints from 'src/hooks/useBreakpoints';
 
 export const CourseCard = ({ children, ...props }) => (
   <Card

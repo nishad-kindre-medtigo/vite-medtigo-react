@@ -1,4 +1,4 @@
-import axios from '../utils/axios';
+import axios from 'src/utils/axios';
 import authService from './authService';
 
 class ESignatureService {
@@ -26,7 +26,9 @@ class ESignatureService {
   getSignature = async (signatureID, senderID, type) => {
     try {
       const accessToken = authService.getAccessToken();
-  
+  console.log('signatureID',signatureID)
+  console.log('senderID',senderID)
+  console.log('type',type)
       // Validate required parameters
       if (!signatureID && !senderID) {
         throw new Error('Either signatureID or senderID must be provided');
@@ -41,13 +43,14 @@ class ESignatureService {
         ? `/esignature?signatureID=${signatureID}`
         : `/esignature?senderID=${senderID}&type=${type}`;
   
+        console.log("endpoint", endpoint)
       const response = await axios.get(endpoint, {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },
       });
-  
-      // Return standardized response format
+
+      console.log("response on service", response)
       return {
         status: true,
         data: response.data,

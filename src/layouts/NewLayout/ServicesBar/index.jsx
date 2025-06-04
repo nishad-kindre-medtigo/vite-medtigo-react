@@ -2,11 +2,11 @@ import React, { useEffect, useState, useContext } from 'react';
 import { Box, Tabs, Tab, FormControlLabel } from '@mui/material';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import useBreakpoints from '../../../hooks/useBreakpoints';
-import { StaffingContext } from '../../../context/StaffingContext';
-import { IOSSwitch } from '../../../views/AdminView/TeamCompliance/components';
-import { clearSessionStorage } from '../../../views/AdminView/utils';
-import { CustomToolbar, RightSection } from '../../../ui/Tabs';
+import useBreakpoints from 'src/hooks/useBreakpoints';
+import { StaffingContext } from 'src/context/StaffingContext';
+import { IOSSwitch } from 'src/views/AdminView/TeamCompliance/components';
+import { clearSessionStorage } from 'src/views/AdminView/utils';
+import { CustomToolbar, RightSection } from 'src/ui/Tabs';
 
 const StyledTab = ({ children, ...props }) => {
   return (

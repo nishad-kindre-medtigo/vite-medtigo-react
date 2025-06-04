@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Backdrop } from '@mui/material';
-import { useBuyPlan } from '../../hooks/useBuyPlan';
-import { Loader } from '../../ui/Progress';
+import { Loader } from 'src/ui/Progress';
+import { useBuyPlan } from 'src/hooks/useBuyPlan';
 
 const data = {
   BLS: {

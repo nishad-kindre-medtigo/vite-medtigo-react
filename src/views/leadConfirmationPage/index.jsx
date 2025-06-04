@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router';
-import axios from '../../utils/axios';
+import axios from 'src/utils/axios';
 import { Box, Typography } from '@mui/material';
 
 const LeadConfirmation = () => {

@@ -1,13 +1,13 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Send as SendIcon } from '@mui/icons-material';
 import { Dialog, DialogContent, TextField, InputAdornment, IconButton, Typography, Box, CircularProgress, List, ListItem, Chip, Tooltip } from '@mui/material';
-import taskChatServices from '../../../../services/taskChat';
+import taskChatServices from 'src/services/taskChat';
 import CancelIcon from '@mui/icons-material/Close';
 import { useSelector } from 'react-redux';
-import { SERVER_URL } from '../../../../settings';
+import { SERVER_URL } from 'src/settings';
 import AddIcon from '@mui/icons-material/Add';
 import ReplayIcon from '@mui/icons-material/Replay';
-import { useOpenSnackbar } from '../../../../hooks/useOpenSnackbar';
+import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 
 const formatTimestamp = (timestamp) => {
   if (!timestamp) return '';

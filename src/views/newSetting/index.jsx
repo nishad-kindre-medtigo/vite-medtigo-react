@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Box, Typography } from '@mui/material';
-import { PrimaryTabPanel } from '../../ui/Tabs';
-import { SERVER_URL } from '../../settings';
+import { PrimaryTabPanel } from 'src/ui/Tabs';
+import { SERVER_URL } from 'src/settings';
 import { useLocation } from 'react-router-dom';
-import { updateProfile } from '../../actions/accountActions';
+import { updateProfile } from 'src/actions/accountActions';
 import MyOrders from './MyOrders';
 import Security from './Security';
 import ActiveInactive from './General/ActiveInactive';

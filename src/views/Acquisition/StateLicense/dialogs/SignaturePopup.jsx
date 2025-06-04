@@ -1,7 +1,7 @@
 import React from 'react';
 import { Dialog, DialogTitle, DialogContent } from '@mui/material';
 import CancelIcon from '@mui/icons-material/Cancel';
-import ServiceRegistationForm from '../../../../views/serviceRegistrationForm';
+import ServiceRegistationForm from 'src/views/serviceRegistrationForm';
 
 const SignaturePopup = ({
   openSignatureModal,

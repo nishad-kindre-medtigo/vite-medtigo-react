@@ -9,7 +9,7 @@ import { Box, Typography, IconButton, Button, Grid, Tooltip, useMediaQuery, useT
   DialogContent,
   DialogContentText,
   DialogActions } from '@mui/material';
-import schedullingServices from '../../../services/schedullingServices';
+import schedullingServices from 'src/services/schedullingServices';
 import { useSelector } from 'react-redux';
 import moment from 'moment';
 import { Close } from '@mui/icons-material';

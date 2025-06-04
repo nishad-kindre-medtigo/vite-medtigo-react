@@ -2,15 +2,15 @@ import React, { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom';
 import ArrowBackIosNewRoundedIcon from '@mui/icons-material/ArrowBackIosNewRounded';
 import { Box, Grid, IconButton, Typography } from '@mui/material';
-import { CME_RequestType, cme_states, states } from '../../../appConstants';
+import { CME_RequestType, cme_states, states } from 'src/appConstants';
 import moment from 'moment';
-// import { StateWiseRenew } from '../../../StateCompliance';
-import useBreakpoints from '../../../hooks/useBreakpoints';
-import ReportContainer from '../../../components/CMECompliance/reportsPage/reportContainer';
-import { ComplianceTag, ComplianceTagSmall, PageNav } from '../../AdminView/TeamCompliance/components';
+// import { StateWiseRenew } from 'src/views/StateCompliance';
+import useBreakpoints from 'src/hooks/useBreakpoints';
+import ReportContainer from 'src/components/CMECompliance/reportsPage/reportContainer';
+import { ComplianceTag, ComplianceTagSmall, PageNav } from 'src/views/AdminView/TeamCompliance/components';
 import { useParams } from "react-router-dom";
-import StateSpecificCMECervices from '../../../services/stateSpecificCMEService';
-import { PlaceHolder } from '../../../components/CMECompliance';
+import StateSpecificCMECervices from 'src/services/stateSpecificCMEService';
+import { PlaceHolder } from 'src/components/CMECompliance';
 
 
 function SingleReport() {
@@ -92,7 +92,7 @@ function SingleReport() {
                     <PageNav backTo={'/monitoring-renewal/ce-cme/report'} Title={`Compliance Report`} /> 
                 </Grid>
 
-                <Grid item>
+                <Grid>
                     <span style={{ fontSize: isMobile && '14px', display: 'inline-block', flexDirection: 'row', width: 'fit-content', justifyContent: 'flex-end' }}>
                         {<React.Fragment>
                             <p> <strong style={{ fontWeight: '600' }}> State License Type :  </strong> Full License <br /> <strong style={{ fontWeight: '600' }}> Request Type :  </strong> {CME_RequestType[1].label}  <br />

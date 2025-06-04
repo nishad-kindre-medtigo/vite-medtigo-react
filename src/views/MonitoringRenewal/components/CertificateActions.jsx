@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
-import { useCertificatesContext } from '../../../context/CertificatesContext';
-import certificatesService from '../../../services/certificatesService';
+import { useCertificatesContext } from 'src/context/CertificatesContext';
+import certificatesService from 'src/services/certificatesService';
 import { Button, Dialog, DialogActions, DialogTitle, Grid } from '@mui/material';
 import EditIcon from '@mui/icons-material/BorderColorRounded';
 import DeleteIcon from '@mui/icons-material/DeleteRounded';
-import { Loader } from '../../../ui/Progress';
-import { Transition } from '../../../ui/Transition';
-import { StyledMenu, StyledMenuItem } from '../../../layouts/NewLayout/MidBar/HeaderMenu';
-import { CertificateIcon } from '../../MonitoringRenewal/ui';
-import { useOpenSnackbar } from '../../../hooks/useOpenSnackbar';
-import { SERVER_URL } from '../../../settings';
-import isPrintable from '../../../utils/isPrintable';
-import { printCertificate } from '../../MonitoringRenewal/utils';
+import { Loader } from 'src/ui/Progress';
+import { Transition } from 'src/ui/Transition';
+import { StyledMenu, StyledMenuItem } from 'src/layouts/NewLayout/MidBar/HeaderMenu';
+import { CertificateIcon } from 'src/views/MonitoringRenewal/ui';
+import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
+import { SERVER_URL } from 'src/settings';
+import isPrintable from 'src/utils/isPrintable';
+import { printCertificate } from 'src/views/MonitoringRenewal/utils';
 
 export const dialogStyles = {
   title: {

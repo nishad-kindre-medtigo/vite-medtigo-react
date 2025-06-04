@@ -10,7 +10,7 @@ import timeGridPlugin from '@fullcalendar/timegrid';
 // import "@fullcalendar/timegrid/main.css";
 // import timeGridPlugin from "@fullcalendar/timegrid";
 import './style.css';
-import schedullingServices from '../../../services/schedullingServices';
+import schedullingServices from 'src/services/schedullingServices';
 import { useSelector } from 'react-redux';
 import {
   Grid,
@@ -36,10 +36,10 @@ import ArrowDropDownRoundedIcon from '@mui/icons-material/ArrowDropDownRounded';
 import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import hospitalsService from '../../../services/hospitalsService';
-import departmentsService from '../../../services/departmentsService';
+import hospitalsService from 'src/services/hospitalsService';
+import departmentsService from 'src/services/departmentsService';
 import { useLocation } from 'react-router-dom';
-import shiftServices from '../../../services/shiftServices';
+import shiftServices from 'src/services/shiftServices';
 import moment from 'moment';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -49,8 +49,8 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { styled } from '@mui/material/styles';
-import { useOpenSnackbar } from '../../../hooks/useOpenSnackbar';
-import useBreakpoints from '../../../hooks/useBreakpoints';
+import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
+import useBreakpoints from 'src/hooks/useBreakpoints';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -727,6 +727,7 @@ const AvailabilityPage = () => {
           alignItems: 'start',
           gap: '5px',
           backgroundColor: 'white',
+          fontFamily: 'Roboto',
           fontSize: '12px',
           width: '100%',
           overflow: 'hidden'
@@ -734,7 +735,7 @@ const AvailabilityPage = () => {
       >
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <Checkbox
-            color="success"
+           color="success"
             checked={whatToCheck && whatToCheck.available}
             onChange={e => {
               if (e.target.checked) {
@@ -889,7 +890,7 @@ const AvailabilityPage = () => {
                         }}
                       >
                         <Checkbox
-                           color="primary"
+                          color="primary"
                           checked={whatToCheck && whatToCheck.shiftIds.includes(
                             shift.dataValues.id
                           )}
@@ -966,7 +967,7 @@ const AvailabilityPage = () => {
   }
 
   return (
-    <Box className='availability-page' mb={2} sx={{ minHeight: '50vh' }}>
+    <Box mb={2} sx={{ minHeight: '50vh' }}>
       {/* Filters */}
       <Grid container my={1} spacing={2} alignItems="flex-end">
         {Object.keys(filters)

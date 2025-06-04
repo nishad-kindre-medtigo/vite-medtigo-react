@@ -3,7 +3,7 @@ import { Button, Box, Dialog, DialogTitle, Stack, DialogContent, DialogActions, 
 import CancelIcon from '@mui/icons-material/Cancel';
 import FileIcon from '@mui/icons-material/InsertDriveFile';
 import { convertMarkdownLinksToHtml } from '../utils';
-import { AddCertificateField } from '../../../../views/MonitoringRenewal/ui';
+import { AddCertificateField } from 'src/views/MonitoringRenewal/ui';
 
 const CompleteAndUploadPopup = ({
   responseData,

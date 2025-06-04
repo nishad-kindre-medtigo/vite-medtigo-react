@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { LearningContext } from '../context/LearningContext';
+import { LearningContext } from 'src/context/LearningContext';
 
 //? REFER PR - https://github.com/Medtigo/medtigo-react/pull/1919
 // HOOK USED TO ALERT USER WHILE NAVIGATING TO DIFFERNT PAGE/ TAB WHILE QUIZ IS ACTIVE

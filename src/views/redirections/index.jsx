@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router';
-import authService from '../../services/authService';
-import LearningService from '../../services/learningService';
-import { MARKET_URL } from '../../settings';
+import authService from 'src/services/authService';
+import LearningService from 'src/services/learningService';
+import { MARKET_URL } from 'src/settings';
 
 function RedirectingPage(){
     const navigate = useNavigate();

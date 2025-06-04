@@ -5,7 +5,7 @@ import BarChartIcon from '@mui/icons-material/BarChart';
 import TableChartIcon from '@mui/icons-material/TableChart';
 import { Link } from 'react-router-dom';
 import ArrowBackIosNewRoundedIcon from '@mui/icons-material/ArrowBackIosNewRounded';
-import { cme_colors } from '../../../../components/CMECompliance/style_guides';
+import { cme_colors } from 'src/components/CMECompliance/style_guides';
 import TuneIcon from '@mui/icons-material/Tune';
 // Styles for Accordion Details Table
 export const styles = {

@@ -3,9 +3,9 @@ import { useLocation } from 'react-router-dom';
 import { Box, Button, FormControl, FormControlLabel, RadioGroup, Radio, Typography, Stack, TextareaAutosize, useTheme } from '@mui/material';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { useOpenSnackbar } from '../../hooks/useOpenSnackbar';
-import alertPage from '../../services/alertPage';
-import { Loader } from '../../ui/Progress';
+import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
+import alertPage from 'src/services/alertPage';
+import { Loader } from 'src/ui/Progress';
 import { motion } from 'framer-motion';
 
 const StarRating = ({ value, onChange, error }) => {

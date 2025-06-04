@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 import Chart from 'react-apexcharts';
 import { useNavigate } from 'react-router-dom';
-import { ReportFilterContext } from '../../../../context/ReportFilterContext';
-import useBreakpoints from '../../../../hooks/useBreakpoints';
+import { ReportFilterContext } from 'src/context/ReportFilterContext';
+import useBreakpoints from 'src/hooks/useBreakpoints';
 
 const RegulatoryChart = ({ data, selectedDepartments }) => {
   const navigate = useNavigate();

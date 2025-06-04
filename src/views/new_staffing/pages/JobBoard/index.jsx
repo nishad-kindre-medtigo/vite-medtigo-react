@@ -4,10 +4,10 @@ import BookmarkOutlinedIcon from '@mui/icons-material/BookmarkOutlined';
 import FilterListRoundedIcon from '@mui/icons-material/FilterListRounded';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { ContentBox } from '../../components';
-import { StaffingContext } from '../../../../context/StaffingContext';
+import { StaffingContext } from 'src/context/StaffingContext';
 import { useSelector } from 'react-redux';
-import { specialityOptions } from '../../../../appConstants';
-import useBreakpoints from '../../../../hooks/useBreakpoints';
+import { specialityOptions } from 'src/appConstants';
+import useBreakpoints from 'src/hooks/useBreakpoints';
 import { JobCardSkeleton, JobFilterPanel, JobSearchbar, JobSpecialtyFilter, JobCard, JobsContainer } from './components';
 import { PlaceHolder } from './ui';
 

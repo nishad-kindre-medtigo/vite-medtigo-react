@@ -1,6 +1,6 @@
 import React from 'react';
 import Backdrop from '@mui/material/Backdrop';
-import { Loader } from '../../../ui/Progress';
+import { Loader } from 'src/ui/Progress';
 
 export default function SimpleBackdrop({ page, open }) {
   return (

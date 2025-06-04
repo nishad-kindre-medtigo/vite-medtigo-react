@@ -2,7 +2,7 @@ import React, { useState, useCallback } from 'react';
 import { Autocomplete, InputAdornment, IconButton } from '@mui/material';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
-import { SearchField } from '../../../components';
+import { SearchField } from 'src/views/new_staffing/components';
 import { debounce } from 'lodash';
 
 export const JobSearchbar = ({ searchJobTitle, setSearchJobTitle, updateFilter }) => {

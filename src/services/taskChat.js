@@ -1,4 +1,4 @@
-import axios from '../utils/axios';
+import axios from 'src/utils/axios';
 
 class TaskChatService {
   // Fetch TaskChat messages (by senderID, receiverID, or message ID)
