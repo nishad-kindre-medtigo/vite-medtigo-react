@@ -6,7 +6,7 @@ function formatQuizHintText(htmlContent) {
   return htmlContent
     .replace(
       /<a\s+(?![^>]*\btarget=)[^>]*href="([^"]*)"[^>]*>/g,
-      '<a href="$1" target="_blank" rel="noopener noreferrer" style="color: #2872C1;">'
+      '<a href="$1" target="_blank" aria-label="source" rel="noopener noreferrer" style="color: #2872C1;">'
     ) // Open links in a new tab and style them
     .replace(/<li>/g, '<li style="margin-left: 24px;">') // Add left margin to <li> tags
     .replace(/<ul>/g, '<ul style="margin-left: 24px;">') // Add left margin to <ul> tags

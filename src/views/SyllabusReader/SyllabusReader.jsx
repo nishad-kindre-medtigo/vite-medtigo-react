@@ -17,7 +17,7 @@ function SyllabusReader({ syllabusName }) {
         <object data={pdfUrl} type="application/pdf" width="100%" height="100%">
           <p>
             PDF not supported.
-            <a href={pdfUrl}>Click here to view the PDF</a>
+            <a href={pdfUrl} aria-label='pdf'>Click here to view the PDF</a>
           </p>
         </object>
       ) : (

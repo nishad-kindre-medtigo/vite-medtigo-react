@@ -771,7 +771,7 @@ const LocumsPage = () => {
                 }}
               >
                 <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                  <Box component="img" src={mailIconLine} sx={classes.icon} />
+                  <Box component="img" alt="mail" src={mailIconLine} sx={classes.icon} />
                   <Typography
                     component="a"
                     href="mailto:staffing@medtigo.com"
@@ -787,7 +787,7 @@ const LocumsPage = () => {
                   </Typography>
                 </Box>
                 <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                  <Box component="img" src={phoneIconLine} sx={classes.icon} />
+                  <Box component="img" alt="call" src={phoneIconLine} sx={classes.icon} />
                   <Typography
                     component="a"
                     href="tel:413-419-0592"

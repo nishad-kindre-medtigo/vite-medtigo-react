@@ -420,11 +420,12 @@ const Calendar = () => {
                                 }
                                 arrow
                               >
-                                <img src='/icons/InfoIcon.svg' style={{ cursor: 'pointer', marginLeft: '6px' , width:'20px'}} />
+                                <img src='/icons/InfoIcon.svg' alt="info" style={{ cursor: 'pointer', marginLeft: '6px' , width:'20px'}} />
                               </Tooltip>
                             ) : (
                               <img 
-                                src='/icons/InfoIcon.svg' 
+                                src='/icons/InfoIcon.svg'
+                                alt="info" 
                                 style={{ cursor: 'pointer', marginLeft: '6px' , width:'20px'}} 
                                 onClick={() => handleOpenMobileDialog(event)}
                               />

@@ -216,6 +216,7 @@ const TaskDetailsPopup = ({
                   </span>
                   <a
                     target="_blank"
+                    aria-label="Attachment"
                     rel="noreferrer"
                     href={`${CONNECT_URL}/${data}`}
                   >
@@ -351,6 +352,7 @@ const TaskDetailsPopup = ({
           {taskDetailData.Task_Type === 'Fees Requested' ? (
             <div style={{ display: 'flex', gap: '5px' }}>
               <img
+                alt="Arrow"
                 src="/icons/licensing/rightArrow.png"
                 width="20px"
                 height="20px"

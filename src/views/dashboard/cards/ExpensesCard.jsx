@@ -1,5 +1,5 @@
 import React from 'react';
-import { CardTitle, ClickText, DetailBox, GreyBox, TitleDescription } from '../components';
+import { CardTitle,  DetailBox, GreyBox, TitleDescription } from '../components';
 
 const ExpensesCard = () => {
   return (
@@ -7,6 +7,7 @@ const ExpensesCard = () => {
       <CardTitle
         title="Expenses"
         description="The Expenses section help you to manage reimbursement for your costs."
+        link="/tools/expense"
       />
       <GreyBox sx={{ flexGrow: 1 }}>
         <TitleDescription
@@ -24,7 +25,6 @@ const ExpensesCard = () => {
           description="Use this tab to submit claims for site-related expenses, making it easier to manage financial reimbursements"
         />
       </GreyBox>
-      <ClickText link="/tools/expense" />
     </DetailBox>
   );
 };

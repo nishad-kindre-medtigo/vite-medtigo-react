@@ -134,6 +134,7 @@ const QuizActionsCard = props => {
           </Typography>
 
           <img
+            alt="Quiz Actions Card"
             style={{ padding: '20px 0px' }}
             width={isMobile ? 100 : 170}
             src="/images/lms/quiz_card.png"

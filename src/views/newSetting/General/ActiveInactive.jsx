@@ -116,6 +116,7 @@ function ActiveInactive({ user }) {
             email to:{' '}
             <a
               href="mailto:support@medtigo.com"
+              aria-label="Mail"
               style={{ color: '#2872C1', textDecoration: 'none' }}
             >
               <span style={{ color: '#2872C1', textDecoration: 'none' }}>

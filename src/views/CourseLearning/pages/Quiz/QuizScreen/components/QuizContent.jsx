@@ -414,7 +414,7 @@ const QuizContent = (props) => {
                   }}
                 />
                 {question && question.questionPic && (
-                  <img src={question.questionPic} alt="image" />
+                  <img src={question.questionPic} alt="question image" />
                 )}
                 {question &&
                   renderTags(
@@ -507,7 +507,7 @@ const QuizContent = (props) => {
         >
           {renderQuizAnswerIcon(isMultiSelect, isAnswerSeleted)}
           {questionType === 'text' && <span>{answer}</span>}
-          {questionType === 'photo' && <img src={answer} alt="image" />}
+          {questionType === 'photo' && <img src={answer} alt="question image" />}
         </button>
       );
     });

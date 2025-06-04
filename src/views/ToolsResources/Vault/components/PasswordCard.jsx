@@ -61,8 +61,8 @@ const PasswordCard = ({ data, fetchPasswords }) => {
     }
   };
 
-  const CopyIcon = () => <img src='/icons/passwordManager/password_copy.svg' height={15} width={15} />
-  const LockIcon = () => <img src='/icons/passwordManager/password_lock.svg' height={25} width={25} />
+  const CopyIcon = () => <img src='/icons/passwordManager/password_copy.svg' alt="copy" height={15} width={15} />
+  const LockIcon = () => <img src='/icons/passwordManager/password_lock.svg' alt="lock" height={25} width={25} />
 
   return (
     <>

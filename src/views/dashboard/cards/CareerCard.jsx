@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Box, Grid } from '@mui/material';
-import { CardTitle, ClickText, DetailBox, GreyBox, TitleDescription } from '../components';
+import { CardTitle,  DetailBox, GreyBox, TitleDescription } from '../components';
 
 const JobInfoBox = ({ type, count, color, image }) => (
   <Box
@@ -28,6 +28,7 @@ const CareerCard = ({ savedJobsCount, appliedJobsCount }) => (
     <CardTitle
       title="Career"
       description="In the Career section, you will find valuable resources to advance your professional journey."
+      link="/career/job-board"
     />
     <GreyBox sx={{ flexGrow: 1 }}>
       <TitleDescription
@@ -59,7 +60,6 @@ const CareerCard = ({ savedJobsCount, appliedJobsCount }) => (
         </Grid>
       </Grid>
     </GreyBox>
-    <ClickText link="/career/job-board" />
   </DetailBox>
 );
 

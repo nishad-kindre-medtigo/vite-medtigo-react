@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Box, Typography } from '@mui/material';
-import { CardTitle, ClickText, DetailBox, DonutChart, GreyBox } from '../components';
+import { CardTitle,  DetailBox, DonutChart, GreyBox } from '../components';
 
 const CountBoxItem = ({ title, count, sx }) => {
   return (
@@ -23,6 +23,7 @@ const StateLicenseCard = ({ overdueTaskCount, timelyTaskCount, completedTaskCoun
       <CardTitle
         title="State License"
         description="Here, you can track your license acquisition progress, monitor your current licenses, and manage renewals and support."
+        link="/state-licensing"
       />
       {/* Chart and Legend */}
       <GreyBox sx={{ mb: 2 }}>
@@ -47,7 +48,6 @@ const StateLicenseCard = ({ overdueTaskCount, timelyTaskCount, completedTaskCoun
           count={monitoringLicensesCount}
         />
       </GreyBox>
-      <ClickText link="/state-licensing" />
     </DetailBox>
   );
 };

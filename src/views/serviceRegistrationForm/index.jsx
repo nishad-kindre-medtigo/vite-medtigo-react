@@ -254,7 +254,7 @@ const ServiceRegistationForm = ({onFormSubmit}) => {
     className='form-page'
     style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "15px", fontFamily: "Poppins"}}>
         <div>
-            <img src='/images/logo.png' height="100px" width="250px" style={{
+            <img src='/images/logo.png' alt="Logo" height="100px" width="250px" style={{
                 height: '100px',
                 width: '250px',
                 paddingLeft: '20px',

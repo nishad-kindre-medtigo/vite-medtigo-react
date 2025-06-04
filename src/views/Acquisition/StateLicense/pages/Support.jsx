@@ -9,6 +9,7 @@ const ContactCard = ({ name, title, email, showIcon = true }) => (
     <Box display="flex" gap={2}>
       {showIcon && (
         <img
+          alt="Support"
           height="29px"
           width="22px"
           src="/icons/licensing/supportNotification.svg"
@@ -29,6 +30,7 @@ const ContactCard = ({ name, title, email, showIcon = true }) => (
               fontWeight: '500'
             }}
             href={`mailto:${email}`}
+            aria-label="Mail"
           >
             {email}
           </a>
@@ -45,6 +47,7 @@ const BookMeetingCard = () => {
         <Typography variant="body2" color="primary" mt={1}>
           <a
             href="mailto:licensing@medtigo.com"
+            aria-label="Meeting"
             style={{
               color: '#006CDE',
               textDecoration: 'underline',
@@ -75,6 +78,7 @@ const BookMeetingCard = () => {
               fontWeight: '500'
             }}
             href="tel:+508-310-4810"
+            aria-label="Phone"
           >
             508-310-4810
           </a>

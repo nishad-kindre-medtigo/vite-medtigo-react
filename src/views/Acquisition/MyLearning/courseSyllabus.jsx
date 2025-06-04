@@ -1,5 +1,6 @@
-import { Box, Typography, Grid, Paper, Button, IconButton, Link } from '@mui/material'
-import React from 'react'
+import { Box, Typography, Grid, Paper, Button, IconButton } from '@mui/material'
+import React from 'react';
+import { Link } from 'react-router-dom';
 import DownloadIcon from '@mui/icons-material/Download';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import { useLearningContext } from 'src/context/LearningContext';
@@ -106,7 +107,7 @@ function CourseSyllabus() {
                                 }}
                             />
                             <Box >
-                                <a href={item.downloadLink} target='_blank' rel='noreferrer' download="syllabus.pdf">
+                                <a href={item.downloadLink} aria-label="syllabus" target='_blank' rel='noreferrer' download="syllabus.pdf">
                                 <Button
                                     style={{
                                         padding: '8px 40px',

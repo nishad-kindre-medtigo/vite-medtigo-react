@@ -335,7 +335,7 @@ const Footer = () => {
                         <Box sx={classes.socialIcon}>
                           <Box component="img"
                             src={icon.src}
-                            alt=""
+                            alt="link"
                             sx={{ width: '12px', height: '12px' }}
                           />
                         </Box>
@@ -364,7 +364,7 @@ const Footer = () => {
                         width="15px"
                         height="15px"
                         src="https://medtigo.com/wp-content/uploads/2023/04/Vector-15.svg"
-                        alt=""
+                        alt="link"
                       />
                       <Link href={link.href} sx={classes.link}>
                         {link.text}
@@ -483,7 +483,7 @@ const Footer = () => {
         </Box>
         <Box sx={classes.copyright}>
           <Typography sx={classes.copyrightText}>
-            <Box component="img" src='https://medtigo.com/wp-content/uploads/2024/08/Group-1000005825.svg' sx={classes.CopyrightIcon} />
+            <Box component="img" alt="copyright" src='https://medtigo.com/wp-content/uploads/2024/08/Group-1000005825.svg' sx={classes.CopyrightIcon} />
             COPYRIGHT 2025 MEDTIGO, ALL RIGHTS RESERVED
           </Typography>
         </Box>

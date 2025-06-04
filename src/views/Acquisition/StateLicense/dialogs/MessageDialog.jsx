@@ -173,7 +173,7 @@ const MessageDialog = ({
         }}
       >
         <Box sx={{ display: 'flex', gap: '20px', alignItems: 'center', maxWidth: { xs: '100%', sm: '80%'} }}>
-          <img src="/icons/medtigoNew.svg" width={45} />
+          <img src="/icons/medtigoNew.svg" alt="Medtigo Logo" width={45} />
           <span
             style={{
               fontSize: '18px',
@@ -302,6 +302,7 @@ const MessageDialog = ({
                           <a
                             href={`${SERVER_URL}${message.attachments}`}
                             target="_blank"
+                            aria-label="attachment"
                             rel="noopener noreferrer"
                             style={{ color: '#57b9ff' }}
                           >

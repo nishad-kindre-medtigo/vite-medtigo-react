@@ -132,7 +132,7 @@ const MedtigoOrangePage = () => {
           <Box style={{ fontSize: isTablet ? '13px' : '20px' }}>
             <div style={{ fontWeight: 600, lineHeight: '30px' }}>Caroline Mascarenhas</div>
             <div style={{ fontWeight: 500, lineHeight: '30px' }}>medtigo Services</div>
-            <a href={`mailto:cmascarenhas@medtigo.com`} style={{ fontWeight: 500, lineHeight: '30px', textDecoration: 'underline', color: '#2872C1' }}>
+            <a href={`mailto:cmascarenhas@medtigo.com`} aria-label="mail" style={{ fontWeight: 500, lineHeight: '30px', textDecoration: 'underline', color: '#2872C1' }}>
               cmascarenhas@medtigo.com
             </a>
             <div style={{ fontWeight: 300, lineHeight: '30px' }}>phone: <strong>508-310-4810</strong></div>
