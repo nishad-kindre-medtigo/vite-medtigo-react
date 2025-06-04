@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import { Chip, Box } from '@mui/material';
-import { specificDesignations } from '../appConstants';
+import { specificDesignations } from 'src/appConstants';
 
 const FilterChips = props => {
   const { filterData, setFilterData, filterCertificates } = props;

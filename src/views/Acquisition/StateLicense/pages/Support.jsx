@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Typography, Grid } from '@mui/material';
 import { Phone } from '@mui/icons-material';
 import { SupportCard, PageBackText } from '../ui';
-import useBreakpoints from '../../../../hooks/useBreakpoints';
+import useBreakpoints from 'src/hooks/useBreakpoints';
 
 const ContactCard = ({ name, title, email, showIcon = true }) => (
   <SupportCard>

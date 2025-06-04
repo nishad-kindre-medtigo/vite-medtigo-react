@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import Page from '../../components/Page';
-import { PrimaryTabPanel } from '../../ui/Tabs';
+import Page from 'src/components/Page';
+import { PrimaryTabPanel } from 'src/ui/Tabs';
 import StateLicensePage from './StateLicense';
 import { LicensingProcessPage } from './StateLicense/pages';
 import MyLearningPage from './MyLearning';

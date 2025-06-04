@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react"
-import { cme_states as states } from '../../appConstants';
+import { cme_states as states } from 'src/appConstants';
 import './style.css';
 import { useSelector } from "react-redux";
-import StateSpecificCMECervices from '../../services/stateSpecificCMEService';
+import StateSpecificCMECervices from 'src/services/stateSpecificCMEService';
 import { Box, Grid, TableCell } from '@mui/material';
 import { tableCellClasses } from "@mui/material";
-import { useOpenSnackbar } from '../../hooks/useOpenSnackbar';
+import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 import FilterPanel from "./Components/filterPanel";
-import { PlaceHolder } from "../AdminView/TeamCompliance/components";
+import { PlaceHolder } from "src/views/AdminView/TeamCompliance/components";
 import StatesAccordian from "./Components/statesAccordian";
 import AllStatesReports from "./Components/allStatesReports";
 import { useParams } from "react-router-dom";

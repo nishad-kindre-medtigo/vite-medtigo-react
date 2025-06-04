@@ -1,19 +1,19 @@
 import React, { useState, useEffect, useCallback, useContext } from 'react';
 import { Grid } from '@mui/material';
-import authService from '../../../../../services/authService';
-import learningService from '../../../../../services/learningService';
-import myLearningService from '../../../../../services/myLearningService';
+import authService from 'src/services/authService';
+import learningService from 'src/services/learningService';
+import myLearningService from 'src/services/myLearningService';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { LearningContext } from '../../../../../context/LearningContext';
+import { LearningContext } from 'src/context/LearningContext';
 import QuizContent from './components/QuizContent';
 import QuizSimulationCard from './components/QuizSimulationCard';
 import QuizActionsCard from './components/QuizActionsCard';
 import QuizCompletion from './components/QuizCompletion';
 import { ExitButton } from './handlers';
 import './styles.css';
-import { useOpenSnackbar } from '../../../../../hooks/useOpenSnackbar';
-import useBreakpoints from '../../../../../hooks/useBreakpoints';
+import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
+import useBreakpoints from 'src/hooks/useBreakpoints';
 
 /**
  * @component QuizScreen

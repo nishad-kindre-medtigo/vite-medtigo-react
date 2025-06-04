@@ -1,17 +1,17 @@
 import React, { useContext, useRef } from 'react'
 import { useLocation } from 'react-router-dom';
 import ReportContainer from './reportContainer';
-import { CME_RequestType, designations, states } from '../../../appConstants';
+import { CME_RequestType, designations, states } from 'src/appConstants';
 import { Box, FormControl, Grid, IconButton, InputLabel, MenuItem, Select, Tooltip, Typography } from '@mui/material';
-import { StateWiseRenew } from '../../../views/StateCompliance';
-import useBreakpoints from '../../../hooks/useBreakpoints';
+import { StateWiseRenew } from 'src/views/StateCompliance';
+import useBreakpoints from 'src/hooks/useBreakpoints';
 import { ClickableComplianceTag, ComplianceTag, DefaultPlaceHolder, PageNav } from '../index';
 import moment from 'moment';
 import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleUp';
 import { scrollToTopButtonStyle } from '../style_guides';
-import BackButtonWithTitle from '../../Reports';
-import { InfoDialog, InfoIconTooltip } from '../../../views/AdminView/LicenseReports/Components';
-import { ReportFilterContext } from '../../../context/ReportFilterContext';
+import BackButtonWithTitle from 'src/components/Reports';
+import { InfoDialog, InfoIconTooltip } from 'src/views/AdminView/LicenseReports/Components';
+import { ReportFilterContext } from 'src/context/ReportFilterContext';
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import CloseIcon from "@mui/icons-material/Close";
 import Divider from '@mui/material/Divider';

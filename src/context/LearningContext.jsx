@@ -1,10 +1,10 @@
 import * as React from 'react';
-import learningService from '../services/learningService';
+import learningService from 'src/services/learningService';
 import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import useroptionsServices from '../services/userOptionsService';
-import myLearningService from '../services/myLearningService';
-import { courseLanguages } from '../appConstants';
+import useroptionsServices from 'src/services/userOptionsService';
+import myLearningService from 'src/services/myLearningService';
+import { courseLanguages } from 'src/appConstants';
 
 const AVAILABLE_COURSES = [4526, 9985, 9238, 151904, 79132, 11159, 192797];
 

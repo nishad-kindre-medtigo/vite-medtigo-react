@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Box, Typography } from '@mui/material';
-import { GradientCircularProgress } from '../../../ui/Progress';
-import Page from '../../../components/Page';
+import { GradientCircularProgress } from 'src/ui/Progress';
+import Page from 'src/components/Page';
 
 function SurveyFormLoader() {
   return (

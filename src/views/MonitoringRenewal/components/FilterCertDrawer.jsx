@@ -11,7 +11,7 @@ import {
   Box
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/CloseRounded';
-import { specificDesignations } from '../appConstants';
+import { specificDesignations } from 'src/appConstants';
 import { LocalizationProvider, DatePicker } from '@mui/x-date-pickers';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 

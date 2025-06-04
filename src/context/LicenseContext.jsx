@@ -1,6 +1,6 @@
 import * as React from 'react';
 import moment from 'moment';
-import alertPage from '../services/alertPage';
+import alertPage from 'src/services/alertPage';
 import { useSelector } from 'react-redux';
 
 export const LicenseContext = React.createContext({});

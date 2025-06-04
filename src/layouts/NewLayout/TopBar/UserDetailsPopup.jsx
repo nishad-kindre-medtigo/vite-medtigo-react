@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, TextField, Autocomplete } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
-import { updateProfile } from '../../../actions/accountActions';
-import { useOpenSnackbar } from '../../../hooks/useOpenSnackbar';
+import { updateProfile } from 'src/actions/accountActions';
+import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 import WarningRoundedIcon from '@mui/icons-material/WarningRounded';
-import UpdateProfileService from '../../../services/updateProfileServices';
-import { designations, showSpecialtyFor, specialityOptions, showProgramFor, studentProgramOptions, designationsObject } from '../../../appConstants';
+import UpdateProfileService from 'src/services/updateProfileServices';
+import { designations, showSpecialtyFor, specialityOptions, showProgramFor, studentProgramOptions, designationsObject } from 'src/appConstants';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
 

@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import TeamCompliancePage from './TeamCompliance';
-import FilterPanel from '../../components/Reports/FilterPanel';
-import { PrimaryTabPanel } from '../../ui/Tabs';
+import FilterPanel from 'src/components/Reports/FilterPanel';
+import { PrimaryTabPanel } from 'src/ui/Tabs';
 import { clearSessionStorage } from './utils';
 import LicenseReports from './LicenseReports';
 import ClinicalCertificate from './ClinicalCertificate';

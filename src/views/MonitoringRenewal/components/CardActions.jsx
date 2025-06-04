@@ -1,12 +1,12 @@
 import React from 'react';
-import { useCertificatesContext } from '../../../context/CertificatesContext';
+import { useCertificatesContext } from 'src/context/CertificatesContext';
 import { CertificateActions } from './CertificateActions';
 import { CertificateIcon } from '../ui';
-import { SERVER_URL } from '../../../settings';
+import { SERVER_URL } from 'src/settings';
 import VisibilityRoundedIcon from '@mui/icons-material/VisibilityRounded';
 import EmailRoundedIcon from '@mui/icons-material/EmailRounded';
 import PrintRoundedIcon from '@mui/icons-material/PrintRounded'; // New icon
-import isPrintable from '../../../utils/isPrintable';
+import isPrintable from 'src/utils/isPrintable';
 import { printCertificate } from '../utils';
 
 const CardActions = ({ page, data }) => {

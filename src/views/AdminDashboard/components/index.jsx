@@ -1,7 +1,7 @@
 import React from 'react';
 import Chart from 'react-apexcharts';
 import { Box, List, ListItem, ListItemIcon, Skeleton, Typography } from '@mui/material';
-import { DetailBox, GreyBox } from '../../../views/dashboard/components';
+import { DetailBox, GreyBox } from 'src/views/dashboard/components';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 

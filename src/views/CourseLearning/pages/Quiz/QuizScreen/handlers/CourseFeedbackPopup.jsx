@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { Dialog, Box, Button, Collapse, Typography, Stack, TextareaAutosize, useTheme } from '@mui/material';
 import Confetti from 'react-dom-confetti';
-import { useOpenSnackbar } from '../../../../../../hooks/useOpenSnackbar';
-import useBreakpoints from '../../../../../../hooks/useBreakpoints';
-import LearningService from '../../../../../../services/learningService';
+import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
+import LearningService from 'src/services/learningService';
 import { useSelector } from 'react-redux';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { Loader } from '../../../../../../ui/Progress';
+import { Loader } from 'src/ui/Progress';
+import useBreakpoints from 'src/hooks/useBreakpoints';
 import { motion } from 'framer-motion';
 import { config } from '../data';
 

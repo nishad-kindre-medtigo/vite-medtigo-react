@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Paper, Box, Typography, Checkbox, FormControlLabel, Collapse, IconButton, Drawer } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
-import useBreakpoints from '../../../../../hooks/useBreakpoints';
+import useBreakpoints from 'src/hooks/useBreakpoints';
 
 const filters = [
   {

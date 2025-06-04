@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Grid } from '@mui/material';
 import LicenseTaskCard from '../components/LicenseTaskCard';
 import { TaskSkeleton, PageBackText } from '../ui';
-import { PlaceHolder } from '../../../../views/MonitoringRenewal/ui';
+import { PlaceHolder } from 'src/views/MonitoringRenewal/ui';
 
 const SingleLicenseTasksPage = props => {
   const { goBack, overdueTasks, pendingTasks, licenseName, taskLoading } = props;

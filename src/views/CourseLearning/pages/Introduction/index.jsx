@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Grid, Button, Typography } from '@mui/material';
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
-import { courseDetails } from '../../../../appConstants';
+import { courseDetails } from 'src/appConstants';
 
 // PAGE DISPLAYED WHEN ACCESSING COURSE CONTENT FOR FIRST TIME AFTER COURSE PURCHASE
 const Introduction = ({ setIsFirstTime, courseID }) => {

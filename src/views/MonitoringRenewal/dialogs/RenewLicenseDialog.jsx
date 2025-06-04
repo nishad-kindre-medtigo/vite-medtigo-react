@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Button, Dialog, DialogActions, DialogTitle, Typography, Grid } from '@mui/material';
-import { Transition } from '../../../ui/Transition';
+import { Transition } from 'src/ui/Transition';
 import { dialogStyles } from '../components/CertificateActions';
-import { useOpenSnackbar } from '../../../hooks/useOpenSnackbar';
-import useBreakpoints from '../../../hooks/useBreakpoints';
-import { Loader } from '../../../ui/Progress';
+import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
+import useBreakpoints from 'src/hooks/useBreakpoints';
+import { Loader } from 'src/ui/Progress';
 
 const RenewLicenseDialog = ({ open, onClose, handleRenew }) => {
   const openSnackbar = useOpenSnackbar();

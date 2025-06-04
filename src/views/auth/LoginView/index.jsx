@@ -2,11 +2,11 @@ import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { Box, Typography } from '@mui/material';
-import Page from '../../../components/Page';
-import Logo from '../../../components/Logo';
+import Page from 'src/components/Page';
+import Logo from 'src/components/Logo';
 import LoginForm from './LoginForm';
-import { AUTH_QA, AUTH_URL } from '../../../settings.js';
-import { DetailBox } from '../../dashboard/components';
+import { AUTH_QA, AUTH_URL } from 'src/settings';
+import { DetailBox } from 'src/views/dashboard/components';
 
 function LoginView() {
   const navigate = useNavigate();

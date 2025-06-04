@@ -3,9 +3,9 @@ import { useDispatch } from "react-redux";
 import * as Yup from "yup";
 import { Stack, Button, Typography } from "@mui/material";
 import { useFormik } from "formik";
-import { login } from "../../../actions/accountActions";
-import useBreakpoints from "../../../hooks/useBreakpoints";
-import encrypt from "../../../utils/encrypt";
+import { login } from "src/actions/accountActions";
+import useBreakpoints from "src/hooks/useBreakpoints";
+import encrypt from "src/utils/encrypt";
 
 function LoginForm({ onSubmitSuccess, ...rest }) {
   const { isMobile } = useBreakpoints();

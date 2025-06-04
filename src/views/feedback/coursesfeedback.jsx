@@ -19,8 +19,8 @@ import {
 } from '@mui/material';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { useOpenSnackbar } from '../hooks/useOpenSnackbar';
-import alertPage from '../../services/alertPage';
+import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
+import alertPage from 'src/services/alertPage';
 import { useMediaQuery } from '@mui/material';
 
 

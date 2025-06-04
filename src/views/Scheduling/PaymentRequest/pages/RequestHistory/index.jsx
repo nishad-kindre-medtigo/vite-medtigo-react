@@ -2,14 +2,14 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { Grid, Card, Box, Table, TableContainer, Paper, TextField, MenuItem, TableBody, TableCell, TableHead, TableRow, Tooltip, IconButton } from '@mui/material';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import { Link } from 'react-router-dom';
-import Label from '../../../../../components/Label';
+import Label from 'src/components/Label';
 import moment from 'moment';
-import axios from '../../../../../utils/axios';
-import useIsMountedRef from '../../../../../hooks/useIsMountedRef';
+import axios from 'src/utils/axios';
+import useIsMountedRef from 'src/hooks/useIsMountedRef';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import { useSelector } from 'react-redux';
 import TableSkeleton from '../../components/TableSkeleton';
-import useBreakpoints from '../../../../../hooks/useBreakpoints';
+import useBreakpoints from 'src/hooks/useBreakpoints';
 
 const useStyles = {
   root: {

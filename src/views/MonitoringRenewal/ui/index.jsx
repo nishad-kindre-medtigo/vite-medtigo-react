@@ -8,7 +8,7 @@ import ContinueIcon from '@mui/icons-material/SkipNext';
 import StartQuizIcon from '@mui/icons-material/CallMade';
 import ExploreIcon from '@mui/icons-material/OpenInNew';
 import BackArrow from '@mui/icons-material/ArrowBackIosRounded';
-import history from '../../../utils/history';
+import history from 'src/utils/history';
 
 const StyledBox = ({ children, id, sx }) => (
   <Box

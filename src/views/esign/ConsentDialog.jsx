@@ -13,13 +13,13 @@ import {
   useTheme, useMediaQuery
 } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import eSignatureService from '../../services/esignatureService';
-import alertPage from '../../services/alertPage';
+import eSignatureService from 'src/services/esignatureService';
+import alertPage from 'src/services/alertPage';
+import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 import SendForSignatureComponent from './SendForSignatureComponent';
 import HistoryPage from './HistoryPage';
 import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import { useOpenSnackbar } from "../../hooks/useOpenSnackbar"
 
 const theme = createTheme({
   typography: {

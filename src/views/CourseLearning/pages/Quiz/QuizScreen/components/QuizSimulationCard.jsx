@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Box, Grid, Button, Dialog, DialogContent, DialogTitle, IconButton, Typography, Tooltip } from '@mui/material';
-import simulationService from '../../../../../../services/simulationServices';
+import simulationService from 'src/services/simulationServices';
 import { useSelector } from 'react-redux';
 import RetryIcon from '@mui/icons-material/Refresh';
 import CompleteIcon from '@mui/icons-material/CheckCircle';
@@ -10,9 +10,9 @@ import CachedIcon from '@mui/icons-material/Cached';
 import SkipNextIcon from '@mui/icons-material/SkipNext';
 import CallMadeIcon from '@mui/icons-material/CallMade';
 import VerifiedIcon from '@mui/icons-material/Verified';
-import useBreakpoints from '../../../../../../hooks/useBreakpoints';
+import useBreakpoints from 'src/hooks/useBreakpoints';
 import { simulationCasesData } from '../data';
-import { LearningContext } from '../../../../../../context/LearningContext';
+import { LearningContext } from 'src/context/LearningContext';
 import { AutoProviderCardBox } from '../handlers';
 
 const QuizSimulationCard = ({ parent, endQuiz }) => {
@@ -313,7 +313,7 @@ const QuizSimulationCard = ({ parent, endQuiz }) => {
                     spacing={2}
                     style={{ padding: '10px', flexWrap: 'nowrap' }}
                   >
-                    <Grid item>
+                    <Grid>
                       <img
                         style={{ borderRadius: '10px 0 0 10px' }}
                         height={100}
@@ -323,7 +323,6 @@ const QuizSimulationCard = ({ parent, endQuiz }) => {
                       />
                     </Grid>
                     <Grid
-                      item
                       style={{
                         display: 'flex',
                         flexDirection: 'column',

@@ -1,12 +1,12 @@
 /* eslint react/prop-types: 0 */
 import React, { useContext, useEffect, useRef } from 'react';
 import { Autocomplete, TextField, Button, Box } from '@mui/material';
-import { LearningContext } from '../../../../context/LearningContext';
+import { LearningContext } from 'src/context/LearningContext';
 // import MapViewer from '../../../map';
-import { courseLanguages } from '../../../../appConstants';
-import useroptionsServices from '../../../../services/userOptionsService';
+import { courseLanguages } from 'src/appConstants';
+import useroptionsServices from 'src/services/userOptionsService';
 import { useNavigate } from 'react-router-dom';
-import useBreakpoints from '../../../../hooks/useBreakpoints';
+import useBreakpoints from 'src/hooks/useBreakpoints';
 
 function CourseUnits(props) {
   const { activeStep, steps, activeCourse, goToPreviousUnit, goToNextUnit, courseTitle } = props;

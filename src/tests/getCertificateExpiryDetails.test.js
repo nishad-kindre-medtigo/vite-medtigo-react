@@ -1,6 +1,6 @@
 // ../utils/getCertificateExpiryDetails.test.js
 import { getCertificateExpiryDetails } from '../utils/getCertificateExpiryDetails';
-import { certificatesDictionary as Dict } from '../appConstants';
+import { certificatesDictionary as Dict } from 'src/appConstants';
 
 describe('getCertificateExpiryDetails', () => {
   const mockDate = new Date('2025-04-16T15:07:00+05:30'); // current date as per your context

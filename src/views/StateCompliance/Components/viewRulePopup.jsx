@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Dialog, DialogContent, DialogTitle, IconButton, MenuItem, Paper, Select, styled, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Tooltip, tooltipClasses, Typography,Autocomplete, TextField, Chip, Box } from "@mui/material";
 import CloseIcon from '@mui/icons-material/Close';
-import { CMEComplianceRuleSet } from "../../../appConstants";
+import { CMEComplianceRuleSet } from "src/appConstants";
 
 const CMERulesPopup = ({ showRule, setShowRule, selectedStates }) => {
     const [stateRule, setStateRules] = React.useState({

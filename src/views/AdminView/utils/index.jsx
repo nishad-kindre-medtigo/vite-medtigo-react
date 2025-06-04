@@ -1,6 +1,6 @@
 import moment from "moment";
-import history from "../../../utils/history";
-import { allCertificates, cme_states, ProfessionWithCertificates } from "../../../appConstants";
+import history from "src/utils/history";
+import { allCertificates, cme_states, ProfessionWithCertificates } from "src/appConstants";
 
 export const calculateValidity = (expiryDate) => {
   const now = moment();

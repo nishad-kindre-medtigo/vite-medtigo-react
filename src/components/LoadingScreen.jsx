@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box } from '@mui/material';
-import { GradientCircularProgress } from '../ui/Progress';
+import { GradientCircularProgress } from 'src/ui/Progress';
 
 function LoadingScreen() {
 

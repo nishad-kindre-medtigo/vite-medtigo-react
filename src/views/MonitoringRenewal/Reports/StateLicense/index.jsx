@@ -1,12 +1,12 @@
 import React, { useContext, useState } from 'react';
 import { TableBody, TableCell, TableContainer, TableHead, TableRow, Box } from '@mui/material';
-import { getLicenseStatusImage, formatDate, RenewalCycle, calculateStatus } from '../../../AdminView/utils';
-import licenseReportServices from '../../../../services/licenseReportServices';
-import { AccordionBox, AccordionTable, PageContainer, PlaceHolder, DefaultPlaceHolder } from '../../../../components/CMECompliance';
+import { getLicenseStatusImage, formatDate, RenewalCycle, calculateStatus } from 'src/views/AdminView/utils';
+import licenseReportServices from 'src/services/licenseReportServices';
+import { AccordionBox, AccordionTable, PageContainer, PlaceHolder, DefaultPlaceHolder } from 'src/components/CMECompliance';
 import { useSelector } from 'react-redux';
-import { allCertificates } from '../../../../appConstants';
-import { ReportFilterContext } from '../../../../context/ReportFilterContext';
-import { StatusFilter } from '../../../AdminView/ClinicalCertificate/UserView';
+import { allCertificates } from 'src/appConstants';
+import { ReportFilterContext } from 'src/context/ReportFilterContext';
+import { StatusFilter } from 'src/views/AdminView/ClinicalCertificate/UserView';
 import { ReportBackLink } from '../../ui';
 
 const SingleLicenseData = ({ licenseItem }) => {

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import learningService from '../../services/learningService';
-import orderServices from '../../services/orderServices';
-import myLearningService from '../../services/myLearningService';
+import learningService from 'src/services/learningService';
+import orderServices from 'src/services/orderServices';
+import myLearningService from 'src/services/myLearningService';
 import RegularCourseForm from './forms/RegularCourseForm';
 import OpioidSurveyForm from './forms/OpioidCourseForm';
 import { AccessDeniedScreen } from '../CourseLearning/components';

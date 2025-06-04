@@ -3,13 +3,13 @@ import React, { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom';
 import ArrowBackIosNewRoundedIcon from '@mui/icons-material/ArrowBackIosNewRounded';
 import { Box, Grid, IconButton } from '@mui/material';
-import { CME_RequestType, states } from '../../../appConstants';
+import { CME_RequestType, states } from 'src/appConstants';
 import moment from 'moment';
-import { StateWiseRenew } from '../../../views/StateCompliance';
-import useBreakpoints from '../../../hooks/useBreakpoints';
+import { StateWiseRenew } from 'src/views/StateCompliance';
+import useBreakpoints from 'src/hooks/useBreakpoints';
 import ReportContainer from './reportContainer';
 import { ComplianceTag, ComplianceTagSmall, PageNav } from '..';
-import BackButtonWithTitle from '../../Reports';
+import BackButtonWithTitle from 'src/components/Reports';
 
 
 function SingleUserSingleState() {
@@ -47,7 +47,7 @@ function SingleUserSingleState() {
                     </Box>
                 </Grid>
 
-                <Grid item>
+                <Grid>
                     <span style={{ fontSize: isMobile && '14px', display: 'inline-block', flexDirection: 'row', width: 'fit-content', justifyContent: 'flex-end' }}>
                         {<React.Fragment>
                             <p> <strong style={{ fontWeight: '600' }}> State License Type :  </strong> Full License <br /> <strong style={{ fontWeight: '600' }}> Request Type :  </strong> {CME_RequestType[1].label}  <br />

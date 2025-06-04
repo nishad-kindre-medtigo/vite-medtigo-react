@@ -1,4 +1,4 @@
-import { certificatesDictionary as Dict } from '../appConstants';
+import { certificatesDictionary as Dict } from 'src/appConstants';
 import moment from 'moment';
 
 export const getCertificateExpiryDetails = (expiryDate, isCME = false) => {

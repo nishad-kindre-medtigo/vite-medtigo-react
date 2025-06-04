@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Grid, Typography, Divider, Link } from '@mui/material';
 import { benefits, aboutInfo } from './data';
 import { useSelector } from 'react-redux';
-import useBreakpoints from '../../hooks/useBreakpoints';
+import useBreakpoints from 'src/hooks/useBreakpoints';
 
 const boxStyles = {
   width: '100%',

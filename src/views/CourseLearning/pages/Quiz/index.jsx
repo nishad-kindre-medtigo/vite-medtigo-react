@@ -1,11 +1,11 @@
 /* eslint react/prop-types: 0 */
 import React from 'react';
-import { LearningContext } from '../../../../context/LearningContext';
+import { LearningContext } from 'src/context/LearningContext';
 import { useSelector } from 'react-redux';
 import moment from 'moment';
-import { courseDetails } from '../../../../appConstants';
+import { courseDetails } from 'src/appConstants';
 import QuizScreen from './QuizScreen';
-import SplashScreen from '../../../../components/SplashScreen';
+import SplashScreen from 'src/components/SplashScreen';
 import { formatQuizContent } from '../../utils';
 import './quiz.css';
 

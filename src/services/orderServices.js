@@ -1,4 +1,4 @@
-import axios from '../utils/axios';
+import axios from 'src/utils/axios';
 
 class OrderServices {
   validateService  = (data) => new Promise((resolve, reject) => {

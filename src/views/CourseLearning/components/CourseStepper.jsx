@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Typography, Grid, Stepper, Step, StepLabel, LinearProgress } from '@mui/material';
-import { LearningContext } from '../../../context/LearningContext';
+import { LearningContext } from 'src/context/LearningContext';
 import { courseLessonTypes } from '../utils';
 import EmojiEventsTwoToneIcon from '@mui/icons-material/EmojiEventsTwoTone';
 import ErrorIcon from '@mui/icons-material/ErrorOutline';
@@ -20,7 +20,7 @@ function CourseStepper({ activeStep, steps, setActiveStep, closePopup }) {
     : Math.round((activeStep / steps.length) * 100);
 
   return (
-    <Grid size={{ xs: 12, md: 3 }} item>
+    <Grid size={{ xs: 12, md: 3 }}>
       {activeCourse && (
         <div>
           <CourseProgressCard

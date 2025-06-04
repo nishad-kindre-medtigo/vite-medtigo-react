@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Typography, Tooltip, Box, List, ListItem } from '@mui/material';
 import { CardTitle, ClickText, DetailBox, GreyBox, ListItemSkeleton } from '../components';
-import { useMyLearningContext } from '../../../context/MyLearningContext';
-import ExplorePlansDialog from '../../Acquisition/MyLearning/dialogs/ExplorePlansDialog';
-import RetakeCourseDialog from '../../Acquisition/MyLearning/dialogs/RetakeCourseDialog';
-import { courses } from '../../Acquisition/MyLearning/data';
-import { CourseProgress } from '../../Acquisition/MyLearning/ui';
+import { useMyLearningContext } from 'src/context/MyLearningContext';
+import ExplorePlansDialog from 'src/views/Acquisition/MyLearning/dialogs/ExplorePlansDialog';
+import RetakeCourseDialog from 'src/views/Acquisition/MyLearning/dialogs/RetakeCourseDialog';
+import { courses } from 'src/views/Acquisition/MyLearning/data';
+import { CourseProgress } from 'src/views/Acquisition/MyLearning/ui';
 
 const capitalizeWords = (text) => {
   return text

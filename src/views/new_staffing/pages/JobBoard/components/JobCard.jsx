@@ -4,10 +4,10 @@ import BookmarkOutlinedIcon from '@mui/icons-material/BookmarkOutlined';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
-import { StaffingContext } from '../../../../../context/StaffingContext';
-import staffingServices from '../../../../../services/staffingServices';
+import { StaffingContext } from 'src/context/StaffingContext';
+import staffingServices from 'src/services/staffingServices';
 import ApplyForJobPopup from './ApplyForJobPopup';
-import { ApplyButton } from '../../../components';
+import { ApplyButton } from 'src/views/new_staffing/components';
 
 const JobCard = props => {
   const { data, userSavedJobs } = props;
@@ -110,7 +110,7 @@ const JobCard = props => {
           justifyContent={{ xs: 'flex-end', md: 'center' }}
           alignItems="flex-end"
         >
-          <Grid item>
+          <Grid>
             <IconButton onClick={() => handleSaveJob(data)}>
               {isBookmarked ? (
                 <BookmarkOutlinedIcon style={{ color: '#2872C1' }} />
@@ -131,7 +131,7 @@ const JobCard = props => {
               {applyButtonClick ? 'Applied' : 'Apply'}
             </ApplyButton>
           </Grid>
-          <Grid item>
+          <Grid>
             <IconButton onClick={() => (expanded ? setExpanded(false) : handleShowJobDetail(data))}>
               {expanded ? <ExpandLessIcon /> : <ExpandMoreIcon />}
             </IconButton>

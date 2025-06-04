@@ -1,7 +1,7 @@
 import React from 'react';
-import Logo from './Logo';
+import Logo from 'src/components/Logo';
 import { Box } from '@mui/material';
-import { GradientCircularProgress } from '../ui/Progress';
+import { GradientCircularProgress } from 'src/ui/Progress';
 
 function SplashScreen() {
   return (

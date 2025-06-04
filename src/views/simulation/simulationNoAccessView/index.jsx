@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Box, Grid, Button, Typography, Card, CardContent } from '@mui/material';
 import { ArrowBack, OpenInNew as ExploreIcon } from '@mui/icons-material';
 import { useSelector } from 'react-redux';
-import useBreakpoints from '../../../hooks/useBreakpoints';
-import { useMyLearningContext } from '../../../context/MyLearningContext';
-import myLearningService from '../../../services/myLearningService';
-import ExplorePlansDialog from '../../Acquisition/MyLearning/dialogs/ExplorePlansDialog';
-import { courses } from '../../Acquisition/MyLearning/data';
+import useBreakpoints from 'src/hooks/useBreakpoints';
+import { useMyLearningContext } from 'src/context/MyLearningContext';
+import myLearningService from 'src/services/myLearningService';
+import ExplorePlansDialog from 'src/views/Acquisition/MyLearning/dialogs/ExplorePlansDialog';
+import { courses } from 'src/views/Acquisition/MyLearning/data';
 
 function SimulationNoAccessView() {
   const { handleButtonClick } = useMyLearningContext();
@@ -109,7 +109,7 @@ function SimulationNoAccessView() {
           </Typography>
 
           <Grid container spacing={2} justifyContent="center">
-            <Grid item>
+            <Grid>
               <Button
                 startIcon={<ArrowBack />}
                 variant="outlined"
@@ -118,7 +118,7 @@ function SimulationNoAccessView() {
                 Go Back
               </Button>
             </Grid>
-            <Grid item>
+            <Grid>
               <Button
                 variant="contained"
                 disableElevation

@@ -168,7 +168,7 @@ const DocumentUpload = () => {
           {/* Header Cards */}
           <Box sx={{ p: 3, margin: '40px' }}>
             <Grid container justifyContent="center" style={{ gap: '40px' }}>
-              <Grid item>
+              <Grid>
                 <StyledCard sx={{ backgroundColor: '#1C5087' }}>
                   <CardContent sx={{ textAlign: 'center' }}>
                     <img
@@ -182,7 +182,7 @@ const DocumentUpload = () => {
                   </CardContent>
                 </StyledCard>
               </Grid>
-              <Grid item>
+              <Grid>
                 <StyledCard
                   sx={{
                     backgroundColor:

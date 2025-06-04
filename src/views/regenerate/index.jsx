@@ -1,6 +1,6 @@
 import React, { useState, useEffect} from 'react';
 import { useLocation } from 'react-router-dom';
-import orderServices from '../../services/orderServices';
+import orderServices from 'src/services/orderServices';
 
 function RegenerateView() {
 

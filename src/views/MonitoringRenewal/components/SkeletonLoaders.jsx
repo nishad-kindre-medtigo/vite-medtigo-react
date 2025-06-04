@@ -1,7 +1,7 @@
 import React from 'react';
 import { Skeleton, Grid, Box } from '@mui/material';
 import { StyledCard, CertificateContent, ActionContainer } from '../ui';
-import useBreakpoints from '../../../hooks/useBreakpoints';
+import useBreakpoints from 'src/hooks/useBreakpoints';
 
 export const CertificateSkeletonList = ({ isCME = false, cards = 6 }) => {
   const { isMobile } = useBreakpoints();

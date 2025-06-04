@@ -2,9 +2,9 @@ import React from 'react';
 import { Dialog, DialogContent, Grid, Box, Typography } from '@mui/material';
 import CancelIcon from '@mui/icons-material/CancelOutlined';
 import { BasicPlanCard, StandardPlanCard, BestValuePlanCard, FullAccessPlanCard, SingleCard, COLORS, FONT } from '../components/DialogCards';
-import { Transition } from '../../../../ui/Transition';
-import { useMyLearningContext } from '../../../../context/MyLearningContext';
-import useBreakpoints from '../../../../hooks/useBreakpoints';
+import { Transition } from 'src/ui/Transition';
+import { useMyLearningContext } from 'src/context/MyLearningContext';
+import useBreakpoints from 'src/hooks/useBreakpoints';
 
 const ExplorePlansDialog = ({ fullAccess }) => {
   const { isMobile, isTablet } = useBreakpoints();

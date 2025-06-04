@@ -1,10 +1,10 @@
 import React from 'react';
 import { Box, Grid, Button, TextField, IconButton, Typography, Dialog, Backdrop, Fade } from '@mui/material';
-import { useOpenSnackbar } from '../../hooks/useOpenSnackbar';
+import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 import CloseIcon from '@mui/icons-material/Close';
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
-import UserAccessService from '../../services/userAccessService';
-import useBreakpoints from '../../hooks/useBreakpoints';
+import UserAccessService from 'src/services/userAccessService';
+import useBreakpoints from 'src/hooks/useBreakpoints';
 
 const MyInstitutions = () => {
   const { isMobile } = useBreakpoints();

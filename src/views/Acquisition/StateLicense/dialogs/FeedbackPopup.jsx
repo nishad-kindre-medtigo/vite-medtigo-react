@@ -1,13 +1,13 @@
 import React from 'react';
 import { Dialog, DialogContent, Box, Button, FormControl, FormControlLabel, RadioGroup, Radio, Typography, Stack, TextareaAutosize, useTheme } from '@mui/material';
-import { useOpenSnackbar } from '../../../../hooks/useOpenSnackbar';
-import alertPage from '../../../../services/alertPage';
+import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
+import alertPage from 'src/services/alertPage';
 import { useSelector } from 'react-redux';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { Loader } from '../../../../ui/Progress';
+import { Loader } from 'src/ui/Progress';
 import { motion } from 'framer-motion';
-import useBreakpoints from '../../../../hooks/useBreakpoints';
+import useBreakpoints from 'src/hooks/useBreakpoints';
 
 export const StarRating = ({ value, onChange, error }) => {
   const labels = ['Very Poor', 'Poor', 'Average', 'Good', 'Excellent'];

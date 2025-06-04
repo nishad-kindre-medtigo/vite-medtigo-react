@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Box, AppBar, Toolbar, Typography, Button } from '@mui/material';
-import { SERVER_URL } from '../../settings';
+import { SERVER_URL } from 'src/settings';
 
 function ImageViewer() {
   const [attachment, setAttachment] = useState(null);

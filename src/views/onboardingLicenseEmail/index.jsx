@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Grid, Typography } from '@mui/material';
-import authService from '../../services/authService';
+import authService from 'src/services/authService';
 
 const OnboardingLicenseEmail = () => {
     const urlParams = new URLSearchParams(window.location.search);

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import staffingServices from '../services/staffingServices';
+import staffingServices from 'src/services/staffingServices';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 

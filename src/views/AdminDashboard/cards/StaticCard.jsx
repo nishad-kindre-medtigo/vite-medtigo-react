@@ -1,5 +1,5 @@
 import React from 'react';
-import { CardTitle, ClickText, DetailBox, GreyBox } from '../../../views/dashboard/components';
+import { CardTitle, ClickText, DetailBox, GreyBox } from 'src/views/dashboard/components';
 import { Box, Typography } from '@mui/material';
 
 const StaticCard = () => {

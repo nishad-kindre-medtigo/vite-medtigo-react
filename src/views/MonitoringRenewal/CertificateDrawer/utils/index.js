@@ -1,5 +1,5 @@
 import moment from 'moment';
-import { states, certCategories } from '../../../../appConstants';
+import { states, certCategories } from 'src/appConstants';
 
 // FILTER OUT HEALTH, CERTIFICATE COURSES, MALPRACTICE, AND TRANSCRIPTS AND SCORES
 export const LICENSE_STATES = states.filter(

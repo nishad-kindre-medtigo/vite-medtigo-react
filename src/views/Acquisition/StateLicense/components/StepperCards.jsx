@@ -2,8 +2,8 @@ import React from 'react';
 import { Grid, Typography, Box, Step, StepLabel } from '@mui/material';
 import { LICENSE_STEPS, getLicenseActiveStep } from '../utils';
 import { StepperCard, StyledStepper, StepperSkeleton, LicenseTaskCount, StyledLink } from '../ui';
-// import Label from '../components/Label';
-import { PlaceHolder } from '../../../MonitoringRenewal/components/Placeholders';
+import Label from 'src/components/Label';
+import { PlaceHolder } from 'src/views/MonitoringRenewal/components/Placeholders';
 import moment from'moment';
 
 const LicenseStepperCardContainer = props => {

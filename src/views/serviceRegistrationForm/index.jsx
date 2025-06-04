@@ -4,14 +4,14 @@ import React, { useEffect, useState } from 'react';
 import "./style.css"
 // import DateFnsUtils from '@date-io/moment';
 import { Box, InputLabel, MenuItem, TextField, Typography, IconButton, FormControl, Select, FormControlLabel, FormLabel, RadioGroup, Radio, TextareaAutosize, Checkbox, Button, ThemeProvider, Divider, Tooltip } from '@mui/material';
-import { useOpenSnackbar } from '../../hooks/useOpenSnackbar';
+import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 
-import { countryList } from '../../appConstants';
+import { countryList } from 'src/appConstants';
 import { DatePicker, LocalizationProvider, DesktopDatePicker} from '@mui/x-date-pickers';
 import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment';
 import moment from 'moment';
-import serviceFormRegistration from '../../services/serviceFormRegistration';
-import serviceFormRegistrationInstance from '../../services/serviceFormRegistration';
+import serviceFormRegistration from 'src/services/serviceFormRegistration';
+import serviceFormRegistrationInstance from 'src/services/serviceFormRegistration';
 import CryptoJS from 'crypto-js';
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';

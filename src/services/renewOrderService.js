@@ -1,5 +1,5 @@
-import { CertificateVariants } from '../appConstants';
-import axios from '../utils/axios';
+import { CertificateVariants } from 'src/appConstants';
+import axios from 'src/utils/axios';
 
 class RenewOrderService {
 

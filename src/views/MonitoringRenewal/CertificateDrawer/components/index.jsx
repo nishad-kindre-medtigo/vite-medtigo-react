@@ -8,8 +8,8 @@ import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import CalendarIcon from '@mui/icons-material/CalendarMonthTwoTone';
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import { CloudUpload, AttachFile, ErrorOutline, InsertDriveFile, PictureAsPdf, Image, Visibility } from '@mui/icons-material';
-import { Loader } from '../../../../ui/Progress';
-import { SERVER_URL } from '../../../../settings';
+import { Loader } from 'src/ui/Progress';
+import { SERVER_URL } from 'src/settings';
 
 export const AddCategoryButton = ({ onClick }) => {
   return (

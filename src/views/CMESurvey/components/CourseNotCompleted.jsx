@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Container, Grid, Typography, Box } from '@mui/material';
-import Page from '../../../components/Page';
+import Page from 'src/components/Page';
 
 function CourseNotCompleted({ courseID }) {
   return (

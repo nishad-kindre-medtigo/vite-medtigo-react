@@ -3,8 +3,8 @@ import Chart from 'react-apexcharts';
 import { Box, Grid, IconButton, List, ListItem, ListItemIcon, Skeleton, Tooltip, Typography } from '@mui/material';
 import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
 import { useNavigate } from 'react-router-dom';
-import { CourseProgress } from '../../Acquisition/MyLearning/ui';
-import { StyledLink } from '../../Acquisition/StateLicense/ui';
+import { CourseProgress } from 'src/views/Acquisition/MyLearning/ui';
+import { StyledLink } from 'src/views/Acquisition/StateLicense/ui';
 
 export const DetailBox = ({ children, sx }) => {
   return (

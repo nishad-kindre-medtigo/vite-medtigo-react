@@ -1,12 +1,12 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { Typography } from '@mui/material';
-import { DetailBox } from '../../../views/dashboard/components';
+import { DetailBox } from 'src/views/dashboard/components';
 import GroupFilter from '../components/Filters/GroupFilter';
 import MonthFilter from '../components/Filters/MonthFilter';
 import { BarChartTitleBox, FiltersBox } from '../components';
-import { ReportFilterContext } from '../../../context/ReportFilterContext';
+import { ReportFilterContext } from 'src/context/ReportFilterContext';
 import RegulatoryChart from '../components/Chart/RegulatoryChart';
-import adminService from '../../../services/adminService';
+import adminService from 'src/services/adminService';
 import moment from 'moment';
 import { generateMonthRange } from '../utils';
 

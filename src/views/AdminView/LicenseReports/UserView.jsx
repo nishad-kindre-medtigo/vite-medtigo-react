@@ -1,13 +1,13 @@
 import React, { useContext, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom'; // Import useHistory for navigation
 import { Typography, TableBody, TableCell, TableContainer, TableHead, TableRow, Box } from '@mui/material';
 import { getLicenseStatusImage, formatDate, getLicenseStatus, RenewalCycle, calculateStatus } from '../utils';
-import licenseReportServices from '../../../services/licenseReportServices';
-import { AccordionBox, AccordionTable, PlaceHolder, PageContainer, DefaultPlaceHolder } from '../../../components/CMECompliance';
+import licenseReportServices from 'src/services/licenseReportServices';
+import { AccordionBox, AccordionTable, PlaceHolder, PageContainer, DefaultPlaceHolder } from 'src/components/CMECompliance';
 import { InfoDialog, InfoIconTooltip } from './Components';
-import { allCertificates } from '../../../appConstants';
-import BackButtonWithTitle from '../../../components/Reports';
-import { ReportFilterContext } from '../../../context/ReportFilterContext';
+import { allCertificates } from 'src/appConstants';
+import BackButtonWithTitle from 'src/components/Reports';
+import { ReportFilterContext } from 'src/context/ReportFilterContext';
 import { StatusFilter } from '../ClinicalCertificate/UserView';
 
 const SingleLicenseData = ({ licenseItem, handleOpen }) => {

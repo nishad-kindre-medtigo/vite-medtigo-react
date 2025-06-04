@@ -3,7 +3,7 @@ import { Box, Button, Divider, IconButton, Typography, Stepper, StepConnector, S
 import BackArrow from '@mui/icons-material/ArrowBackIosRounded';
 import { styled } from '@mui/material/styles';
 import { Message } from '@mui/icons-material';
-import useBreakpoints from '../../../../hooks/useBreakpoints';
+import useBreakpoints from 'src/hooks/useBreakpoints';
 import { convertMarkdownLinksToHtml } from '../utils';
 
 const CustomConnector = styled(StepConnector)(({ theme }) => ({

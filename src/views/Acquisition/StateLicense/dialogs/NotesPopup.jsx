@@ -8,7 +8,7 @@ import {
   DialogActions
 } from '@mui/material';
 import moment from 'moment';
-import { CONNECT_URL } from '../../../../settings';
+import { CONNECT_URL } from 'src/settings';
 
 const NotesPopup = ({ viewNotesData, openNotesDialog, setOpenNotesDialog }) => {
   return (
