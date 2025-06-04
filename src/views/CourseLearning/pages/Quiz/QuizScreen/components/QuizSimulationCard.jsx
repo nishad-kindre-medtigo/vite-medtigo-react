@@ -128,6 +128,7 @@ const QuizSimulationCard = ({ parent, endQuiz }) => {
             Step 1
           </Typography>
           <img
+            alt="Simulation Card"
             style={{ marginTop: '0px', padding: '20px 0px' }}
             width={isMobile ? 100 : 170}
             src="/images/lms/simulation_card.png"

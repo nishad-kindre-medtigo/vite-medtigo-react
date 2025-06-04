@@ -351,6 +351,7 @@ const TaskDetailsPopup = ({
           {taskDetailData.Task_Type === 'Fees Requested' ? (
             <div style={{ display: 'flex', gap: '5px' }}>
               <img
+                alt="Arrow"
                 src="/icons/licensing/rightArrow.png"
                 width="20px"
                 height="20px"

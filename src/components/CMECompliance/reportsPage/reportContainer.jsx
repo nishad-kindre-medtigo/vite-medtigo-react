@@ -337,10 +337,6 @@ function ReportContainer({ licenseStatus, compliance_report, title, state, isCom
                                             total_credits_required <= (total_require_credits + +total_generic_credits) ?
                                                 <CheckBoxIcon color='success' /> : <DisabledByDefaultRoundedIcon color='error' />
                                         }
-
-                                        <Tooltip>
-                                            <img></img>
-                                        </Tooltip>
                                     </TableCell>
                                 </TableRow>
                             </TableBody>

@@ -9,6 +9,7 @@ const ContactCard = ({ name, title, email, showIcon = true }) => (
     <Box display="flex" gap={2}>
       {showIcon && (
         <img
+          alt="Support"
           height="29px"
           width="22px"
           src="/icons/licensing/supportNotification.svg"
