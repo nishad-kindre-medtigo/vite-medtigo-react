@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { Box } from '@mui/material';
+import { Box, Avatar } from '@mui/material';
 import CartIcon from '@mui/icons-material/ShoppingCartRounded';
 import AdminFilledIcon from '@mui/icons-material/AdminPanelSettings';
 import AdminOutlinedIcon from '@mui/icons-material/AdminPanelSettingsOutlined';
@@ -295,10 +295,10 @@ const TopBar = () => {
                     height: '27px'
                   }}
                 >
-                  <img
+                  <Avatar
                     src={profilePicture}
                     alt="User"
-                    style={{ borderRadius: '50%', width: '27px', height: '27px' }}
+                    sx={{ width: 28, height: 28 }}
                   />
                   {/* Crown only for medtigo Orange Users */}
                   {user.isMedtigoOrange && (
