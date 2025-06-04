@@ -349,24 +349,6 @@ export const CustomDatePicker = (props) => {
           disabled={disabled}
           disableFuture={isCME}
           onChange={handleDateChange}
-          // Changes for mui/x-date-picker version 5
-          renderInput={(params) => (
-            <TextField
-              {...params}
-              sx={{
-                cursor: 'pointer',
-                '& .MuiInputBase-input': {
-                  cursor: 'pointer',
-                },
-              }}
-            />
-          )}
-          // Hide the Edit Icon in the DatePicker Toolbar
-          sx={{
-            '& .MuiPickersToolbar-penIconButton': {
-              display: 'none'
-            }
-          }}
         />
       </FormControl>
     </LocalizationProvider>

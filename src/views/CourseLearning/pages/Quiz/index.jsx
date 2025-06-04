@@ -1,4 +1,3 @@
-/* eslint react/prop-types: 0 */
 import React from 'react';
 import { LearningContext } from 'src/context/LearningContext';
 import { useSelector } from 'react-redux';

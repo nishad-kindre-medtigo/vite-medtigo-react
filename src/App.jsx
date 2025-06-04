@@ -22,10 +22,24 @@ const theme = createTheme({
     mode: "light", // Enforce light theme
   },
   components: {
-    MuiButton: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        body: {
+          // Enforce light theme scrollbars
+          scrollbarColor: '#888 #fff',
+          '&::-webkit-scrollbar-thumb': {
+            backgroundColor: '#888',
+          },
+          '&::-webkit-scrollbar-thumb:hover': {
+            backgroundColor: '#bbb',
+          },
+        },
+      },
+    },
+    MuiButtonBase: {
       styleOverrides: {
         root: {
-          "&:focus": {
+          '&:focus, &:focus-visible': {
             outline: "none",
           },
         },

@@ -151,12 +151,19 @@ export const CertificatesContextProvider = ({ children }) => {
 
   const fetchData = async () => {
     setIsLoading(true);
-    fetchClinicalCertificates();
-    fetchMonitoringStateLicenses();
-    fetchCMECertificates();
-    fetchDEACertificates();
-    fetchStateCSRCertificates();
-    setIsLoading(false);
+    try {
+      await Promise.all([
+        fetchClinicalCertificates(),
+        fetchMonitoringStateLicenses(),
+        fetchCMECertificates(),
+        fetchDEACertificates(),
+        fetchStateCSRCertificates(),
+      ]);
+    } catch (error) {
+      console.error("Error while fetching data:", error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleSendEmail = async (emails, sendACopy, isCME, shouldEmailCmeCredits, shouldEmailCertificate) => {

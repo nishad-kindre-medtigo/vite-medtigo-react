@@ -16,7 +16,7 @@ import Label from 'src/components/Label';
 
 const ENCRYPTION_KEY = import.meta.env.VITE_ENCRYPTION_KEY;
 
-const PasswordCard = ({ data, setRefresh }) => {
+const PasswordCard = ({ data, fetchPasswords }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState('');
@@ -35,7 +35,7 @@ const PasswordCard = ({ data, setRefresh }) => {
   const deletePassword = async passwordId => {
     try {
       await passwordManagerServices.deletePassword(passwordId);
-      setRefresh(prev => !prev);
+      fetchPasswords();
       openSnackbar('Platform details deleted successfully');
     } catch (error) {
       console.error('Error deleting password:', error);
@@ -167,7 +167,7 @@ const PasswordCard = ({ data, setRefresh }) => {
         open={editDialogOpen}
         onClose={() => setEditDialogOpen(false)}
         initialValues={{ ...data, password: decryptedPassword }}
-        setRefresh={setRefresh}
+        fetchPasswords={fetchPasswords}
       />
     </>
   );

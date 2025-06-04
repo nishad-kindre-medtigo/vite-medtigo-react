@@ -1,4 +1,3 @@
-/* eslint react/prop-types: 0 */
 import React, { useContext, useEffect, useRef } from 'react';
 import { Autocomplete, TextField, Button, Box } from '@mui/material';
 import { LearningContext } from 'src/context/LearningContext';

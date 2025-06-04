@@ -16,7 +16,7 @@ const ToolsAndResourcesSection = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { scheduling , showEsign} = useSelector(state => state.account.user);
-  const [currentTab, setCurrentTab] = useState('/esign');
+  const [currentTab, setCurrentTab] = useState('vault');
   const [dropdownValue, setDropdownValue] = useState('mealExpense');
   const [menuAnchor, setMenuAnchor] = useState(null);
 

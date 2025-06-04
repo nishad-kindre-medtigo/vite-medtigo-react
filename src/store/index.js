@@ -3,6 +3,8 @@ import { createLogger } from 'redux-logger';
 import rootReducer from '../reducers';
 import { ENABLE_REDUX_LOGGER } from '../config';
 
+const NODE_ENV = import.meta.env.VITE_NODE_ENV;
+
 export function configureStoreInstance(preloadedState = {}) {
   const loggerMiddleware = createLogger();
 
@@ -15,7 +17,7 @@ export function configureStoreInstance(preloadedState = {}) {
     reducer: rootReducer,
     middleware,
     preloadedState,
-    devTools: process.env.NODE_ENV !== 'production',
+    devTools: NODE_ENV !== 'production',
   });
 
   return store;

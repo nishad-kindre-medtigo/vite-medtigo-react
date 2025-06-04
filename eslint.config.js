@@ -4,7 +4,9 @@ import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
 
 export default [
-  { ignores: ["dist"] },
+  {
+    ignores: ["dist", "node_modules", "**/*.test.js", "*.config.js"],
+  },
   {
     files: ["**/*.{js,jsx}"],
     languageOptions: {
@@ -36,8 +38,6 @@ export default [
       "jsx-a11y/control-has-associated-label": "off",
       "jsx-a11y/anchor-is-valid": "off",
       "no-unused-vars": "off",
-      "react/jsx-uses-react": "error",
-      "react/jsx-uses-vars": "error",
       "react/prop-types": "off",
       "react/display-name": "off",
       "react-refresh/only-export-components": [
