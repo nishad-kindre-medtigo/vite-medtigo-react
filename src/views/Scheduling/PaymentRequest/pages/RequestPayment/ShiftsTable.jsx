@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Table, TableContainer, Paper, TableBody, TableCell, TableHead, TableFooter, TableRow, TablePagination, Tooltip, IconButton} from '@mui/material';
 import InfoIcon from '@mui/icons-material/InfoRounded';
-import Label from '../../../../../components/Label';
+import Label from 'src/components/Label';
 import moment from 'moment';
 import { calculateHours, calculateTotalPayment, roundHours } from '../../utils';
 

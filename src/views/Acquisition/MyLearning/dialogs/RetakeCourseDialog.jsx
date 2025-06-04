@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { Button, Dialog, DialogActions, DialogTitle, DialogContent, CircularProgress } from '@mui/material';
-import { Loader } from '../../../../ui/Progress';
+import { Loader } from 'src/ui/Progress';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
 import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 import authService from 'src/services/authService';
 import orderServices from 'src/services/orderServices';
 import { useMyLearningContext } from 'src/context/MyLearningContext';
-import { SERVER_URL } from '../../../../settings';
+import { SERVER_URL } from 'src/settings';
 
 // Course Plans To place order for TeamHealth User when clicked on Renew
 const TEAMHEALTH_COURSE_PLANS = {

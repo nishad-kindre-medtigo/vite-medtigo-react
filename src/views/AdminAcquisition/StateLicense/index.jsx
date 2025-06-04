@@ -3,8 +3,8 @@ import { Typography } from '@mui/material';
 import adminService from 'src/services/adminService';
 import { ReportFilterContext } from 'src/context/ReportFilterContext';
 import DepartmentAccordion from './DepartmentAccordion';
-import { PlaceHolder, DefaultPlaceHolder, PageContainer } from '../../../components/CMECompliance';
-import { InfoDialog, InfoIconTooltip } from '../../../views/AdminView/LicenseReports/Components';
+import { PlaceHolder, DefaultPlaceHolder, PageContainer } from 'src/components/CMECompliance';
+import { InfoDialog, InfoIconTooltip } from 'src/views/AdminView/LicenseReports/Components';
 
 const StateLicense = forwardRef((props, ref) => {
   const [LicenseSummary, setLicenseSummary] = useState([]);

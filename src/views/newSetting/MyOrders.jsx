@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { Box, Typography, Table, TableContainer, Paper, TableBody, TableFooter, TableCell, TableHead, TableRow, IconButton, TablePagination } from '@mui/material';
-import NewLabel from '../../components/Label';
+import NewLabel from 'src/components/Label';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import moment from 'moment';
 import { tableStyles } from '../Scheduling/PaymentRequest/pages/RequestPayment/ShiftsTable';

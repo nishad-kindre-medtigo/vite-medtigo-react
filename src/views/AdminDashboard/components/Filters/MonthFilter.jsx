@@ -3,7 +3,7 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { TextField, Box, Button, Dialog, DialogActions, DialogContent, DialogTitle } from '@mui/material';
-import { Transition } from '../../../../ui/Transition';
+import { Transition } from 'src/ui/Transition';
 import addMonths from 'date-fns/addMonths';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import moment from 'moment';

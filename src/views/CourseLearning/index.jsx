@@ -6,7 +6,7 @@ import { LearningContext } from 'src/context/LearningContext';
 import useBreakpoints from 'src/hooks/useBreakpoints';
 import authService from 'src/services/authService';
 import myLearningService from 'src/services/myLearningService';
-import Page from '../../components/Page';
+import Page from 'src/components/Page';
 import { LoadingScreen, AccessDeniedScreen, CourseStepper, CourseStepperPopup } from './components';
 import { Introduction, CourseUnits, QuizPage } from './pages';
 import { courseLessonTypes } from './utils';

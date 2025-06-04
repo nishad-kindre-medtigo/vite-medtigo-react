@@ -7,7 +7,7 @@ import { Box, Grid, TableCell } from '@mui/material';
 import { tableCellClasses } from "@mui/material";
 import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 import FilterPanel from "./Components/filterPanel";
-import { PlaceHolder } from "../AdminView/TeamCompliance/components";
+import { PlaceHolder } from "src/views/AdminView/TeamCompliance/components";
 import StatesAccordian from "./Components/statesAccordian";
 import AllStatesReports from "./Components/allStatesReports";
 import { useParams } from "react-router-dom";

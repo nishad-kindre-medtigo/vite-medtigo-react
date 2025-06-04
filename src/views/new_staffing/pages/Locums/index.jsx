@@ -10,7 +10,7 @@ import { Formik, Form, Field } from 'formik';
 import { useSelector } from 'react-redux';
 import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 import staffingServices from 'src/services/staffingServices';
-import { CONNECT_URL } from '../../../../settings';
+import { CONNECT_URL } from 'src/settings';
 
 const LocumsHeader = '/images/staffing/locumsheader.svg';
 const jobboardinterface = '/images/staffing/Job board mobile.svg';

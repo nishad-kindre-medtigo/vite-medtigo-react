@@ -15,7 +15,7 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import CheckIcon from '@mui/icons-material/Check';
 import { TextField, Tooltip, Autocomplete, Select, DialogTitle, Dialog, DialogContentText, tooltipClasses, ToggleButton, ListItemText } from '@mui/material';
 import moment from "moment";
-import { SERVER_URL } from "../../../settings";
+import { SERVER_URL } from "src/settings";
 // import { Page } from "@react-pdf/renderer";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { createFilterOptions, tableCellClasses } from "@mui/material";
@@ -26,8 +26,8 @@ import AddRoundedIcon from '@mui/icons-material/AddRounded';
 import { CertificatesContext } from 'src/context/CertificatesContext';
 import CMERulesPopup from "./viewRulePopup";
 import HelpPopup from "./helpPopup";
-import useBreakpoints from "../../../hooks/useBreakpoints";
-import { IOSSwitch } from "../../../components/CMECompliance";
+import useBreakpoints from "src/hooks/useBreakpoints";
+import { IOSSwitch } from "src/components/CMECompliance";
 
 function FilterPanel({
     states_options,

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import { Box, Button, Typography } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import Page from '../../components/Page';
+import Page from 'src/components/Page';
 
 function Error404View() {
   return (

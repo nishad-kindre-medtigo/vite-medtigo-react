@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Grid, Typography, IconButton, Button, Tooltip } from '@mui/material';
-import Label from '../../../../../components/Label';
+import Label from 'src/components/Label';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import moment from 'moment';
 import CommentModal from './CommentModal';

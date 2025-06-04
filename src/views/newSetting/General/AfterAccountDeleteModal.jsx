@@ -1,7 +1,7 @@
 import React from 'react';
 import { Dialog, DialogTitle, DialogContent, DialogActions, Button, Typography } from '@mui/material';
 import authService from 'src/services/authService';
-import { Transition } from '../../../ui/Transition';
+import { Transition } from 'src/ui/Transition';
 
 const AfterAccountDeleteModal = () => {
 

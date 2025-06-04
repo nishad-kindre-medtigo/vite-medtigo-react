@@ -2,7 +2,7 @@ import React from 'react';
 import DEACard from './DEACard';
 import { Grid } from '@mui/material';
 import { useCertificatesContext } from 'src/context/CertificatesContext';
-import { PlaceHolder, PageTitle } from '../../../MonitoringRenewal/ui';
+import { PlaceHolder, PageTitle } from 'src/views/MonitoringRenewal/ui';
 import { CertificateSkeletonList } from '../../components/SkeletonLoaders';
 
 const DEA = () => {

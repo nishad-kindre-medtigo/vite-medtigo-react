@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from 'react'
 import { Box, Collapse, IconButton, Tab, Table, TableBody, TableCell, TableContainer, TableFooter, TableHead, TableRow, Tabs, Tooltip, Typography } from '@mui/material';
 import VisibilityIcon from '@mui/icons-material/Visibility';
-import { AccordionBox, AccordionHead, AccordionTabs, AccordionExpandIcon, StatesButton, styles } from '../../AdminView/TeamCompliance/components';
+import { AccordionBox, AccordionHead, AccordionTabs, AccordionExpandIcon, StatesButton, styles } from 'src/views/AdminView/TeamCompliance/components';
 import useBreakpoints from 'src/hooks/useBreakpoints';
 import { ReportTypes, states } from 'src/appConstants';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import { StateWiseRenew } from '../../StateCompliance';
+import { StateWiseRenew } from 'src/views/StateCompliance';
 import DisabledByDefaultIcon from '@mui/icons-material/DisabledByDefaultRounded';
 import CheckBoxIcon from '@mui/icons-material/CheckBoxRounded';
 import moment from 'moment';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
-import { cme_colors } from '../../../components/CMECompliance/style_guides';
+import { cme_colors } from 'src/components/CMECompliance/style_guides';
 
 function StatesAccordian({ stateData, complianceReports, tableHeadData }) {
     const { isMobile } = useBreakpoints();

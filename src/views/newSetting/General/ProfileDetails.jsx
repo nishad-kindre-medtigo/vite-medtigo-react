@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Avatar, Box } from '@mui/material';
-import { SERVER_URL } from "../../../settings";
+import { SERVER_URL } from "src/settings";
 
 const EditIcon = "/icons/settings/editIcon.svg"
 
@@ -75,7 +75,7 @@ function ProfileDetails({ user, onProfilePictureUpdate }) {
       >
         <Box
           component="img"
-          src="/icons/settings/editIcon.svg"
+          src={EditIcon}
           alt="Edit"
           sx={{
             width: { xs: 12, sm: 16 },

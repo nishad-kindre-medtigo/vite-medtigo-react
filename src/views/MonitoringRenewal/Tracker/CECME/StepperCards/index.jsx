@@ -2,10 +2,10 @@ import React from 'react';
 import { Box, Grid, Card, CardContent, Button, Step, StepLabel, Stepper } from '@mui/material';
 import { useMyLearningContext } from 'src/context/MyLearningContext';
 import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
-import { courses } from '../views/Acquisition/MyLearning/data';
+import { courses } from 'src/views/Acquisition/MyLearning/data';
 import { stepperCardStyles } from './styles';
 import { StepperSkeleton } from './StepperSkeleton';
-import history from '../utils/history';
+import history from 'src/utils/history';
 
 const CONNECT_CME_COURSES = [4526, 9985, 9238, 192797, 11159];
 const STEPPER_TEXT = [{name: 'ACLS', cmeCredits: 4.25}, {name: 'BLS', cmeCredits: 3}, {name: 'PALS', cmeCredits: 4}, {name: 'NIHSS', cmeCredits: 4.25}, {name: 'OPIOID', cmeCredits: 3}]

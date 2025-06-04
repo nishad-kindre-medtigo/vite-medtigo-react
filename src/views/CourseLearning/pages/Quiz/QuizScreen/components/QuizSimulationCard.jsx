@@ -313,7 +313,7 @@ const QuizSimulationCard = ({ parent, endQuiz }) => {
                     spacing={2}
                     style={{ padding: '10px', flexWrap: 'nowrap' }}
                   >
-                    <Grid item>
+                    <Grid>
                       <img
                         style={{ borderRadius: '10px 0 0 10px' }}
                         height={100}
@@ -323,7 +323,6 @@ const QuizSimulationCard = ({ parent, endQuiz }) => {
                       />
                     </Grid>
                     <Grid
-                      item
                       style={{
                         display: 'flex',
                         flexDirection: 'column',

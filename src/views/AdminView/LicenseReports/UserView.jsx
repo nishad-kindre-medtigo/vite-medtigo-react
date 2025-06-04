@@ -1,12 +1,12 @@
 import React, { useContext, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom'; // Import useHistory for navigation
 import { Typography, TableBody, TableCell, TableContainer, TableHead, TableRow, Box } from '@mui/material';
 import { getLicenseStatusImage, formatDate, getLicenseStatus, RenewalCycle, calculateStatus } from '../utils';
 import licenseReportServices from 'src/services/licenseReportServices';
-import { AccordionBox, AccordionTable, PlaceHolder, PageContainer, DefaultPlaceHolder } from '../../../components/CMECompliance';
+import { AccordionBox, AccordionTable, PlaceHolder, PageContainer, DefaultPlaceHolder } from 'src/components/CMECompliance';
 import { InfoDialog, InfoIconTooltip } from './Components';
 import { allCertificates } from 'src/appConstants';
-import BackButtonWithTitle from '../../../components/Reports';
+import BackButtonWithTitle from 'src/components/Reports';
 import { ReportFilterContext } from 'src/context/ReportFilterContext';
 import { StatusFilter } from '../ClinicalCertificate/UserView';
 

@@ -4,9 +4,9 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import useBreakpoints from 'src/hooks/useBreakpoints';
 import { StaffingContext } from 'src/context/StaffingContext';
-import { IOSSwitch } from '../../../views/AdminView/TeamCompliance/components';
-import { clearSessionStorage } from '../../../views/AdminView/utils';
-import { CustomToolbar, RightSection } from '../../../ui/Tabs';
+import { IOSSwitch } from 'src/views/AdminView/TeamCompliance/components';
+import { clearSessionStorage } from 'src/views/AdminView/utils';
+import { CustomToolbar, RightSection } from 'src/ui/Tabs';
 
 const StyledTab = ({ children, ...props }) => {
   return (

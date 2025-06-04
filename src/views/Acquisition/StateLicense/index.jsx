@@ -5,11 +5,11 @@ import moment from 'moment';
 import { useLicenceContext } from 'src/context/LicenseContext';
 import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 import alertPage from 'src/services/alertPage';
-import history from '../../../utils/history';
-import Page from '../../../components/Page';
+import history from 'src/utils/history';
+import Page from 'src/components/Page';
 import { TrackerPage, SupportPage, AllLicenseTasksPage, SingleLicenseTasksPage, UpdatesPage, } from './pages';
 import { CompleteAndUploadPopup, FeedbackPopup, SignaturePopup, TaskDetailsPopup, MessageDialog, AttachmentViewPopup, EmailPreferenceDialog } from './dialogs';
-import PlatformDetailsDialog from '../../../views/ToolsResources/Vault/components/PlatformDetailsDialog';
+import PlatformDetailsDialog from 'src/views/ToolsResources/Vault/components/PlatformDetailsDialog';
 
 const DEFAULT_RESPONSE = {
   Task_Id: '',

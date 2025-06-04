@@ -5,7 +5,7 @@ import SendIcon from '@mui/icons-material/Send';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { useCertificatesContext } from 'src/context/CertificatesContext';
-import { Transition } from '../../../ui/Transition';
+import { Transition } from 'src/ui/Transition';
 
 const SendMailDialog = () => {
   const { sendACopy, recipientEmails, setRecipientEmails, setIsEmailDialogOpen, isEmailDialogOpen, handleSendEmail, setActiveCertificateData } = useCertificatesContext();

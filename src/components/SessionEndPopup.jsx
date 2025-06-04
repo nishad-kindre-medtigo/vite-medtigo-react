@@ -6,11 +6,11 @@ import PropTypes from 'prop-types';
 import CryptoJS from 'crypto-js';
 import authService from 'src/services/authService';
 import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
-import { FadeTransition } from '../layouts/NewLayout/TopBar/SearchBar';
-import { Loader } from '../ui/Progress';
+import { FadeTransition } from 'src/layouts/NewLayout/TopBar/SearchBar';
+import { Loader } from 'src/ui/Progress';
 import { Grid, Button, Typography, Dialog, DialogTitle, DialogContent, IconButton, InputAdornment } from '@mui/material';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
-import { StyledInputLabel, CustomTextfield } from '../views/new_staffing/components';
+import { StyledInputLabel, CustomTextfield } from 'src/views/new_staffing/components';
 import useBreakpoints from 'src/hooks/useBreakpoints';
 
 const ENCRYPTION_KEY = import.meta.env.VITE_ENCRYPTION_KEY;

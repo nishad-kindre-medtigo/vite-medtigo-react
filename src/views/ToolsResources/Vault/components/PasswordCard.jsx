@@ -12,7 +12,7 @@ import { format } from 'date-fns';
 import CryptoJS from 'crypto-js';
 import passwordManagerServices from 'src/services/passwordManagerService';
 import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
-import Label from '../../../../components/Label';
+import Label from 'src/components/Label';
 
 const ENCRYPTION_KEY = import.meta.env.VITE_ENCRYPTION_KEY;
 

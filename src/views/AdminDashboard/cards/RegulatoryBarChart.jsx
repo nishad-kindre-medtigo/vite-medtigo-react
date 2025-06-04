@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { Typography } from '@mui/material';
-import { DetailBox } from '../../../views/dashboard/components';
+import { DetailBox } from 'src/views/dashboard/components';
 import GroupFilter from '../components/Filters/GroupFilter';
 import MonthFilter from '../components/Filters/MonthFilter';
 import { BarChartTitleBox, FiltersBox } from '../components';

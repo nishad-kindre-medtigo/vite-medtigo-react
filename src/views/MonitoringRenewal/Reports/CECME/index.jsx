@@ -1,6 +1,6 @@
 import React from 'react';
-import CMEFeature from '../../../StateCompliance';
-import { PageContainer } from '../../../../components/CMECompliance';
+import CMEFeature from 'src/views/StateCompliance';
+import { PageContainer } from 'src/components/CMECompliance';
 import { ReportBackLink } from '../../ui';
 
 const CECMEReport = () => {

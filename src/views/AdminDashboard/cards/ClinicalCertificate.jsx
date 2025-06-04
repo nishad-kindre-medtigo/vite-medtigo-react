@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { Box } from '@mui/material';
 import { AdminDonutChart } from '../components';
-import { CardTitle, DetailBox, GreyBox } from '../../../views/dashboard/components';
+import { CardTitle, DetailBox, GreyBox } from 'src/views/dashboard/components';
 import GroupFilter from '../components/Filters/GroupFilter';
 import adminService from 'src/services/adminService';
 import { ReportFilterContext } from 'src/context/ReportFilterContext';

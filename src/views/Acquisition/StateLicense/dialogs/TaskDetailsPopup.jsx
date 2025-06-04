@@ -4,8 +4,8 @@ import CancelIcon from '@mui/icons-material/Cancel';
 import AttachmentIcon from '@mui/icons-material/AttachFile';
 import { convertMarkdownLinksToHtml } from '../utils';
 import moment from 'moment';
-import Label from '../../../../components/Label';
-import { CONNECT_URL } from '../../../../settings';
+import Label from 'src/components/Label';
+import { CONNECT_URL } from 'src/settings';
 
 const TaskDetailsPopup = ({
   taskDetailData,

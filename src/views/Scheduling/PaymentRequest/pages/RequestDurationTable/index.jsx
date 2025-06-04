@@ -1,9 +1,9 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Box, Table, Tooltip, TableContainer, Paper, TableBody, TableCell, TableHead, TableFooter, TableRow, TablePagination, IconButton } from '@mui/material';
 import InfoIcon from '@mui/icons-material/InfoRounded';
-import Label from '../../../../../components/Label';
+import Label from 'src/components/Label';
 import moment from 'moment';
-import axios from '../../../../../utils/axios';
+import axios from 'src/utils/axios';
 import useIsMountedRef from 'src/hooks/useIsMountedRef';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';

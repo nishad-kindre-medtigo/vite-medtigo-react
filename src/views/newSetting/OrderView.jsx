@@ -1,10 +1,10 @@
 import React from 'react';
 import { Dialog, DialogTitle, DialogContent, Typography, Box, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
-import { Transition } from '../../ui/Transition';
+import { Transition } from 'src/ui/Transition';
 import useBreakpoints from 'src/hooks/useBreakpoints';
 import moment from 'moment';
-import NewLabel from '../../components/Label';
+import NewLabel from 'src/components/Label';
 
 const OrderViewDialog = React.memo(({ open, handleClose, currentOrder, getStatusColor }) => {
   const { isMobile } = useBreakpoints();

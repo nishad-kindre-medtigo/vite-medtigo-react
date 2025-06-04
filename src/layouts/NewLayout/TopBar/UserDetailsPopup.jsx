@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, TextField, Autocomplete } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
-import { updateProfile } from '../../../actions/accountActions';
+import { updateProfile } from 'src/actions/accountActions';
 import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 import WarningRoundedIcon from '@mui/icons-material/WarningRounded';
 import UpdateProfileService from 'src/services/updateProfileServices';

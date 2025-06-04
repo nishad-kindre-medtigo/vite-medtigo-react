@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
 import { useNavigate } from 'react-router-dom';
-import { useOpenSnackbar } from "../../hooks/useOpenSnackbar"
+import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 import HistoryPage from './HistoryPage';
 import { Slide, IconButton } from '@mui/material';
 pdfjsLib.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.js`;

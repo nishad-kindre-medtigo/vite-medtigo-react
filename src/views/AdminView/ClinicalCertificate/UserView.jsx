@@ -1,13 +1,13 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { Box, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography, FormControl, InputLabel, Select, MenuItem } from '@mui/material';
 import ArrowDropDownRoundedIcon from '@mui/icons-material/ArrowDropDownRounded';
-import { AccordionBox, AccordionTable, PlaceHolder, DefaultPlaceHolder, PageContainer } from '../../../components/CMECompliance';
+import { AccordionBox, AccordionTable, PlaceHolder, DefaultPlaceHolder, PageContainer } from 'src/components/CMECompliance';
 import { InfoDialog, InfoIconTooltip } from '../LicenseReports/Components';
 import { useParams } from 'react-router';
 import { getLicenseStatusImage, calculateStatus, getMonthName } from '../utils';
 import { ReportFilterContext } from 'src/context/ReportFilterContext';
 import adminService from 'src/services/adminService';
-import BackButtonWithTitle from '../../../components/Reports';
+import BackButtonWithTitle from 'src/components/Reports';
 import moment from 'moment';
 
 export const StatusFilter = ({ statusFilter, handleStatusFilterChange }) => {

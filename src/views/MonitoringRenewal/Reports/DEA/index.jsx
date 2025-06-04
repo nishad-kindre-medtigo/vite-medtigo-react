@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react';
 import adminService from 'src/services/adminService';
-import { PlaceHolder, DefaultPlaceHolder, PageContainer } from '../../../../components/CMECompliance';
+import { PlaceHolder, DefaultPlaceHolder, PageContainer } from 'src/components/CMECompliance';
 import { useSelector } from 'react-redux';
 import { SingleUserData } from '../ClinicalCertificate';
 import { ReportFilterContext } from 'src/context/ReportFilterContext';

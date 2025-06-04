@@ -8,9 +8,9 @@ import { useParams } from 'react-router';
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
 import CertificateDrawer from './CertificateDrawer';
 import { useCertificatesContext } from 'src/context/CertificatesContext';
-import Page from '../../components/Page';
+import Page from 'src/components/Page';
 import SendMailDialog from './dialogs/SendMailDialog';
-import { PrimaryTabPanel, RightSection } from '../../ui/Tabs';
+import { PrimaryTabPanel, RightSection } from 'src/ui/Tabs';
 import useBreakpoints from 'src/hooks/useBreakpoints';
 import { NAV_CONFIG } from './constants';
 

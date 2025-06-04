@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid } from '@mui/material';
 import UpdatesCard from '../components/UpdatesCard';
 import { PageBackText, TaskSkeleton } from '../ui';
-import { PlaceHolder } from '../../../../views/MonitoringRenewal/ui';
+import { PlaceHolder } from 'src/views/MonitoringRenewal/ui';
 import { useLicenceContext } from 'src/context/LicenseContext';
 
 const UpdatesPage = props => {

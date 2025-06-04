@@ -727,6 +727,7 @@ const AvailabilityPage = () => {
           alignItems: 'start',
           gap: '5px',
           backgroundColor: 'white',
+          fontFamily: 'Roboto',
           fontSize: '12px',
           width: '100%',
           overflow: 'hidden'
@@ -734,7 +735,7 @@ const AvailabilityPage = () => {
       >
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <Checkbox
-            color="success"
+           color="success"
             checked={whatToCheck && whatToCheck.available}
             onChange={e => {
               if (e.target.checked) {
@@ -889,7 +890,7 @@ const AvailabilityPage = () => {
                         }}
                       >
                         <Checkbox
-                           color="primary"
+                          color="primary"
                           checked={whatToCheck && whatToCheck.shiftIds.includes(
                             shift.dataValues.id
                           )}
@@ -966,7 +967,7 @@ const AvailabilityPage = () => {
   }
 
   return (
-    <Box className='availability-page' mb={2} sx={{ minHeight: '50vh' }}>
+    <Box mb={2} sx={{ minHeight: '50vh' }}>
       {/* Filters */}
       <Grid container my={1} spacing={2} alignItems="flex-end">
         {Object.keys(filters)

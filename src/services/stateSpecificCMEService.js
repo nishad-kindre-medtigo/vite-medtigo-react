@@ -1,4 +1,4 @@
-import axios,{PYTHON_SERVER} from '../utils/axios';
+import axios,{PYTHON_SERVER} from 'src/utils/axios';
 import axiosMain from 'axios';
 
 class StateSpecificCMECervice {

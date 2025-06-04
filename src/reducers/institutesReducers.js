@@ -1,4 +1,4 @@
-import { GET_INSTITUTES } from '../actions/institutes';
+import { GET_INSTITUTES } from 'src/actions/institutes';
 
 const initialState = {
   allInstitutes: []

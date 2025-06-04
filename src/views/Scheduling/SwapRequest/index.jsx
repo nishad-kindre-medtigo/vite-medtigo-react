@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Box } from '@mui/material';
-import Page from '../../../components/Page';
+import Page from 'src/components/Page';
 import Header from './components/Header';
 import Results from './components/Results';
 import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';

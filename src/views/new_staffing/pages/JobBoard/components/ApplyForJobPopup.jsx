@@ -4,11 +4,11 @@ import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 import useBreakpoints from 'src/hooks/useBreakpoints';
-import { FadeTransition } from '../../../../../layouts/NewLayout/TopBar/SearchBar';
+import { FadeTransition } from 'src/layouts/NewLayout/TopBar/SearchBar';
 import staffingServices from 'src/services/staffingServices';
 import { StaffingContext } from 'src/context/StaffingContext';
 import { Grid, Typography, Box, Dialog, DialogTitle, DialogContent, CircularProgress } from '@mui/material';
-import { Loader } from '../../../../../ui/Progress';
+import { Loader } from 'src/ui/Progress';
 import CloudUploadRoundedIcon from '@mui/icons-material/CloudUploadRounded';
 import { StyledInputLabel, SubmitButton, OutlinedButton, CustomTextfield, VisuallyHiddenInput } from '../../../../new_staffing/components';
 

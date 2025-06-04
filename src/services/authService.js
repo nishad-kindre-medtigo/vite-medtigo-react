@@ -1,11 +1,11 @@
 import React from 'react';
 import { jwtDecode } from 'jwt-decode';
-import axios,{PYTHON_SERVER} from '../utils/axios';
-import { APP_URL } from '../settings';
+import axios,{PYTHON_SERVER} from 'src/utils/axios';
+import { APP_URL } from 'src/settings';
 import { Router } from 'react-router';
-import { AUTH_URL } from '../settings';
+import { AUTH_URL } from 'src/settings';
 import LearningService from './learningService';
-import { isNotification } from '../actions/accountActions';
+import { isNotification } from 'src/actions/accountActions';
 
 class AuthService {
   passwordValidationCheck = false;

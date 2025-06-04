@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router';
 import authService from 'src/services/authService';
 import LearningService from 'src/services/learningService';
-import { MARKET_URL } from '../../settings';
+import { MARKET_URL } from 'src/settings';
 
 function RedirectingPage(){
     const navigate = useNavigate();

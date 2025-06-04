@@ -5,7 +5,7 @@ import alertPage from 'src/services/alertPage';
 import { useSelector } from 'react-redux';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { Loader } from '../../../../ui/Progress';
+import { Loader } from 'src/ui/Progress';
 import { motion } from 'framer-motion';
 import useBreakpoints from 'src/hooks/useBreakpoints';
 

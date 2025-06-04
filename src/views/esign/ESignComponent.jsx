@@ -66,7 +66,7 @@ const ESignComponent = () => {
   return (
     <Box sx={{ bgcolor: '#F9F9F9', padding:'60px'}}>
       <Grid container justifyContent="center" style={{ gap: '40px' }}>
-        <Grid item>
+        <Grid>
           <StyledCard
             sx={{ backgroundColor: hoveredCard === 'send' ? '#1C5087' : 'white' }}
             onMouseEnter={() => setHoveredCard('send')}
@@ -89,7 +89,7 @@ const ESignComponent = () => {
             </CardContent>
           </StyledCard>
         </Grid>
-        <Grid item>
+        <Grid>
           <StyledCard
             sx={{ backgroundColor: hoveredCard === 'sign' ? '#1C5087' : 'white' }}
             onMouseEnter={() => setHoveredCard('sign')}

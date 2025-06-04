@@ -5,7 +5,7 @@ import * as Yup from 'yup';
 import { Formik } from 'formik';
 import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 import { Button, Typography, Dialog, DialogTitle, DialogContent, DialogActions, Grid, TextField, Autocomplete } from '@mui/material';
-import { updateProfile } from '../../../actions/accountActions';
+import { updateProfile } from 'src/actions/accountActions';
 import { designations, countryList, showSpecialtyFor, showProgramFor, specialityOptions, studentProgramOptions, designationsObject } from 'src/appConstants';
 
 function GeneralSettings({ user, setUser, open, handleClose }) {

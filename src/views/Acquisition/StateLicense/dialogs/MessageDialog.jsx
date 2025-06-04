@@ -4,7 +4,7 @@ import { Dialog, DialogContent, TextField, InputAdornment, IconButton, Typograph
 import taskChatServices from 'src/services/taskChat';
 import CancelIcon from '@mui/icons-material/Close';
 import { useSelector } from 'react-redux';
-import { SERVER_URL } from '../../../../settings';
+import { SERVER_URL } from 'src/settings';
 import AddIcon from '@mui/icons-material/Add';
 import ReplayIcon from '@mui/icons-material/Replay';
 import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';

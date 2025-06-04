@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import FilterPane from '../../components/Reports/FilterPanel';
+import FilterPane from 'src/components/Reports/FilterPanel';
 import StateLicense from './StateLicense';
-import { PrimaryTabPanel } from '../../ui/Tabs';
+import { PrimaryTabPanel } from 'src/ui/Tabs';
 
 const AdminView = () => {
   const navigate = useNavigate();

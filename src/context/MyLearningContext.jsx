@@ -2,7 +2,7 @@ import React, { createContext, useState, useCallback, useContext } from 'react';
 import { useSelector } from 'react-redux';
 import { useBuyPlan } from 'src/hooks/useBuyPlan';
 import Backdrop from '@mui/material/Backdrop';
-import { Loader } from '../ui/Progress';
+import { Loader } from 'src/ui/Progress';
 
 export const MyLearningDataContext = createContext();
 

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Typography, Collapse, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, IconButton, Box } from '@mui/material';
 import MailIcon from '@mui/icons-material/Mail';
-import { AccordionExpandIcon, AccordionBox, AccordionHead, AccordionTable, UserClick } from '../../../components/CMECompliance';
-import { ConfirmationDialog } from '../../../components/Reports/confirmationDilog';
-import MailIconWithDialog from '../../../components/Reports/IconWithPopup';
+import { AccordionExpandIcon, AccordionBox, AccordionHead, AccordionTable, UserClick } from 'src/components/CMECompliance';
+import { ConfirmationDialog } from 'src/components/Reports/confirmationDilog';
+import MailIconWithDialog from 'src/components/Reports/IconWithPopup';
 import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 
 const DepartmentAccordion = ({ department, onViewAll, onViewSingle }) => {

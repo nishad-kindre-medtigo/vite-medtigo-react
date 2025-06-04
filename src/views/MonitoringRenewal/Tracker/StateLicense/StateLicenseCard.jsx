@@ -2,15 +2,15 @@ import React, { useState, useMemo } from 'react';
 import moment from 'moment';
 import { Box } from '@mui/material';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import { CertificateActions } from '../../../MonitoringRenewal/components/CertificateActions';
+import { CertificateActions } from 'src/views/MonitoringRenewal/components/CertificateActions';
 import certificatesService from 'src/services/certificatesService';
 import { useSelector } from 'react-redux';
-import { getCertificateExpiryDetails } from '../../../../utils/getCertificateExpiryDetails';
-import RenewLicenseDialog from '../../../MonitoringRenewal/dialogs/RenewLicenseDialog';
+import { getCertificateExpiryDetails } from 'src/utils/getCertificateExpiryDetails';
+import RenewLicenseDialog from 'src/views/MonitoringRenewal/dialogs/RenewLicenseDialog';
 import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 import useBreakpoints from 'src/hooks/useBreakpoints';
-import { StyledCard, CertificateContent, PrimaryText, SecondaryText, AddedByYou, MenuIcon, ProgressIcon, ActionContainer, ActionButton } from '../../../MonitoringRenewal/ui';
-import CardActions from '../../../MonitoringRenewal/components/CardActions';
+import { StyledCard, CertificateContent, PrimaryText, SecondaryText, AddedByYou, MenuIcon, ProgressIcon, ActionContainer, ActionButton } from 'src/views/MonitoringRenewal/ui';
+import CardActions from 'src/views/MonitoringRenewal/components/CardActions';
 
 const StateLicenseCard = props => {
   const { isMobile } = useBreakpoints();

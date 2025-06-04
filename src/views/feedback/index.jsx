@@ -5,7 +5,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 import alertPage from 'src/services/alertPage';
-import { Loader } from '../../ui/Progress';
+import { Loader } from 'src/ui/Progress';
 import { motion } from 'framer-motion';
 
 const StarRating = ({ value, onChange, error }) => {

@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Button, CircularProgress, Collapse, IconButton, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@mui/material';
 import { StatesButton } from '.';
-import { AccordionExpandIcon, AccordionBox, AccordionHead, AccordionTable, UserClick } from '../../../../components/CMECompliance';
+import { AccordionExpandIcon, AccordionBox, AccordionHead, AccordionTable, UserClick } from 'src/components/CMECompliance';
 import useBreakpoints from 'src/hooks/useBreakpoints';
 import { ReportTypes, states } from 'src/appConstants';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import { cme_colors } from '../../../../components/CMECompliance/style_guides';
-import { ConfirmationDialog } from '../../../../components/Reports/confirmationDilog';
-import MailIconWithDialog from '../../../../components/Reports/IconWithPopup';
+import { cme_colors } from 'src/components/CMECompliance/style_guides';
+import { ConfirmationDialog } from 'src/components/Reports/confirmationDilog';
+import MailIconWithDialog from 'src/components/Reports/IconWithPopup';
 import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 
 const DepartmentCollapse = ({ firstItem, title, tableData, complianceReports, tableHeadData, selectedState, setSelectedState,

@@ -2,11 +2,11 @@ import React, { useState, useMemo } from 'react';
 import moment from 'moment';
 import { Box } from '@mui/material';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import { CertificateActions } from '../../../../MonitoringRenewal/components/CertificateActions';
-import { getCertificateExpiryDetails } from '../../../../../utils/getCertificateExpiryDetails';
+import { CertificateActions } from 'src/views/MonitoringRenewal/components/CertificateActions';
+import { getCertificateExpiryDetails } from 'src/utils/getCertificateExpiryDetails';
 import useBreakpoints from 'src/hooks/useBreakpoints';
-import { StyledCard, CertificateContent, PrimaryText, SecondaryText, AddedByYou, MenuIcon, ProgressIcon, ActionContainer } from '../../../../MonitoringRenewal/ui';
-import CardActions from '../../../../MonitoringRenewal/components/CardActions';
+import { StyledCard, CertificateContent, PrimaryText, SecondaryText, AddedByYou, MenuIcon, ProgressIcon, ActionContainer } from 'src/views/MonitoringRenewal/ui';
+import CardActions from 'src/views/MonitoringRenewal/components/CardActions';
 import { creditTypes } from 'src/appConstants';
 
 const CMECard = props => {

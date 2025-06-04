@@ -1,4 +1,4 @@
-import axios from '../utils/axios';
+import axios from 'src/utils/axios';
 import authService from 'src/services/authService';
 
 export const LOGIN_REQUEST = '@account/login-request';

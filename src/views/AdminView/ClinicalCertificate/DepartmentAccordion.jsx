@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import MailIcon from '@mui/icons-material/Mail';
 import { Box, Collapse, IconButton, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@mui/material';
-import { AccordionBox, AccordionHead, AccordionExpandIcon, AccordionTable, UserClick } from '../../../components/CMECompliance';
+import { AccordionBox, AccordionHead, AccordionExpandIcon, AccordionTable, UserClick } from 'src/components/CMECompliance';
 import { useNavigate } from 'react-router-dom';
-import MailIconWithDialog from '../../../components/Reports/IconWithPopup';
+import MailIconWithDialog from 'src/components/Reports/IconWithPopup';
 import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 
 const DepartmentAccordion = ({ data, page, allUserIds, currentMonthSelected = null }) => {

@@ -2,8 +2,8 @@ import React, { forwardRef, useImperativeHandle, useState, useContext, useEffect
 import { useNavigate } from 'react-router-dom';
 import { Typography } from '@mui/material';
 import licenseReportServices from 'src/services/licenseReportServices';
-import { PlaceHolder, PageContainer } from '../../../components/CMECompliance';
-import { ConfirmationDialog } from '../../../components/Reports/confirmationDilog';
+import { PlaceHolder, PageContainer } from 'src/components/CMECompliance';
+import { ConfirmationDialog } from 'src/components/Reports/confirmationDilog';
 import { ReportFilterContext } from 'src/context/ReportFilterContext';
 import { InfoDialog, InfoIconTooltip } from './Components';
 import DepartmentAccordion from './DepartmentAccordion';

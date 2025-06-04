@@ -3,14 +3,14 @@ import { Menu, MenuItem } from '@mui/material';
 import ArrowDropDownRoundedIcon from '@mui/icons-material/ArrowDropDownRounded';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import Page from '../../components/Page';
+import Page from 'src/components/Page';
 import SendForSignatureComponent from '../esign/SendForSignatureComponent';
 import VaultPage from './Vault';
 import MealsExpenseForm from '../new_expenses/pages/MealExpense';
 import TravelExpenseForm from '../new_expenses/pages/TravelExpense';
 import SiteExpenseForm from '../new_expenses/pages/SiteExpense';
 import ExpensePage from '../new_expenses/pages/ExpensesSubmissionPopUp';
-import { CustomToolbar, StyledTabs, StyledTab } from '../../ui/Tabs';
+import { CustomToolbar, StyledTabs, StyledTab } from 'src/ui/Tabs';
 
 const ToolsAndResourcesSection = () => {
   const navigate = useNavigate();

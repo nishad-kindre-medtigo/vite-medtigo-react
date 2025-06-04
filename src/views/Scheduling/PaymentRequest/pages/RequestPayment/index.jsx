@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { Box, Tooltip, Card, Button, Grid, TextField } from '@mui/material';
 import { LocalizationProvider, DatePicker } from '@mui/x-date-pickers';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
-import axios from '../../../../../utils/axios';
+import axios from 'src/utils/axios';
 import useIsMountedRef from 'src/hooks/useIsMountedRef';
 import { useSelector } from 'react-redux';
 import moment from 'moment';

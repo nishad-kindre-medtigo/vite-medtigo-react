@@ -7,7 +7,7 @@ import { AccordionBox, AccordionHead, AccordionTabs, AccordionExpandIcon, States
 import useBreakpoints from 'src/hooks/useBreakpoints';
 import { ReportTypes, states } from 'src/appConstants';
 import { Link } from 'react-router-dom';
-import { cme_colors } from '../../../../components/CMECompliance/style_guides';
+import { cme_colors } from 'src/components/CMECompliance/style_guides';
 import moment from 'moment';
 const StateCollapse = ({ firstItem, title, tableData, complianceReports, tableHeadData, selectedState, setSelectedState }) => {
   const { isMobile } = useBreakpoints();

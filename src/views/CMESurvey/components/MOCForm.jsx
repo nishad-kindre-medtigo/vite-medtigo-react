@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { Box, Button, FormControl, FormLabel, Grid, TextField, Typography } from '@mui/material';
-import Page from '../../../components/Page';
+import Page from 'src/components/Page';
 import LearningService from 'src/services/learningService';
 import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 import FormSubmitBackdrop from './FormSubmitBackdrop';

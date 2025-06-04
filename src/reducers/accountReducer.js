@@ -8,7 +8,7 @@ import {
   SILENT_LOGIN,
   UPDATE_PROFILE,
   UPDATE_DOCTORID, UPDATE_PICTURE, isNotification
-} from '../actions/accountActions';
+} from 'src/actions/accountActions';
 
 const initialState = {
   user: null,

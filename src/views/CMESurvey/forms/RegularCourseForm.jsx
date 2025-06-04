@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { Autocomplete, Button, Box, TextField, Checkbox, FormControl, FormControlLabel, FormGroup, FormLabel, Typography, Grid, RadioGroup } from '@mui/material';
 import DownloadIcon from '@mui/icons-material/Download';
-import Page from '../../../components/Page';
+import Page from 'src/components/Page';
 import learningService from 'src/services/learningService';
 import orderServices from 'src/services/orderServices';
 import certificatesService from 'src/services/certificatesService';

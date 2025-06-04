@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Box, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
-import { AccordionBox, AccordionTable, PlaceHolder, DefaultPlaceHolder, PageContainer } from '../../../../components/CMECompliance';
+import { AccordionBox, AccordionTable, PlaceHolder, DefaultPlaceHolder, PageContainer } from 'src/components/CMECompliance';
 import { useSelector } from 'react-redux';
-import { getLicenseStatusImage, calculateStatus } from '../../../AdminView/utils';
+import { getLicenseStatusImage, calculateStatus } from 'src/views/AdminView/utils';
 import adminService from 'src/services/adminService';
 import moment from 'moment';
 import { CertificateTypeOptions } from 'src/context/ReportFilterContext';
-import { StatusFilter } from '../../../AdminView/ClinicalCertificate/UserView';
+import { StatusFilter } from 'src/views/AdminView/ClinicalCertificate/UserView';
 import { ReportBackLink } from '../../ui';
 
 export const SingleUserData = ({ userData, type = '' }) => {

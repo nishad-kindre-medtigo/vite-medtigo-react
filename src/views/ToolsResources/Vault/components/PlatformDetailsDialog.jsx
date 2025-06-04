@@ -3,14 +3,14 @@ import { useSelector } from 'react-redux';
 import { Dialog, DialogTitle, DialogContent, DialogActions, Button, Box, Grid, Skeleton, TextField, InputAdornment, IconButton, FormControlLabel } from '@mui/material';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import { Formik, Form, Field } from 'formik';
-import { Transition } from '../../../../ui/Transition';
-import { StyledInputLabel } from '../../../new_staffing/components';
+import { Transition } from 'src/ui/Transition';
+import { StyledInputLabel } from 'src/views/new_staffing/components';
 import { AndroidSwitch } from '.';
 import * as Yup from 'yup';
 import passwordManagerServices from 'src/services/passwordManagerService';
 import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 import useBreakpoints from 'src/hooks/useBreakpoints';
-import { Loader } from '../../../../ui/Progress';
+import { Loader } from 'src/ui/Progress';
 import CryptoJS from 'crypto-js';
 
 const ENCRYPTION_KEY = import.meta.env.VITE_ENCRYPTION_KEY;

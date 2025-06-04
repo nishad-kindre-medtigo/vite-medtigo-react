@@ -1,4 +1,4 @@
-import { UserClick, StatesButton } from '../../../../components/CMECompliance';
+import { UserClick, StatesButton } from 'src/components/CMECompliance';
 import React, { useState } from "react";
 import {
     Table,
@@ -16,12 +16,12 @@ import {
     Skeleton,
     CircularProgress
 } from "@mui/material";
-import MailIconWithDialog from '../../../../components/Reports/IconWithPopup';
+import MailIconWithDialog from 'src/components/Reports/IconWithPopup';
 import { ReportTypes } from 'src/appConstants';
 import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
-import { cme_colors } from '../../../../components/CMECompliance/style_guides';
+import { cme_colors } from 'src/components/CMECompliance/style_guides';
 import CloseIcon from "@mui/icons-material/Close";
-import SingleUserSingleStateDrawer from '../../../../components/CMECompliance/reportsPage/singleUserSingleStateDrawer';
+import SingleUserSingleStateDrawer from 'src/components/CMECompliance/reportsPage/singleUserSingleStateDrawer';
 import { tr } from 'date-fns/locale';
 import StateSpecificCMECervices from 'src/services/stateSpecificCMEService';
 const ReportTable = (

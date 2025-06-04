@@ -3,7 +3,7 @@ import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 import { useSelector } from 'react-redux';
 import certificatesService from 'src/services/certificatesService';
 import orderServices from 'src/services/orderServices';
-import calculateCreditPoints from '../utils/calculateCreditPoints';
+import calculateCreditPoints from 'src/utils/calculateCreditPoints';
 import alertPage from 'src/services/alertPage';
 import { groupBy } from 'lodash';
 

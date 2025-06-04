@@ -1,14 +1,14 @@
 import React, { useRef } from 'react'
 import { useLocation } from 'react-router-dom';
-import ReportContainer from '../../../components/CMECompliance/reportsPage/reportContainer';
+import ReportContainer from 'src/components/CMECompliance/reportsPage/reportContainer';
 import { CME_RequestType, cme_states, states } from 'src/appConstants';
 import { Box, FormControl, Grid, IconButton, MenuItem, Select, Tooltip, Typography } from '@mui/material';
-import { StateWiseRenew } from '../../StateCompliance';
+import { StateWiseRenew } from 'src/views/StateCompliance';
 import useBreakpoints from 'src/hooks/useBreakpoints';
 import moment from 'moment';
 import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleUp';
-import { PageNav } from '../../AdminView/TeamCompliance/components';
-import { DefaultPlaceHolder, PlaceHolder } from '../../../components/CMECompliance';
+import { PageNav } from 'src/views/AdminView/TeamCompliance/components';
+import { DefaultPlaceHolder, PlaceHolder } from 'src/components/CMECompliance';
 import { useParams } from 'react-router-dom';
 import StateSpecificCMECervices from 'src/services/stateSpecificCMEService';
 
@@ -95,7 +95,7 @@ function SingleUserMultiState() {
         </IconButton>
         </Tooltip> */}
             <Grid container display={'flex'} direction={'row'} justifyContent={'space-between'} alignItems={'center'} style={{ marginBottom: '10px' }}>
-                <Grid ref={topRef} item>
+                <Grid ref={topRef}>
                     <PageNav backTo={'/monitoring-renewal/ce-cme/report'} Title={`Compliance Report`} />
                     <Box 
                     display={'flex'} alignItems={'center'} gap={'6px'} flexWrap={'wrap'}>
