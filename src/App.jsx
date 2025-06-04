@@ -22,6 +22,20 @@ const theme = createTheme({
     mode: "light", // Enforce light theme
   },
   components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        body: {
+          // Enforce light theme scrollbars
+          scrollbarColor: '#888 #fff',
+          '&::-webkit-scrollbar-thumb': {
+            backgroundColor: '#888',
+          },
+          '&::-webkit-scrollbar-thumb:hover': {
+            backgroundColor: '#bbb',
+          },
+        },
+      },
+    },
     MuiButton: {
       styleOverrides: {
         root: {
