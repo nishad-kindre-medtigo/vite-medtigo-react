@@ -9,7 +9,6 @@ const VaultPage = () => {
   const {id: userID} = useSelector((state) => state.account.user);
   const [openVaultDialog, setOpenVaultDialog] = useState(false);
   const [passwords, setPasswords] = useState([]); // State to store passwords
-  const [refresh, setRefresh] = useState(false);
   const [vaultLoading, setVaultLoading] = useState(true); // State to manage loading
 
   const [vaultOptions, setVaultOptions] = useState([]); // State to store search options
@@ -28,16 +27,20 @@ const VaultPage = () => {
     }
   };
 
-  useEffect(() => {
+  const getPasswordData = async () => {
+    setVaultLoading(true);
     try {
-      setVaultLoading(true);
-      fetchPasswords(); // Fetch passwords based on userID and vaultSearch
+      await fetchPasswords(); // Fetch passwords based on userID and vaultSearch
     } catch (error) {
       console.error('Error fetching passwords:', error);
     } finally {
       setVaultLoading(false); // Set loading to false after fetching
     }
-  }, [refresh, vaultSearch]); // Fetch passwords when refresh state changes
+  }
+
+  useEffect(() => {
+    getPasswordData();
+  }, [vaultSearch]); // Fetch passwords when refresh state changes
 
   const VaultHeader = React.memo(() => {
     return (
