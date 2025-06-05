@@ -3,7 +3,6 @@ import { Link as RouterLink } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { Box, Typography } from '@mui/material';
 import Page from 'src/components/Page';
-import Logo from 'src/components/Logo';
 import LoginForm from './LoginForm';
 import { AUTH_QA, AUTH_URL } from 'src/settings';
 import { DetailBox } from 'src/views/dashboard/components';
@@ -71,7 +70,7 @@ function LoginView() {
           {/* Medtigo Logo */}
           <Box sx={{ mb: 2, display: 'flex', justifyContent: 'center' }}>
             <RouterLink to="/">
-              <Logo full={'true'} width={200} />
+              <img alt="Logo" src="/images/logo-white.png" width={100} height={100} />
             </RouterLink>
           </Box>
 
