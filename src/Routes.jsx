@@ -61,7 +61,7 @@ const ServicesRedirect = () => {
   return null;
 };
 
-// AUTH ROUTES
+// AUTH ROUTES & OPEN ROUTES
 const routesConfig = [
   {
     path: '/',
@@ -360,26 +360,6 @@ const serviceRoutes = [
   }
 ];
 
-// OPEN ROUTES ACCESSIBLE WITHOUT LOGGING IN
-const openRoutes = [
-  {
-    path: '/imageViewer',
-    element: ImageViewer
-  },
-  {
-    path: '/feedback',
-    element: Feedback
-  },
-  {
-    path: '/onBoardingResendEmail',
-    element: OnboardingLicenseEmail
-  },
-  {
-    path: '/clerk-chat-consent',
-    element: ClerkChat
-  }
-];
-
 // RENDER ROUTES
 // CONDITIONALLY ADD GUARD & LAYOUT WRAPPER FOR COMPONENTS
 const renderRoutes = (routes, serviceRoutes) =>
@@ -431,12 +411,7 @@ const renderRoutes = (routes, serviceRoutes) =>
   ) : null;
 
 function PageRoutes() {
-  if (localStorage.getItem('open_route')) {
-    localStorage.removeItem('open_route');
-    return renderRoutes(openRoutes, null);
-  } else {
-    return renderRoutes(routesConfig, serviceRoutes);
-  }
+  return renderRoutes(routesConfig, serviceRoutes);
 }
 
 export default PageRoutes;

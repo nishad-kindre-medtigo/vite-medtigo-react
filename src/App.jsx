@@ -108,28 +108,6 @@ function App() {
     localStorage.setItem("medtigo", true);
   }
 
-  if (URL.includes("feedback")) {
-    localStorage.setItem("open_route", true);
-  }
-  if (URL.includes("courses")) {
-    localStorage.setItem("open_route", true);
-  }
-  if (URL.includes("onBoardingResendEmail")) {
-    localStorage.setItem("open_route", true);
-  }
-
-  if (URL.includes("taskResponse")) {
-    localStorage.setItem("open_route", true);
-  }
-
-  if (URL.includes("imageViewer")) {
-    localStorage.setItem("open_route", true);
-  }
-
-  if (URL.includes("clerk-chat-consent")) {
-    localStorage.setItem("open_route", true);
-  }
-
   if (params.get("path") === "certificates") {
     localStorage.setItem("certificateType", "certificates");
     window.location.href = `${CONNECT_URL}/certificates`;
