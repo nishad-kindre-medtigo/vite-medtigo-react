@@ -5,7 +5,7 @@ import { ENABLE_REDUX_LOGGER } from '../config';
 
 const NODE_ENV = import.meta.env.VITE_NODE_ENV;
 
-export function configureStoreInstance(preloadedState = {}) {
+function configureStoreInstance(preloadedState = {}) {
   const loggerMiddleware = createLogger();
 
   const middleware = (getDefaultMiddleware) =>
@@ -22,3 +22,5 @@ export function configureStoreInstance(preloadedState = {}) {
 
   return store;
 }
+
+export const store = configureStoreInstance();
