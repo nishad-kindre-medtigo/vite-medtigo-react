@@ -6,6 +6,7 @@ import HeaderMenu from './HeaderMenu';
 import Backdrop from './Backdrop';
 import { useNavigate } from 'react-router-dom';
 import authService from 'src/services/authService';
+import { useUserDataContext } from 'src/context/UserDataContext';
 import useBreakpoints from 'src/hooks/useBreakpoints';
 import { useBlockNavigation } from 'src/hooks/useBlockNavigation';
 import { useSelector } from 'react-redux';
@@ -94,6 +95,7 @@ const tabs = [
 
 function MidBar() {
   const navigate = useNavigate();
+  const { coursesToken } = useUserDataContext();
   const [currentTab, setCurrentTab] = useState('services');
   const [page, setPage] = useState('services');
   const { isMobile } = useBreakpoints();
@@ -147,19 +149,8 @@ function MidBar() {
     }
   };
 
-  const getCoursesToken = async () => {
-    try {
-      const newToken = await authService.generateToken();
-      return newToken;
-    } catch (error) {
-      console.error('Error generating token:', error);
-      return null;
-    }
-  };
-
   const handleLogoClick = async () => {
-    const connectTokensForWordpress = await getCoursesToken();
-    const courses_connect_token = connectTokensForWordpress ? "&t1=" + connectTokensForWordpress : '';
+    const courses_connect_token = coursesToken ? "&t1=" + coursesToken : '';
 
     // Check if the quiz is in progress
     const confirm = blockNavigationWhenActiveQuiz();
@@ -171,8 +162,7 @@ function MidBar() {
 
   useEffect(() => {
     (async () => {
-      const connectTokensForWordpress = await getCoursesToken();
-      const courses_connect_token = connectTokensForWordpress ? "&t1=" + connectTokensForWordpress : '';
+      const courses_connect_token = coursesToken ? "&t1=" + coursesToken : '';
       setFunctionalTabs(...[functionalTabs.map(tab => {
           if(tab.value === 'services') return tab
           return {...tab, link: tab.link+'?t='+ user.wp_token + courses_connect_token}

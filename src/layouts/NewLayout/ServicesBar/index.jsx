@@ -7,6 +7,7 @@ import { StaffingContext } from 'src/context/StaffingContext';
 import { IOSSwitch } from 'src/views/AdminView/TeamCompliance/components';
 import { clearSessionStorage } from 'src/views/AdminView/utils';
 import { CustomToolbar, RightSection } from 'src/ui/Tabs';
+import { boxStyles } from '..';
 
 const StyledTab = ({ children, ...props }) => {
   return (
@@ -116,9 +117,7 @@ function ServicesBar() {
   return (
     <Box
       sx={{
-        maxWidth: 1440,
-        margin: '0 auto',
-        width: '100%',
+        ...boxStyles,
         px: { xs: 2, md: 4, lg: 5 },
       }}
     >

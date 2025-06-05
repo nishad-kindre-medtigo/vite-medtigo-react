@@ -1,33 +1,32 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { Box, Avatar } from '@mui/material';
 import CartIcon from '@mui/icons-material/ShoppingCartRounded';
 import AdminFilledIcon from '@mui/icons-material/AdminPanelSettings';
 import AdminOutlinedIcon from '@mui/icons-material/AdminPanelSettingsOutlined';
 import moment from 'moment';
 import { StaffingContext } from 'src/context/StaffingContext';
+import { useUserDataContext } from 'src/context/UserDataContext';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 import { useBlockNavigation } from 'src/hooks/useBlockNavigation';
 import { logout } from 'src/actions/accountActions';
-import { AUTH_URL, SERVER_URL, CONNECT_URL } from 'src/settings';
+import { AUTH_URL } from 'src/settings';
 import { SearchBar } from './SearchBar';
 import UserDetailsPopup from './UserDetailsPopup';
-import axios from 'axios';
 import useBreakpoints from 'src/hooks/useBreakpoints';
 import { Root, ToolbarContainer, StyledToolbar, FlexGrow, Section, DividerStyled, StyledLink, DateText, StyledBadge, StyledMenu, MenuItemWithSeparator, TruncatedUserName } from './components';
 
 const TopBar = () => {
   const { isTablet } = useBreakpoints();
   const { blockNavigationWhenActiveQuiz } = useBlockNavigation();
+  const { profilePicture, cartCount } = useUserDataContext();
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { user } = useSelector(state => state.account);
   const openSnackbar = useOpenSnackbar();
   const [anchorEl, setAnchorEl] = useState(null);
-  const [cartCount, setCartCount] = useState(0);
   const [openSearchDialog, setOpenSearchDialog] = useState(false);
-  const [profilePicture, setProfilePicture] = useState('/icons/header/account.svg');
   const { showAdminView, toggleAdminView } = useContext(StaffingContext);
 
   const wpToken = user['wp_token'];
@@ -38,47 +37,6 @@ const TopBar = () => {
   const displayName = user['first_name']
   ? `${user['first_name']} ${user['last_name']}`
   : username;
-
-  // FETCH COUNT OF PRODUCTS IN METIGO CART FOR USER 
-  useEffect(() => {
-    const fetchCartCount = async () => {
-      try {
-        const email = user.email;
-        const response = await axios.get(
-          `https://medtigo.store/wp-json/user_cart_info/v2/cart/?email=${email}&request_mood=root`
-        );
-        const data = response.data;
-
-        if (data.user_data_have) {
-          setCartCount(data.number_of_item_in_cart);
-        } else {
-          setCartCount(0);
-        }
-      } catch (error) {
-        setCartCount(0);
-      }
-    };
-
-    if (user.email) {
-      fetchCartCount();
-    } else {
-      setCartCount(0);
-    }
-  }, [user.email]);
-
-  // SET THE PROFILE PICTURE OF USER IN HEADER
-  useEffect(() => {
-    if (user.profilePicture) {
-      const pictureUrl = user.profilePicture.includes('http')
-        ? user.profilePicture
-        : `${SERVER_URL}${user.profilePicture}`;
-      const isPlaceholder =
-        pictureUrl === `${CONNECT_URL}/no-photo.jpg`;
-      setProfilePicture(
-        isPlaceholder ? '/icons/header/account.svg' : pictureUrl
-      );
-    }
-  }, [user]);
 
   const showUserMenu = event => {
     setAnchorEl(event.currentTarget);

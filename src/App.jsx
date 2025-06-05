@@ -1,74 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import { SnackbarProvider } from "notistack";
-import { createTheme, CssBaseline, ThemeProvider, StyledEngineProvider } from "@mui/material";
+import { CssBaseline, ThemeProvider, StyledEngineProvider } from "@mui/material";
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterMoment } from "@mui/x-date-pickers/AdapterMoment";
 import Auth from "./components/Auth";
 import ScrollReset from "./components/ScrollReset";
 import RoutesConfig from "./Routes";
-import { CertificatesContextProvider } from "./context/CertificatesContext";
-import { LearningContextProvider } from "./context/LearningContext";
-import { StaffingContextProvider } from "./context/StaffingContext";
-import { MyLearningDataProvider } from "./context/MyLearningContext";
-import { LicenseContextProvider } from "./context/LicenseContext";
-import { ReportFilterContextProvider } from "./context/ReportFilterContext";
+import ContextWrapper from "./context";
 import history from "./utils/history";
 import { CONNECT_URL } from "./settings";
-
-// Default light theme
-const theme = createTheme({
-  palette: {
-    mode: "light", // Enforce light theme
-  },
-  components: {
-    MuiCssBaseline: {
-      styleOverrides: {
-        body: {
-          // Enforce light theme scrollbars
-          scrollbarColor: '#888 #fff',
-          '&::-webkit-scrollbar-thumb': {
-            backgroundColor: '#888',
-          },
-          '&::-webkit-scrollbar-thumb:hover': {
-            backgroundColor: '#bbb',
-          },
-        },
-      },
-    },
-    MuiButtonBase: {
-      styleOverrides: {
-        root: {
-          '&:focus, &:focus-visible': {
-            outline: "none",
-          },
-        },
-      },
-    },
-    MuiTextField: {
-      styleOverrides: {
-        root: {
-          "&:focus-within": {
-            outline: "none",
-          },
-        },
-      },
-    },
-    MuiTab: {
-      styleOverrides: {
-        root: {
-          "&:focus": {
-            outline: "none",
-          },
-        },
-      },
-    },
-  },
-});
+import { theme } from "./theme";
 
 function App() {
   const params = new URLSearchParams(window.location.search);
   const URL = window.location.href;
+  const [access, setAccess] = useState(true);
 
   if (
     params.get("hospitalId") &&
@@ -82,6 +29,7 @@ function App() {
     localStorage.setItem("departmentId", depart);
     localStorage.setItem("scheduleId", sch);
   }
+
   if (params.get("data") === "/redirect/checkout") {
     localStorage.setItem("add-to-cart", params.get("add-to-cart"));
     const lang = params.get("lang");
@@ -108,58 +56,36 @@ function App() {
     localStorage.setItem("medtigo", true);
   }
 
-  if (URL.includes("feedback")) {
-    localStorage.setItem("open_route", true);
-  }
-  if (URL.includes("courses")) {
-    localStorage.setItem("open_route", true);
-  }
-  if (URL.includes("onBoardingResendEmail")) {
-    localStorage.setItem("open_route", true);
-  }
-
-  if (URL.includes("taskResponse")) {
-    localStorage.setItem("open_route", true);
-  }
-
-  if (URL.includes("imageViewer")) {
-    localStorage.setItem("open_route", true);
-  }
-
-  if (URL.includes("clerk-chat-consent")) {
-    localStorage.setItem("open_route", true);
-  }
-
   if (params.get("path") === "certificates") {
     localStorage.setItem("certificateType", "certificates");
     window.location.href = `${CONNECT_URL}/certificates`;
   }
+  
   if (params.get("path") === "cme") {
     localStorage.setItem("certificateType", "cme");
     window.location.href = `${CONNECT_URL}/certificates`;
   }
 
-  const [ok, _setOk] = React.useState(true);
-  React.useEffect(() => {
+  const checkDomain = () => {
     try {
-      const whitelisted = [
-        "medtigo",
-        "localhost",
-        "connect.medtigo.com",
-        "qa.medtigo.com",
-      ];
+      const whitelisted = ["medtigo", "localhost", "connect.medtigo.com"];
       // we have to check the current domain
       if (
         whitelisted.includes(window.parent.location.hostname) ||
         whitelisted.includes(window.parent.location.hostname.split(".")[1])
       ) {
         // if the domain is correct we are good to go
-        return _setOk(false);
+        return setAccess(true);
       }
     } catch (err) {
       // otherwise ACCESS DENIED"
+      setAccess(false);
       return;
     }
+  };
+
+  useEffect(() => {
+    checkDomain();
 
     window.addEventListener("beforeunload", () => {
       localStorage.removeItem("data");
@@ -173,7 +99,7 @@ function App() {
     };
   }, []);
 
-  if (ok) {
+  if (!access) {
     return <></>;
   } else {
     return (
@@ -184,20 +110,10 @@ function App() {
             <SnackbarProvider maxSnack={1}>
               <Router history={history}>
                 <Auth>
-                  <CertificatesContextProvider>
-                    <LearningContextProvider>
-                      <StaffingContextProvider>
-                        <LicenseContextProvider>
-                          <MyLearningDataProvider>
-                            <ReportFilterContextProvider>
-                              <ScrollReset />
-                              <RoutesConfig />
-                            </ReportFilterContextProvider>
-                          </MyLearningDataProvider>
-                        </LicenseContextProvider>
-                      </StaffingContextProvider>
-                    </LearningContextProvider>
-                  </CertificatesContextProvider>
+                  <ContextWrapper>
+                    <ScrollReset />
+                    <RoutesConfig />
+                  </ContextWrapper>
                 </Auth>
               </Router>
             </SnackbarProvider>
