@@ -79,9 +79,10 @@ const CourseFeedbackPopup = ({ open, setOpen, courseID, percentage }) => {
 
   const isOpioid = courseID === 11159;
   const isNIHSS = courseID === 192797;
+  const isECG = courseID === 130360;
   const totalQuestionsCount = isOpioid ? 24 : isNIHSS ? 25 : 50;
 
-  const hasProviderCard = !isOpioid && !isNIHSS;
+  const hasProviderCard = !isOpioid && !isNIHSS && !isECG;
 
   const formik = useFormik({
     initialValues: {

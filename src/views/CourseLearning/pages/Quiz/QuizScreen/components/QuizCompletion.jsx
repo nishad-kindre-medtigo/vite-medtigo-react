@@ -3,13 +3,14 @@ import { Box, Grid, Typography } from '@mui/material';
 import { useOpenSnackbar } from 'src/hooks/useOpenSnackbar';
 import { LearningContext } from 'src/context/LearningContext';
 import { useNavigate } from 'react-router-dom';
-import { courseDetails } from '../data';
+import { courseDetails } from 'src/appConstants';
 import {
   CompletionCard,
   CompletionLoadingScreen as LoadingScreen,
   APIErrorMessage,
   ExitButton
 } from '../handlers';
+import { quizQuestions } from './QuizActionsCard';
 
 /**
  * @component QuizCompletion
@@ -73,6 +74,7 @@ const QuizCompletion = props => {
 
   const hasCME = currentOrder?.hasCME;
   const courseID = activeCourse.id;
+  const hasProviderCard = ![11159, 192797, 130360].includes(parseInt(activeCourse.id)); // To run generateProviderCard API
 
   // Check whether the user is revisiting this page using parent component for reference
   const isRevisit = parent === 'QuizScreen';
@@ -91,8 +93,8 @@ const QuizCompletion = props => {
 
   let isCourseCompleted = false;
 
-  // ONLY FOR OPIOID & NIHSS AFTER PASSING QUIZ AND USER HASNT CLAIMED CME WHILE RETURNING TO COURSE PAGE
-  if ((isOpioid || isNIHSS) && !quizPassed) {
+  // ONLY FOR OPIOID, NIHSS & ECG AFTER PASSING QUIZ AND USER HASNT CLAIMED CME WHILE RETURNING TO COURSE PAGE
+  if (!hasProviderCard && !quizPassed) {
     isCourseCompleted = activeCourseProgress.isCourseCompleted;
   }
 
@@ -123,8 +125,7 @@ const QuizCompletion = props => {
 
   return (
     <Grid container spacing={2} justifyContent="center" sx={{ my: 2 }}>
-      <Grid size={{ xs: 10, sm: 8 }}>
-        <Grid container justifyContent="center" spacing={2}>
+        <Grid size={{ xs: 10, sm: 8 }} container justifyContent="center" spacing={2}>
           {/* SHOW EXIT BUTTON ONLY WHEN QUIZ IS PASSED FOR FIRST TIME AND NOT ON REVISIT */}
           {parent === 'QuizContent' && (
             <Grid size={12}>
@@ -171,7 +172,7 @@ const QuizCompletion = props => {
             ) : (
               <>
                 {/* DOWNLOAD CERTIFICATE BUTTON  */}
-                {!(isOpioid || isNIHSS) && (
+                {hasProviderCard && (
                   <Grid size={{ xs: 12, sm: 6 }}>
                     <CompletionCard
                       card="Provider Card"
@@ -188,7 +189,7 @@ const QuizCompletion = props => {
                       card="CME Certificate"
                       action="Claim"
                       onClick={handleClaimCME}
-                      disabled={!(isOpioid || isNIHSS) && !providerCardPath}
+                      disabled={hasProviderCard && !providerCardPath}
                     />
                   </Grid>
                 )}
@@ -204,7 +205,7 @@ const QuizCompletion = props => {
               ) : (
                 <>
                   {/* DOWNLOAD CERTIFICATE BUTTON  */}
-                  {!(isOpioid || isNIHSS) && (
+                  {hasProviderCard && (
                     <Grid size={{ xs: 12, sm: 6 }}>
                       <CompletionCard
                         card="Provider Card"
@@ -221,7 +222,7 @@ const QuizCompletion = props => {
                         card="CME Certificate"
                         action="Claim"
                         onClick={handleClaimCME}
-                        disabled={!(isOpioid || isNIHSS) && !providerCardPath}
+                        disabled={hasProviderCard && !providerCardPath}
                       />
                     </Grid>
                   ) : (
@@ -246,18 +247,14 @@ const QuizCompletion = props => {
             <APIErrorMessage errorMessage={certificateGenerateError} />
           )}
         </Grid>
-      </Grid>
     </Grid>
   );
 };
 
 const QuizScore = ({ courseID, percentage }) => {
-  const isOpioid = courseID === 11159;
-  const isNIHSS = courseID === 192797;
-  const totalQuestionsCount = isOpioid ? 24 : isNIHSS ? 25 : 50;
+  const totalQuestionsCount = quizQuestions[courseID].total;
 
-  const courseShortName = courseDetails.find(course => course.id == courseID)
-    ?.short_name;
+  const courseShortName = courseDetails.find(course => course.id == courseID)?.short_name;
 
   return (
     <Typography>

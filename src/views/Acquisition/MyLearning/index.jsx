@@ -14,7 +14,7 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { useLearningContext } from 'src/context/LearningContext';
 import useBreakpoints from 'src/hooks/useBreakpoints';
 
-const CONNECT_COURSES = [4526, 9985, 9238, 79132, 151904, 192797, 11159];
+const CONNECT_COURSES = [4526, 9985, 9238, 79132, 151904, 192797, 11159, 130360];
 
 const MyLearningPage = () => {
   const { isMobile } = useBreakpoints();

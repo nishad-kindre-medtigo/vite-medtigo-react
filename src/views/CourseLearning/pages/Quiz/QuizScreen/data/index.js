@@ -45,6 +45,11 @@ export const courseDetails = [
     name: 'opioid-course',
     full_name: 'Opioid And Pain Management',
     id: 11159
+  },
+  {
+    name: 'ecg-course',
+    full_name: 'Electrocardiogram',
+    id: 130360
   }
 ];
 

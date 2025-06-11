@@ -38,6 +38,17 @@ import CompleteIcon from '@mui/icons-material/CheckCircle';
  * @props {Function} setStart - State setter function to initiate the quiz.
  */
 
+export const quizQuestions = {
+  4526: { total: 50, pass: 40 },
+  9985: { total: 50, pass: 40 }, 
+  9238: { total: 50, pass: 40 },
+  79132: { total: 50, pass: 40 },
+  151904: { total: 50, pass: 40 },
+  192797: { total: 25, pass: 20 }, 
+  11159:  { total: 24, pass: 20 },
+  130360:  { total: 27, pass: 22 }
+}
+
 const QuizActionsCard = props => {
   const {
     parent,
@@ -92,13 +103,9 @@ const QuizActionsCard = props => {
     }
   };
 
-  const totalQuestionsCount = isOpioid ? 24 : isNIHSS ? 25 : 50;
-  const passingQuestionsCount = isOpioid || isNIHSS ? 20 : 40;
-  const passingCriteria = isOpioid
-    ? '20 out of 24'
-    : isNIHSS
-    ? '20 out of 25'
-    : '40 out of 50';
+  const totalQuestionsCount = quizQuestions[courseID].total;
+  const passingQuestionsCount = quizQuestions[courseID].pass;
+  const passingCriteria = `${passingQuestionsCount} out of ${totalQuestionsCount}`
 
   const quizTitle = quizPassed
     ? 'Congratulations'

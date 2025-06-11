@@ -80,7 +80,7 @@ const QuizContent = (props) => {
   const isTeamHealthUser = user.email.split('@')[1] === 'teamhealth.com';
   const showSimulationCard = (isTeamHealthUser && isACLS) || (isACLS && userPlans.acls == 'best_value');
   const showHintData = [4526, 9985, 9238].includes(activeCourse.id); // Hints shown only for ACLS, BLS & PALS
-  const hasProviderCard = ![11159, 192797].includes(parseInt(activeCourse.id)); // To run generateProviderCard API
+  const hasProviderCard = ![11159, 192797, 130360].includes(parseInt(activeCourse.id)); // To run generateProviderCard API
 
   // QUIZ ATTEMPT DATA STATE VALUES
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -155,6 +155,9 @@ const QuizContent = (props) => {
 
   // Place order for teamhealth user on Quiz Success
   const placeOrderForTeamHealthUser = async () => {
+    // Prevent placing order for ECG
+    if(activeCourse.id == 130360) return;
+
     const order_number = await orderServices.getRecentOrderNumber();
     const orderPlan = teamhealthPlans[activeCourse.id];
     await orderServices.addOrderFromMarket({

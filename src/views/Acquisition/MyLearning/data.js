@@ -53,6 +53,7 @@ export const courses = [
     {
         id: 151904,
         title: 'ASC CE',
+        cmeCredits: 6,
         color: '#1D1D65',
         subtitle: 'Annual Stroke Center Continuing Education',
         image: 'https://courses.medtigo.com/wp-content/uploads/2024/12/ascce.webp', // Course Card Image in My Learning Page
@@ -71,6 +72,11 @@ export const courses = [
         title: 'Opioid Education and Pain Management',
         cmeCredits: 4,
         image: 'http://courses.medtigo.com/wp-content/uploads/2024/10/opioid.svg',
+    },
+    {
+        id: 130360,
+        title: 'Electrocardiogram',
+        image: '/images/lms/ecg-course.png',
     }
 ];
 

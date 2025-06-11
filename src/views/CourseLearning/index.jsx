@@ -12,7 +12,9 @@ import { Introduction, CourseUnits, QuizPage } from './pages';
 import { courseLessonTypes } from './utils';
 import './courseContent.css';
 
-const AVAILABLE_COURSES = [4526, 9985, 9238, 151904, 79132, 11159, 192797];
+const AVAILABLE_COURSES = [4526, 9985, 9238, 151904, 79132, 11159, 192797, 130360];
+
+const FREE_ACCESS_COURSES = [130360]
 
 const CourseLearningPage = () => {
   // CONSTANT VALUES
@@ -21,6 +23,7 @@ const CourseLearningPage = () => {
   const user = useSelector((state) => state.account.user);
   const { language, activeCourse, activeCourseProgress: courseProgress, updateCourseProgress } = useContext(LearningContext);
   const isValidCourseID = AVAILABLE_COURSES.includes(parseInt(courseID)); // Check if the course ID is valid
+  const freeAccess = FREE_ACCESS_COURSES.includes(parseInt(courseID)); // Check if the course ID is valid
 
   // STATE VALUES
   const [activeStep, setActiveStep] = useState(0); // Store current active Step/Lesson
@@ -65,12 +68,19 @@ const CourseLearningPage = () => {
 
   // CHECK USER'S COURSE ACCESS BASED ON ORDER - FREE ACCESS FOR TEAMHEALTH USER
   const checkCourseAccess = async () => {
+    if(freeAccess){
+      setLoadingCourse(false);
+      setHasCourseAccess(true);
+      return;
+    }
+
     const isTeamHealthUser = user.email.includes('teamhealth.com');
     if (isTeamHealthUser) {
       setLoadingCourse(false);
       setHasCourseAccess(true);
       return;
     }
+    
     setLoadingCourse(true);
     try {
       const myLearningData = await myLearningService.getCourseMyLearningData(user.id, parseInt(courseID));

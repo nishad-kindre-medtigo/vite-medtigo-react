@@ -1,6 +1,7 @@
 import React, { createContext, useState, useEffect, useContext } from "react";
 import { useSelector } from "react-redux";
 import { SERVER_URL } from "src/settings";
+import authService from "src/services/authService";
 import axios from "axios";
 
 export const UserDataContext = createContext();

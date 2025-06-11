@@ -15,6 +15,8 @@ const NewCourseCard = React.memo(({ courseID, courseData, handleOpenDialog, hand
     const hasCME = order?.hasCME || false;
     const hasFullSizeCertificate = order?.hasFullSizeCertificate || false;
 
+    const disableActionButton = courseID === 130360 && buttonText === "RENEW";
+
     const { progressPercentage, isCourseCompleted } = progressSummary;
 
     const hideLinearProgress = progressPercentage === 0 || progressPercentage === 100 || isOrderExpired || isCourseCompleted; // Hide Linear Progress Bar only when course is not started & if course plan is expired
@@ -128,7 +130,7 @@ const NewCourseCard = React.memo(({ courseID, courseData, handleOpenDialog, hand
           </Box>
 
           {/* ACTION BUTTON */}
-          <ActionButton onClick={handleActionButtonClick} buttonText={buttonText} />
+          <ActionButton onClick={handleActionButtonClick} buttonText={buttonText} disabled={disableActionButton} />
         </CardActions>
       </CourseCard>
     );

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Chart from 'react-apexcharts';
-import { Box, Grid, IconButton, List, ListItem, ListItemIcon, Skeleton, Tooltip, Typography } from '@mui/material';
+import { Box, Grid, Button, IconButton, List, ListItem, ListItemIcon, Skeleton, Tooltip, Typography } from '@mui/material';
 import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
 import { useNavigate } from 'react-router-dom';
 import { CourseProgress } from 'src/views/Acquisition/MyLearning/ui';
@@ -216,23 +216,48 @@ export const Arrow = () => {
   );
 };
 
-export const ListItemSkeleton = ({title}) => {
+export const CourseName = ({ title }) => (
+  <Typography style={{ fontSize: "14px", fontWeight: 500, width: "54px" }}>
+    {title}
+  </Typography>
+);
 
-  return (
-    <ListItem sx={{ p: 0, mb: 2, display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '12px', '&:last-child': {mb: 0}}}>
-      <Typography style={{ fontSize: '14px', fontWeight: 500, width: '54px' }}>
-        {title}
-      </Typography>
+export const CoursePercentage = ({ percent }) => (
+  <Tooltip arrow followCursor title={`${percent}% Completed`}>
+    <Box sx={{ flexGrow: 1, cursor: "pointer" }}>
+      <CourseProgress percent={percent} />
+    </Box>
+  </Tooltip>
+);
 
-      <Tooltip arrow followCursor>
-        <Box sx={{ flexGrow: 1, cursor: 'pointer' }}>
-          <CourseProgress percent={0}/>
-        </Box>
-      </Tooltip>
+const capitalizeWords = (text) => {
+  return text
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .join(" ");
+};
 
-      <Typography style={{ fontSize: '14px', fontWeight: 500, color: '#2872C1', width: '110px', textAlign: 'left', textDecoration: 'underline', cursor: 'pointer' }}>
-      <></>
-      </Typography>
-    </ListItem>
-  );
-}
+export const ActionButton = ({ buttonText, disabled, onClick, ...props }) => (
+  <Typography
+    variant="body2"
+    color={disabled ? "textDisabled" : "primary"}
+    onClick={disabled ? null : onClick}
+    sx={{
+      textDecoration: "underline",
+      p: 0,
+      width: "100px",
+      cursor: disabled ? 'not-allowed' : "pointer",
+    }}
+    {...props}
+  >
+    {capitalizeWords(buttonText)}
+  </Typography>
+);
+
+export const ListItemSkeleton = ({title}) => (
+  <ListItem sx={{ p: 0, mb: 2, display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 1, '&:last-child': {mb: 0}}}>
+    <CourseName title={title} />
+    <CoursePercentage percent={0} />
+    <ActionButton buttonText="..." />
+  </ListItem>
+);

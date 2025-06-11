@@ -6,7 +6,7 @@ import useroptionsServices from 'src/services/userOptionsService';
 import myLearningService from 'src/services/myLearningService';
 import { courseLanguages } from 'src/appConstants';
 
-const AVAILABLE_COURSES = [4526, 9985, 9238, 151904, 79132, 11159, 192797];
+const AVAILABLE_COURSES = [4526, 9985, 9238, 151904, 79132, 11159, 192797, 130360];
 
 export const LearningContext = React.createContext({});
 
